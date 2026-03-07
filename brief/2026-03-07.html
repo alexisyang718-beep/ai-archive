@@ -502,6 +502,77 @@
     .back-to-top { bottom: 20px; right: 20px; }
   }
 
+  /* ===== Insight Block ===== */
+  .insight {
+    background: linear-gradient(135deg, var(--accent-soft), rgba(201, 100, 66, 0.03));
+    border: 1px solid var(--accent-border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 18px 22px;
+    margin: 12px 0 6px;
+    font-size: 13.5px;
+    line-height: 1.95;
+    color: var(--text-secondary);
+  }
+
+  .insight-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .insight h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 14px 0 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .insight h4:first-of-type {
+    margin-top: 8px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .insight ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0;
+  }
+
+  .insight ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 4px;
+  }
+
+  .insight ul li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .insight strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .insight em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
   /* ===== Smooth Scroll ===== */
   html { scroll-behavior: smooth; }
 
@@ -576,6 +647,45 @@
       3 月 6 日，Anthropic 正式推出 <strong>Anthropic Marketplace</strong>，为企业客户提供购买第三方软件的新平台。首批入驻服务包括 <strong>Snowflake、Harvey、Replit</strong> 等基于 Claude 模型构建的应用。核心策略：<strong>零佣金</strong>——不从交易中抽成，并允许客户将用于 Anthropic 自有服务的年度支出转移购买第三方工具，模式对标 AWS Marketplace 和 Azure Marketplace。此举标志着 Anthropic 正从模型公司向<strong>企业 AI 生态平台</strong>转型，尤其在对美国政府业务面临不确定性之际，加速拓展商业版图。
     </div>
     <div class="item-source">来源：<a href="https://x.com/claudeai/status/2029966517497122886?s=20">Claude AI (X/Twitter)</a> · <a href="https://claude.com/platform/marketplace">Claude Marketplace 官网</a> · <a href="https://www.bloomberg.com/news/articles/2026-03-06/anthropic-unveils-amazon-inspired-marketplace-for-ai-software">Bloomberg</a> ｜ 3月6日</div>
+
+    <div class="insight">
+      <div class="insight-title">💡 深度洞察</div>
+
+      <h4>一、对 Anthropic 自身：从"模型供应商"到"AI 生态平台"的关键跃迁</h4>
+      <ul>
+        <li>Anthropic 当前年化收入约 <em>$140 亿</em>，估值 <em>$3800 亿</em>（2026 年 2 月 Series G），但收入高度依赖模型 API 调用。Marketplace 的推出意味着 Anthropic 正从"卖算力"转向<strong>"卖生态"</strong>——通过平台化能力提升客户粘性和 LTV（客户终身价值）。</li>
+        <li><strong>零佣金 ≠ 不赚钱</strong>。真正的商业逻辑是：客户在 Marketplace 采购第三方工具时，底层消耗的仍是 Claude API 算力。每一笔第三方交易都间接放大了 Anthropic 的 Token 消费量。这与 AWS 早期"不靠 Marketplace 抽成赚钱，靠 EC2 消耗赚钱"的飞轮模型如出一辙。</li>
+        <li>五角大楼事件后 Claude 用户激增（免费用户增长 >60%，日注册量翻 4 倍，付费用户翻倍），Marketplace 恰好承接住了这波流量红利，将消费端热度转化为企业端营收增量。</li>
+      </ul>
+
+      <h4>二、对行业：AI 应用分发权之争正式开启</h4>
+      <ul>
+        <li><strong>模型公司做平台，是 2026 年最重要的行业趋势之一。</strong>OpenAI 有 GPT Store（已整合到 ChatGPT），Google 有 Vertex AI Marketplace，现在 Anthropic 也入局。"谁拥有 AI 应用的分发权"正在成为比"谁的模型更强"更关键的竞争维度。</li>
+        <li>AWS Marketplace 2025 年第三方软件 GMV 已超 <em>$150 亿</em>，Azure Marketplace 体量相近。Anthropic 零佣金策略短期内会快速吸引 ISV（独立软件厂商）入驻，但能否形成足够交易密度是关键考验。</li>
+        <li>首批入驻的 Snowflake（数据仓库）、Harvey（法律 AI）、Replit（编程 AI）代表了<strong>企业数据层→垂直行业→开发者工具</strong>的三角布局，Anthropic 瞄准的是 B2B 高客单价市场，而非 ChatGPT 式的 C 端应用分发。</li>
+      </ul>
+
+      <h4>三、对上下游的影响</h4>
+      <ul>
+        <li><strong>上游（云厂商）</strong>：Anthropic 与 AWS 的关系变得微妙——既是 AWS 的最大 AI 客户（亚马逊累计投资 $80 亿），又在应用层与 AWS Marketplace 直接竞争。如果 Anthropic 能将企业客户的采购预算从 AWS 抢走，Amazon 的 AI 变现逻辑将受到冲击。</li>
+        <li><strong>下游（AI 应用开发者）</strong>：零佣金 + 允许客户复用 Anthropic 年度预算 = 降低了 AI 应用的获客成本。对于基于 Claude 构建的 SaaS 公司而言，这是一个明确的利好信号。</li>
+        <li><strong>竞争对手</strong>：OpenAI 的 GPT Store 至今未公布收入数据，Google 的 Vertex 市场份额有限。Anthropic 的零佣金策略会逼迫竞争对手跟进降费，整个行业的应用分发层将进入价格战。</li>
+      </ul>
+
+      <h4>四、对国内企业的启示</h4>
+      <ul>
+        <li><strong>国内大模型公司应加速平台化转型。</strong>目前百度文心、阿里通义、月之暗面的商业模式仍停留在"模型 API + 应用"，尚无一家推出类 Marketplace 的第三方应用分发平台。随着模型能力趋同，"生态厚度"将成为决胜关键。</li>
+        <li>Anthropic 的"零佣金"策略值得研究：以短期让利换取平台规模效应，本质是一场"用户注意力×API 消耗量"的飞轮赌注。国内企业可借鉴此策略，用<strong>免费分发层 + 付费算力层</strong>的模式快速建立应用生态。</li>
+        <li>五角大楼事件证明：在 AI 时代，"价值观品牌"可以直接转化为商业增长。对于国内企业而言，<strong>数据安全和用户隐私</strong>同样可以成为差异化竞争的核心叙事。</li>
+      </ul>
+
+      <h4>五、未来趋势判断</h4>
+      <ul>
+        <li><strong>2026 年下半年，"AI Marketplace"将成为行业标配。</strong>预计 Meta（Llama 生态）、Mistral（欧洲市场）都将推出类似平台。</li>
+        <li>长期来看，AI 应用分发的终局不是"应用商店"，而是<strong>"Agent 调度中心"</strong>——用户不下载应用，而是直接让 Agent 跨应用完成任务。Marketplace 只是这个终局的过渡形态。</li>
+        <li>Anthropic 的 $3800 亿估值已隐含了"平台公司"预期。如果 Marketplace 能在 12 个月内达到 <em>$10 亿+</em> GMV，将验证"模型公司→平台公司"的转型逻辑，并可能推动其 IPO 进程。</li>
+      </ul>
+    </div>
   </div>
 
   <div class="item">
@@ -715,6 +825,46 @@
       <span class="stat">适配机型 <em>小米17系列</em></span>
     </div>
     <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/TLU6WXkgI-7Ph2ebGQKARg">小米技术（微信公众号）</a> · <a href="https://www.ithome.com/0/926/529.htm">IT之家</a> · <a href="https://news.pconline.com.cn/2110/21109233.html">太平洋科技</a> ｜ 3月6日</div>
+
+    <div class="insight">
+      <div class="insight-title">💡 深度洞察</div>
+
+      <h4>一、对小米自身：从"硬件+互联网"到"硬件+AI 原生"的战略升级</h4>
+      <ul>
+        <li><strong>这是国内首个手机厂商级的系统级 AI Agent 产品。</strong>与传统语音助手（Siri、小爱同学）的本质区别在于：miclaw 不是"对话工具"，而是"执行引擎"——它以系统应用身份运行，封装 <em>50+</em> 系统级工具，具备推理-执行闭环能力（analyze → select tool → execute → review → iterate）。</li>
+        <li>小米将 miclaw 定位为"人车家全生态"的统一 AI 入口。依托小米 IoT 平台连接超 <em>8 亿台</em>设备的生态优势，miclaw 的想象空间远大于单一手机 Agent：它可以调度手机、汽车、家电形成跨设备任务链。这是苹果 Siri、Google Assistant 至今未实现的能力层级。</li>
+        <li>自研 MiMo 大模型是关键。小米未采用第三方模型（如通义/文心），而是完全基于自研模型构建端侧推理能力，并支持 MCP（Model Context Protocol）接入第三方 SDK。这意味着小米对 AI 能力的掌控度和迭代速度远高于依赖外部模型的厂商。</li>
+        <li>五年 <em>2000 亿</em>研发投入承诺（覆盖芯片、AI、机器人），加上小米 17 系列硬件作为首发平台，说明小米正将 AI 视为与硬件同级的核心战略。</li>
+      </ul>
+
+      <h4>二、对行业：手机端 Agent 赛道正式从概念走向产品</h4>
+      <ul>
+        <li><strong>时间窗口意义重大。</strong>miclaw 的发布紧跟 OpenClaw 全球爆发（Discord 11.9 万用户、腾讯大厦排长队部署），精准卡位了"AI Agent 从 PC 端向移动端迁移"的行业拐点。小米将 Agent 的落地战场从浏览器/桌面拉到了手机终端，这是一个全新的竞争维度。</li>
+        <li>手机 Agent 的核心壁垒在于<strong>系统级权限</strong>。相比第三方 Agent 应用（如 Perplexity、Rabbit R1），手机厂商天然拥有操作系统层的完整控制权——可以读取短信、日历、通知、传感器数据，可以调用系统 API 执行操作。这使得手机厂商在 Agent 赛道拥有其他玩家无法复制的结构性优势。</li>
+        <li>支持 MCP 协议是前瞻性布局。MCP（由 Anthropic 提出）正在成为 AI Agent 的"USB 接口标准"，小米率先支持意味着第三方开发者可以低成本接入 miclaw 生态，有望催生手机端的"Agent 应用市场"。</li>
+      </ul>
+
+      <h4>三、对上下游的影响</h4>
+      <ul>
+        <li><strong>上游（芯片/模型）</strong>：端侧 Agent 对芯片的推理算力和能效比提出了更高要求。高通/联发科/小米自研澎湃芯片将面临"端侧推理性能"的新军备竞赛。模型层面，端侧部署要求模型足够小且快，会加速<strong>小模型蒸馏</strong>和<strong>MoE 架构</strong>在手机端的落地。</li>
+        <li><strong>下游（应用开发者）</strong>：传统 App 开发模式可能被重构。如果 Agent 能直接操控第三方应用完成任务，用户对"打开 App → 手动操作"的需求将下降。对于工具类/效率类 App 而言，这既是机会（被 Agent 调用 = 获得分发）也是威胁（用户不再直接使用 UI）。</li>
+        <li><strong>同行竞争</strong>：华为（盘古）、OPPO/vivo（蓝心/蓝河）、三星（Galaxy AI）都在布局手机 AI，但尚无类似"系统级 Agent"产品落地。小米率先封测可能抢占 <em>3-6 个月</em>的先发窗口。</li>
+      </ul>
+
+      <h4>四、对国内企业的启示</h4>
+      <ul>
+        <li><strong>手机厂商做 AI Agent 的逻辑是成立的。</strong>手机是最高频的计算设备（日均使用 4+ 小时），拥有最丰富的个人上下文数据（位置、通讯、消费、健康），天然适合 Agent 落地。国内手机厂商应抓住这一窗口期。</li>
+        <li>小米的"三级记忆管理"机制（关键决策留存、冗余交互压缩、核心指令本地优化）使对话效率提升 <em>30%</em>、存储开销降低 <em>45%</em>，展示了端侧 Agent 在资源受限环境下的工程可行性。这一方案值得其他厂商借鉴。</li>
+        <li><strong>"封测 + 邀请制 + 实验性产品"的发布策略</strong>值得学习。小米主动降低用户预期（明确说不稳定、建议勿在主力机安装），既控制了口碑风险，又制造了稀缺感和话题度。</li>
+      </ul>
+
+      <h4>五、未来趋势判断</h4>
+      <ul>
+        <li><strong>2026 年将是"手机 Agent 元年"。</strong>下半年苹果 WWDC 预计将推出系统级 Siri Agent，Google I/O 也将更新 Android Agent 能力。小米率先出手意味着中国厂商在这一轮竞争中<strong>首次站在了起跑线前面</strong>。</li>
+        <li>端侧 Agent 将催生新的"<strong>注意力经济</strong>"：谁的 Agent 帮用户完成的任务最多，谁就掌握了新的流量分发权。传统 App 的"搜索→下载→打开"模式可能被"一句话→Agent 执行"模式逐步替代。</li>
+        <li>小米"人车家全生态 + Agent 执行引擎"的组合如果跑通，将从"智能设备公司"升级为"AI 服务公司"，商业模型从<strong>硬件毛利</strong>转向<strong>服务收入</strong>（Agent 订阅、AI 增值服务、生态分发佣金），长期想象空间巨大。</li>
+      </ul>
+    </div>
   </div>
 
 </section>
@@ -766,6 +916,68 @@
       <span class="stat">推理成本 <em>降10x</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.nvidia.com/en-us/gtc/">NVIDIA GTC 官网</a> · <a href="https://blogs.nvidia.com/blog/category/deep-learning/">NVIDIA Blog</a> · <a href="https://www.trustedreviews.com/brands/nvidia/">Trusted Reviews</a> ｜ 3月</div>
+
+    <div class="insight">
+      <div class="insight-title">💡 深度洞察</div>
+
+      <h4>一、英伟达的业务战略变化：从"卖 GPU"到"卖推理经济学"</h4>
+      <ul>
+        <li><strong>数据中心业务已彻底压倒游戏业务。</strong>FY2026 Q4（截至 2026 年 1 月），英伟达数据中心营收达 <em>$623 亿</em>（单季），而游戏业务收入占比已降至历史低位。更具标志性的是：英伟达宣布 2026 年<strong>不发布任何新消费级游戏 GPU</strong>——这是自 1990 年代以来首次，资源全面倾斜 AI 数据中心。</li>
+        <li><strong>英伟达正在重新定义自己的价值主张。</strong>过去卖的是"FLOPS"（算力），现在卖的是"Tokenomics"（Token 经济学）。GTC 2026 的核心叙事不是"Blackwell 有多快"，而是"每美元能产出多少 Token"。这标志着英伟达从<strong>硬件性能竞赛</strong>转向<strong>推理成本效率竞赛</strong>。</li>
+        <li>传闻英伟达正在洽谈<strong>收购 Groq</strong>（LPU 推理芯片公司），这是一个防御性战略：当 Google TPU、AMD MI355X、Groq LPU 在推理市场蚕食份额时，英伟达选择"买下潜在颠覆者"来巩固推理领域的统治地位。</li>
+      </ul>
+
+      <h4>二、"推理成本降 10 倍"的实际影响——关键数据解读</h4>
+      <ul>
+        <li><strong>核心数据</strong>：据 VentureBeat 报道及英伟达官方数据，Blackwell（GB200 NVL72）相比 Hopper（H100），在配合优化软件栈和开源模型时，Token 单价降低 <em>4x-10x</em>。具体案例：</li>
+      </ul>
+      <div class="stat-row" style="margin: 8px 0 12px;">
+        <span class="stat">DeepInfra <em>$0.20→$0.05/百万Token</em></span>
+        <span class="stat">Sully.ai(医疗) <em>成本降90%</em></span>
+        <span class="stat">Decagon(语音客服) <em>成本降6x</em></span>
+      </div>
+      <ul>
+        <li><strong>采购成本变化</strong>：H100 单卡市价约 <em>$25,000-30,000</em>，B200 单卡预估 <em>$30,000-40,000</em>（涨价 ~30%），但每卡产出的推理 Token 数提升 <em>5-10 倍</em>。折算后，<strong>每百万 Token 的硬件摊销成本从 $0.20 降至 $0.05 以下</strong>。对于一个日均处理 <em>10 亿</em> Token 的中型 AI 公司，年化硬件成本可从 ~<em>$7300 万</em>降至 ~<em>$1800 万</em>，节省超 <em>$5000 万</em>。</li>
+        <li><strong>Token 降价的传导效应</strong>：推理成本降 10 倍直接推动 API 定价下降。2024 年 GPT-4 级模型的 API 价格为 ~$30/百万 Token，到 2026 年初已降至 ~$3/百万 Token。Blackwell 大规模部署后，预计推动行业价格进一步降至 <em>$0.3-1.0/百万 Token</em>。这意味着：</li>
+      </ul>
+      <div class="stat-row" style="margin: 8px 0 12px;">
+        <span class="stat">2024年 GPT-4 级 <em>~$30/M Token</em></span>
+        <span class="stat">2026年初 <em>~$3/M Token</em></span>
+        <span class="stat">Blackwell 后 <em>$0.3-1.0/M Token</em></span>
+      </div>
+      <ul>
+        <li><strong>对模型迭代速度的影响</strong>：推理成本下降 → 模型评估成本下降 → 研发团队可以跑更多实验 → 模型迭代周期缩短。据 Baseten 和 Together AI 的实际数据，Blackwell 上运行开源模型（如 Llama 3、DeepSeek-R1）的评估速度提升 <em>3-5 倍</em>，单个 DGX 系统可达 <em>30,000+ tokens/s</em> 吞吐量。这意味着过去需要一周完成的模型评估，现在可以在 <em>1-2 天</em>内完成。</li>
+        <li><strong>关键技术因素</strong>：10 倍降幅不仅来自硬件升级（仅贡献 ~2 倍），而是<strong>硬件+软件+模型架构</strong>三层协同的结果。具体包括：① Blackwell 原生 NVFP4 低精度格式（将 FP8 精度减半，贡献额外 2 倍）；② MoE（混合专家）模型在 NVLink 互联下的高效通信；③ TensorRT-LLM + Dynamo 推理引擎的软件优化。</li>
+      </ul>
+
+      <h4>三、芯片技术迭代启示</h4>
+      <ul>
+        <li><strong>从"训练为王"到"推理为王"的范式切换。</strong>H100 时代的核心卖点是训练性能（FP8 3,958 TFLOPS），Blackwell 的核心卖点变成了推理效率（FP4 20,000 TFLOPS，推理吞吐提升 30 倍）。这反映了行业现实：大模型训练需求增速放缓（头部公司已建成大规模训练集群），而推理需求随 AI 应用普及呈指数级增长。</li>
+        <li><strong>低精度计算是未来 3 年芯片竞争的核心战场。</strong>从 FP16（A100）→ FP8（H100）→ FP4（Blackwell），每一代精度减半都带来吞吐翻倍。下一代 Rubin 架构（2027 年）预计将支持 FP4/INT4 混合精度，目标在 Blackwell 基础上再降 <em>10 倍</em>推理成本。</li>
+        <li><strong>液冷成为刚需。</strong>GB200 NVL72 采用液冷散热，功耗 ~<em>72kW</em>/机柜，性能密度是 H100 风冷方案的 ~<em>4 倍</em>。这意味着新建数据中心必须配套液冷基础设施，对整个数据中心供应链（制冷系统、CDU、管路）形成拉动。</li>
+      </ul>
+
+      <h4>四、对 AI 行业的影响</h4>
+      <ul>
+        <li><strong>"AI 推理平价化"加速到来。</strong>当推理成本降到 $1/百万 Token 以下，大量过去"算不起账"的 AI 应用场景将变得经济可行：实时 AI 客服、个性化内容生成、端侧 Agent 持续运行等。AI 的商业化拐点将从"能不能做"变成"值不值得做"。</li>
+        <li><strong>开源模型 + Blackwell = 对闭源模型的生存威胁。</strong>VentureBeat 数据显示，Sully.ai 使用开源模型在 Blackwell 上的推理成本比闭源模型降低 <em>10 倍</em>，且响应速度提升 <em>65%</em>。当开源模型的性价比碾压闭源 API，OpenAI/Anthropic/Google 的 API 定价权将被严重削弱。</li>
+        <li><strong>竞争格局：英伟达"推理帝国"面临三面夹击。</strong>① Google TPU 已获 Anthropic 大额订单，凭能效优势切入商用市场；② AMD MI355X 在中端推理市场提供价格替代；③ Groq LPU 在超低延迟场景（语音 AI）具备颠覆性优势。英伟达虽仍占推理市场 >80% 份额，但护城河正在收窄。</li>
+      </ul>
+
+      <h4>五、对国内企业的启示</h4>
+      <ul>
+        <li><strong>国产芯片的机遇窗口。</strong>Blackwell 受美国出口管制限制，中国企业无法直接采购。但推理成本"每年降 10 倍"的趋势是全球性的，国产推理芯片（如华为昇腾 910C、寒武纪 MLU590、海光 DCU）只要能达到 Hopper 级别的推理效率，在中国市场就能获得可观份额——因为中国客户的替代选项非常有限。</li>
+        <li><strong>Token 降价将加速中国 AI 应用落地。</strong>当前国内大模型 API 价格已处于"百万 Token 一块钱"的卷价阶段（DeepSeek-V3 的 API 价格约 $0.27/百万 Token），Blackwell 带来的全球性成本下降将进一步压缩定价空间，但也意味着更多中小企业"用得起 AI"。</li>
+        <li><strong>液冷产业链是确定性机会。</strong>英伟达 Blackwell 全面转向液冷，中国是全球最大的数据中心市场之一，液冷相关的 CDU（冷量分配单元）、冷板、管路、冷却液供应商将直接受益。这是一条不受出口管制限制的供应链机会。</li>
+      </ul>
+
+      <h4>六、未来趋势判断</h4>
+      <ul>
+        <li><strong>2026-2027 年，AI 推理成本将再降 10-100 倍。</strong>英伟达 Rubin 架构（2027）目标是在 Blackwell 基础上再降 10 倍；叠加算法优化（MoE、推测解码、KV Cache 压缩），到 2028 年 GPT-4 级推理成本可能降至 <em>$0.01/百万 Token</em>——届时 AI 将真正成为"零边际成本"的基础设施。</li>
+        <li><strong>"推理即服务"（Inference-as-a-Service）将成为比"模型即服务"更大的市场。</strong>Baseten、Together AI、Fireworks AI 等推理服务商正在快速崛起，预计 2027 年全球 AI 推理服务市场规模将超 <em>$500 亿</em>。</li>
+        <li>英伟达放弃消费级 GPU 更新，短期看是"聚焦高利润业务"，长期看可能留下战略隐患——如果 AI PC 和端侧推理需求爆发，缺乏消费级产品线的英伟达可能将这一市场拱手让给 AMD、Intel 和高通。</li>
+      </ul>
+    </div>
   </div>
 </section>
 
