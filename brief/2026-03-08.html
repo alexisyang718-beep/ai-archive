@@ -506,6 +506,80 @@
   /* ===== Smooth Scroll ===== */
   html { scroll-behavior: smooth; }
 
+  /* ===== Insight Collapsible ===== */
+  .insight-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: var(--bg-warm);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    user-select: none;
+  }
+
+  .insight-toggle:hover {
+    border-color: var(--accent-border);
+  }
+
+  .insight-toggle .insight-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .insight-toggle .insight-chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    transition: transform 0.3s ease;
+  }
+
+  .insight-toggle.open .insight-chevron {
+    transform: rotate(180deg);
+  }
+
+  .insight-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+    padding: 0 18px;
+    background: var(--bg-warm);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-body.open {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0 18px 14px;
+  }
+
+  .insight-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .insight-toggle.open {
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border-bottom: none;
+  }
+
   /* ===== Selection ===== */
   ::selection {
     background: var(--accent-soft);
@@ -560,8 +634,12 @@
       AMD 企业副总裁 Anush Elangovan 发布了一个完全用 Python 编写的<strong>轻量级 Radeon 驱动测试工具</strong>。所有代码 <strong>100% 由 Claude Code 生成</strong>，他甚至一次都没打开过代码编辑器。该工具绕过 ROCm 软件栈，直接与 Linux 内核 GPU 接口交互，用于调试和硬件功能测试。项目展示了 AMD 内核接口的开放性，同时也证明 AI 编码工具已经能够<strong>独立完成专业级底层系统开发</strong>。
     </div>
     <div class="item-source">来源：<a href="http://www.sohu.com/a/993798559_114760">搜狐科技/IT之家</a> ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜这件事真正的看点是：CUDA 护城河可能正在被 AI 编码工具绕过。</strong>AMD 的 ROCm 长期被诟病"生态弱、文档差、开发体验远不如 CUDA"，但 Claude Code 直接绕过了 ROCm 软件栈，与 Linux 内核 GPU 接口对话——<strong>AI 编码工具正在抹平不同硬件生态的开发门槛</strong>。如果 AI 能自动生成过去需要深谙 CUDA 才能写的底层代码，那"CUDA 生态 = 开发者锁定"这条护城河就不再牢不可破。对国产 GPU 厂商（砺算、壁仞、摩尔线程）而言，这是重大利好：<strong>与其花十年追赶 CUDA 生态，不如让 AI 编码工具成为"万能适配层"</strong>，用 Claude Code/Copilot 自动生成各硬件平台的驱动和优化代码。NVIDIA 的软件壁垒可能被"AI 写代码"这件事从根基上瓦解。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜这件事真正的看点是：CUDA 护城河可能正在被 AI 编码工具绕过</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      AMD 的 ROCm 长期被诟病"生态弱、文档差、开发体验远不如 CUDA"，但 Claude Code 直接绕过了 ROCm 软件栈，与 Linux 内核 GPU 接口对话——<strong>AI 编码工具正在抹平不同硬件生态的开发门槛</strong>。如果 AI 能自动生成过去需要深谙 CUDA 才能写的底层代码，那"CUDA 生态 = 开发者锁定"这条护城河就不再牢不可破。对国产 GPU 厂商（砺算、壁仞、摩尔线程）而言，这是重大利好：<strong>与其花十年追赶 CUDA 生态，不如让 AI 编码工具成为"万能适配层"</strong>，用 Claude Code/Copilot 自动生成各硬件平台的驱动和优化代码。NVIDIA 的软件壁垒可能被"AI 写代码"这件事从根基上瓦解。
     </div>
   </div>
 
@@ -574,8 +652,12 @@
       谷歌宣布在搜索中为所有美国用户推出 <strong>Gemini Canvas</strong> 功能。类似于 OpenAI 的 ChatGPT Canvas 和 Anthropic 的 Artifacts，将 Google 搜索引擎转变为由 <strong>Gemini 2.0 驱动</strong>的定制化聊天界面。用户可在搜索结果中直接与 AI 进行深度交互和内容创作，而不仅仅查看 AI 概述摘要。与此同时，谷歌"AI 概览"功能已导致多家科技媒体来自谷歌的流量<strong>暴跌 85%-97%</strong>，这一现象被称为<strong>"Google Zero"</strong>——AI 摘要直接回答用户问题，媒体网站获得的点击流量趋近于零。
     </div>
     <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/05/google-search-rolls-out-geminis-canvas-ai-mode-to-all-us-users/">TechCrunch</a> · <a href="https://techdator.net/">TechDator</a> · NPR · AI Magazine ｜ 3月7-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜Canvas 本质上是谷歌版的 Perplexity，但杀伤力更大：</strong>Perplexity 的 AI 搜索模式已经验证了"直接给答案、不给链接"的可行性，但 Perplexity 是独立产品，需要用户主动迁移。Canvas 的恐怖之处在于它<strong>直接嵌在谷歌搜索里</strong>——全球 90% 搜索份额的用户无需任何迁移成本，就从"看链接"变成了"直接在搜索页获得 AI 交互结果"。<br><br>
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Canvas 本质上是谷歌版的 Perplexity，但杀伤力更大</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Perplexity 的 AI 搜索模式已经验证了"直接给答案、不给链接"的可行性，但 Perplexity 是独立产品，需要用户主动迁移。Canvas 的恐怖之处在于它<strong>直接嵌在谷歌搜索里</strong>——全球 90% 搜索份额的用户无需任何迁移成本，就从"看链接"变成了"直接在搜索页获得 AI 交互结果"。<br><br>
       <strong>为什么 SEO/ASO 获客逻辑会失效？</strong>核心逻辑链：过去搜索引擎的商业模式是"吸引用户搜索→展示网站链接→用户点击跳转"，网站通过 SEO 优化排名来获取流量。但 Canvas/AI 概览直接在搜索页<strong>回答了用户问题</strong>，用户不再需要点击任何链接——这就是已经发生的<strong>"Google Zero"现象</strong>：多家科技媒体来自谷歌的流量暴跌 <strong>85%-97%</strong>。对游戏发行方而言，官网 SEO、攻略站 ASO 的获客效率将持续下降，<strong>转型方向是让内容被 AI 引用而非被搜索排名</strong>——结构化数据、知识图谱适配、AI 可读性将取代关键词密度成为新的"优化"方向。
     </div>
   </div>
@@ -589,8 +671,12 @@
       Cursor 宣布推出 <strong>Cursor Automations</strong>，让 AI 7×24 小时自动审核、监控、修复代码并辅助研发流程。开发者只需配置智能体，即可持续监控并优化代码库，打造<strong>自动化"软件研发工厂"</strong>。所有自动化能力由云端 Agent 驱动，不消耗本地资源。标志着 AI 编程工具从"辅助编码"进入"自主编码"阶段。
     </div>
     <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/06/cursor-is-rolling-out-a-new-kind-of-agentic-coding-tool/">TechCrunch</a> · <a href="https://cursor.com/">Cursor 官网</a> ｜ 3月7-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜"云端 Agent 不消耗本地资源"是关键转折：</strong>Cursor Automations 意味着 AI 编码从"IDE 插件"升级为"云端持续服务"，开发者睡觉时代码也在被审查和修复。对团队管理者而言，这将改变<strong>代码审查和 CI/CD 流程</strong>——如果 AI Agent 能 7×24 做 code review，人工审查的定位将从"守门员"转向"决策者"。需要关注的风险：自动化修复引入新 bug 的责任归属问题，以及对初级开发者学习成长路径的潜在冲击。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"云端 Agent 不消耗本地资源"是关键转折</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Cursor Automations 意味着 AI 编码从"IDE 插件"升级为"云端持续服务"，开发者睡觉时代码也在被审查和修复。对团队管理者而言，这将改变<strong>代码审查和 CI/CD 流程</strong>——如果 AI Agent 能 7×24 做 code review，人工审查的定位将从"守门员"转向"决策者"。需要关注的风险：自动化修复引入新 bug 的责任归属问题，以及对初级开发者学习成长路径的潜在冲击。
     </div>
   </div>
 
@@ -603,8 +689,12 @@
       Anthropic 发布 Claude Code <strong>v2.1.71</strong>，核心新增 <strong>/loop 命令</strong>——开发者可在终端内设定时间间隔，让 AI 自动周期性执行提示词或斜杠命令（如 <code>/loop 5m check the deploy</code> 每 5 分钟检查部署状态）。同步上线 <strong>cron 调度工具</strong>，支持标准 cron 语法在会话内配置复杂周期任务。此外还修复了长会话 stdin 冻结、语音模式启动卡顿等多项稳定性问题。
     </div>
     <div class="item-source">来源：<a href="https://docs.anthropic.com/en/docs/claude-code/changelog">Anthropic 官方 Changelog</a> · <a href="https://releasebot.io/updates/anthropic/claude-code">Releasebot</a> ｜ 3月7日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜AI 编程"周期执行"三级进化：</strong>Claude Code /loop 是<strong>会话级</strong>轻量循环，终端内按固定间隔执行，会话关闭即终止。而 <strong>Claude Cowork /schedule</strong> 是<strong>桌面级</strong>持久定时任务（每小时/天/周/工作日），支持暂停/恢复/手动触发，但依赖电脑唤醒+应用开启。<strong>OpenClaw Heartbeat</strong> 则是<strong>服务器级</strong>自治心跳，默认 30 分钟触发，Agent 自主判断有事/无事，支持断点续传，无任务时零消耗。三者形成：<strong>临时循环 → 桌面调度 → 自治心跳</strong>，逐步从"人在回路"走向"Agent 自主运行"。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 编程"周期执行"三级进化</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Claude Code /loop 是<strong>会话级</strong>轻量循环，终端内按固定间隔执行，会话关闭即终止。而 <strong>Claude Cowork /schedule</strong> 是<strong>桌面级</strong>持久定时任务（每小时/天/周/工作日），支持暂停/恢复/手动触发，但依赖电脑唤醒+应用开启。<strong>OpenClaw Heartbeat</strong> 则是<strong>服务器级</strong>自治心跳，默认 30 分钟触发，Agent 自主判断有事/无事，支持断点续传，无任务时零消耗。三者形成：<strong>临时循环 → 桌面调度 → 自治心跳</strong>，逐步从"人在回路"走向"Agent 自主运行"。
     </div>
     <div class="stat-row">
       <span class="stat">Claude Code <em>/loop 会话级</em></span>
@@ -638,8 +728,12 @@
       <span class="stat">旗舰涨价 <em>2000-3000元</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.toutiao.com/article/7611372082794775083/">今日头条</a> · <a href="https://m.tech.china.com/redian/2026/0308/032026_1820615.html">中华网</a> · TrendForce ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜AI 算力需求正在通过供应链向消费端"征税"：</strong>这不是简单的手机涨价新闻——本质是 AI 训练/推理对 HBM 的疯狂需求挤占了消费级存储产能，形成了<strong>"AI 基建成本→芯片产能挤压→终端涨价→消费者买单"</strong>的传导链条。对手机游戏行业冲击直接：设备均价上涨将拉高用户换机成本，中低端市场可能出现"存量博弈"加剧，<strong>低配适配和云游戏方案的重要性将显著提升</strong>。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 算力需求正在通过供应链向消费端"征税"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      这不是简单的手机涨价新闻——本质是 AI 训练/推理对 HBM 的疯狂需求挤占了消费级存储产能，形成了<strong>"AI 基建成本→芯片产能挤压→终端涨价→消费者买单"</strong>的传导链条。对手机游戏行业冲击直接：设备均价上涨将拉高用户换机成本，中低端市场可能出现"存量博弈"加剧，<strong>低配适配和云游戏方案的重要性将显著提升</strong>。
     </div>
   </div>
 
@@ -652,8 +746,12 @@
       MWC 2026 上手机厂商集中秀 AI 肌肉。<strong>荣耀</strong>一举推出行业首款<strong>机器人手机 Robot Phone</strong> 和具身智能人形机器人，搭配旗舰折叠屏 Magic V6，斩获 70+ 项"Best of MWC 2026"海外媒体奖项，西班牙国王亲临展台体验。<strong>三星</strong>首次向 CNBC 揭示 <strong>AI 智能眼镜</strong>核心细节，年内发售，正面对标 Meta。<strong>小米</strong>展示 Vision GT 概念车并启动 <strong>Xiaomi miclaw</strong>（基于 MiMo 大模型的系统级 AI 执行 Agent）封测。<strong>华为</strong> AI 眼镜预计 4 月与 Pura 90 同步发布，搭载海思芯片 + 鸿蒙生态联动。
     </div>
     <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-03-06/doc-inhpzkwq2645046.shtml">新浪科技</a> · <a href="https://www.sohu.com/a/993741705_121956424">搜狐科技</a> · <a href="http://news.pconline.com.cn/2111/21114313.html">太平洋科技</a> ｜ 3月7-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜手机厂商的 AI 竞争已从"模型能力"转向"终端形态"：</strong>荣耀 Robot Phone、三星 AI 眼镜、小米 miclaw Agent——三家同时在 MWC 亮相，但切入点完全不同：荣耀走<strong>机器人手机（具身智能入口）</strong>、三星走<strong>穿戴设备（AI 眼镜对标 Meta）</strong>、小米走<strong>系统级 Agent（OS 原生 AI）</strong>。这意味着"AI 手机"的定义正在分裂，<strong>没有统一范式</strong>。对应用开发者而言，跨终端 AI 适配将成为新挑战——同一个 AI 功能可能需要同时适配手机、眼镜、机器人三种交互形态。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜手机厂商的 AI 竞争已从"模型能力"转向"终端形态"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      荣耀 Robot Phone、三星 AI 眼镜、小米 miclaw Agent——三家同时在 MWC 亮相，但切入点完全不同：荣耀走<strong>机器人手机（具身智能入口）</strong>、三星走<strong>穿戴设备（AI 眼镜对标 Meta）</strong>、小米走<strong>系统级 Agent（OS 原生 AI）</strong>。这意味着"AI 手机"的定义正在分裂，<strong>没有统一范式</strong>。对应用开发者而言，跨终端 AI 适配将成为新挑战——同一个 AI 功能可能需要同时适配手机、眼镜、机器人三种交互形态。
     </div>
   </div>
 
@@ -666,8 +764,12 @@
       中华网深度分析：端侧部署大模型、运行多模态任务成为趋势，<strong>AI 终端 DRAM 需求增长超过 300%</strong>。主流 AI 手机内存已从 12GB 起步，旗舰向 <strong>24GB 以上</strong>迈进。小米集团总裁卢伟冰被问及供应链压力——小米业务横跨手机、平板、电视、汽车，内存需求广、用量大。终端 AI 能力的跃升正对存储芯片提出前所未有的高要求。
     </div>
     <div class="item-source">来源：<a href="https://m.tech.china.com/redian/2026/0308/032026_1820615.html">中华网</a> ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜端侧 AI 的"内存墙"将决定模型部署策略：</strong>12GB→24GB 的跃升直接决定了<strong>端侧能跑多大的模型</strong>。实证案例：阿里刚开源的 <strong>Qwen3.5 9B</strong>（3月2日发布），在 Q4 量化下显存占用不足 <strong>16GB</strong>，普通笔记本即可实现每秒 30 token 的推理速度，且在 GPQA Diamond 基准中<strong>超越参数量 13.5 倍的 GPT-OSS-120B</strong>。这意味着 24GB 内存的旗舰手机已经能流畅运行 9B 级别的高质量模型，而 4B/2B 版本可覆盖中低端设备。对游戏应用而言，<strong>AI NPC 的智能上限将由设备内存决定</strong>——旗舰机跑 9B 做复杂角色扮演，中端机跑 4B 做基础对话，需要在产品设计阶段做好<strong>分层适配方案</strong>。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜端侧 AI 的"内存墙"将决定模型部署策略</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      12GB→24GB 的跃升直接决定了<strong>端侧能跑多大的模型</strong>。实证案例：阿里刚开源的 <strong>Qwen3.5 9B</strong>（3月2日发布），在 Q4 量化下显存占用不足 <strong>16GB</strong>，普通笔记本即可实现每秒 30 token 的推理速度，且在 GPQA Diamond 基准中<strong>超越参数量 13.5 倍的 GPT-OSS-120B</strong>。这意味着 24GB 内存的旗舰手机已经能流畅运行 9B 级别的高质量模型，而 4B/2B 版本可覆盖中低端设备。对游戏应用而言，<strong>AI NPC 的智能上限将由设备内存决定</strong>——旗舰机跑 9B 做复杂角色扮演，中端机跑 4B 做基础对话，需要在产品设计阶段做好<strong>分层适配方案</strong>。
     </div>
   </div>
 </section>
@@ -693,8 +795,12 @@
       <span class="stat">GTC <em>3月中旬</em></span>
     </div>
     <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-03-08/doc-inhqfsuv1028678.shtml">新浪科技</a> · <a href="https://new.qq.com/rain/a/20260308A02RAW00">腾讯新闻</a> ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜"缺货叙事"是 NVIDIA 维持定价权的核心武器：</strong>黄仁勋说"喜欢限制"不是玩笑——供应紧张意味着客户只能买最贵的（Blackwell/Vera Rubin），无法降级选老型号。对算力采购方而言，GTC 发布新芯片将重新定义<strong>性价比天花板</strong>，但短期内"买不到"的现实不变。值得关注 Feynman 架构的 1.6nm 制程——如果台积电 A16 良率不达预期，<strong>供应瓶颈可能从"需求太强"变成"工艺跟不上"</strong>，届时整个 AI 算力扩张节奏都会被迫放缓。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"缺货叙事"是 NVIDIA 维持定价权的核心武器</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      黄仁勋说"喜欢限制"不是玩笑——供应紧张意味着客户只能买最贵的（Blackwell/Vera Rubin），无法降级选老型号。对算力采购方而言，GTC 发布新芯片将重新定义<strong>性价比天花板</strong>，但短期内"买不到"的现实不变。值得关注 Feynman 架构的 1.6nm 制程——如果台积电 A16 良率不达预期，<strong>供应瓶颈可能从"需求太强"变成"工艺跟不上"</strong>，届时整个 AI 算力扩张节奏都会被迫放缓。
     </div>
   </div>
 
@@ -707,8 +813,11 @@
       去 GPU 化浪潮已不可阻挡。<strong>OpenAI 嫌英伟达太慢转向自研芯片</strong>，Anthropic 砸 <strong>1486 亿投奔谷歌 TPU</strong>，微软和 Meta 也在加速布局自研 ASIC。Scaling Law 与 GPU 性能提升同时面临瓶颈，定制化 ASIC 因<strong>更高能效比</strong>成为新宠。老黄被迫以约 200 亿美元天价收购"叛徒"自救。算力军备赛正式进入<strong>"每焦耳每微秒"的能效为王</strong>新时代。
     </div>
     <div class="item-source">来源：<a href="https://new.qq.com/rain/a/20260306A0800A00">新智元/腾讯新闻</a> · <a href="https://www.thepaper.cn/newsDetail_forward_32718147">澎湃新闻</a> ｜ 3月6-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜对国内芯片厂商和算力需求方的三重启示：</strong><br>
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜对国内芯片厂商和算力需求方的三重启示</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
       <strong>① 对国产芯片厂商：</strong>硅谷巨头"叛逃"GPU 走向 ASIC，说明<strong>通用 GPU 不是唯一出路</strong>。国产厂商（壁仞、摩尔线程、砺算）与其死磕 CUDA 兼容的通用 GPU，不如在<strong>推理专用 ASIC</strong> 赛道发力——这条路不需要追赶 NVIDIA 的生态壁垒，门槛更低、周期更短。<br>
       <strong>② 对算力需求方：</strong>当多家 ASIC 同时成熟（预计 2027-2028），GPU 通用算力的<strong>溢价能力将急剧下降</strong>，算力市场从"卖方市场"转向"买方市场"。现在签长期 GPU 租约要谨慎，避免被高价锁定。<br>
       <strong>③ 对中国 AI 产业：</strong>美国限制高端 GPU 出口，反而倒逼国内加速 ASIC 自研。如果全球趋势就是去 GPU 化，那<strong>"买不到 A100/H100"的限制反而可能变成"弯道超车"的契机</strong>——不跟 NVIDIA 的牌，走自研 ASIC 的牌。
@@ -729,8 +838,12 @@
       <span class="stat">行业库存 <em>仅4周</em></span>
     </div>
     <div class="item-source">来源：<a href="https://k.sina.com.cn/article_7857201856_1d45362c001902yzlq.html">新浪财经</a> · <a href="https://www.toutiao.com/article/7613715886909719075/">今日头条</a> · TrendForce ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜"紧缺到 2028"意味着 AI 成本拐点至少推迟两年：</strong>HBM 全年售罄+三星良率仅 60%+南亚科技"持续到 2028"的表态，三重信号叠加说明<strong>存储芯片供需失衡是结构性而非周期性的</strong>。对 AI 应用公司而言，训练/推理的硬件成本在未来两年内不会显著下降，"降本"只能靠<strong>算法效率提升</strong>（蒸馏、量化、MoE）而非等硬件降价。对预算规划要做好"芯片成本高位横盘"的预期。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"紧缺到 2028"意味着 AI 成本拐点至少推迟两年</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      HBM 全年售罄+三星良率仅 60%+南亚科技"持续到 2028"的表态，三重信号叠加说明<strong>存储芯片供需失衡是结构性而非周期性的</strong>。对 AI 应用公司而言，训练/推理的硬件成本在未来两年内不会显著下降，"降本"只能靠<strong>算法效率提升</strong>（蒸馏、量化、MoE）而非等硬件降价。对预算规划要做好"芯片成本高位横盘"的预期。
     </div>
   </div>
 
@@ -743,8 +856,12 @@
       3 月 12 日 AWE 2026 上，砺算科技将携自研架构 <strong>TrueGPU</strong> 的"渲推一体 GPU"参展。7G100 系列已量产，采用 <strong>6nm 工艺</strong>，完全自研指令集与软件栈，<strong>非外国 IP 授权</strong>。基准测试<strong>超越 RTX 4060</strong>，可高分辨率流畅运行《黑神话：悟空》，支持主流开源大模型本地推理。
     </div>
     <div class="item-source">来源：<a href="https://news.mydrivers.com/1/1107/1107109.htm">快科技</a> · <a href="https://news.cheaa.com/2026/0305/653286.shtml">中国家电网</a> ｜ 3月7-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜国产 GPU 的真正考验不在性能而在生态：</strong>超越 RTX 4060 的跑分是好消息，但游戏/AI 生态适配才是关键。能跑《黑神话》说明兼容层可用，但<strong>开发者愿不愿意为国产 GPU 做原生优化</strong>是另一回事。对比 CUDA 生态的护城河（见芯片报告第五章），砺算的自研指令集意味着需要从零构建开发者工具链。短期最务实的落地场景是<strong>大模型本地推理</strong>——不依赖游戏引擎生态，只要算力/能效比够就行，这也是芯片报告中"国产替代"路径最清晰的方向。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜国产 GPU 的真正考验不在性能而在生态</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      超越 RTX 4060 的跑分是好消息，但游戏/AI 生态适配才是关键。能跑《黑神话》说明兼容层可用，但<strong>开发者愿不愿意为国产 GPU 做原生优化</strong>是另一回事。对比 CUDA 生态的护城河（见芯片报告第五章），砺算的自研指令集意味着需要从零构建开发者工具链。短期最务实的落地场景是<strong>大模型本地推理</strong>——不依赖游戏引擎生态，只要算力/能效比够就行，这也是芯片报告中"国产替代"路径最清晰的方向。
     </div>
   </div>
 </section>
@@ -765,8 +882,12 @@
       腾讯游戏在 GDC 2026 上提交超过 <strong>20 场技术分享</strong>，创中国厂商历史新高，涵盖 AI 驱动的 NPC 行为、场景自动生成、AI 音频制作、玩法模拟测试等多个领域。自研游戏 AI 引擎 <strong>GiiNEX</strong> 升级展示——基于大模型的 AIGC 能力实现 3D 城市自动构建（效率提升 <strong>40 倍</strong>）、UGC 关卡设计、AI NPC 对话与决策，已在《元梦之星》上线。GiiNEX 同时整合了"绝艺"（棋牌 AI）和"绝悟"（MOBA/FPS 决策 AI）的底层能力。
     </div>
     <div class="item-source">来源：<a href="https://news.futunn.com/post/69740479/">富途牛牛/PRNewswire</a> · <a href="https://www.leiphone.com/category/industrynews/neIbSoaPmDW67R5Y.html">雷锋网</a> ｜ 3月6-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜腾讯 GiiNEX 的战略意图是"游戏 AI 基础设施化"：</strong>20+ 场 GDC 分享不只是秀技术，而是在<strong>抢占游戏 AI 标准的话语权</strong>。GiiNEX 把"绝艺"（棋牌决策）和"绝悟"（MOBA 决策）统一到一个引擎中，再叠加 AIGC 生成能力，本质是要打造游戏行业的"AI 中台"。关注点：GiiNEX 是否会开放给第三方工作室？如果走平台化路线，将直接改变国内游戏 AI 的竞争格局——<strong>中小工作室可能不再需要自建 AI 团队，直接接入 GiiNEX 即可获得 AI NPC/AIGC 能力</strong>。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜腾讯 GiiNEX 的战略意图是"游戏 AI 基础设施化"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      20+ 场 GDC 分享不只是秀技术，而是在<strong>抢占游戏 AI 标准的话语权</strong>。GiiNEX 把"绝艺"（棋牌决策）和"绝悟"（MOBA 决策）统一到一个引擎中，再叠加 AIGC 生成能力，本质是要打造游戏行业的"AI 中台"。关注点：GiiNEX 是否会开放给第三方工作室？如果走平台化路线，将直接改变国内游戏 AI 的竞争格局——<strong>中小工作室可能不再需要自建 AI 团队，直接接入 GiiNEX 即可获得 AI NPC/AIGC 能力</strong>。
     </div>
   </div>
 
@@ -779,8 +900,12 @@
       Unity CEO 马修·布罗姆伯格在财报电话会上透露，公司将在 GDC 上发布<strong>全新 Unity AI 测试版</strong>。开发者只需<strong>使用自然语言下达指令</strong>，就能直接生成完整的休闲游戏，该功能原生适配 Unity 平台，从原型到成品的转化流程大幅简化。这标志着游戏引擎正式进入<strong>"说话即开发"</strong>的新阶段。
     </div>
     <div class="item-source">来源：<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_9476994015367652">企鹅号/IT之家</a> ｜ 3月7日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜"自然语言生成游戏"将引爆 UGC 游戏赛道：</strong>Unity 这步棋瞄准的不是专业开发者，而是<strong>数以百万计的非技术创作者</strong>。当"说话就能做游戏"变成现实，游戏行业的供给侧将发生根本变化——Roblox/元梦之星等 UGC 平台的内容产出效率可能出现<strong>数量级增长</strong>。但随之而来的问题是：AI 生成的海量低质游戏如何做内容审核和质量筛选？对平台方而言，"AI 生成内容的治理机制"将比"AI 生成能力"本身更具战略价值。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"自然语言生成游戏"将引爆 UGC 游戏赛道</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Unity 这步棋瞄准的不是专业开发者，而是<strong>数以百万计的非技术创作者</strong>。当"说话就能做游戏"变成现实，游戏行业的供给侧将发生根本变化——Roblox/元梦之星等 UGC 平台的内容产出效率可能出现<strong>数量级增长</strong>。但随之而来的问题是：AI 生成的海量低质游戏如何做内容审核和质量筛选？对平台方而言，"AI 生成内容的治理机制"将比"AI 生成能力"本身更具战略价值。
     </div>
   </div>
 </section>
@@ -811,8 +936,12 @@
       <span class="stat">AIGC 观看 <em>100倍↑</em></span>
     </div>
     <div class="item-source">来源：<a href="http://www.eeo.com.cn/2026/0305/805888.shtml">经济观察网/B站财报</a> · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001902xpfy.html">新浪财经·业绩电话会</a> · <a href="http://finance.eastmoney.com/a/202603053663433879.html">东方财富网</a> ｜ 3月5-6日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜B 站验证了"AI 内容消费平台"的商业模型：</strong>1.2 亿月活消费 AI 内容 + AI 广告 +180%，这组数据证明<strong>AI 不只是生产工具，也是流量入口</strong>。B 站的年轻用户天然对 AI 内容有高接受度，使其成为 AI 产品的天然"试验田"。对游戏行业的启示：游戏直播/攻略/二创中的 AI 内容（AI 生成攻略、AI 解说、AI 角色扮演）正在成为<strong>新的流量增长极</strong>，B 站"盈利→投 AI→更多 AI 内容→更多流量→更多广告"的正循环模型值得借鉴。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜B 站验证了"AI 内容消费平台"的商业模型</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      1.2 亿月活消费 AI 内容 + AI 广告 +180%，这组数据证明<strong>AI 不只是生产工具，也是流量入口</strong>。B 站的年轻用户天然对 AI 内容有高接受度，使其成为 AI 产品的天然"试验田"。对游戏行业的启示：游戏直播/攻略/二创中的 AI 内容（AI 生成攻略、AI 解说、AI 角色扮演）正在成为<strong>新的流量增长极</strong>，B 站"盈利→投 AI→更多 AI 内容→更多流量→更多广告"的正循环模型值得借鉴。
     </div>
   </div>
 
@@ -827,8 +956,12 @@
       阿里最年轻 P10 技术专家、千问（Qwen）前负责人<strong>林俊旸</strong>（93 年生）在朋友圈发文告别阿里。CEO 吴泳铭通过内部邮件批准辞职并成立<strong>基础模型支持小组</strong>（吴泳铭、周靖人、范禹协调），强调继续坚持开源策略。Qwen 系列为全球下载量最大的开源模型家族之一，其离开引发行业对阿里大模型方向的关注。
     </div>
     <div class="item-source">来源：<a href="https://www.sohu.com/a/992348406_122014422">搜狐科技</a> · <a href="http://news.sina.com.cn/zx/ds/2026-03-08/doc-inhqfnnx1099117.shtml">新浪AI速递</a> ｜ 3月7-8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜核心人才出走 + CEO 亲自挂帅 = 阿里大模型进入"战时状态"：</strong>林俊旸是 Qwen 的灵魂人物，他的离开不只是人事变动——吴泳铭亲自牵头成立"基础模型支持小组"说明最高层意识到了风险。Qwen 作为全球下载量最大的开源模型，<strong>其开源策略是否会因人事变动而收紧？</strong>这对整个开源 AI 生态都有影响。对依赖 Qwen 做二次开发的团队（含游戏 AI NPC、Agent 应用）而言，建议关注阿里后续表态，必要时做好<strong>模型供应商多元化</strong>的预案。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜核心人才出走 + CEO 亲自挂帅 = 阿里大模型进入"战时状态"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      林俊旸是 Qwen 的灵魂人物，他的离开不只是人事变动——吴泳铭亲自牵头成立"基础模型支持小组"说明最高层意识到了风险。Qwen 作为全球下载量最大的开源模型，<strong>其开源策略是否会因人事变动而收紧？</strong>这对整个开源 AI 生态都有影响。对依赖 Qwen 做二次开发的团队（含游戏 AI NPC、Agent 应用）而言，建议关注阿里后续表态，必要时做好<strong>模型供应商多元化</strong>的预案。
     </div>
   </div>
 
@@ -845,8 +978,12 @@
       <span class="stat">苹果税 <em>30%</em></span>
     </div>
     <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-03-08/doc-inhqevqy1408278.shtml">新浪科技</a> ｜ 3月8日</div>
-    <div class="item-body" style="margin-top:10px; padding:14px 18px; background:var(--bg-warm); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
-      <strong>🔍 深度洞察｜渠道税率竞争将直接影响游戏/AI 应用的定价策略：</strong>谷歌降至 10% 意味着 Android 开发者的渠道成本骤降三分之二。对游戏和 AI 订阅类应用而言，这打开了<strong>定价空间重构</strong>的窗口——同样的收入，渠道抽成从 30% 降到 10%，多出的 20% 可以用于降价获客或提升利润。苹果如果不跟进，iOS 端可能出现<strong>"同款应用 Android 更便宜"</strong>的价格歧视，倒逼开发者重新评估双平台策略。这是影响所有应用开发者 P&L 的结构性变化。
+    <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜渠道税率竞争将直接影响游戏/AI 应用的定价策略</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      谷歌降至 10% 意味着 Android 开发者的渠道成本骤降三分之二。对游戏和 AI 订阅类应用而言，这打开了<strong>定价空间重构</strong>的窗口——同样的收入，渠道抽成从 30% 降到 10%，多出的 20% 可以用于降价获客或提升利润。苹果如果不跟进，iOS 端可能出现<strong>"同款应用 Android 更便宜"</strong>的价格歧视，倒逼开发者重新评估双平台策略。这是影响所有应用开发者 P&L 的结构性变化。
     </div>
   </div>
 
@@ -923,6 +1060,19 @@
   window.addEventListener('scroll', function() {
     backBtn.classList.toggle('visible', window.scrollY > 400);
   });
+
+  // Insight toggle
+  function toggleInsight(el) {
+    const body = el.nextElementSibling;
+    const isOpen = el.classList.contains('open');
+    if (isOpen) {
+      el.classList.remove('open');
+      body.classList.remove('open');
+    } else {
+      el.classList.add('open');
+      body.classList.add('open');
+    }
+  }
 </script>
 
 </body>
