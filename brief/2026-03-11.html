@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief | 2026年3月11日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141211;
+      --bg-warm: #1A1816;
+      --card: #1E1C1A;
+      --border: #2E2A26;
+      --border-light: #262220;
+      --accent: #E07850;
+      --accent-hover: #F08860;
+      --accent-soft: rgba(224, 120, 80, 0.12);
+      --accent-border: rgba(224, 120, 80, 0.25);
+      --text: #F0EBE3;
+      --text-secondary: #A09080;
+      --text-tertiary: #706050;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 24px auto;
+    border-radius: 1px;
+  }
+
+  .summary-card {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 8px;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .section { margin-bottom: 40px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header .icon { font-size: 20px; flex-shrink: 0; }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border);
+  }
+
+  .item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .item h3 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .item h3 a:hover {
+    color: var(--accent);
+  }
+
+  .item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .item .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .item .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .item .tag-red { background: var(--tag-red-bg); color: var(--tag-red); }
+  .item .tag-green { background: var(--tag-green-bg); color: var(--tag-green); }
+  .item .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .item .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .item .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .item .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item .source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  .item .source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item .source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    background: var(--bg-warm);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 16px 20px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .insight-box strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .github-item {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .github-item .repo-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .github-item .repo-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .github-item .repo-info h3 a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .github-item .repo-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .github-item .repo-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  .github-item .repo-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    line-height: 1.8;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .back-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="header-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <h1>科技资讯日报</h1>
+    <p class="date">2026年3月11日 · 星期二</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="summary-card">
+    <strong>今日要闻：</strong>图灵奖得主 Tony Hoare 爵士逝世，QuickSort 算法之父享年 92 岁；Cloudflare 发布一键爬虫 API，单次调用即可抓取整站；Claude Code Camp 提出 AI Agent 验证框架解决自治代理可信问题；GDC 2026 调查显示 Xbox 平台开发者兴趣仅 20%，远低于 PC 的 80%；苹果 iPhone 17e 国补价 3999 元开启预售；Claude Opus 4.6 正式支持 100 万 Token 上下文。
+  </div>
+
+  <!-- Section 1: AI Models & Products -->
+  <section class="section" id="ai-models">
+    <div class="section-header">
+      <span class="icon">🤖</span>
+      <h2>AI 模型与产品</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank">Claude Opus 4.6 正式发布：首款支持 100 万 Token 上下文的 Opus 级模型</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">Anthropic</span>
+        <span class="tag tag-blue">大模型</span>
+        <span class="tag tag-green">新品发布</span>
+      </div>
+      <p>Anthropic 于 2026 年 2 月发布 Claude Opus 4.6，这是该公司迄今最强大的 AI 模型，也是 Opus 系列首款支持 100 万 Token 上下文窗口（Beta）的旗舰产品。相较前代 Opus 4.5 仅于 2025 年 11 月推出，此次更新周期明显加速。新版本引入"智能体团队"架构，支持多智能体协作，在 Terminal-Bench 2.0 等基准测试中领先，并通过从零构建 C 编译器验证了强大的自主编码能力。</p>
+      <div class="source">来源：<a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank">Anthropic 官方</a> · <a href="https://www.aiposthub.com/anthropic-claude-opus-4-6-million-token-context-model/" target="_blank">AI Post Hub</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep" target="_blank">Claude Code Camp：构建"在你睡觉时运行"的 AI Agent 验证框架</a></h3>
+      <div class="tags">
+        <span class="tag tag-purple">AI Agent</span>
+        <span class="tag tag-blue">开发者工具</span>
+      </div>
+      <p>Claude Code Camp 发布文章探讨如何验证自治 AI Agent 的正确性。作者指出，当 AI 自动生成的代码量达到无法人工审查的程度时，传统代码审查失效。解决方案是基于 TDD 思想：先写验收标准（Acceptance Criteria），让 Agent 构建，再用 Playwright 浏览器代理自动验证。框架采用 Opus 规划 + 多个 Sonnet 并行执行 + Opus 最终裁决的架构，成本可控且可靠。</p>
+      <div class="source">来源：<a href="https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep" target="_blank">Claude Code Camp</a></div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>AI Agent 的核心挑战从"能否生成代码"转向"如何验证正确性"。当 AI 自写测试自写代码时，等于"自我祝贺机器"。真正的解决方案是<strong>人写验收标准、AI 执行、第三方验证</strong>——这正是传统 TDD 的精髓，只是 AI 加速了中间环节。
+      </div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/" target="_blank">Cloudflare 发布 /crawl 端点：单次 API 调用即可爬取整站</a></h3>
+      <div class="tags">
+        <span class="tag tag-teal">开发者工具</span>
+        <span class="tag tag-green">新品发布</span>
+        <span class="tag tag-blue">爬虫</span>
+      </div>
+      <p>Cloudflare Browser Rendering 服务新增 `/crawl` 端点（开放测试版），开发者只需提交一个起始 URL，系统自动发现、渲染并返回整站内容。支持 HTML、Markdown、结构化 JSON 三种输出格式，适用于训练模型、构建 RAG 管道、内容监控等场景。关键特性包括：爬取深度/页面限制控制、增量爬取、静态模式（不启动浏览器）、遵守 robots.txt。免费和付费计划均可用。</p>
+      <div class="source">来源：<a href="https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/" target="_blank">Cloudflare Developers</a> · HackerNews 热榜</div>
+    </article>
+  </section>
+
+  <!-- Section 2: Mobile & Consumer Electronics -->
+  <section class="section" id="mobile">
+    <div class="section-header">
+      <span class="icon">📱</span>
+      <h2>手机与消费电子</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="https://new.qq.com/rain/a/20260302A07KMY00" target="_blank">iPhone 17e 国补价 3999 元开启预售，2026 年最便宜苹果手机</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">苹果</span>
+        <span class="tag tag-green">新品发布</span>
+      </div>
+      <p>苹果于 3 月 2 日宣布推出 iPhone 17e，3 月 4 日起接受预购，起售价 599 美元（国内 4499 元），存储容量从 256GB 起。京东等平台支持国补，到手价 3999 元，3 月 11 日正式开售。外观有白色、黑色、浅粉色三款可选，主要升级 A19 芯片、基带、MagSafe、eSIM、屏幕玻璃。正面采用 6.1 吋动态岛 OLED 面板，是今年最便宜的苹果手机。</p>
+      <div class="source">来源：<a href="https://new.qq.com/rain/a/20260302A07KMY00" target="_blank">腾讯新闻</a> · <a href="https://new.qq.com/rain/a/20260304A092UH00" target="_blank">快科技</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.mozillion.com/resources/2026-most-anticipated-phones/" target="_blank">2026 年最受期待的 10 款手机：iPhone 18、Galaxy S26、折叠屏成焦点</a></h3>
+      <div class="tags">
+        <span class="tag tag-blue">行业趋势</span>
+        <span class="tag tag-purple">折叠屏</span>
+      </div>
+      <p>行业预测 2026 年手机市场将迎来激烈竞争。苹果 iPhone 18 预计 9 月发布，将搭载最新 A 系列芯片和更深度的 AI 集成；三星 Galaxy S26 系列继续引领安卓旗舰；折叠屏成为焦点，Oppo、Google、三星都在优化设计。中国厂商小米、华为在影像技术上持续突破。行业趋势：更薄、更智能、更实验性，AI 和影像技术驱动下一次飞跃。</p>
+      <div class="source">来源：<a href="https://www.mozillion.com/resources/2026-most-anticipated-phones/" target="_blank">Mozillion</a></div>
+    </article>
+  </section>
+
+  <!-- Section 3: Chips & Computing -->
+  <section class="section" id="chips">
+    <div class="section-header">
+      <span class="icon">🔋</span>
+      <h2>芯片与算力</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="https://www.datacenterknowledge.com/data-center-chips/ces-2026-amd-targets-data-center-with-instinct-additions" target="_blank">AMD CES 2026 发布数据中心 GPU 新品，挑战 NVIDIA 90% 市占率</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">AMD</span>
+        <span class="tag tag-blue">GPU</span>
+        <span class="tag tag-orange">数据中心</span>
+      </div>
+      <p>AMD 在 CES 2026 发布 Instinct GPU 新品，瞄准 NVIDIA 占据 90% 以上市场份额的数据中心 GPU 市场。战略重点：服务中小企业客户，提供性价比更高的增量升级方案。Helios 机架级解决方案搭载 72 颗 MI455X 芯片、EPYC CPU 和 Pensando Vulcano NIC，对标 NVIDIA NVL 系统。AMD EPYC 云部署同比增长 50%，Instinct GPU 和 EPYC CPU 销售已占近半营收。</p>
+      <div class="source">来源：<a href="https://www.datacenterknowledge.com/data-center-chips/ces-2026-amd-targets-data-center-with-instinct-additions" target="_blank">Data Center Knowledge</a></div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>AMD 的策略是<strong>错位竞争</strong>——不打 NVIDIA 的超大规模客户主战场，而是深耕中小企业这个"长尾市场"。这恰似当年 AMD 用 EPYC 从 Intel 手中抢夺服务器市场的翻版：性价比 + 开放生态 + 存量机柜兼容。但软件栈（ROCm vs CUDA）仍是硬伤。
+      </div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu" target="_blank">定制芯片拐点 2026：超大规模厂商 ASIC 与 NVIDIA GPU 的融合</a></h3>
+      <div class="tags">
+        <span class="tag tag-purple">ASIC</span>
+        <span class="tag tag-blue">芯片</span>
+        <span class="tag tag-orange">数据中心</span>
+      </div>
+      <p>行业分析指出 2026 年是定制芯片的关键拐点。超大规模云厂商（Google、AWS、Microsoft、Meta）正在开发自有 ASIC，与 NVIDIA GPU 形成互补而非替代关系。NVIDIA CEO 黄仁勋强调与 SK hynix 在 HBM4 内存带宽上的深度合作，称双方工程师"像一个团队"。NVIDIA 已公开下一代 Vera Rubin 平台，HBM4 供应和验证是核心。</p>
+      <div class="source">来源：<a href="https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu" target="_blank">Introl Blog</a></div>
+    </article>
+  </section>
+
+  <!-- Section 4: Gaming Industry -->
+  <section class="section" id="gaming">
+    <div class="section-header">
+      <span class="icon">🎮</span>
+      <h2>游戏行业</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="http://www.199it.com/archives/1810015.html" target="_blank">GDC 2026 调查：PC 平台开发者兴趣 80%，Xbox 仅 20%</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">重磅</span>
+        <span class="tag tag-blue">GDC</span>
+        <span class="tag tag-purple">Xbox</span>
+      </div>
+      <p>GDC（游戏开发者大会）发布的"年度游戏行业状况"调查显示，想为 Xbox 开发游戏的开发者仅有 PS5 或 Switch 的一半。调查结果：80% 开发者有兴趣在 PC 上开发游戏，40% 有兴趣在 PS5 上开发，39% 想为 Switch 2 开发，但只有 20% 选择 Xbox Series X/S。Xbox 受欢迎程度更接近安卓（16%）、iOS（16%）或初代 Switch（13%），而非其他当前世代主机。</p>
+      <div class="source">来源：<a href="http://www.199it.com/archives/1810015.html" target="_blank">199IT</a> · GDC State of the Game Industry 2026</div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>Xbox 平台的困境在于<strong>硬件销量暴跌 32% + Game Pass 订阅停滞</strong>导致开发者信心下滑。微软千亿美元收购动视暴雪和 ZeniMax 后，反而面临"平台根基动摇"的质疑。服务化转型（Game Pass）的边际收益递减，而索尼 PS5 生态持续扩张。Xbox 可能被迫进一步转向多平台策略。
+      </div>
+    </article>
+
+    <article class="item">
+      <h3><a href="http://www.199it.com/archives/1810327.html" target="_blank">GamesIndustry：Xbox 硬件收入暴跌 32%，订阅停滞，微软千亿收购未达预期</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">重磅</span>
+        <span class="tag tag-orange">微软</span>
+        <span class="tag tag-purple">Xbox</span>
+      </div>
+      <p>GamesIndustry 发文质疑 Xbox 平台未来。尽管微软斥资近千亿美元收购动视暴雪和 ZeniMax，但最近财务数据指向令人不安的现实：Xbox 平台根基正在动摇，服务化转型未达预期。最新财报显示：微软游戏业务总收入同比下降 9%，硬件收入暴跌 32%，软件收入也下降 5%。</p>
+      <div class="source">来源：<a href="http://www.199it.com/archives/1810327.html" target="_blank">199IT</a> · GamesIndustry</div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://gdconf.com/news/article-tags/gdc?page=45" target="_blank">GDC 2026 游戏开发者大会 3 月 9-13 日旧金山举行，周边活动达 225 场</a></h3>
+      <div class="tags">
+        <span class="tag tag-green">会议</span>
+        <span class="tag tag-blue">GDC</span>
+      </div>
+      <p>GDC 2026 于 3 月 9-13 日在旧金山 Moscone Center 举行。除官方议程外，城市里有 225 场由公司、社区、组织自发举办的 Meetup/Mixer/Party。《Clair Obscur: Expedition 33》以 8 项提名领跑 GDCA 2026 游戏开发者选择奖，包括年度游戏。大会发布 State of the Game Industry 2026 报告，涵盖裁员、生成式 AI、工会化、平台趋势等议题。</p>
+      <div class="source">来源：<a href="https://gdconf.com/news/article-tags/gdc?page=45" target="_blank">GDC 官方</a> · <a href="https://new.qq.com/rain/a/20260306A086IJ00" target="_blank">腾讯网</a></div>
+    </article>
+  </section>
+
+  <!-- Section 5: Tech Industry -->
+  <section class="section" id="tech">
+    <div class="section-header">
+      <span class="icon">💼</span>
+      <h2>科技行业动态</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">图灵奖得主 Tony Hoare 爵士逝世，QuickSort 算法之父享年 92 岁</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">重磅</span>
+        <span class="tag tag-purple">人物</span>
+      </div>
+      <p>Tony Hoare（全名 Sir Charles Antony Richard Hoare）于 2026 年 3 月 5 日逝世，享年 92 岁。他是 1980 年图灵奖得主、英国爵士、牛津大学名誉教授、剑桥微软研究院高级研究员。最著名的贡献是 1960 年发明的快速排序算法（QuickSort），这是当前世界上使用最广泛的排序算法之一。他还发明了 Hoare 逻辑、参与 ALGOL 语言设计，对计算机科学影响深远。</p>
+      <div class="source">来源：<a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">Computational Complexity Blog</a> · HackerNews 热榜 #1</div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>QuickSort 是每个计算机专业学生学到的第一个"优雅算法"——分治思想的完美体现。Tony Hoare 曾在访问苏联期间从机器翻译研究中获得灵感，回国后在 Elliott 公司一小时内构思出这个算法。他曾说<strong>"空指针引用是我十亿美元的错误"</strong>——这种对自身错误的坦诚，比算法本身更值得铭记。
+      </div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://ashleydudarenok.com/china-ai-strategy/" target="_blank">中国 AI 战略：2030 年市场规模预计达 1.4 万亿美元</a></h3>
+      <div class="tags">
+        <span class="tag tag-blue">中国</span>
+        <span class="tag tag-orange">政策</span>
+        <span class="tag tag-green">市场</span>
+      </div>
+      <p>据 Morgan Stanley 预测，中国国内 AI 市场规模到 2030 年可达 1.4 万亿美元，符合北京成为全球 AI 强国的目标。2024 年中国占全球生成式 AI 新专利的 61.5%，核心 AI 产业规模超过 7000 亿元人民币（约 960 亿美元），AI 芯片市场同步增长。政策层面，2026 年是全球 AI 监管的关键转折点，多个司法管辖区的综合法规开始生效。</p>
+      <div class="source">来源：<a href="https://ashleydudarenok.com/china-ai-strategy/" target="_blank">Ashley Dudarenok</a> · <a href="https://www.unifiedaihub.com/blog/current-state-of-ai-regulation-in-2026" target="_blank">Unified AI Hub</a></div>
+    </article>
+  </section>
+
+  <!-- Section 6: Policy & Regulation -->
+  <section class="section" id="policy">
+    <div class="section-header">
+      <span class="icon">⚖️</span>
+      <h2>政策与监管</h2>
+    </div>
+
+    <article class="item">
+      <h3><a href="https://www.unifiedaihub.com/blog/current-state-of-ai-regulation-in-2026" target="_blank">2026 年 AI 监管现状：全球综合法规开始生效的关键转折点</a></h3>
+      <div class="tags">
+        <span class="tag tag-purple">监管</span>
+        <span class="tag tag-blue">全球</span>
+      </div>
+      <p>2026 年被视为 AI 监管的转折点，多个司法管辖区的综合法规开始生效。AI 已从创新实验室进入全球会议室，企业争相挖掘其改变生活的潜力，治理方式也在转变。对企业领导者而言，了解这些变化不再仅是合规问题，而是战略必需。监管框架涵盖风险评估、透明度要求、问责机制等核心议题。</p>
+      <div class="source">来源：<a href="https://www.unifiedaihub.com/blog/current-state-of-ai-regulation-in-2026" target="_blank">Unified AI Hub</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.cncso.com/openclaw-one-click-remote-code-execution.html" target="_blank">OpenClaw 曝出高危漏洞 CVE-2026-25253：一键远程代码执行</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">安全</span>
+        <span class="tag tag-orange">漏洞</span>
+      </div>
+      <p>2026 年初，开源 AI 代理 OpenClaw 曝出高危 One-Click 远程代码执行漏洞（CVE-2026-25253）。漏洞源于控制界面设计缺陷，攻击者可诱导用户点击恶意链接，窃取高权限认证令牌，最终在受害者设备上执行任意代码。OpenClaw 团队已在 2026.2.23 版本中修复此漏洞并强化安全防护，新增可选 HTTP 安全标头、会话维护机制、磁盘配额控制等。</p>
+      <div class="source">来源：<a href="https://www.cncso.com/openclaw-one-click-remote-code-execution.html" target="_blank">首席安全官</a> · <a href="https://new.qq.com/rain/a/20260225A01WTZ00" target="_blank">腾讯网</a></div>
+    </article>
+  </section>
+
+  <!-- Section 7: GitHub Trending -->
+  <section class="section" id="github">
+    <div class="section-header">
+      <span class="icon">📦</span>
+      <h2>GitHub 高增长项目</h2>
+    </div>
+
+    <article class="github-item">
+      <span class="repo-icon">🦞</span>
+      <div class="repo-info">
+        <h3><a href="https://github.com/openclaw/openclaw" target="_blank">openclaw/openclaw</a></h3>
+        <p>个人 AI 助手，支持任何操作系统和平台。自托管、本地推理、多模态互动。</p>
+        <div class="repo-meta">
+          <span>⭐ 217,502</span>
+          <span>🔥 2,390/天</span>
+          <span>TypeScript</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="github-item">
+      <span class="repo-icon">🤖</span>
+      <div class="repo-info">
+        <h3><a href="https://github.com/QwenLM/Qwen-Agent" target="_blank">QwenLM/Qwen-Agent</a></h3>
+        <p>基于 Qwen ≥3.0 的 Agent 框架与应用，集成指令遵循与工具调用能力。</p>
+        <div class="repo-meta">
+          <span>⭐ 高增长</span>
+          <span>🔥 热门</span>
+          <span>Python</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="github-item">
+      <span class="repo-icon">💰</span>
+      <div class="repo-info">
+        <h3><a href="https://github.com/virattt/ai-hedge-fund" target="_blank">virattt/ai-hedge-fund</a></h3>
+        <p>AI 驱动的对冲基金概念验证，包含多代理协作与回测系统。</p>
+        <div class="repo-meta">
+          <span>⭐ 高增长</span>
+          <span>🔥 热门</span>
+          <span>Python · TypeScript</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="github-item">
+      <span class="repo-icon">☁️</span>
+      <div class="repo-info">
+        <h3><a href="https://github.com/GoogleCloudPlatform/generative-ai" target="_blank">GoogleCloudPlatform/generative-ai</a></h3>
+        <p>Google Cloud 生成式 AI 示例代码与 Notebook，涵盖 Gemini on Vertex AI 应用。</p>
+        <div class="repo-meta">
+          <span>⭐ 14,309</span>
+          <span>📈 +563</span>
+          <span>Jupyter Notebook</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <p>信源：Anthropic · Cloudflare · Data Center Knowledge · GDC · GamesIndustry · Computational Complexity Blog<br>
+    HackerNews · Morgan Stanley · Unified AI Hub · 首席安全官 · 199IT · 腾讯新闻 · 快科技</p>
+    <p style="margin-top: 16px;">
+      <a href="../index.html">← 返回存档</a> · 
+      <a href="https://alexisyang718-beep.github.io/ai-archive/" target="_blank">在线版</a>
+    </p>
+  </footer>
+
+</div>
+
+<a href="../index.html" class="back-btn" title="返回存档">←</a>
+
+</body>
+</html>
