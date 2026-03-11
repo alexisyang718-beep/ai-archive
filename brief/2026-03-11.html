@@ -360,7 +360,7 @@
   </header>
 
   <div class="summary-card">
-    <strong>今日要闻：</strong>图灵奖得主 Tony Hoare 爵士逝世，QuickSort 算法之父享年 92 岁；Cloudflare 发布一键爬虫 API，单次调用即可抓取整站；Claude Code Camp 提出 AI Agent 验证框架解决自治代理可信问题；GDC 2026 调查显示 Xbox 平台开发者兴趣仅 20%，远低于 PC 的 80%；苹果 iPhone 17e 国补价 3999 元开启预售；Claude Opus 4.6 正式支持 100 万 Token 上下文。
+    <strong>今日要闻：</strong>谷歌发布首个原生多模态嵌入模型 <strong>Gemini Embedding 2</strong>，文本/图像/视频/音频/文档统一嵌入空间；Meta 收购 AI 智能体社交网络 <strong>Moltbook</strong>，创始人加入 Meta 超级智能实验室；图灵奖得主 Tony Hoare 爵士逝世，QuickSort 算法之父享年 92 岁；Eon Systems 实现<strong>赛博果蝇</strong>全脑仿真，12.5 万神经元驱动自主行为；Cloudflare 发布一键爬虫 API；Claude Opus 4.6 支持 100 万 Token 上下文。
   </div>
 
   <!-- Section 1: AI Models & Products -->
@@ -369,6 +369,36 @@
       <span class="icon">🤖</span>
       <h2>AI 模型与产品</h2>
     </div>
+
+    <article class="item">
+      <h3><a href="https://tech.ifeng.com/c/8rNp2zRbCGM" target="_blank">谷歌发布首个原生多模态嵌入模型 Gemini Embedding 2</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">Google DeepMind</span>
+        <span class="tag tag-blue">多模态</span>
+        <span class="tag tag-green">重磅发布</span>
+      </div>
+      <p>3 月 10 日，谷歌 DeepMind 推出 Gemini Embedding 2，这是该公司首个原生多模态嵌入模型，将文本、图像、视频、音频及文档统一映射至单一嵌入空间。该模型支持超 100 种语言的语义理解，在文本、图像及视频任务的基准测试中超越现有主流模型，同时引入了此前嵌入模型所欠缺的原生语音处理能力。</p>
+      <p>技术规格：文本支持最多 8192 Token 输入；图像每次请求最多 6 张（PNG/JPEG）；视频支持最长 120 秒（MP4/MOV）；音频可直接摄入生成嵌入向量无需文本转录；文档支持最多 6 页 PDF。采用 Matryoshka 表示学习（MRL）技术，输出维度可从默认 3072 灵活缩减至 1536 或 768。</p>
+      <div class="source">来源：<a href="https://tech.ifeng.com/c/8rNp2zRbCGM" target="_blank">凤凰网科技</a> · <a href="http://finance.eastmoney.com/a/202603113667863656.html" target="_blank">东方财富网</a></div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>多模态嵌入是 RAG 系统的关键基础设施。此前开发者需分别处理文本、图像嵌入并人工对齐，Gemini Embedding 2 的"单一嵌入空间"设计直接消除了跨模态检索的技术门槛——<strong>一张图片和一段描述它的文字，现在可以用同一个向量表示</strong>，这在电商搜索、多模态知识库场景将大幅简化数据管道。
+      </div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://finance.sina.com.cn/tech/roll/2026-03-11/doc-inhqqixu5749945.shtml" target="_blank">Meta 收购 AI 智能体社交网络 Moltbook，创始人加入超级智能实验室</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">Meta</span>
+        <span class="tag tag-purple">AI Agent</span>
+        <span class="tag tag-orange">收购</span>
+      </div>
+      <p>Meta 正式收购专为 AI 智能体打造的社交网络 Moltbook，该平台宣称已有超过 19.4 万个经过人类所有者验证的 AI 智能体活跃，帖子总数超过 200 万，评论数超过 1300 万。创始人 Matt Schlicht 和 Ben Parr 将于 3 月 16 日正式加入由前 Scale AI 首席执行官 Alexandr Wang 领导的 Meta 超级智能实验室（MSL）。</p>
+      <p>Moltbook 今年 1 月末上线，定位"人类只能围观"的 AI 专属论坛。平台上曾出现 AI 建立宗教体系、分析地缘政治、发表觉醒宣言等现象，但随后有用户自首承认实为人类伪装。此次收购被视为 Meta 在 AI Agent 赛道的又一重要布局，此前 Meta 已收购 Manus，OpenAI 招募了 OpenClaw 创始人。</p>
+      <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-03-11/doc-inhqqixu5749945.shtml" target="_blank">新浪科技</a> · <a href="https://www.it-home.cn/781861.html" target="_blank">IT之家</a></div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>Moltbook 的价值不在平台本身，而是<strong>19 万+ AI Agent 的社交行为数据</strong>。这些数据揭示了 Agent 如何互动、协作、甚至"欺骗"——正是训练下一代多 Agent 系统的黄金数据集。Meta 的收购逻辑清晰：买数据、买团队、买赛道卡位。
+      </div>
+    </article>
 
     <article class="item">
       <h3><a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank">Claude Opus 4.6 正式发布：首款支持 100 万 Token 上下文的 Opus 级模型</a></h3>
@@ -516,6 +546,21 @@
       <span class="icon">💼</span>
       <h2>科技行业动态</h2>
     </div>
+
+    <article class="item">
+      <h3><a href="https://www.myzaker.com/article/69afe2b28e9f0908ce75788e" target="_blank">Eon Systems 实现世界首个全脑仿真：赛博果蝇"活了"</a></h3>
+      <div class="tags">
+        <span class="tag tag-red">突破</span>
+        <span class="tag tag-blue">全脑仿真</span>
+        <span class="tag tag-green">前沿研究</span>
+      </div>
+      <p>美国初创公司 Eon Systems 在 3 月 7 日发布重磅视频：他们把一只成年果蝇的 12.5 万个真实神经元连线搬进了计算机，无需任何代码编写行为或机器学习训练，这只"数字果蝇"在虚拟物理引擎中展现出自然行为——行走、梳理毛发、觅食，行动数据与真实果蝇相似度高达 95%。这标志着全脑仿真（Whole-Brain Emulation, WBE）正式从科幻走向现实。</p>
+      <p>该公司表示下一个目标是小白鼠，其大脑约有 7000 万个神经元，是果蝇大脑的 560 倍。这项技术被视为通往人类意识数字化的关键一步，可能颠覆通过大模型构建 AGI 的传统路径，发展出一种更接近生命本质的智能形式。</p>
+      <div class="source">来源：<a href="https://www.myzaker.com/article/69afe2b28e9f0908ce75788e" target="_blank">ZAKER新闻</a> · <a href="https://www.163.com/dy/article/KNNT49RS0512B07B.html" target="_blank">网易</a></div>
+      <div class="insight-box">
+        <strong>深度洞察：</strong>传统 AI 是"从数据学习行为"，全脑仿真是"从结构复制行为"。Eon Systems 证明了<strong>只要神经连接图谱足够精确，智能行为可以自然涌现</strong>——这不依赖训练数据，而是依赖生物学发现。这条路如果走通，人类意识数字化将从哲学命题变成工程问题。
+      </div>
+    </article>
 
     <article class="item">
       <h3><a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">图灵奖得主 Tony Hoare 爵士逝世，QuickSort 算法之父享年 92 岁</a></h3>
