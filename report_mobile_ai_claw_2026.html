@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手机厂商 AI 龙虾评测报告 · 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+
+  :root {
+    --ink: #1a1a1a;
+    --ink-2: #2c2c2c;
+    --ink-3: #5a5a5a;
+    --ink-4: #909090;
+    --bg: #f0ede8;
+    --white: #ffffff;
+    --rule: #ddd8d0;
+    --cover-bg: #111318;
+    --orange: #d4520e;
+    --orange-lt: #fff3ec;
+    --blue: #1558a8;
+    --blue-lt: #eaf1fc;
+    --green: #1a6e3f;
+    --green-lt: #eaf7f0;
+    --red: #b02820;
+    --red-lt: #fdecea;
+    --purple: #6527d4;
+    --purple-lt: #f2edff;
+    --teal: #0d7377;
+    --teal-lt: #e8f7f7;
+    --code: #f5f2ee;
+
+    --f-sans: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', 'Noto Sans SC', 'PingFang SC', sans-serif;
+    --f-serif: 'Noto Serif SC', 'STSong', Georgia, serif;
+
+    --radius: 4px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══════════════ COVER ═══════════════ */
+  .cover {
+    background: var(--cover-bg);
+    color: #fff;
+    padding: 64px 0 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-noise { display: none; }
+  .cover-bg-text { display: none; }
+  .cover::before {
+    content: 'CLAW';
+    position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+    font-family: var(--f-serif); font-size: 220px; font-weight: 900;
+    color: rgba(255,255,255,0.03); letter-spacing: -8px;
+    pointer-events: none; user-select: none; line-height: 1;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 33%, var(--blue) 66%, var(--green) 100%);
+  }
+  .cover-inner {
+    max-width: 720px; margin: 0 auto; padding: 0 28px;
+    position: relative; z-index: 1;
+  }
+  .cover-eyebrow {
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+  }
+  .cover-eyebrow::before { display: none; }
+  .cover h1 {
+    font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', var(--f-serif);
+    font-size: clamp(30px, 5.5vw, 50px);
+    font-weight: 900; line-height: 1.15; letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .cover h1 em { font-style: normal; color: #f0a060; }
+  .cover-sub {
+    font-size: 14px; color: rgba(255,255,255,0.45);
+    line-height: 1.75; max-width: 520px;
+  }
+  .cover-meta {
+    display: flex; align-items: center; gap: 14px;
+    flex-wrap: wrap; margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .cover-date { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 1px; }
+  .brand-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .brand-tag {
+    font-size: 11px; padding: 4px 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px; color: rgba(255,255,255,0.4);
+  }
+  .brand-tag.xiaomi { border-color: rgba(212,82,14,0.6); color: #f0a060; }
+  .brand-tag.huawei { border-color: rgba(21,88,168,0.6); color: #7ab8f5; }
+  .brand-tag.honor  { border-color: rgba(26,110,63,0.6); color: #5ecf96; }
+
+  /* ═══════════════ NAV ═══════════════ */
+  .nav-bar {
+    background: #1a1e28;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky; top: 0; z-index: 200;
+  }
+  .nav-inner {
+    max-width: 720px; margin: 0 auto; padding: 0 20px;
+    display: flex; overflow-x: auto; scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner a {
+    display: flex; align-items: center;
+    padding: 0 14px; height: 46px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+    color: rgba(255,255,255,0.4); text-decoration: none; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-inner a:hover { color: #fff; }
+  .nav-inner a.brand-mi:hover  { color: #f0a060; border-bottom-color: #f0a060; }
+  .nav-inner a.brand-hw:hover  { color: #7ab8f5; border-bottom-color: #7ab8f5; }
+  .nav-inner a.brand-honor:hover { color: #5ecf96; border-bottom-color: #5ecf96; }
+
+  /* ═══════════════ LAYOUT ═══════════════ */
+  .page { max-width: 720px; margin: 0 auto; padding: 28px 20px 100px; }
+  .module:first-child { padding-top: 0; }
+
+  /* ═══════════════ MODULE ═══════════════ */
+  .module { padding-top: 64px; }
+  .module-header {
+    display: flex; align-items: flex-start; gap: 0;
+    margin-bottom: 12px;
+    background: var(--ink);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    color: #fff;
+  }
+  .mod-red    .module-header { background: var(--red); }
+  .mod-orange .module-header { background: var(--orange); }
+  .mod-blue   .module-header { background: var(--blue); }
+  .mod-green  .module-header { background: var(--green); }
+  .mod-purple .module-header { background: var(--purple); }
+  .mod-teal   .module-header { background: var(--teal); }
+
+  .module-num { display: none; }
+  .module-title-wrap { flex: 1; }
+  .module-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 2px; margin-bottom: 8px;
+    background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8);
+  }
+  .badge-orange, .badge-blue, .badge-green, .badge-red, .badge-purple, .badge-teal { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
+  .badge-gray { background: rgba(0,0,0,0.08); color: var(--ink-3); }
+  .module-title {
+    font-family: var(--f-serif);
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 900; letter-spacing: -0.5px; line-height: 1.15;
+    color: #fff;
+  }
+  .module-desc {
+    font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.6;
+  }
+  /* 信息来源模块保持深色背景 */
+  #s5 .module-header { background: #2a2a2a; }
+
+  /* ═══════════════ SUB-SECTION ═══════════════ */
+  .sub { margin-bottom: 12px; }
+  .sub-heading {
+    font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px 0;
+  }
+  .sub-heading::after { display: none; }
+  .sub-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 3px;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .sn-orange { background: var(--orange); color: #fff; }
+  .sn-blue   { background: var(--blue);   color: #fff; }
+  .sn-green  { background: var(--green);  color: #fff; }
+  .sn-gray   { background: var(--ink-3);  color: #fff; }
+  .sn-red    { background: var(--red);    color: #fff; }
+  .sn-purple { background: var(--purple); color: #fff; }
+  .sn-teal   { background: var(--teal);   color: #fff; }
+
+  /* ═══════════════ CARD ═══════════════ */
+  .sub-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid var(--rule);
+  }
+  .mod-red    .sub-card { border-top: 3px solid var(--red); }
+  .mod-orange .sub-card { border-top: 3px solid var(--orange); }
+  .mod-blue   .sub-card { border-top: 3px solid var(--blue); }
+  .mod-green  .sub-card { border-top: 3px solid var(--green); }
+  .mod-purple .sub-card { border-top: 3px solid var(--purple); }
+  .mod-teal   .sub-card { border-top: 3px solid var(--teal); }
+
+  .sub-card .sub-heading {
+    padding: 12px 18px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--rule);
+    background: #faf9f7;
+    font-size: 15px;
+    color: var(--ink-3);
+  }
+  .sub-card-body { padding: 18px; }
+  .sub-card-body > .timeline,
+  .sub-card-body > .compare-table-wrap,
+  .sub-card-body > .tbl-wrap,
+  .sub-card-body > .callout { margin: 0; }
+
+  /* ═══════════════ PROSE ═══════════════ */
+  p { font-size: 15px; color: var(--ink-2); line-height: 1.9; margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; color: var(--ink); }
+
+  ul.dot-list { list-style: none; margin: 4px 0; }
+  ul.dot-list li {
+    font-size: 15px; color: var(--ink-2); line-height: 1.8;
+    padding: 8px 0 8px 22px; position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+  ul.dot-list li:last-child { border-bottom: none; }
+  ul.dot-list li::before {
+    content: '▸'; position: absolute; left: 0;
+    font-size: 11px; top: 10px; color: var(--ink-4);
+  }
+  .list-orange li::before { color: var(--orange); }
+  .list-blue   li::before { color: var(--blue); }
+  .list-green  li::before { color: var(--green); }
+
+  /* ═══════════════ TIMELINE ═══════════════ */
+  .timeline { display: flex; margin: 0; background: var(--white); overflow: hidden; }
+  .tl-item {
+    flex: 1; padding: 18px 16px;
+    border-right: 1px solid var(--rule); position: relative;
+  }
+  .tl-item:last-child { border-right: none; }
+  .tl-date { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+  .tl-date.mi { color: var(--orange); }
+  .tl-date.honor { color: var(--green); }
+  .tl-date.hw { color: var(--blue); }
+  .tl-brand { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .tl-product { font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .tl-connector { display: none; }
+
+  /* ═══════════════ COMPARE TABLE ═══════════════ */
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sub-card-body > .compare-table-wrap { margin: -18px; border-radius: 0 0 var(--radius) var(--radius); }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--white); }
+  .compare-table th {
+    padding: 11px 14px; text-align: left;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    border-bottom: 2px solid var(--rule); white-space: nowrap; background: var(--white);
+  }
+  .compare-table th.col-mi    { color: var(--orange); }
+  .compare-table th.col-hw    { color: var(--blue); }
+  .compare-table th.col-honor { color: var(--green); }
+  .compare-table td {
+    padding: 11px 14px; vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-2); line-height: 1.6; font-size: 13px;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child {
+    font-weight: 600; font-size: 12px;
+    color: var(--ink-3); white-space: nowrap;
+    background: #faf9f7; border-right: 1px solid var(--rule); min-width: 64px;
+  }
+  .compare-table tr:hover td { background: #faf9f7; }
+  .compare-table tr:hover td:first-child { background: #f3f1ec; }
+  .tag-leader, .tag-mi, .tag-hw, .tag-honor { display: none; }
+
+  /* ═══════════════ GENERAL TABLES ═══════════════ */
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sub-card-body > .tbl-wrap { margin: 8px -18px -18px; border-radius: 0 0 var(--radius) var(--radius); }
+  .sub-card-body > p + .tbl-wrap { margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: #1a1e28; color: #fff; }
+  thead th { padding: 10px 14px; font-weight: 600; text-align: left; font-size: 11.5px; letter-spacing: 0.5px; }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #faf9f7; }
+  tbody td { padding: 10px 14px; color: var(--ink-2); line-height: 1.6; vertical-align: top; font-size: 13px; }
+  tbody td:first-child { color: var(--ink); font-weight: 600; }
+
+  /* ═══════════════ CALLOUT ═══════════════ */
+  .callout {
+    border-left: 3px solid var(--rule);
+    padding: 18px 20px;
+    margin: 12px 0;
+    background: var(--code);
+    border-radius: 0 4px 4px 0;
+  }
+  .sub-card-body > .callout:last-child {
+    margin: 12px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .sub-card-body > p + .callout { margin-top: 10px; }
+  .sub-card-body > .callout + p { margin-top: 12px; }
+  .callout-orange { background: var(--orange-lt); border-left-color: var(--orange) !important; }
+  .callout-blue   { background: var(--blue-lt);   border-left-color: var(--blue) !important; }
+  .callout-green  { background: var(--green-lt);  border-left-color: var(--green) !important; }
+  .callout-gray   { background: var(--code);      border-left-color: #bbb !important; }
+  .callout p { font-size: 15px; margin: 0; line-height: 1.85; color: var(--ink-2); }
+  .callout p + p { margin-top: 10px; }
+
+  /* ═══════════════ FEAT CARDS ═══════════════ */
+  .card-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0; }
+  .card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 4px 0; }
+  .feat-card {
+    background: var(--bg); border: 1px solid var(--rule);
+    border-radius: var(--radius); padding: 16px; position: relative; overflow: hidden;
+  }
+  .feat-card-stripe { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .stripe-orange { background: var(--orange); }
+  .stripe-blue   { background: var(--blue); }
+  .stripe-green  { background: var(--green); }
+  .feat-card-icon { font-size: 18px; margin-bottom: 6px; }
+  .feat-card-title { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .feat-card-body  { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+
+  /* ═══════════════ ARCH CARDS ═══════════════ */
+  .arch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0; }
+  .arch-card { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px; }
+  .arch-card-n { display: none; }
+  .arch-card-title { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .arch-card-body  { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+
+  /* ═══════════════ DIALOGUE ═══════════════ */
+  .dialogue {
+    background: #1a1e28; border-radius: var(--radius); padding: 18px 20px; margin: 12px 0;
+  }
+  .dl { display: flex; gap: 12px; padding: 7px 0; }
+  .dl + .dl { border-top: 1px solid rgba(255,255,255,0.06); margin-top: 2px; padding-top: 9px; }
+  .spk {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    white-space: nowrap; padding-top: 3px; min-width: 46px; color: rgba(255,255,255,0.35);
+  }
+  .spk-u { color: #7ab8f5; }
+  .spk-ai-orange { color: #f0a060; }
+  .txt { color: rgba(255,255,255,0.82); flex: 1; line-height: 1.8; font-size: 14px; }
+
+  /* ═══════════════ PRIVACY LIST ═══════════════ */
+  .priv-list { list-style: none; margin: 0; }
+  .priv-list li {
+    padding: 10px 0; border-bottom: 1px solid var(--rule);
+    display: flex; gap: 12px; font-size: 15px; color: var(--ink-2);
+  }
+  .priv-list li:last-child { border-bottom: none; }
+  .priv-list li::before { content: '✓'; color: #1a9e5a; font-weight: 900; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ═══════════════ PRODUCT HERO ═══════════════ */
+  .product-hero { width: 100%; border-radius: var(--radius); overflow: hidden; margin: 0 0 10px; background: #eee; }
+  .product-hero img { width: 100%; display: block; cursor: zoom-in; }
+
+  /* ═══════════════ CAPABILITY ITEMS ═══════════════ */
+  .cap-item { border-bottom: 1px solid var(--rule); padding: 18px 0; }
+  .cap-item:last-child { border-bottom: none; padding-bottom: 4px; }
+  .cap-header { margin-bottom: 8px; }
+  .cap-label { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .cap-desc { font-size: 14px; color: var(--ink-3); line-height: 1.7; margin-bottom: 10px; }
+  .cap-example {
+    font-size: 14px; color: var(--ink-2); background: var(--bg);
+    border-left: 3px solid var(--orange); padding: 8px 14px;
+    border-radius: 0 3px 3px 0; margin-bottom: 12px; line-height: 1.7;
+  }
+  .cap-example strong { color: var(--orange); font-weight: 700; }
+  .cap-imgs { display: grid; gap: 8px; margin-top: 10px; }
+  .cap-imgs.cols-1 { grid-template-columns: 1fr; }
+  .cap-imgs.cols-2 { grid-template-columns: 1fr 1fr; }
+  .cap-imgs.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cap-imgs img {
+    width: 100%; border-radius: 6px; display: block;
+    cursor: zoom-in; border: 1px solid var(--rule); transition: opacity 0.15s;
+  }
+  .cap-imgs img:hover { opacity: 0.85; }
+  .cap-imgs .img-caption { font-size: 11px; color: var(--ink-4); text-align: center; margin-top: 4px; line-height: 1.4; }
+
+  /* ═══════════════ VIDEO CARD ═══════════════ */
+  .video-card {
+    display: flex; align-items: center; gap: 16px;
+    background: #1a1e28; border-radius: var(--radius); padding: 16px 20px;
+    text-decoration: none; margin-top: 16px;
+    transition: background 0.2s;
+  }
+  .video-card:hover { background: #252b3a; }
+  .video-play {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #e55; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0; color: #fff;
+  }
+  .video-info { flex: 1; }
+  .video-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+  .video-meta  { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ═══════════════ LIGHTBOX ═══════════════ */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+    cursor: zoom-out; padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 4px; object-fit: contain; cursor: default; }
+  .lightbox-close { position: fixed; top: 16px; right: 20px; color: rgba(255,255,255,0.6); font-size: 28px; cursor: pointer; line-height: 1; user-select: none; z-index: 10000; }
+  .lightbox-close:hover { color: #fff; }
+
+  /* ═══════════════ STRATEGY ═══════════════ */
+  .strategy-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 4px 0; }
+  .strat-card {
+    background: var(--bg); border: 1px solid var(--rule);
+    border-radius: var(--radius); padding: 16px; border-top: 3px solid;
+  }
+  .strat-card.mi  { border-top-color: var(--orange); }
+  .strat-card.hw  { border-top-color: var(--blue); }
+  .strat-card.hon { border-top-color: var(--green); }
+  .strat-brand { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 7px; }
+  .strat-card.mi  .strat-brand { color: var(--orange); }
+  .strat-card.hw  .strat-brand { color: var(--blue); }
+  .strat-card.hon .strat-brand { color: var(--green); }
+  .strat-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 7px; }
+  .strat-body  { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+
+  /* ═══════════════ LIMITS ═══════════════ */
+  .limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .limit { background: var(--bg); border: 1px solid var(--rule); border-left: 3px solid var(--rule); border-radius: var(--radius); padding: 14px 16px; }
+  .limit.risk { border-left-color: var(--red); }
+  .limit.warn { border-left-color: #e08a20; }
+  .limit-label { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .limit-desc  { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; }
+
+  /* ═══════════════ SCENARIO ═══════════════ */
+  .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sc-card { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); padding: 14px; display: flex; gap: 12px; }
+  .sc-num  { font-family: var(--f-serif); font-size: 28px; font-weight: 700; color: var(--rule); line-height: 1; flex-shrink: 0; }
+  .sc-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .sc-body  { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; }
+
+  /* ═══════════════ DIVIDER / FOOTER ═══════════════ */
+  .divider { border: none; border-top: 1px solid var(--rule); margin: 0; }
+  footer { border-top: 1px solid var(--rule); padding: 24px 20px; max-width: 720px; margin: 0 auto; }
+  footer p { font-size: 12px; color: var(--ink-4); text-align: center; margin: 0; }
+
+  /* ═══════════════ RESPONSIVE ═══════════════ */
+  @media (max-width: 480px) {
+    .card-grid, .arch-grid, .scenario-grid, .limits-grid, .strategy-grid, .card-grid-3 { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; }
+    .tl-item { border-right: none; border-bottom: 1px solid var(--rule); }
+    .cap-imgs.cols-3 { grid-template-columns: 1fr 1fr; }
+    .compare-table { font-size: 11.5px; }
+    .compare-table th, .compare-table td { padding: 8px 10px; }
+    .cover h1 { font-size: clamp(24px, 8vw, 36px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .module { animation: fadeIn 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     COVER
+══════════════════════════════════════ -->
+<header class="cover">
+  <div class="cover-noise"></div>
+  <div class="cover-bg-text">Claw</div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">专项研究报告 · 手机厂商 AI Agent</div>
+    <h1>三大手机厂商<br><em>AI 龙虾</em>全面评测</h1>
+    <p class="cover-sub">小米 miclaw · 华为 小艺Claw · 荣耀 龙虾宇宙——2026年3月，手机厂商集体入场 Agent 混战，谁是真正的"手机龙虾"？</p>
+    <div class="cover-meta">
+      <span class="cover-date">2026 · 03 · 11</span>
+      <div class="brand-tags">
+        <span class="brand-tag xiaomi">小米 miclaw</span>
+        <span class="brand-tag huawei">华为 小艺Claw</span>
+        <span class="brand-tag honor">荣耀 龙虾宇宙</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a href="#s-insight">业务洞察</a>
+    <a href="#s0">横向对比</a>
+    <a href="#s1" class="brand-mi">小米 miclaw</a>
+    <a href="#s2" class="brand-hw">华为 小艺Claw</a>
+    <a href="#s3" class="brand-honor">荣耀 龙虾宇宙</a>
+    <a href="#s4">行业洞察</a>
+    <a href="#s5">信息来源</a>
+  </div>
+</nav>
+
+<main class="page">
+
+<!-- ══════════════════════════════════════
+  MODULE · 业务洞察
+══════════════════════════════════════ -->
+<section class="module mod-teal" id="s-insight">
+  <div class="module-header">
+    <div class="module-title-wrap">
+      <div class="module-badge badge-teal">业务洞察</div>
+      <h2 class="module-title">对我们业务的影响</h2>
+      <p class="module-desc">手机厂商 AI 龙虾产品对游戏获客业务的实际价值判断。</p>
+    </div>
+  </div>
+
+  <div class="sub-card">
+    <div class="sub-heading"><span class="sub-num sn-teal">1</span>短期业务价值有限</div>
+    <div class="sub-card-body">
+      <p>手机厂商 AI 龙虾产品目前对游戏获客业务<strong>短期内不构成直接价值</strong>。三家产品均处于早期封测或 Beta 阶段，核心场景集中在生活管家类（控家电、管日程），游戏相关场景几乎未被覆盖。厂商当前更多是在<strong>跟随 OpenClaw 热点、占位 Agent 入口</strong>，产品本身距离实用的游戏推广渠道还有较大距离。</p>
+    </div>
+  </div>
+
+  <div class="sub-card">
+    <div class="sub-heading"><span class="sub-num sn-teal">2</span>用户侧习惯尚未形成</div>
+    <div class="sub-card-body">
+      <p>用户尚未养成依赖 AI 处理<strong>衣食住行</strong>基础需求的习惯，更遑论游戏层面的 AI 操控或精神陪伴类 Agent。游戏 AI 操控（代打、自动任务）涉及反作弊风险，各大游戏厂商尚无开放意愿；<strong>精神层面的 Agent 陪伴需求极低</strong>，当前用户对 AI 角色的情感黏性仍远弱于真实社交或游戏内固有玩法。</p>
+      <p>总体判断：<strong>值得持续关注，但无需为此调整当前获客策略</strong>。重点观察节点是厂商何时开放第三方 APP 接入 API，以及是否有游戏类合作生态的官方披露。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 0 · 横向对比
+══════════════════════════════════════ -->
+<section class="module mod-red" id="s0">
+  <div class="module-header">
+    <span class="module-num red">00</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-red">横向对比</div>
+      <h2 class="module-title">三足鼎立：谁的龙虾最能打？</h2>
+      <p class="module-desc">同一周内三家厂商相继官宣，AI Agent 进入手机系统级战场。</p>
+    </div>
+  </div>
+
+  <!-- 时间轴 -->
+  <div class="sub-card"><div class="sub-card-body">
+<div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date mi">3月6日</div>
+      <div class="tl-brand">小米</div>
+      <div class="tl-product">Xiaomi miclaw 官宣封测</div>
+      <div class="tl-connector">→</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date honor">3月10日</div>
+      <div class="tl-brand">荣耀</div>
+      <div class="tl-product">龙虾宇宙发布会亮相</div>
+      <div class="tl-connector">→</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date hw">3月11日</div>
+      <div class="tl-brand">华为</div>
+      <div class="tl-product">小艺Claw Beta 正式公布</div>
+    </div>
+  </div>
+</div></div>
+
+
+  <!-- ── 共同定位 ── -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-red">1</span>共同定位：生活管家，而非工作助理</div>
+    <div class="sub-card-body">
+    <p>三家厂商的"手机龙虾"与 OpenClaw（电脑端）的定位有本质不同。OpenClaw 的主要场景是<strong>工作流自动化</strong>——写代码、处理文档、管理邮件；而手机厂商的 Claw 主打的是<strong>生活类管家</strong>——调闹钟、控家电、管日程、叫起床。</p>
+    <p>硬件厂商围绕用户构建的全硬件网络——音响、空调、扫地机器人、窗帘、汽车——这些都是纯软件厂商接触不到的执行终端。<strong>控制更多执行终端，是手机厂商做 Agent 的核心护城河。</strong></p>
+    <div class="callout callout-gray" style="margin-top:20px;">
+      <p>📌 <strong>硬件厂商的底层逻辑</strong>：AI Agent 的竞争，本质上是<strong>谁能控制更多执行终端</strong>。纯软件厂商（豆包、元宝）的 Agent 能力再强，最终执行层也只在屏幕里；而手机厂商的 Agent 有手、有脚，能延伸到用户生活的物理世界。这是软件侧无法复制的壁垒。</p>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- ── 对比大表 ── -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-red">2</span>三家产品横向对比</div>
+    <div class="sub-card-body">
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:140px">维度</th>
+            <th class="col-mi">小米 miclaw</th>
+            <th class="col-hw">华为 小艺Claw</th>
+            <th class="col-honor">荣耀 龙虾宇宙</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 基础信息 -->
+          <tr>
+            <td colspan="4" style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff !important;background:#2e2e2e !important;padding:10px 18px;">基础信息</td>
+          </tr>
+          <tr>
+            <td>底层模型</td>
+            <td>自研 MiMo 大模型</td>
+            <td>盘古端侧大模型</td>
+            <td>端侧大模型（未具体披露）</td>
+          </tr>
+          <tr>
+            <td>当前状态</td>
+            <td>封测，邀请制</td>
+            <td>Beta 公开，逐步扩量</td>
+            <td>近期陆续内测</td>
+          </tr>
+          <tr>
+            <td>支持机型</td>
+            <td>小米 17 系列</td>
+            <td>鸿蒙设备（范围待定）</td>
+            <td>荣耀 Magic V6 及旗舰</td>
+          </tr>
+          <tr>
+            <td>费用</td>
+            <td>目前完全免费</td>
+            <td>未披露</td>
+            <td>未披露</td>
+          </tr>
+
+          <!-- 用户体验 -->
+          <tr>
+            <td colspan="4" style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff !important;background:#2e2e2e !important;padding:10px 18px;">用户体验</td>
+          </tr>
+          <tr>
+            <td>系统工具权限</td>
+            <td colspan="3" style="color:var(--ink-3);">三家相同——均可调用短信、日历、相册、通讯录、Wi-Fi、文件等系统接口</td>
+          </tr>
+          <tr>
+            <td>操作入口</td>
+            <td>暂时仅手机</td>
+            <td>手机 / 平板 / PC / 车机</td>
+            <td>手机 / PC / 平板</td>
+          </tr>
+          <tr>
+            <td>生态联动</td>
+            <td>米家智能家居+汽车<br>（人车家全生态）</td>
+            <td>华为智能家居+鸿蒙车机<br>（仅限鸿蒙生态设备）</td>
+            <td>手机 / PC / 平板<br>（暂无其他联动）</td>
+          </tr>
+          <tr>
+            <td>记忆系统</td>
+            <td>深度记忆，越用越懂；<br>明确披露三层架构</td>
+            <td>深度记忆，越用越懂；<br>架构细节未披露</td>
+            <td>深度记忆，越用越懂；<br>架构细节未披露</td>
+          </tr>
+
+          <!-- 技术架构 -->
+          <tr>
+            <td colspan="4" style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff !important;background:#2e2e2e !important;padding:10px 18px;">技术架构</td>
+          </tr>
+          <tr>
+            <td>实现形态</td>
+            <td>大模型<strong>直接</strong>调用系统接口，AI 即执行主体</td>
+            <td>小艺作为交互入口，调用龙虾执行；小艺不直接操作系统</td>
+            <td>YOYO 作为交互入口，调用龙虾执行；同华为形态</td>
+          </tr>
+          <tr>
+            <td>端云架构</td>
+            <td>云端主导</td>
+            <td>端云协同</td>
+            <td>端侧部署</td>
+          </tr>
+          <tr>
+            <td>底层系统</td>
+            <td>HyperOS<br>（基于 Android）</td>
+            <td>鸿蒙分布式架构<br>（自研，不依赖 Android）</td>
+            <td>MagicOS<br>（未披露架构细节）</td>
+          </tr>
+          <tr>
+            <td>未来方向</td>
+            <td>与小爱同学合并为"超级小爱"，AI 助手统一入口</td>
+            <td colspan="2" style="color:var(--ink-3);">目前均处于 Beta / 预热阶段，借龙虾热度稳定用户预期；正式形态预计向小米（大模型直接执行）演进，后续路线暂无明确披露</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-gray" style="margin-top:20px;">
+      <p><strong>操作入口 vs 生态联动的区别</strong>：操作入口指用户可在哪些设备上向 Agent 下指令；生态联动指 Agent 能控制哪些设备。小米操作入口暂时仅手机，但通过米家可联动全屋家居和汽车；华为操作入口覆盖四端，但联动范围仅限鸿蒙生态设备。</p>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- ── 风险一：第三方 APP 壁垒 ── -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-red">3</span>风险一：第三方 APP 壁垒与商业模型重构</div>
+    <div class="sub-card-body">
+    <p>三家产品目前均主要支持自有生态，微信、美团、淘宝等头部第三方 APP 无法直接被 Agent 调用，原因是缺乏 API 开放授权。这是整个行业当前最硬的天花板。</p>
+    <p>要打破这个壁垒，不只是技术问题，更是<strong>商业模型重构</strong>的问题。一个值得关注的推演方向：</p>
+    <div class="callout callout-gray">
+      <p>📌 <strong>推演（非既成事实）</strong>：如果未来 APP 的形态向 Agent 化演进，每个垂类服务都以 Agent 形式提供能力，厂商的 Agent 通过 API 调用垂类服务 Agent——那么原先预装位和买量费用的逻辑，可能会转变为"API 接口调用费"。这意味着流量分发的底层机制将被重写，谁掌握入口 Agent，谁就掌握了新的分发权。但这条路依赖生态成熟度和用户习惯迁移，目前还为时尚早。</p>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- ── 风险二：端侧算力瓶颈 ── -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-red">4</span>风险二：端侧算力瓶颈与小模型方案</div>
+    <div class="sub-card-body">
+    <p>手机 NPU 算力普遍在 <strong>20–50 TOPS</strong>（骁龙 8 Elite 约 45 TOPS，天玑 9400 约 50 TOPS，麒麟 9010 约 20 TOPS），与数据中心 GPU 相差数量级（H200 达 2000+ TOPS）。长时间运行 Agent 任务还会带来<strong>电量快速消耗和设备发热</strong>问题。</p>
+    <p>近期轻量小模型的进展是否能缓解这一瓶颈？从对比表格来看，小模型能缓解但难以消除算力瓶颈。</p>
+    <div class="tbl-wrap" style="margin:16px 0 20px;">
+      <table>
+        <thead>
+          <tr><th>模型</th><th>参数量</th><th>端侧可用性</th><th>对算力瓶颈的缓解判断</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Qwen3 0.6B / 1.7B</td>
+            <td>最小版本</td>
+            <td>可在手机运行</td>
+            <td>适合简单指令；复杂多步 Agent 任务仍吃力，规划能力有明显天花板</td>
+          </tr>
+          <tr>
+            <td>Gemini Flash</td>
+            <td>未披露</td>
+            <td>云端轻量版，非真正端侧</td>
+            <td>降低云端推理成本，不解决本地算力问题</td>
+          </tr>
+          <tr>
+            <td>面壁智能 MiniCPM</td>
+            <td>2–4B</td>
+            <td>专为端侧优化，已有手机部署案例</td>
+            <td>最接近实用端侧 Agent 的国产选项；工具调用准确率仍不及云端大模型</td>
+          </tr>
+          <tr>
+            <td>阶跃星辰小模型</td>
+            <td>未披露端侧版</td>
+            <td>当前 OpenClaw 调用量第一</td>
+            <td>优势在工具调用成功率和响应速度，而非端侧部署本身</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-gray">
+      <p>Agent 任务的核心难点在于多步规划能力和工具调用准确率，这两项在 &lt;2B 的小模型上均有明显衰减。当下最务实的方案是小米已在用的路径：<strong>端侧轻量感知 + 云端复杂推理的协同架构</strong>。中期来看，随着 3nm 芯片迭代和端侧量化技术进步，2–3 年内有望实现更多任务的本地化。</p>
+    </div>
+    <p style="margin-top:12px;">此外，这里有一个小米专属的额外风险：miclaw 的系统级权限（读短信、调摄像头等）是通过 <strong>HyperOS 系统层自行开放</strong>的，并非标准 Android 权限。若未来国内监管政策收紧对系统级 API 的管控，miclaw 的核心能力将面临合规压力。华为鸿蒙为自研系统，不存在此类依赖风险。</p>
+  </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 1 · 小米 miclaw 深度评测
+══════════════════════════════════════ -->
+<section class="module mod-orange" id="s1">
+  <div class="module-header">
+    <span class="module-num orange">01</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-orange">深度评测 · 小米</div>
+      <h2 class="module-title">Xiaomi miclaw</h2>
+      <p class="module-desc">三家中信息披露最完整、有第三方独立实测数据的产品。</p>
+    </div>
+  </div>
+
+  <!-- 产品图 -->
+  <div class="product-hero">
+    <img src="img/1.png" alt="Xiaomi miclaw 产品界面" onclick="openLightbox(this)">
+  </div>
+
+  <!-- 1. 产品背景 -->
+  <div class="sub-card">
+    <div class="sub-heading"><span class="sub-num sn-orange">1</span>产品背景</div>
+    <div class="sub-card-body">
+    <p>miclaw 基于小米自研 <strong>MiMo 大模型</strong>，采用 MCP 协议集成到 HyperOS 系统底层。MiMo 大模型负责人为原 DeepSeek 核心成员<strong>罗福莉</strong>，2025 年 11 月加入小米；MiMo-V2-Flash 性能已可对标 DeepSeek-V3.2。未来将与小爱同学合并为<strong>"超级小爱"</strong>，统一 AI 助手入口。</p>
+  </div>
+  </div>
+
+  <!-- 2. 能力矩阵 -->
+  <div class="sub-card">
+    <div class="sub-heading"><span class="sub-num sn-orange">2</span>能力矩阵</div>
+    <div class="sub-card-body">
+
+      <div class="cap-item">
+        <div class="cap-header"><span class="cap-label">① 系统工具调用</span></div>
+        <div class="cap-desc">短信、日历、通讯录、位置、文件读写、录屏录音、拍照、打电话、Wi-Fi 等 27 类系统接口，可直接批量执行。</div>
+        <div class="cap-example"><strong>实测：</strong>"帮我找骚扰短信，挨个回 R 退订，发最新的5个" → 自动识别并批量回复</div>
+        <div class="cap-imgs cols-2">
+          <div><img src="img/3.jpg" alt="批量回复骚扰短信" onclick="openLightbox(this)"></div>
+          <div><img src="img/4.png" alt="卸载应用需用户确认" onclick="openLightbox(this)"></div>
+        </div>
+      </div>
+
+      <div class="cap-item">
+        <div class="cap-header"><span class="cap-label">② 个人上下文理解</span></div>
+        <div class="cap-desc">读取使用习惯与偏好，理解模糊自然语言指令，自主规划并组合执行多步任务。</div>
+        <div class="cap-example"><strong>实测：</strong>"我要开始写稿了" → 自动调整窗帘至适合亮度、调低挂灯亮度、开启勿扰模式</div>
+        <div class="cap-imgs cols-2">
+          <div><img src="img/8.jpg" alt="输入：我要开始写稿了" onclick="openLightbox(this)"><div class="img-caption">输入指令</div></div>
+          <div><img src="img/9.jpg" alt="执行结果：调整窗帘灯光" onclick="openLightbox(this)"><div class="img-caption">执行结果</div></div>
+        </div>
+      </div>
+
+      <div class="cap-item">
+        <div class="cap-header"><span class="cap-label">③ 生态互联控制</span></div>
+        <div class="cap-desc">联动米家全品类智能家居 + 小米汽车，支持多设备复杂协同。理解生活场景语义，自动拆解为多步设备控制指令。</div>
+        <div class="cap-example"><strong>实测：</strong>"温柔把我叫起来" → 开窗帘 + 放轻柔音乐 + 开灯 + 抬床头 + 关电热毯，五设备联动</div>
+        <div class="cap-imgs cols-2">
+          <div><img src="img/5.png" alt="米家授权设备列表" onclick="openLightbox(this)"><div class="img-caption">米家授权管理</div></div>
+          <div><img src="img/13.png" alt="卧室场景：熟睡状态" onclick="openLightbox(this)"><div class="img-caption">唤醒前</div></div>
+        </div>
+        <div class="cap-imgs cols-2" style="margin-top:8px;">
+          <div><img src="img/14.png" alt="miclaw放轻柔音乐" onclick="openLightbox(this)"><div class="img-caption">miclaw：放了轻柔的音乐</div></div>
+          <div><img src="img/15.png" alt="音量开到最大" onclick="openLightbox(this)"><div class="img-caption">把音量开到了最大</div></div>
+        </div>
+      </div>
+
+      <div class="cap-item">
+        <div class="cap-header"><span class="cap-label">④ 视觉识别</span></div>
+        <div class="cap-desc">调用后置摄像头画面，实时分析并生成自然语言描述，可感知人物、背景、陈设、文字等。</div>
+        <div class="cap-example"><strong>实测：</strong>"看看拍摄间有什么" → 准确描述人物动作、室内陈设和设备摆放</div>
+        <div class="cap-imgs cols-3">
+          <div><img src="img/16.png" alt="调用摄像头" onclick="openLightbox(this)"><div class="img-caption">调用摄像头</div></div>
+          <div><img src="img/17.png" alt="识别工作室场景" onclick="openLightbox(this)"><div class="img-caption">识别场景</div></div>
+          <div><img src="img/18.png" alt="描述收藏品" onclick="openLightbox(this)"><div class="img-caption">描述陈设</div></div>
+        </div>
+      </div>
+
+      <div class="cap-item">
+        <div class="cap-header"><span class="cap-label">⑤ 定时自动化</span></div>
+        <div class="cap-desc">设置周期性任务与条件触发任务，全天候无人值守执行，不依赖用户在场。</div>
+        <div class="cap-example"><strong>实测：</strong>"实时监控鱼缸温度，出现异常立刻通知我" → 每小时整点检查，设置 22–30°C 正常范围，异常即推送</div>
+        <div class="cap-imgs cols-2">
+          <div><img src="img/7.jpg" alt="定时监控鱼缸温度" onclick="openLightbox(this)"></div>
+          <div><img src="img/111.png" alt="定时自动化设置界面" onclick="openLightbox(this)"></div>
+        </div>
+      </div>
+
+      <a class="video-card" href="https://www.bilibili.com/video/BV14vPfzMEwN/?spm_id_from=333.337.search-card.all.click" target="_blank">
+        <div class="video-play">▶</div>
+        <div class="video-info">
+          <div class="video-title">实测视频 · B站 UP主陈抱一完整评测</div>
+          <div class="video-meta">bilibili.com · Xiaomi miclaw 深度体验</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-orange">3</span>记忆系统实测</div>
+    <div class="sub-card-body">
+    <p>miclaw 明确披露三层记忆架构，是三家中唯一有公开细节的产品。</p>
+    <div class="tbl-wrap" style="margin:14px 0;">
+      <table>
+        <thead><tr><th>层级</th><th>存储内容</th><th>持久性</th></tr></thead>
+        <tbody>
+          <tr><td>短期记忆</td><td>当前任务执行上下文</td><td>对话周期内</td></tr>
+          <tr><td>长期记忆</td><td>周期性任务、使用偏好</td><td>跨对话持久</td></tr>
+          <tr><td><strong>人设记忆</strong></td><td>个性设定（语气、称谓、习惯）</td><td><strong>清除对话 / 删除记忆 / 卸载重装均无法消除</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>人设记忆与普通记忆的区别在于其存储位置不同，不随用户手动清除操作而删除。实测验证：</p>
+    <div class="dialogue">
+      <div class="dl">
+        <span class="spk spk-u">用户</span>
+        <span class="txt">"清空所有记忆"</span>
+      </div>
+      <div class="dl">
+        <span class="spk spk-ai-orange">miclaw</span>
+        <span class="txt">"所有记忆已经全部清空了，喵～现在我的记忆就像一张白纸一样干净了喵～"</span>
+      </div>
+      <div class="dl">
+        <span class="spk spk-u">用户</span>
+        <span class="txt">"那你为什么还在喵？"</span>
+      </div>
+      <div class="dl">
+        <span class="spk spk-ai-orange">miclaw</span>
+        <span class="txt">"因为喵是我的说话习惯不是记忆喵～就像爆酱，你天生就会说话一样，我天生就是猫娘喵～"</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- 4. 隐私安全设计 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-orange">4</span>隐私与安全设计</div>
+    <div class="sub-card-body">
+    <ul class="priv-list">
+      <li>代码中<strong>无支付转账工具</strong>，主动限制高风险操作范围</li>
+      <li>不使用用户数据训练 AI 模型</li>
+      <li>LLM 推理在云端完成，但对话记录及敏感数据仅存储在手机本地</li>
+      <li>所有敏感系统操作需用户逐步确认，不可静默执行</li>
+    </ul>
+  </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 2 · 华为 小艺Claw
+══════════════════════════════════════ -->
+<section class="module mod-blue" id="s2">
+  <div class="module-header">
+    <span class="module-num blue">02</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-blue">评测 · 华为</div>
+      <h2 class="module-title">小艺 Claw</h2>
+      <p class="module-desc">三家中率先进入 Beta 公测，鸿蒙生态多端覆盖最广。</p>
+    </div>
+  </div>
+
+  <!-- 1. 产品背景 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-blue">1</span>产品背景</div>
+    <div class="sub-card-body">
+    <p>2026年3月11日，华为终端 BG CEO 何刚正式公布小艺Claw Beta 版本。通过<strong>小艺开放平台新增 OpenClaw 模式</strong>实现：用户经由小艺 App 接入专属智能体，小艺作为交互层调用龙虾能力执行任务。底层基于盘古端侧大模型，依托鸿蒙分布式架构实现跨设备协同。何刚亲测评价："用了几天，很惊喜，挺好用的。"</p>
+  </div>
+  </div>
+
+
+  <!-- 2. 能力矩阵 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-blue">2</span>能力矩阵</div>
+    <div class="sub-card-body">
+    <div class="card-grid">
+      <div class="feat-card"><div class="feat-card-stripe stripe-blue"></div><div class="feat-card-title">办公全流程自动化</div><div class="feat-card-body">文档编辑、PPT 制作、自动回复邮件、代码编写，是三家中办公场景覆盖最完整的。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-blue"></div><div class="feat-card-title">鸿蒙多端协同</div><div class="feat-card-body">手机 / 平板 / PC / 车机无缝接力同一任务，三家中操作入口覆盖最广。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-blue"></div><div class="feat-card-title">人格定制 + 技能市场</div><div class="feat-card-body">"信息猎手""办公搭子""创作天才"等预设人格，支持技能市场扩展，可玩性最高。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-blue"></div><div class="feat-card-title">日程与信息管理</div><div class="feat-card-body">智能管理手机日程、备忘录，跨设备信息同步，信息检索与文案创作全覆盖。</div></div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- 3. 实测情况 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-blue">3</span>实测情况</div>
+    <div class="sub-card-body">
+    <p>当前仅有华为内部及少量媒体测评，无第三方独立深度实测数据。已披露场景均为官方演示，执行成功率、响应速度等关键指标尚无可参考的公开数据。</p>
+  </div>
+  </div>
+
+
+  <!-- 4. 差异化亮点 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-blue">4</span>差异化亮点</div>
+    <div class="sub-card-body">
+    <p>核心壁垒在于<strong>鸿蒙分布式架构下的多端协同</strong>：手机、平板、PC、车机可接力完成同一任务，Agent 不受单一设备限制。这是小米（仅手机入口）和荣耀（无车机）目前无法复制的体验。</p>
+    <p>局限在于能力边界与鸿蒙生态强绑定，非鸿蒙设备用户无法获得完整体验。具体大模型技术栈与执行能力的详细披露仍不足。</p>
+  </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 3 · 荣耀 龙虾宇宙
+══════════════════════════════════════ -->
+<section class="module mod-green" id="s3">
+  <div class="module-header">
+    <span class="module-num green">03</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-green">评测 · 荣耀</div>
+      <h2 class="module-title">荣耀 龙虾宇宙</h2>
+      <p class="module-desc">三家中生态开放性最强，明确提出兼容 iOS 与 Windows 的跨品牌路线。</p>
+    </div>
+  </div>
+
+  <!-- 1. 产品背景 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-green">1</span>产品背景</div>
+    <div class="sub-card-body">
+    <p>2026年3月10日，随荣耀 Magic V6 折叠屏旗舰发布会同步公布。采用 <strong>YOYO 控虾</strong>架构：YOYO 作为用户交互入口，调用龙虾能力执行任务，YOYO 本身不直接操作系统。底层基于端侧大模型，数据本地处理。各项功能将于近期陆续开放内测，目前尚无正式上线产品。</p>
+  </div>
+  </div>
+
+
+  <!-- 2. 能力矩阵 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-green">2</span>能力矩阵</div>
+    <div class="sub-card-body">
+    <div class="card-grid">
+      <div class="feat-card"><div class="feat-card-stripe stripe-green"></div><div class="feat-card-title">YOYO 四维感知执行</div><div class="feat-card-body">看（感知屏幕意图）/ 记（跨会话记忆）/ 做（跨应用执行）/ 想（主动服务预判）。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-green"></div><div class="feat-card-title">跨品牌生态兼容</div><div class="feat-card-body">明确提出兼容 iOS 和 Windows，三家中唯一不限于自有生态的方案。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-green"></div><div class="feat-card-title">发布会演示场景</div><div class="feat-card-body">AI 会议纪要、拍照转文档（PPT/Word/Excel）、定时推送行业资讯、全屏 14 语言翻译、3 分钟旅游攻略生成。</div></div>
+      <div class="feat-card"><div class="feat-card-stripe stripe-green"></div><div class="feat-card-title">端侧安全处理</div><div class="feat-card-body">数据本地处理，严格权限控制，安全开放手机智能体供龙虾调用。</div></div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- 3. 实测情况 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-green">3</span>实测情况</div>
+    <div class="sub-card-body">
+    <p>目前尚未正式上线，无任何第三方独立实测数据。现有信息来源均为发布会官方演示，能力的实际稳定性与执行成功率尚待验证。</p>
+  </div>
+  </div>
+
+
+  <!-- 4. 差异化亮点 -->
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-green">4</span>差异化亮点</div>
+    <div class="sub-card-body">
+    <p>跨品牌兼容是荣耀最明确的差异化赌注——若能真正打通 iOS / Windows 生态，意味着 Agent 入口不依赖用户是否在荣耀生态内，潜在用户基数远大于小米和华为。</p>
+    <p>待观察：跨品牌互联的实际稳定性；家居与车机生态当前缺位；功能整体处于预热阶段，正式形态有较大不确定性。</p>
+  </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 4 · 行业洞察
+══════════════════════════════════════ -->
+<section class="module mod-purple" id="s4">
+  <div class="module-header">
+    <span class="module-num purple">04</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-purple">行业洞察</div>
+      <h2 class="module-title">战略格局与行业趋势</h2>
+      <p class="module-desc">三家的选择，折射出手机厂商在 AI Agent 时代的三条差异化道路。</p>
+    </div>
+  </div>
+
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-purple">1</span>三大战略路线</div>
+    <div class="sub-card-body">
+    <div class="strategy-grid">
+      <div class="strat-card mi">
+        <div class="strat-brand">小米</div>
+        <div class="strat-title">技术执行派</div>
+        <div class="strat-body">自研 MiMo 大模型 + 系统级深度执行 + 米家软硬件融合，核心壁垒是"人车家全生态"的执行深度，是纯软件厂商无法复制的护城河。</div>
+      </div>
+      <div class="strat-card hw">
+        <div class="strat-brand">华为</div>
+        <div class="strat-title">鸿蒙生态派</div>
+        <div class="strat-body">鸿蒙系统级多端协同是核心优势，AI Agent 作为鸿蒙生态的超级入口，将"人机互动"升级为"端端协同"，强化生态黏性。</div>
+      </div>
+      <div class="strat-card hon">
+        <div class="strat-brand">荣耀</div>
+        <div class="strat-title">开放生态派</div>
+        <div class="strat-body">兼容 iOS / Windows 跨品牌互联，YOYO 控虾四维架构，以开放性换规模——赌的是"生态越大、Agent 越强"的网络效应。</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="sub-card"><div class="sub-card-body">
+<div class="callout callout-gray" style="margin:28px 0;">
+    <p>📌 <strong>核心洞察</strong>：核心壁垒不在大模型能力本身，而在于<strong>覆盖软硬件融合全产业生态的广度与深度</strong>。手机厂商天然拥有软件厂商没有的"身体"——遍布用户生活的硬件设备网络。谁能让 AI Agent 真正"长"进用户的日常物理世界，谁就赢得了 Agent 时代的入口。</p>
+    <p style="margin-top:10px;">未来手机与 AI 的关系，将从<strong>"用户操作应用"→"用户提出目标，AI 完成操作"</strong>。2026年3月这同一周内三家厂商的集体入场，是这一转变的历史性起点。</p>
+  </div>
+</div></div>
+
+
+  <div class="sub-card">
+
+    <div class="sub-heading"><span class="sub-num sn-purple">2</span>共同风险</div>
+    <div class="sub-card-body">
+    <ul class="dot-list">
+      <li><strong>第三方 APP 壁垒</strong>：三家产品均主要支持自有生态应用，调用微信/美团等头部应用面临 API 授权难题，是整个行业的共同天花板</li>
+      <li><strong>安全权限风险</strong>：国家互联网应急中心已发布 OpenClaw 类应用安全提示，系统级权限对普通用户的安全教育是重大挑战</li>
+      <li><strong>成熟度待验证</strong>：三款产品均处于早期测试阶段，高复杂度任务的成功率、稳定性、功耗表现均需时间检验</li>
+    </ul>
+  </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════════
+  MODULE 5 · 信息来源
+══════════════════════════════════════ -->
+<section class="module" id="s5">
+  <div class="module-header">
+    <span class="module-num">05</span>
+    <div class="module-title-wrap">
+      <div class="module-badge badge-gray">信息来源</div>
+      <h2 class="module-title">参考信源</h2>
+    </div>
+  </div>
+  <ul class="dot-list" style="margin-top:8px;">
+    <li>小米miclaw评测总结（结构化评测文档）</li>
+    <li>miclaw小龙虾分析（极果AI / 十一学姐 / 涛哥爱拆机 多博主实测合集）</li>
+    <li>数字生命卡兹克（微信公众号深度实测）</li>
+    <li>智东西（微信公众号，官方技术披露）</li>
+    <li>腾讯新闻：华为小艺Claw Beta 公布相关报道</li>
+    <li>新京报 / 站长之家：荣耀龙虾宇宙内测公告</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>手机厂商 AI 龙虾评测报告 · 整合自 6 个信源 · 生成于 2026-03-11</p>
+</footer>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(img) {
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (!e || e.target !== document.getElementById('lightbox-img')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

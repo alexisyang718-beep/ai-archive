@@ -474,6 +474,7 @@
   html { scroll-behavior: smooth; }
   ::selection { background: var(--accent-soft); color: var(--accent); }
 
+<<<<<<< HEAD
 
   /* ===== Insight Box (直接展开) ===== */
   .insight-box {
@@ -481,12 +482,67 @@
     padding: 16px 20px;
     background: #FFF8F5;
     border-top: 2px solid var(--accent);
+=======
+  /* ===== Insight Collapsible ===== */
+  .insight-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: var(--bg-warm);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    user-select: none;
+  }
+
+  .insight-toggle:hover {
+    border-color: var(--accent-border);
+  }
+
+  .insight-toggle .insight-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .insight-toggle .insight-chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    transition: transform 0.3s ease;
+  }
+
+  .insight-toggle.open .insight-chevron {
+    transform: rotate(180deg);
+  }
+
+  .insight-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+    padding: 0 18px;
+    background: var(--bg-warm);
+    border: 1px solid var(--border-light);
+    border-top: none;
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
     font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.85;
   }
 
+<<<<<<< HEAD
   [data-theme="dark"] .insight-box {
     background: rgba(212, 132, 95, 0.06);
   }
@@ -506,10 +562,35 @@
   }
 
   .insight-box .insight-content strong {
+=======
+  .insight-body.open {
+    max-height: 1200px;
+    opacity: 1;
+    padding: 0 18px 14px;
+  }
+
+  .insight-body strong {
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     color: var(--text);
     font-weight: 600;
   }
 
+<<<<<<< HEAD
+=======
+  .insight-toggle.open {
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border-bottom: none;
+  }
+
+  /* ===== Smooth Scroll ===== */
+  html { scroll-behavior: smooth; }
+
+  /* ===== Selection ===== */
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
 </style>
 </head>
 <body>
@@ -523,7 +604,11 @@
   <div class="header-logo">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
   </div>
+<<<<<<< HEAD
   <h1>AI Daily Brief</h1>
+=======
+  <h1>科技资讯日报</h1>
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   <div class="date">2026年3月9日 · 周一</div>
   <div class="divider"></div>
   <div class="summary-card">
@@ -565,10 +650,22 @@
       <span class="stat">20天收入 <em>&gt;去年全年</em></span>
     </div>
     <div class="item-source">来源：<a href="http://www.iheima.com/article-394717.html">i黑马/科创板日报</a> · <a href="https://www.theinformation.com/briefings/">The Information</a> · <a href="http://finance.eastmoney.com/a/202603083665350353.html">东方财富网</a> ｜ 3月8日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">Kimi 的暴涨验证了关键假设：<strong>Agent 的 Token 消耗是普通聊天</strong><strong>的 100-1000 倍</strong>，一旦用户从"聊天"转向"用 Agent 办事"，付费意愿和客单价指数级跳升。Stripe 排名全球第 9 意味着 Kimi 已是全球 AI 订阅收入的头部玩家。AI 商业化核心逻辑转变——<strong>从"卖模型能力"到"卖 Agent 完</strong><strong>成任务的价值"。</strong>用户为聊天付费天花板低（$20/月），但为 Agent 办事付费天花板极高（数百至数千美元/月）。启示：① Token 消耗量级跳变，云服务商最确定受益；② Agent竞争维度转为"谁能更可靠地完成更多任务"；③ 中国 AI 全球化<strong>路径打通——Kimi 通过 Stripe 直接面向全球收费，绕过本地化壁</strong><strong>垒。谁让 Agent 从"能用"变成"离不开"，谁就能复制这条曲线。</strong></div>
     </div>
+=======
+
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Agent 引爆 AI 付费"从 0 到 1"拐点</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Kimi 的暴涨本质上验证了一个关键假设：<strong>Agent 的 Token 消耗是普通聊天的 100-1000 倍</strong>，这意味着一旦用户从"聊天"转向"用 Agent 办事"，付费意愿和客单价会指数级跳升。Stripe 排名全球第 9 的含义是：Kimi 已不只是中国市场的现象级产品，而是全球 AI 订阅收入的头部玩家。<br><br>这组数据揭示了 AI 商业化的核心逻辑转变——<strong>从"卖模型能力"到"卖 Agent 完成任务的价值"</strong>。用户愿意为聊天付费的天花板很低（月均 $20），但愿意为 Agent 帮自己完成工作付费的天花板极高（可达数百甚至数千美元/月）。K2.5 模型和 Kimi Claw 的组合证明了：当 Agent 真正能"替人办事"时，付费转化率呈指数级增长而非线性增长。<br><br>对行业的启示有三：第一，<strong>Token 消耗量级的跳变</strong>意味着云服务商（AWS/Azure/阿里云）将成为最确定的受益方；第二，Agent 时代的竞争维度不再是"谁的模型更聪明"，而是"谁的 Agent 能更可靠地完成更多类型的任务"；第三，中国 AI 公司的全球化路径已经打通——Kimi 通过 Stripe 直接面向全球用户收费，绕过了传统的本地化壁垒。谁能率先让 Agent 从"能用"变成"好用到离不开"，谁就能复制这条从免费到暴涨的增长曲线。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-2">
@@ -585,10 +682,21 @@
       <span class="stat">生产环境 <em>8×H100</em></span>
     </div>
     <div class="item-source">来源：<a href="https://github.com/karpathy/autoresearch">GitHub</a> · <a href="https://mp.weixin.qq.com/s/-8crktVMYow2W1hLf8-rOA">AI寒武纪</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">核心突破不在代码量（630行），而在证明了<strong>AI 科研的"最小闭环"</strong>：提出假设→编写实验→跑数据→评估→迭代，全程无人干预。传统科研一轮循环数周，这套系统单 GPU 一夜可跑百次。下一步：<strong>多 Agent 异步协作，模拟"博士生研究社区"</strong>——多个 Agent 各自探索不同假设空间，共享发现，交叉验证。速度快数千倍。药物研发、材料科学、芯片设计等需要大量实验迭代的领域将率先受益。Karpathy 在 8×H100 上运行更大版本说明<strong>算力投入回报正从"训练更大模型"转向"用模型自动做科研"。</strong><strong>科学发现的速度，将取决于算力而非人力。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 科研的"最小闭环"：从博士数周到 AI 一夜百次实验</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      autoresearch 的核心突破不在代码量（630 行），而在于它证明了 <strong>AI 科研的"最小闭环"</strong>：提出假设→编写实验→跑数据→评估结果→迭代改进，全程无人干预。传统科研中，一个博士生可能花数周完成一轮实验循环，而这套系统单 GPU 一夜可跑百次。这不是"自动化实验"，而是"自动化科学发现"的雏形。<br><br>更值得关注的是 Karpathy 透露的下一步计划——<strong>多 Agent 异步协作</strong>，模拟"由博士生组成的研究社区"。这意味着 AI 科研将从"单点循环"进化为"群体涌现"：多个 Agent 各自探索不同假设空间，共享发现，交叉验证。这种模式与人类科研社区的运作方式惊人地相似，但速度快数千倍。<br><br>对产业的影响是深远的：<strong>药物研发、材料科学、芯片设计</strong>等需要大量实验迭代的领域，将率先受益于这种"AI 科研加速器"。Karpathy 在 8×H100 上运行更大规模版本的事实也说明，算力投入的回报正从"训练更大模型"转向"用模型自动做科研"——这可能是 AI 算力需求的下一个增长极。autoresearch 让我们看到了一个未来：<strong>科学发现的速度，将取决于算力而非人力</strong>。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-3">
@@ -604,10 +712,21 @@
       <span class="stat">参数 <em>或超1万亿</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.digit.fyi/deepseek-to-release-new-ai-model/">DIGIT</a> · <a href="https://blog.mean.ceo/new-ai-model-releases-news-march-2026/">Mean CEO Blog</a> · <a href="https://new.qq.com/rain/a/20260301A05WCZ00">腾讯新闻</a> ｜ 3月1-9日（传闻）</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">"针对国产算力深度优化"是最值得关注的信号。万亿参数多模态模型若能在国产芯片高效运行，意味着中国 AI 正在构建<strong>独立于</strong><strong>NVIDIA 的完整技术栈。</strong>100 万 token 上下文+原生多模态将改变 Agent 能力天花板——单次会话处理一本书并同步生成图文视频。DeepSeek 走的是与 OpenAI 截然不同的路线：<strong>开源+国产算</strong><strong>力适配+极致性价比。</strong>若 V4 在国产芯片上表现达 NVIDIA 的80%+，美国芯片管制效果将大打折扣。<strong>这或标志着中美 AI 竞争从"模型性能"转向"算力生态"的分水岭。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜万亿参数+国产算力优化，中美 AI 竞争转向"算力生态"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      V4 的"针对国产算力深度优化"是最值得关注的信号。如果一个万亿参数的原生多模态模型能在国产芯片上高效运行，意味着中国 AI 产业正在构建<strong>独立于 NVIDIA 的完整技术栈</strong>。100 万 token 上下文窗口+原生多模态也将改变 Agent 的能力天花板——Agent 可以在单次会话中处理一本书的内容并同步生成图文视频。<br><br>从技术路线看，DeepSeek 正在走一条与 OpenAI 截然不同的道路：<strong>开源+国产算力适配+极致性价比</strong>。V3.2 已在基准测试中比肩 GPT-5 和 Gemini 3 Pro，如果 V4 的万亿参数版本能兑现承诺，将证明"参数规模+工程优化"这条路线的上限远未到达。原生多模态架构（而非后挂多模态模块）也是技术演进的正确方向——统一的 token 空间让模型能真正"思考"而非"拼接"。<br><br>更深层的地缘影响在于：<strong>如果 V4 在国产芯片上的表现接近 NVIDIA GPU 版本的 80%+</strong>，那么美国对华芯片管制的效果将大打折扣。这或许标志着中美 AI 竞争从"模型性能"转向"算力生态"的分水岭。同时，100 万 token 上下文窗口意味着 V4 可以一次性处理完整的代码库、法律文书或医学影像报告，这将直接推动 AI 在企业级场景的深度应用。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-4">
@@ -624,10 +743,21 @@
       <span class="stat">开发周期 <em>10天</em></span>
     </div>
     <div class="item-source">来源：<a href="https://sea.mashable.com/tech/42396/ai-agents-in-2026-5-ways-they-can-help">Mashable</a> · <a href="https://finance.sina.com.cn/wm/2026-03-08/doc-inhqhisp0760007.shtml">新智元/新浪财经</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">MiroFish 验证了<strong>Vibe Coding 的可行性</strong>——用 AI 辅助编码，个人可在极短时间内完成过去需要团队数月的工程。3000 万投资说明资本已认可"一人团队+AI"的创业模式。"平行数字世界"应用潜力巨大：<strong>城市规划数字孪生、金融极端场景模拟、军事战术推</strong><strong>演</strong>，每个数字实体拥有独立行为逻辑和决策能力。但核心风险不容忽视：<strong>AI 生成代码在工程规模扩大后的可维护</strong><strong>性是最大挑战。</strong>从 Demo 到生产级产品存在巨大工程鸿沟。2026 年将看到更多"AI 原生创业"案例，但<strong>能从 Demo 走到规</strong><strong>模化的可能不到 10%。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"超级个体"时代——从毕设到公司仅 3 个月</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      MiroFish 的故事之所以引爆关注，不只因为"大四学生"和"10 天"的戏剧性，而是它验证了 <strong>Vibe Coding 的可行性</strong>——用 AI 辅助编码，个人可以在极短时间内完成过去需要团队数月的工程。3000 万投资说明资本已开始认可这种"一人团队+AI"的创业模式。<br><br>更深层来看，MiroFish 代表的"平行数字世界"概念具有巨大的应用潜力：<strong>城市规划可以在数字孪生中推演交通方案，金融机构可以模拟市场极端场景，军事领域可以进行无损的战术推演</strong>。群体智能引擎让每个数字实体都拥有独立的行为逻辑和决策能力，这比传统仿真软件的"规则驱动"高出一个维度。<br><br>但核心风险不容忽视：<strong>AI 生成的代码在工程规模扩大后的可维护性是最大挑战</strong>。Vibe Coding 擅长快速原型，但从 Demo 到生产级产品之间存在巨大的工程鸿沟——代码质量、安全审计、性能优化、团队协作，这些都是 AI 生成代码尚未解决的问题。陈天桥的投资更像是押注"超级个体"叙事，而非 MiroFish 本身的技术壁垒。2026 年将会看到更多类似的"AI 原生创业"案例，但<strong>能从 Demo 走到规模化的，可能不到 10%</strong>。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
 </section>
@@ -652,10 +782,21 @@
       <span class="stat">合作对象 <em>OpenAI</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.163.com/dy/article/JM2DKPG60511BLFD.html">BusinessKorea/网易</a> · <a href="https://www.163.com/dy/article/JHSEQBVC0511B8LM.html">Dan Nystedt/网易</a> ｜ 3月7-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">三星同时接入 Gemini 和 ChatGPT，本质是在 AI 时代复制安卓的<strong>"开放策略"——不绑定单一 AI 供应商，让多个引擎竞争。</strong>深层博弈：<strong>三星用 OpenAI 制衡谷歌，防止 Gemini 在 Galaxy</strong><strong>生态中垄断。</strong>苹果走独家合作（Apple Intelligence+ChatGPT），三星走多供应商路线——两种策略各有优劣。电视 AI 化的真正想象空间在于"场景感知"：AI 不仅能回答"这个演员是谁"，还能基于观看历史推荐关联商品——电视从"被动播放设备"变成"主动<strong>服务终端"。三星 19 年全球第一的电视份额将转化为 AI 服务的</strong><strong>巨量入口。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜三星用 OpenAI 制衡谷歌，电视成 AI 交互新入口</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      三星同时接入谷歌 Gemini 和 OpenAI ChatGPT，本质上是在 AI 时代复制安卓的<strong>"开放策略"——不绑定单一 AI 供应商，而是让多个 AI 引擎竞争</strong>。电视作为家庭最大屏幕，一旦成为 AI 交互入口，广告、电商、内容推荐的变现模型都将被重构。<br><br>更深层的战略博弈在于：<strong>三星在用 OpenAI 制衡谷歌，防止 Gemini 在 Galaxy 生态中获得垄断性话语权</strong>。苹果选择了与 OpenAI 独家合作（Apple Intelligence + ChatGPT），三星则走多供应商路线。两种策略各有优劣：苹果获得深度整合体验，三星获得议价权和灵活性。这可能是 AI 时代"iOS vs Android"格局的翻版。<br><br>电视 AI 化的真正想象空间在于<strong>"场景感知"</strong>：AI 不仅能回答"这个演员是谁"，还能基于观看历史和当前内容推荐关联商品、旅游目的地、甚至同步生成观影笔记。这意味着电视从"被动播放设备"变成"主动服务终端"，三星 19 年全球第一的电视份额将转化为 AI 服务的巨量入口。如果三星能将 Galaxy 手机、电视、家电的 AI 体验打通，就能构建一个跨设备的<strong>"三星 AI 生态"</strong>，这是谷歌和苹果都难以轻易复制的差异化优势。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-6">
@@ -672,10 +813,21 @@
       <span class="stat">NPU 提升 <em>39%</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.ithome.com/0/927/054.htm">IT之家</a> · <a href="https://price.zol.com.cn/1142/11428661.html">中关村在线</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">Ultra 占比 70% 说明旗舰手机市场极端化——<strong>用户要么买最好</strong><strong>的，要么不买。</strong>中间档存在感持续降低。NPU +39% 和"隐私显示"等 AI 功能成为溢价核心理由，竞争维度已从"硬件参数"转向"AI 体验差异化"。7 天 135 万部预售还揭示：<strong>Galaxy AI</strong><strong>正成为驱动换机的核心卖点。</strong>"主动预判式服务"意味着交互范式根本转变。端侧 AI 能力正成为消费者付费核心驱动力，<strong>2026 年将是"买手机就是买 AI 能力"成为消费者共识的元年。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Galaxy AI 成 Ultra 销售引擎，AI 功能开始左右购买决策</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Ultra 占比 70% 说明旗舰手机市场正在极端化——<strong>用户要么买最好的，要么不买</strong>。中间档（标准版/+版）的存在感持续降低。NPU 算力提升 39% 和"隐私显示"等 AI 功能成为溢价核心理由，手机厂商的竞争维度已从"硬件参数"转向"AI 体验差异化"。<br><br>7 天 135 万部的预售数据还揭示了一个趋势：<strong>Galaxy AI 正在成为驱动换机的核心卖点</strong>。"主动预判式服务"意味着手机从"用户命令→执行"变成"预测需求→主动服务"，这是交互范式的根本性转变。隐私显示功能则巧妙地将 AI 能力与用户痛点结合——在公共场合防窥是真实需求，用 AI 智能识别应用场景来触发，比物理防窥膜优雅得多。<br><br>更宏观来看，<strong>端侧 AI 能力正成为消费者付费的核心驱动力</strong>。S26 Ultra 的成功将倒逼所有手机厂商加速 NPU 投入：高通、联发科、苹果都在竞赛"谁的端侧 AI 更强"。这也意味着 AI 芯片的需求增长不仅来自数据中心，还来自每年 12 亿部智能手机的换代周期。<strong>2026 年将是"买手机就是买 AI 能力"成为消费者共识的元年</strong>。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-7">
@@ -691,10 +843,21 @@
       <span class="stat">基座模型 <em>MiMo-V2-Flash</em></span>
     </div>
     <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/PszEPEHv-q0OicQPx-0G9Q">数字生命卡兹克</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">27 类系统工具直接调用意味着 AI Agent 不再是"聊天机器人"，而是真正能操作手机的<strong>"数字管家"</strong>。关键突破在于 MiMo-V2-Flash 推理速度——Agent 场景下延迟是体验生死线。<strong>手机是 Agent 的天然最佳载体</strong>：24 小时贴身、完整传感器矩阵（摄像头/GPS/NFC）、掌握最全面的用户数据。操作系统级集成是关键壁垒——小米同时控制 HyperOS 和 MiMo 模型。苹果、三星也在做同样的事，第三方 AI 应用永远无法获得同等权限深度。<strong>手机 Agent 可能是 AI 最先实现 PMF 的场景之一。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜手机成为 Agent 天然载体，操作系统级集成是关键壁垒</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      miclaw 的 27 类系统工具直接调用，意味着 AI Agent 不再是"聊天机器人"，而是真正能操作手机的<strong>"数字管家"</strong>。关键突破在于 MiMo-V2-Flash 的推理速度——Agent 场景下延迟是体验生死线，几十秒完成复杂任务链才能让用户感知到"AI 在帮我做事"而非"AI 在让我等"。<br><br>从产品设计角度看，<strong>手机是 Agent 的天然最佳载体</strong>：它 24 小时贴身携带，拥有完整的传感器矩阵（摄像头、GPS、加速度计、NFC），掌握用户最全面的数据（通讯录、日历、位置、消费记录）。这些优势让手机 Agent 能做到 PC 端 Agent 无法做到的事——比如拍名片自动录入联系人、基于位置和日历的晨间播报、语音记日记自动 OCR 纠错等。<br><br>但<strong>操作系统级集成是关键壁垒</strong>：小米能做到 27 类系统工具调用，是因为它同时控制 MIUI/HyperOS 和 MiMo 模型。苹果的 Apple Intelligence、三星的 Galaxy AI 也在做同样的事。这意味着第三方 AI 应用（ChatGPT/Kimi/通义）在手机端永远无法获得与系统级 Agent 同等的权限深度。<strong>手机 Agent 可能是 AI 最先实现 PMF（产品-市场契合）的场景之一</strong>——因为用户已经习惯了用手机管理生活的一切。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-8">
@@ -710,10 +873,21 @@
       <span class="stat">iPhone 17 <em>2383万台</em></span>
     </div>
     <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-03-08/doc-inhqhuha0582242.shtml">新浪科技</a> · <a href="https://www.ithome.com/0/927/054.htm">IT之家</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">G1 国补后 1997 元+3 小时登顶，说明 AI 硬件大众化不在于技术突破，而在于<strong>定价策略和渠道执行力</strong>。40 克+双旗舰芯片，2000 元价位几乎没有对手。iPhone 17 的 2383 万台数据则说明苹果在中国市场的 AI 策略（Apple Intelligence）尚未产生预期差异化优势。AI 眼镜赛道正成为<strong>"第三块屏"争夺战</strong>：MetaRay-Ban 海外领跑、千问 G1 国内抢先、华为 4 月跟进、苹果从高端切入。"语音+视觉"交互天然适合 AI。<strong>2026 年可能是 AI 眼镜从极客玩具变成大众消费品的转折年。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 眼镜争夺战：语音+视觉的"第三块屏"正在崛起</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      G1 国补后 1997 元+3 小时登顶，说明 AI 硬件的大众化不在于技术突破，而在于<strong>定价策略和渠道执行力</strong>。40 克的重量和双旗舰芯片的配置，在 2000 元价位段几乎没有对手。千问的 AI 能力（实时翻译、语音助手、场景识别）给了眼镜"不是装饰品而是生产力工具"的定位。<br><br>iPhone 17 系列 2383 万台的数据则说明<strong>苹果在中国的 AI 策略（Apple Intelligence）尚未产生预期的差异化优势</strong>。Pro Max 150 天破千万虽然亮眼，但考虑到苹果在中国市场的品牌溢价正在被华为/小米蚕食，增长动力更多来自换机周期而非 AI 功能驱动。苹果计划推出 Ultra 产品线是在"堆高端"，而国产 AI 硬件在"打平价"——两种路径将在 2026 下半年见分晓。<br><br>AI 眼镜赛道正在成为继智能手表之后的<strong>"第三块屏"争夺战</strong>：Meta Ray-Ban 2 代在海外领跑、千问 G1 在国内抢先、华为预计 4 月跟进、苹果 Vision Pro 则从高端切入。眼镜的独特优势在于"语音+视觉"的交互模式天然适合 AI——用户不需要掏出手机、不需要打字，只需说话和看就能获得 AI 服务。<strong>2026 年可能是 AI 眼镜从极客玩具变成大众消费品的转折年</strong>。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
 </section>
@@ -739,10 +913,21 @@
       <span class="stat">Anthropic 追加 <em>$110亿</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/04/broadcoms-custom-ai-chip-business-stays-hot-and-gives-the-bulls-a-much-needed-win-.html">CNBC</a> · <a href="https://www.techbuzz.ai/articles/broadcom-ai-revenue-doubles-as-custom-chip-boom-accelerates">TechBuzz</a> · <a href="https://www.ithome.com/0/904/925.htm">IT之家</a> ｜ 3月5-8日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">Q1 AI 收入 84 亿、Q2 指引 107 亿、年化剑指千亿——<strong>定制</strong><strong>ASIC 已从"补充"变为"替代"。</strong>六大超算客户选定制芯片而非纯买 GPU，本质是控制算力成本和供应链自主权。ASIC 核心优势："专用即高效"，为特定模型架构定制的芯片能效比可高 3-5倍。Anthropic 追加 110 亿美元订单说明连 OpenAI 竞对也在押注定制芯片。<strong>NVIDIA 的护城河正从"唯一选择"变为"选择之一"。</strong>投资者需重新评估的不是"AI 是否泡沫"，而是<strong>AI 算力价</strong><strong>值分配正转向 NVIDIA+博通+Marvell 三足鼎立。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜ASIC 路线已占 GPU 路线约 30% 市场份额</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      博通 Q1 AI 收入 84 亿、Q2 指引 107 亿、年化剑指千亿——这组数字的含义是：<strong>定制 ASIC 芯片路线已从"补充"变为"替代"</strong>。六大超算客户（谷歌、Anthropic、Meta、OpenAI 等）选择定制芯片而非纯买 NVIDIA GPU，本质上是要控制算力成本和供应链自主权。<br><br>ASIC 的核心优势在于<strong>"专用即高效"</strong>：为特定模型架构和推理场景定制的芯片，能效比可以比通用 GPU 高 3-5 倍。谷歌的 TPU 已经证明了这条路线，Anthropic 追加 110 亿美元的订单说明"连 OpenAI 的竞对"也在押注定制芯片。这对 NVIDIA 的影响是结构性的——虽然短期内 GPU 需求仍然旺盛，但长期来看，训练端的需求增速将放缓（因为大模型训练轮次趋于稳定），推理端则会被 ASIC 分流。<br><br><strong>NVIDIA 的护城河正从"唯一选择"变为"选择之一"</strong>。CUDA 生态仍是最大壁垒，但博通的定制芯片配合客户自研的编译器和框架，正在构建平行的软件栈。陈福阳"明年 AI 芯片销售额超 1000 亿美元"的预言如果成真，意味着 ASIC 将占到整个 AI 芯片市场的 30%+。投资者需要重新评估的不是"AI 是否泡沫"，而是<strong>"AI 算力的价值分配正在从 NVIDIA 一家独大转向 NVIDIA+博通+Marvell 的三足鼎立"</strong>。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-10">
@@ -758,10 +943,21 @@
       <span class="stat">核心驱动 <em>AI数据中心</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.theneuron.ai/ai-news-digests/around-the-horn-digest-everything-that-happened-in-ai-this-week-mar-813-2026/">The Neuron</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">博通+Marvell 接连用财报证明"AI 算力投入在加速而非放缓"。<strong>Marvell +20% 说明资本市场对真金白银收入增长极度渴求。</strong>Teralynx 交换芯片获客加速揭示被忽视的趋势：<strong>数据中心</strong><strong>瓶颈正从"算力不够"转向"互联带宽不够"。</strong>万卡集群协同训练时，GPU 间通信速度成为性能天花板。网络芯片可能成为<strong>下一个 AI 基建超级周期。网络层价值捕获正快速上升。</strong></div>
     </div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜定制硅片双雄效应——博通+Marvell 共同验证 ASIC 趋势</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      博通+Marvell 接连用财报证明"AI 算力投入在加速而非放缓"，直接回击了市场对 AI 泡沫的担忧。<strong>Marvell 股价单日 +20% 说明资本市场对这个信号极度渴求</strong>——在 AI 概念股普遍回调的背景下，真金白银的收入增长是最强的信心催化剂。<br><br>Teralynx 交换芯片获客加速揭示了一个被忽视的趋势：<strong>数据中心的瓶颈正从"算力不够"转向"互联带宽不够"</strong>。当万卡集群需要数千张 GPU 协同训练一个大模型时，GPU 之间的通信速度（而非单卡算力）成为性能天花板。这就是为什么网络芯片（交换机、DPU、光互联模块）可能成为下一个 AI 基建的超级周期。英伟达的 InfiniBand 和 Spectrum-X、Marvell 的 Teralynx、Broadcom 的 Jericho 芯片，都在争夺这个新战场。<br><br>从投资视角看，<strong>"定制硅片双雄"效应</strong>意味着 AI 芯片的受益圈正在扩大：不只是 NVIDIA 一家，博通（ASIC 定制）、Marvell（网络+ASIC）、AMD（GPU 第二选择）、台积电（代工所有人的芯片）都是确定性受益者。AI 算力的需求增长是真实的，分歧只在于<strong>价值如何在供应链中分配</strong>。Marvell 的财报给出了答案：网络层的价值捕获正在快速上升。
+    </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   </div>
 
   <div class="item" id="insight-11">
@@ -777,12 +973,28 @@
       <span class="stat">面板出货 <em>-7.3%</em></span>
     </div>
     <div class="item-source">来源：<a href="https://news.mydrivers.com/1/1107/1107759.htm">快科技</a> · <a href="https://new.qq.com/rain/a/20260308A04DF200">腾讯新闻</a> ｜ 3月8日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">根源是 HBM 和消费级存储的产能冲突——<strong>三星/SK 海力士将产</strong><strong>线优先分配给利润更高的 AI 数据中心 HBM。</strong>"价格恢复要到2028 年"说明这不是短期波动，而是 AI 对半导体供应链的结构性重塑。HBM3e 单颗利润是普通 DDR5 的 5-8 倍，厂商必然优先供应。面板出货量下滑 7.3% 说明压力已从芯片层传导到整个消费电子产业链。<strong>消费电子正在为 AI 繁荣"买单"——不仅物料涨，人才</strong><strong>也被 AI 公司抢走。2026-2027 年是消费电子的"至暗时刻"。</strong></div>
     </div>
   </div>
 
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 基建"抽血"消费电子，恢复正常要等 2028</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      内存涨价的根源是 HBM（高带宽内存）和消费级存储的产能冲突——<strong>三星/SK 海力士将产线优先分配给利润更高的 AI 数据中心 HBM</strong>，导致手机/PC 用存储芯片供给收紧。"价格恢复要到 2028 年"意味着这不是短期波动，而是 AI 产业对整个半导体供应链的结构性重塑。<br><br>更具体来看，<strong>HBM3e 的单颗利润是普通 DDR5 的 5-8 倍</strong>，存储厂商在产能有限的情况下必然优先供应高利润产品。这导致了一个"劫贫济富"的格局：AI 公司用天价买 HBM 不眨眼（单块 H100 的 HBM 成本就超过 1000 美元），而手机厂商的 LPDDR5X 采购价格被推高 15-20%。面板出货量下滑 7.3% 则说明供应链的压力已从芯片层传导到整个消费电子产业链。<br><br>前小米高管"今年消费电子行业大裁员"的预判并非危言耸听。<strong>消费电子行业正在为 AI 繁荣"买单"</strong>——不仅是物料成本上升，还有人才被 AI 公司抢走、用户注意力被 AI 应用分流、投资机构的资金被 AI 赛道虹吸。扩产需要 2-3 年意味着 2026-2027 年是消费电子的"至暗时刻"，只有那些<strong>成功将 AI 能力整合为产品核心卖点的厂商</strong>（如三星 Galaxy AI、小米 miclaw）才能在这轮洗牌中幸存。
+    </div>
+
+  </div>
+
+</section>
+
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
   <div class="item" id="insight-12">
     <div class="item-title">
       <span class="tag tag-chip">国产算力</span>
@@ -797,6 +1009,7 @@
       <span class="stat">推理加速 <em>35×</em></span>
     </div>
     <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/0-zWo96WEkG2btIHKM0Whg">科技日报/深圳发布</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">核心价值在于提供了一条<strong>绕过 CUDA 生态的可行路径</strong>：用 AI智能体自动完成算子从 NVIDIA GPU 到华为昇腾的迁移适配。35 倍推理加速说明"有芯片无生态"的困局可通过 AI 工具链破解。创新在于将<strong>"大模型智能"与"运筹优化算法"结合</strong>——大模型理解算子语义，运筹优化搜索硬件约束下最优参数。与 AMD 用Claude Code 生成 GPU 驱动一脉相承：<strong>AI 正成为硬件生态的</strong><strong>"万能适配层"。国产芯片硬件达 60-70% 水平，AI 工具链即可</strong><strong>通过软件优化补齐差距。</strong></div>
@@ -805,6 +1018,17 @@
 
 </section>
 
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 正在成为硬件生态的"万能适配层"</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      KernelCAT 的核心价值不在于"又一个 AI 代码生成器"，而在于它提供了一条<strong>绕过 CUDA 生态的可行路径</strong>：用 AI 智能体自动完成算子从 NVIDIA GPU 到华为昇腾的迁移适配。35 倍推理加速的数据尤其有说服力——说明"有芯片无生态"的困局可以通过 AI 工具链来破解。<br><br>技术层面，KernelCAT 的创新在于将<strong>"大模型智能"与"运筹优化算法"结合</strong>：大模型负责理解算子的语义和逻辑，运筹优化负责在硬件约束下搜索最优的参数配置。这比纯靠 LLM 生成代码要可靠得多——FlashAttentionScore 算子延迟降低 22%、吞吐量提升 30% 的数据证明了这种"智能+优化"组合拳的有效性。<br><br>这与 AMD 副总裁用 Claude Code 生成 GPU 驱动代码的逻辑一脉相承：<strong>AI 正在成为硬件生态的"万能适配层"</strong>。过去，从 CUDA 迁移到其他平台（ROCm/CANN/OneAPI）需要大量人工重写，耗时数月甚至数年；现在，AI 智能体可以在数小时内完成迁移并优化。这对中国 AI 产业的意义是战略性的：即使无法获得最先进的 NVIDIA GPU，<strong>只要国产芯片的硬件性能达到 60-70% 水平，AI 工具链就能通过软件优化补齐剩余差距</strong>。KernelCAT 证明了这条路是走得通的。
+    </div>
+  </div>
+
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
 <!-- ==================== 4. 游戏行业 ==================== -->
 <section class="section" id="game">
   <div class="section-header">
@@ -821,9 +1045,18 @@
       据 <strong>Windows Central</strong> 报道，Xbox 新任 CEO <strong>阿莎·夏尔马（Asha Sharma）</strong>在内部会议中邀请微软 CEO <strong>纳德拉</strong>对谈。纳德拉表示："微软是平台公司、软件公司、<strong>游戏公司</strong>，如果它们无法持续发展，公司也将不复存在。"他强调游戏推动了<strong>云计算、DirectX、显卡技术和服务器 GPU 计算革命</strong>，"<strong>我经常和黄仁勋开玩笑说，如果没有游戏，英伟达可能到现在都不存在</strong>。"夏尔马承认 Xbox 近期正处于"<strong>转型期的阵痛</strong>"，团队正"重新审视过去一年的所有战略"。纳德拉留下一句意味深长的话："我们要确保今天的朋友，就是明天的朋友"——被解读为微软正反思激进的全平台策略。
     </div>
     <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/digi/2026-03-09/doc-inhqivtv0035936.shtml">Windows Central/新浪科技</a> · <a href="https://wap.gamersky.com/news/Content-2102210.html">游民星空</a> · <a href="https://www.sohu.com/a/994157929_122598898">搜狐科技</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">纳德拉"没有游戏，英伟达可能不存在"这句话的潜台词是：游戏不只是娱乐业务，而是推动了 GPU、云计算、DirectX 整个技术栈的进化。他把游戏提升到与云计算、AI 并列的战略高度，这在微软内部是罕见的——考虑到微软 780 亿美元收购动视暴雪后，游戏业务的整合压力巨大。夏尔马承认"转型期阵痛"和"重新审视所有战略"，暗示 Xbox 的全平台策略（把独占游戏放到PS/Switch）可能被收紧。过去一年 Xbox 将《印第安纳·琼斯》《Hi-Fi Rush》等独占游戏登陆 PS5，引发了核心玩家的强烈不满和 Xbox 生态的认同危机。如果夏尔马的"战略重审"意味着回归独占策略，将直接影响索尼和任天堂的第三方游戏获取。"确保今天的朋友就是明天的朋友"——这句话被广泛解读为微软正在反思与索尼/任天堂的合作边界。纳德拉的"朋友论"可能有两层含义：一……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜纳德拉"游戏是科技基石"论，暗示 Xbox 战略收紧</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      纳德拉"没有游戏，英伟达可能不存在"这句话的潜台词是：<strong>游戏不只是娱乐业务，而是推动了 GPU、云计算、DirectX 整个技术栈的进化</strong>。他把游戏提升到与云计算、AI 并列的战略高度，这在微软内部是罕见的——考虑到微软 780 亿美元收购动视暴雪后，游戏业务的整合压力巨大。<br><br>夏尔马承认"转型期阵痛"和"重新审视所有战略"，暗示 <strong>Xbox 的全平台策略（把独占游戏放到 PS/Switch）可能被收紧</strong>。过去一年 Xbox 将《印第安纳·琼斯》《Hi-Fi Rush》等独占游戏登陆 PS5，引发了核心玩家的强烈不满和 Xbox 生态的认同危机。如果夏尔马的"战略重审"意味着回归独占策略，将直接影响索尼和任天堂的第三方游戏获取。<br><br>"确保今天的朋友就是明天的朋友"——这句话被广泛解读为<strong>微软正在反思与索尼/任天堂的合作边界</strong>。纳德拉的"朋友论"可能有两层含义：一是对游戏开发者社区的安抚（不会大规模裁员和关闭工作室）；二是对平台合作伙伴的提醒（合作是有条件的，不是无底线的）。2026 年 Xbox 的战略走向将决定整个主机游戏市场的竞争格局——如果微软重新聚焦独占+Game Pass，三方混战将再度升温。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
   </div>
 
@@ -841,9 +1074,18 @@
       <span class="stat">系统 <em>SteamOS</em></span>
     </div>
     <div class="item-source">来源：<a href="https://store.steampowered.com/sale/steam_machines">Steam 官方</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">Steam Deck 已经证明 Valve 能做硬件，Steam Machine 则是对Xbox/PS 客厅地位的直接挑战。性能 6 倍于 Deck、SteamOS 免费、兼容Steam 库所有游戏——这意味着用户无需为"平台独占"纠结，一台机器打通 PC 和客厅。Steam Machine 的核心优势不在于硬件（半定制 AMD 芯片与 PS5/Xbox并无代差），而在于软件生态的碾压性优势：Steam 拥有超过 10 万款游戏，远超任何主机平台。SteamOS 基于 Linux 的架构意味着零授权费，游戏开发者无需向 Valve支付额外的平台费用（Steam 抽成已经包含了）。即时挂起/恢复和云存档则补齐了 PC在客厅场景下最大的体验短板。 如果定价在 $499-699 区间，将直接冲击 PS5Pro（$699）和 Xbox Se……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Valve 从掌机王者到客厅挑战者，SteamOS 是核心杀器</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Steam Deck 已经证明 Valve 能做硬件，Steam Machine 则是对 Xbox/PS 客厅地位的直接挑战。<strong>性能 6 倍于 Deck、SteamOS 免费、兼容 Steam 库所有游戏</strong>——这意味着用户无需为"平台独占"纠结，一台机器打通 PC 和客厅。<br><br>Steam Machine 的核心优势不在于硬件（半定制 AMD 芯片与 PS5/Xbox 并无代差），而在于<strong>软件生态的碾压性优势</strong>：Steam 拥有超过 10 万款游戏，远超任何主机平台。SteamOS 基于 Linux 的架构意味着零授权费，游戏开发者无需向 Valve 支付额外的平台费用（Steam 抽成已经包含了）。即时挂起/恢复和云存档则补齐了 PC 在客厅场景下最大的体验短板。<br><br>如果定价在 <strong>$499-699 区间</strong>，将直接冲击 PS5 Pro（$699）和 Xbox Series X（$499）的市场份额。但 Valve 的野心可能不止于此——Steam Machine 的真正意义在于<strong>让 SteamOS 成为继 Windows 之后第二个被广泛采用的游戏操作系统</strong>。一旦 SteamOS 的市场份额突破临界点，将倒逼更多游戏开发者优先支持 Linux/Proton，进一步削弱 Windows 在游戏领域的垄断。Valve 正在下一盘大棋：<strong>从游戏分发平台，变成游戏操作系统和硬件生态的控制者</strong>。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -862,9 +1104,18 @@
       <span class="stat">工作室使用AI <em>~50%</em></span>
     </div>
     <div class="item-source">来源：<a href="https://appleinsider.com/articles/26/03/03/apple-outlines-game-dev-strategy-with-three-gdc-sessions">AppleInsider</a> · <a href="https://www.gianty.com/gdc-2026-report-about-generative-ai/">GIANTY/GDC Report</a> · <a href="https://www.gamesradar.com/events/gdc/">GamesRadar</a> ｜ 3月6-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">52% 的人认为 AI 有负面影响，但 50% 的工作室已在使用——这种"一边担忧一边用"的矛盾正是技术变革期的典型特征。和电气化时代工人既害怕失业又不得不学新技术一样，游戏开发者面对 AI的态度是务实的：不用会被淘汰，但用了可能让同行失业。 苹果首次在 GDC发表游戏演讲是重要信号。M5 芯片+Vision Pro 组合可能开辟"空间计算游戏"新品类——苹果一直缺乏游戏基因，但 M 系列芯片的 GPU 性能已经追上独显入门级水平，VisionPro 的空间交互则提供了全新的游戏设计维度。苹果如果在 GDC上宣布游戏开发者激励计划（如降低 App Store 游戏抽成），将产生实质性影响。 AI在游戏中的四大应用方向也值得细究：内容生成（地图、贴图、NPC 对话自动生成）可以将开发周期缩短30-50%；自动化测试让 QA 成本大幅下降……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"一边担忧一边用"——游戏行业的 AI 矛盾心态</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      52% 的人认为 AI 有负面影响，但 50% 的工作室已在使用——<strong>这种"一边担忧一边用"的矛盾正是技术变革期的典型特征</strong>。和电气化时代工人既害怕失业又不得不学新技术一样，游戏开发者面对 AI 的态度是务实的：不用会被淘汰，但用了可能让同行失业。<br><br>苹果首次在 GDC 发表游戏演讲是重要信号。<strong>M5 芯片+Vision Pro 组合可能开辟"空间计算游戏"新品类</strong>——苹果一直缺乏游戏基因，但 M 系列芯片的 GPU 性能已经追上独显入门级水平，Vision Pro 的空间交互则提供了全新的游戏设计维度。苹果如果在 GDC 上宣布游戏开发者激励计划（如降低 App Store 游戏抽成），将产生实质性影响。<br><br>AI 在游戏中的四大应用方向也值得细究：<strong>内容生成</strong>（地图、贴图、NPC 对话自动生成）可以将开发周期缩短 30-50%；<strong>自动化测试</strong>让 QA 成本大幅下降；<strong>动态 NPC 对话</strong>可能彻底改变 RPG 的玩法——每个 NPC 都拥有独立的记忆和性格；<strong>流程加速</strong>则影响动画、音效、本地化等整个生产管线。AI 在游戏行业的争论正从"要不要用"转向<strong>"谁因 AI 失业、谁因 AI 获益"</strong>——答案越来越清晰：创意人才升值，执行岗位缩减。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
   </div>
 
@@ -881,9 +1132,18 @@
       <span class="stat">首日出货 <em>300万+</em></span>
     </div>
     <div class="item-source">来源：<a href="https://www.startupdaily.net/after-hours/gaming/the-burning-questions-shaping-the-games-industry-in-2026/">StartupDaily</a> · <a href="https://nikopartners.com/niko-partners-2026-predictions/">Niko Partners</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">首日 300 万+出货、目标上调至 1900 万——Switch 2 的稀缺性策略非常成功。"可能停售 $449 SKU 仅保留 $499+ 捆绑版"说明任天堂正在测试定价权上限。历史上，任天堂是唯一一家能在硬件性能落后竞争对手两代的情况下，仍然靠游戏性和生态赢得市场的公司。中国版号审批增长 20%+ 对任天堂中国市场是利好，但 Switch 2在中国的行货前景仍取决于与腾讯的合作深度。初代 Switch 在中国市场的表现证明了行货渠道的局限性——大量用户通过港版/日版渠道购买，行货软件销量远低于预期。如果 Switch 2能解决国行 eShop 内容不足的问题（比如引入更多第三方大作），中国市场将贡献显著增量。更宏观来看，Switch 2 的成功验证了"游戏性>硬件性能"的任天堂哲学。在 PS5 Pro追求 8K/光追、Xbox Se……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Switch 2 定义"代际跨越"，任天堂社交生态是护城河</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      首日 300 万+出货、目标上调至 1900 万——<strong>Switch 2 的稀缺性策略非常成功</strong>。"可能停售 $449 SKU 仅保留 $499+ 捆绑版"说明任天堂正在测试定价权上限。历史上，任天堂是唯一一家能在硬件性能落后竞争对手两代的情况下，仍然靠游戏性和生态赢得市场的公司。<br><br>中国版号审批增长 20%+ 对任天堂中国市场是利好，但 <strong>Switch 2 在中国的行货前景仍取决于与腾讯的合作深度</strong>。初代 Switch 在中国市场的表现证明了行货渠道的局限性——大量用户通过港版/日版渠道购买，行货软件销量远低于预期。如果 Switch 2 能解决国行 eShop 内容不足的问题（比如引入更多第三方大作），中国市场将贡献显著增量。<br><br>更宏观来看，Switch 2 的成功验证了<strong>"游戏性>硬件性能"的任天堂哲学</strong>。在 PS5 Pro 追求 8K/光追、Xbox Series X 强调 teraflops 的时代，任天堂用"掌机/主机二合一+独占 IP"的差异化路线，证明了消费者愿意为独特的游戏体验付费，而非单纯的硬件参数。Niko Partners 预测的涨价策略如果成真，将进一步推高任天堂的硬件利润率——这在游戏主机行业（通常硬件亏本卖、软件赚钱）是极为罕见的。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -897,9 +1157,18 @@
       爆火 AI 短片《霍去病》导演杨涵涵澄清：<strong>3000 元仅为算力成本</strong>，非全部制作费；团队近 <strong>20 人</strong>参与，非"一人完成"。AI 降低了技术门槛，但优质内容仍需专业团队和创意投入。
     </div>
     <div class="item-source">来源：<a href="https://www.ithome.com/0/927/054.htm">IT之家</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">"3000 元仅为算力成本"的澄清揭示了 AI 内容创作的常见误解：算力成本确实趋近于零，但创意策划、团队协作、后期调整的人力成本并未消失。20 人团队参与说明优质 AI内容仍需专业分工——导演、美术、文案、技术——AI 替代的是中间的"渲染执行"环节，而非整个创作链条。 这部短片引发的争议折射出 AI 影视行业的核心矛盾：公众舆论倾向于将 AI作品简化为"AI 一键生成"，这既低估了创作者的投入，也高估了 AI 的自主能力。实际上，AI在影视中的角色更接近"超级工具"而非"替代创作者"——它将传统需要数十人数月完成的视觉特效压缩为小团队数周的工作，但剧本、分镜、情感节奏、音乐选择仍依赖人类判断。 AI 不会消灭创作者，但会消灭只做"技术执行"的岗位。传统影视产业链中，特效师、渲染工程师、动画中间画师等"将创意翻译为画面"的角色，正面临被 ……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 影视成本核算的"冰山错觉"——3000 元只是水面上的算力</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      "3000 元仅为算力成本"的澄清揭示了 AI 内容创作的常见误解：<strong>算力成本确实趋近于零，但创意策划、团队协作、后期调整的人力成本并未消失</strong>。20 人团队参与说明优质 AI 内容仍需专业分工——导演、美术、文案、技术——AI 替代的是中间的"渲染执行"环节，而非整个创作链条。<br><br>这部短片引发的争议折射出 AI 影视行业的核心矛盾：<strong>公众舆论倾向于将 AI 作品简化为"AI 一键生成"</strong>，这既低估了创作者的投入，也高估了 AI 的自主能力。实际上，AI 在影视中的角色更接近"超级工具"而非"替代创作者"——它将传统需要数十人数月完成的视觉特效压缩为小团队数周的工作，但剧本、分镜、情感节奏、音乐选择仍依赖人类判断。<br><br><strong>AI 不会消灭创作者，但会消灭只做"技术执行"的岗位</strong>。传统影视产业链中，特效师、渲染工程师、动画中间画师等"将创意翻译为画面"的角色，正面临被 AI 工具替代的风险。而导演、编剧、艺术总监等"定义创意方向"的角色，反而因为 AI 降低了执行成本而获得更大的创作自由度。《霍去病》的真正启示是：<strong>未来的影视团队会更小、更扁平，但对核心创意人才的要求会更高</strong>——AI 放大了创意的杠杆，也放大了平庸创意与卓越创意之间的差距。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -922,9 +1191,18 @@
       OpenClaw 飞书官方插件已上线，支持找资料、看档期、理解群聊上下文。A 股 <strong>10 余家公司率先布局</strong> OpenClaw 部署服务——拓维信息涨停，优刻得涨 4.5%。Agent 渗透导致 token 消耗激增（约 1000 倍），云服务成最确定受益方向。同时 OpenClaw 创始人 Peter Steinberger <strong>加入 OpenAI</strong>，外界预计 OpenClaw 可能被官方产品取代。
     </div>
     <div class="item-source">来源：<a href="https://www.linkedin.com/pulse/tech-insights-2026-week-9-johan-sanneblad-xckqf">Tech Insights Week 9</a> · <a href="https://www.ithome.com/0/927/054.htm">IT之家</a> · <a href="https://www.sohu.com/a/994035139_122014422">搜狐财经</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">10 余家 A 股公司率先布局 OpenClaw，拓维信息涨停——这波资本热情的底层逻辑是：Agent 渗透导致 Token 消耗激增约 1000 倍，云服务和 AI基建成为最确定的受益方向。当每个企业员工都在用 Agent 找资料、理解群聊、安排日程时，算力消耗将从"偶尔调用"变成"分秒必争"。 创始人 Peter Steinberger 加入OpenAI 的消息则暗示 OpenClaw 可能被整合进 OpenAI 官方产品线。这是 AI行业的常见模式：开源项目/独立工具证明了市场需求，然后被大厂收编。对已经部署 OpenClaw的企业而言，这既是利好（获得 OpenAI 级别的技术支持），也是风险（产品路线图可能被大厂战略绑架）。 更深层来看，Agent 生态的"安卓时刻"正在到来：飞书和钉钉是中国企业协作的两大入口，谁能率先在这两个……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜Agent 从消费端走向企业端，飞书+钉钉是中国最大入口</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      10 余家 A 股公司率先布局 OpenClaw，拓维信息涨停——<strong>这波资本热情的底层逻辑是：Agent 渗透导致 Token 消耗激增约 1000 倍，云服务和 AI 基建成为最确定的受益方向</strong>。当每个企业员工都在用 Agent 找资料、理解群聊、安排日程时，算力消耗将从"偶尔调用"变成"分秒必争"。<br><br>创始人 Peter Steinberger 加入 OpenAI 的消息则暗示 <strong>OpenClaw 可能被整合进 OpenAI 官方产品线</strong>。这是 AI 行业的常见模式：开源项目/独立工具证明了市场需求，然后被大厂收编。对已经部署 OpenClaw 的企业而言，这既是利好（获得 OpenAI 级别的技术支持），也是风险（产品路线图可能被大厂战略绑架）。<br><br>更深层来看，<strong>Agent 生态的"安卓时刻"正在到来</strong>：飞书和钉钉是中国企业协作的两大入口，谁能率先在这两个平台上建立 Agent 生态，谁就掌握了企业 AI 化的分发渠道。OpenClaw 选择飞书作为首发平台，说明字节跳动在 AI Agent 的企业端布局上暂时领先于阿里（钉钉）。但真正的竞争才刚刚开始——<strong>开放平台获得开发者生态，封闭平台获得体验控制权</strong>，飞书和钉钉将在 2026 年围绕 Agent 展开激烈的平台战争。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -938,9 +1216,18 @@
       华为 <strong>HarmonyOS Connect 伙伴峰会暨鸿蒙智选 2026 年春季新品发布会</strong>定于 3 月 10 日上海举行。Mate 80 系列销量已突破 <strong>405 万台</strong>，AI 眼镜预计 4 月与 Pura 90 同步发布。
     </div>
     <div class="item-source">来源：<a href="https://www.ithome.com/0/927/054.htm">IT之家</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">Mate 80 销量 405 万台说明华为在高端市场已经站稳脚跟，在苹果和三星的夹击下走出了自己的差异化路线。鸿蒙智选 2026 春季新品发布会的看点在于 AI眼镜——如果华为能在千问 G1 的价格战旁边打出差异化（如与 Mate 系列深度联动、基于盘古大模型的专属 AI 功能），将进一步巩固鸿蒙 IoT 生态的用户黏性。 华为的 AI布局正从"单点产品"转向"全场景生态"：手机（Mate/Pura 系列）→穿戴（Watch/眼镜）→ 家居（鸿蒙智选）→ 汽车（HarmonyOS 智行）→云（华为云+昇腾芯片）。这个生态的核心连接点是 HarmonyOS——统一的操作系统让所有设备之间实现无缝协同，这是苹果生态的"中国版"，但覆盖范围更广（苹果没有涉足智能家居和汽车 OS）。3 月 10 日发布会还有一个隐含看点：HarmonyOS C……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜鸿蒙生态"全屋智能+AI"双轮驱动</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      Mate 80 销量 405 万台说明<strong>华为在高端市场已经站稳脚跟</strong>，在苹果和三星的夹击下走出了自己的差异化路线。鸿蒙智选 2026 春季新品发布会的看点在于 AI 眼镜——如果华为能在千问 G1 的价格战旁边打出差异化（如与 Mate 系列深度联动、基于盘古大模型的专属 AI 功能），将进一步巩固鸿蒙 IoT 生态的用户黏性。<br><br>华为的 AI 布局正从"单点产品"转向<strong>"全场景生态"</strong>：手机（Mate/Pura 系列）→ 穿戴（Watch/眼镜）→ 家居（鸿蒙智选）→ 汽车（HarmonyOS 智行）→ 云（华为云+昇腾芯片）。这个生态的核心连接点是 HarmonyOS——统一的操作系统让所有设备之间实现无缝协同，这是苹果生态的"中国版"，但覆盖范围更广（苹果没有涉足智能家居和汽车 OS）。<br><br>3 月 10 日发布会还有一个隐含看点：<strong>HarmonyOS Connect 伙伴峰会</strong>将展示鸿蒙生态的第三方接入规模。如果华为能宣布"1000+ 品牌、5000+ 产品接入鸿蒙智选"，将标志着鸿蒙从"华为自家生态"升级为"开放行业标准"。这对中国 IoT 产业的影响是结构性的——<strong>鸿蒙可能成为继 Android 之后第二个被广泛采用的 IoT 操作系统</strong>。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -954,9 +1241,18 @@
       据 Lexology/McKinsey 分析，2026 游戏行业三大趋势：① AI 从实验工具转为<strong>核心开发功能</strong>，Steam 新游约 20% 公开使用 AI（同比翻倍）；② 中国<strong>新增外资准入路径</strong>，版号审批加速（2025 年 1772 款，+25%）；③ 全球玩家保护立法加速，未成年人保护和战利品箱监管成焦点。移动游戏亚洲/中东增长 <strong>3.8%</strong>，高于西方 1-2%。
     </div>
     <div class="item-source">来源：<a href="https://www.lexology.com/library/detail.aspx?g=c6e180b3-a4ab-48d3-a42a-53b9f81d6093">Lexology</a> · <a href="https://nikopartners.com/niko-partners-2026-predictions/">Niko Partners</a> · <a href="https://www.gamesindustry.biz/games-industry-legal-trends-to-watch-in-2026">GamesIndustry.biz</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">三大趋势的交汇点值得关注：① Steam 新游 20% 使用 AI（翻倍）说明 AI在游戏开发中已从实验走向主流；② 中国新增外资准入路径+版号加速，为海外游戏公司进入中国和中国厂商出海都创造了空间；③ 全球玩家保护立法加速意味着合规成本上升，大厂受益、小团队承压。 AI 融入游戏开发的深度正在超出预期。四大应用方向各有不同的成熟度：内容生成（地图/贴图）已经可以直接用于生产；NPC 动态对话正处于从 Demo 到产品的过渡期；自动化测试已被多个 AAA 工作室采用；流程加速（动画/本地化/配音）是当前 ROI 最高的场景。但玩家信任是最大挑战——Steam 社区对"AI 生成内容"的标签非常敏感，贸然标注可能导致差评潮。 亚洲/中东移动游戏 3.8% 的增长远超西方（1-2%），是中国游戏出海的核心方向。版号审批加速（2025 年 1772 ……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜AI 融入游戏开发不可逆，但玩家信任是最大挑战</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      三大趋势的交汇点值得关注：① Steam 新游 20% 使用 AI（翻倍）说明<strong> AI 在游戏开发中已从实验走向主流</strong>；② 中国新增外资准入路径+版号加速，为海外游戏公司进入中国和中国厂商出海都创造了空间；③ 全球玩家保护立法加速意味着合规成本上升，大厂受益、小团队承压。<br><br>AI 融入游戏开发的深度正在超出预期。<strong>四大应用方向各有不同的成熟度</strong>：内容生成（地图/贴图）已经可以直接用于生产；NPC 动态对话正处于从 Demo 到产品的过渡期；自动化测试已被多个 AAA 工作室采用；流程加速（动画/本地化/配音）是当前 ROI 最高的场景。但玩家信任是最大挑战——Steam 社区对"AI 生成内容"的标签非常敏感，贸然标注可能导致差评潮。<br><br>亚洲/中东移动游戏 3.8% 的增长远超西方（1-2%），<strong>是中国游戏出海的核心方向</strong>。版号审批加速（2025 年 1772 款，+25%）虽然利好国内开发者，但真正的增长引擎在海外——东南亚、中东、拉美的移动游戏市场仍处于高速增长期。中国新增的外资准入路径也可能改变竞争格局：<strong>如果 EA、Ubisoft 等欧美大厂获准在中国设立全资子公司</strong>，国内游戏市场的竞争烈度将显著上升。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -979,9 +1275,18 @@
       3 月 9 日，十四届全国人大四次会议第二次全体会议举行。全国人大常委会工作报告提出，今年将<strong>加强人工智能等领域立法研究</strong>。中国法学会副会长许安标表示："AI 立法是<strong>世界性难题</strong>，既要规范和保障，也要促进，使人工智能健康稳定发展。"最高法、最高检同样对规范人工智能发展有部署。报告同时提出加强<strong>重点领域、新兴领域、涉外领域</strong>立法。
     </div>
     <div class="item-source">来源：<a href="https://k.sina.com.cn/article_5953190046_162d6789e06702rsrg.html">环球时报/新浪</a> · <a href="https://www.cls.cn/detail/2306704">财联社</a> · <a href="https://new.qq.com/rain/a/20260309A037DU00">腾讯新闻</a> ｜ 3月9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">"既要规范保障，也要促进发展"——这句话定调了中国 AI 立法的核心原则：不搞一刀切禁止，而是在监管和创新之间寻找平衡。最高法、最高检同步部署意味着 AI相关的司法解释和执法标准将加速落地。这比单纯的立法更具实操影响——法官如何判定 AI生成内容的版权归属、AI 决策的责任认定，将直接影响企业的业务边界。 对企业而言，"涉外领域立法"尤其值得关注——这可能涉及 AI 技术出口管制和数据跨境流动规则。DeepSeek 已经被多国政府禁用，如果中国也出台对等的 AI 技术出口限制，将直接影响国内AI 公司的全球化战略。同时，"重点领域立法"可能针对医疗 AI、自动驾驶、金融 AI等高风险场景出台专项规定。 中国 AI 立法的节奏和力度将深刻影响产业格局。与欧盟 AIAct 的"全面管控"和美国的"行业自律"不同，中国可能走"分级分类监管"路……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜"规范+促进"定调中国 AI 立法，合规成为最大变量</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      "既要规范保障，也要促进发展"——这句话定调了中国 AI 立法的核心原则：<strong>不搞一刀切禁止，而是在监管和创新之间寻找平衡</strong>。最高法、最高检同步部署意味着 AI 相关的司法解释和执法标准将加速落地。这比单纯的立法更具实操影响——法官如何判定 AI 生成内容的版权归属、AI 决策的责任认定，将直接影响企业的业务边界。<br><br>对企业而言，<strong>"涉外领域立法"尤其值得关注</strong>——这可能涉及 AI 技术出口管制和数据跨境流动规则。DeepSeek 已经被多国政府禁用，如果中国也出台对等的 AI 技术出口限制，将直接影响国内 AI 公司的全球化战略。同时，"重点领域立法"可能针对医疗 AI、自动驾驶、金融 AI 等高风险场景出台专项规定。<br><br>中国 AI 立法的节奏和力度将深刻影响产业格局。<strong>与欧盟 AI Act 的"全面管控"和美国的"行业自律"不同</strong>，中国可能走"分级分类监管"路线——对通用大模型设定基础安全要求，对特定行业应用设定更严格的准入标准。这意味着 AI 立法将成为中国科技企业 2026 年最大的合规变量——<strong>合规能力可能取代技术能力，成为 AI 公司的核心竞争力之一</strong>。率先建立合规体系的公司将获得先发优势，而忽视合规的公司可能面临产品下架甚至行政处罚的风险。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -995,9 +1300,18 @@
       英国政府原计划推进数据法案，允许 Google、OpenAI 等 AI 公司<strong>在未经许可的情况下使用受版权保护的作品训练模型</strong>。经两个月公众咨询后，各利益相关方普遍反映<strong>负面</strong>。据《金融时报》3 月 6 日报道，版权问题将被<strong>暂时搁置</strong>，该 AI 法案<strong>预计不会纳入今年 5 月的国王演讲</strong>议程。部长决定重新研究方案，寻找替代路径。创意产业界视此为阶段性胜利。
     </div>
     <div class="item-source">来源：<a href="https://new.qq.com/rain/a/20260307A04YTQ00">Financial Times/IT之家/腾讯新闻</a> · <a href="https://www.sohu.com/a/993212098_130887">搜狐</a> ｜ 3月6-7日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">英国推迟 AI 版权立法的意义超出英国本身——它向全球监管机构释放了一个信号：公众咨询中"普遍负面"的反馈足以让政府暂缓立法。创意产业的集体抗议证明了组织化力量对 AI政策的影响力。这给全球的创作者维权提供了一个成功模板：联合行动比个体申诉有效得多。 对OpenAI/Google 等公司而言，"合法使用受版权作品训练模型"的法律基础仍然不确定。英国原本是最有可能率先合法化"训练数据豁免"的国家（其知识产权法框架相对灵活），现在这扇门暂时关上了。美国的纽约时报 vs OpenAI 案件仍在审理中，欧盟 AI Act的版权条款要求"训练数据来源透明"但未明确禁止。这意味着全球 AI公司在版权问题上处于一种"法律灰色地带"——在没有明确判例或立法之前，每次模型训练都面临潜在的法律风险。 版权问题正成为 AI 产业最大的法律不确定性来源。如果最终……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜英国推迟立法的全球连锁反应：版权是 AI 最大法律风险</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      英国推迟 AI 版权立法的意义超出英国本身——<strong>它向全球监管机构释放了一个信号：公众咨询中"普遍负面"的反馈足以让政府暂缓立法</strong>。创意产业的集体抗议证明了组织化力量对 AI 政策的影响力。这给全球的创作者维权提供了一个成功模板：联合行动比个体申诉有效得多。<br><br>对 OpenAI/Google 等公司而言，<strong>"合法使用受版权作品训练模型"的法律基础仍然不确定</strong>。英国原本是最有可能率先合法化"训练数据豁免"的国家（其知识产权法框架相对灵活），现在这扇门暂时关上了。美国的纽约时报 vs OpenAI 案件仍在审理中，欧盟 AI Act 的版权条款要求"训练数据来源透明"但未明确禁止。这意味着全球 AI 公司在版权问题上处于一种<strong>"法律灰色地带"</strong>——在没有明确判例或立法之前，每次模型训练都面临潜在的法律风险。<br><br><strong>版权问题正成为 AI 产业最大的法律不确定性来源</strong>。如果最终各国普遍要求 AI 公司为训练数据付费，大模型的训练成本将大幅上升——据估计，为 GPT-5 级别模型的训练数据支付合理版权费可能需要数十亿美元。这将进一步巩固资金雄厚的大厂（OpenAI/Google/Anthropic）的优势，而中小型 AI 公司和开源社区将面临更高的合规壁垒。创意产业的胜利可能最终加速 AI 行业的寡头化。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -1011,9 +1325,18 @@
       全球 AI 监管进入<strong>密集落地期</strong>：英国 ICO 和爱尔兰 DPC 正调查 Grok 的数据处理行为；多国政府<strong>禁止在政务系统中使用 DeepSeek</strong>；德国版权组织 GEMA 已起诉 Suno AI 和 OpenAI，纽约时报起诉 Perplexity AI。游戏行业方面，Valve 收紧了"未披露 AI 训练数据"游戏的上架条件，被视为行业自律升级信号。
     </div>
     <div class="item-source">来源：<a href="https://blog.mean.ceo/new-ai-model-releases-news-march-2026/">Mean CEO Blog</a> · <a href="https://www.gamesindustry.biz/games-industry-legal-trends-to-watch-in-2026">GamesIndustry.biz</a> ｜ 3月8-9日</div>
+<<<<<<< HEAD
     <div class="insight-box">
       <div class="insight-label">💡 深度洞察</div>
       <div class="insight-content">多国禁用 DeepSeek、GEMA 起诉 Suno 和 OpenAI、纽约时报诉Perplexity——这些事件共同指向一个趋势：AI 的法律和地缘政治风险正在快速叠加。2025 年 AI 公司面对的主要是技术风险（模型幻觉、安全漏洞），2026年则要同时应对技术风险+法律风险+地缘风险的三重压力。 Valve 收紧"未披露 AI训练数据"游戏的上架条件，代表了平台自律的新标杆。当监管机构还在争论"要不要管"时，平台已经开始用商业规则实施事实上的监管。这种"平台先行、政府跟进"的模式可能成为 AI治理的主流路径——Steam、App Store、Google Play的上架政策对开发者的约束力，实际上比法律条文更直接、更即时。 全球 AI治理正在分化为三个阵营："安全禁用派"（多国政府禁用 DeepSeek/TikTok 等中国A……</div>
+=======
+        <div class="insight-toggle" onclick="toggleInsight(this)">
+      <span class="insight-title">🔍 深度洞察｜全球 AI 治理分化：安全禁用派 vs 开放创新派</span>
+      <span class="insight-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="insight-body">
+      多国禁用 DeepSeek、GEMA 起诉 Suno 和 OpenAI、纽约时报诉 Perplexity——<strong>这些事件共同指向一个趋势：AI 的法律和地缘政治风险正在快速叠加</strong>。2025 年 AI 公司面对的主要是技术风险（模型幻觉、安全漏洞），2026 年则要同时应对技术风险+法律风险+地缘风险的三重压力。<br><br>Valve 收紧"未披露 AI 训练数据"游戏的上架条件，代表了<strong>平台自律的新标杆</strong>。当监管机构还在争论"要不要管"时，平台已经开始用商业规则实施事实上的监管。这种"平台先行、政府跟进"的模式可能成为 AI 治理的主流路径——Steam、App Store、Google Play 的上架政策对开发者的约束力，实际上比法律条文更直接、更即时。<br><br>全球 AI 治理正在分化为三个阵营：<strong>"安全禁用派"</strong>（多国政府禁用 DeepSeek/TikTok 等中国 AI 产品）、<strong>"版权保护派"</strong>（GEMA/NYT 等通过诉讼维权）、<strong>"开放创新派"</strong>（部分国家推动 AI 沙盒监管）。对中国 AI 公司而言，地缘政治风险是最难对冲的——产品被禁用不是因为技术不好，而是因为出身。<strong>2026 年可能是 AI 从"自由发展期"进入"监管落地期"的分水岭</strong>，企业需要将"合规能力"和"地缘政治风险管理"提升到与技术研发同等重要的战略高度。
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
     </div>
 
   </div>
@@ -1088,7 +1411,22 @@
     backBtn.classList.toggle('visible', window.scrollY > 400);
   });
 
+<<<<<<< HEAD
 
+=======
+  // Insight toggle
+  function toggleInsight(el) {
+    const body = el.nextElementSibling;
+    const isOpen = el.classList.contains('open');
+    if (isOpen) {
+      el.classList.remove('open');
+      body.classList.remove('open');
+    } else {
+      el.classList.add('open');
+      body.classList.add('open');
+    }
+  }
+>>>>>>> 9500c78390a04a057248cfbd7d62b5cc7ca667c8
 </script>
 
 </body>
