@@ -1,0 +1,58 @@
+# 科技资讯日报 — 统一配置
+
+# === 邮件推送 ===
+email:
+  smtp_server: smtp.qq.com
+  smtp_port: 465  # SSL
+  sender: 422548579@qq.com
+  # 授权码存在 macOS 钥匙串：service=qq-smtp-auth, account=422548579@qq.com
+  auth_keychain_service: qq-smtp-auth
+
+  recipients:
+    - fabzeng@tencent.com
+    - ryanpang@tencent.com
+    - yuxiachen@tencent.com
+    - winstonchen@tencent.com
+    - cicipei@tencent.com
+    - laviahuo@tencent.com
+    - allenzqwei@tencent.com
+    - alexisyang@tencent.com
+
+# === 微信公众号 ===
+wechat:
+  appid: wxc0acff84c3ba27b0
+  appsecret: 7af6a2678e804ecbe3425f0889c1d28d
+  cover_image: ~/Desktop/cover.png
+  publisher_skill_path: ~/.codebuddy/skills/wechat-publisher-skill/src
+
+# === GitHub Pages ===
+github_pages:
+  base_url: https://alexisyang718-beep.github.io/ai-archive/brief/
+
+# === 主题色 ===
+theme:
+  accent: "#C96442"
+  accent_hover: "#B5573A"
+  bg: "#FAF9F5"
+  bg_warm: "#F5F0E8"
+  card: "#FFFFFF"
+  text: "#1A1A1A"
+  text_secondary: "#6B6560"
+  text_tertiary: "#9B9590"
+
+# === 日报板块 ===
+sections:
+  - icon: "🤖"
+    name: "AI 模型与产品"
+  - icon: "📱"
+    name: "手机与消费电子"
+  - icon: "🔧"
+    name: "芯片与算力"
+  - icon: "🎮"
+    name: "游戏行业"
+  - icon: "🏢"
+    name: "科技行业动态"
+  - icon: "📜"
+    name: "政策与监管"
+  - icon: "📦"
+    name: "GitHub 高增长项目"

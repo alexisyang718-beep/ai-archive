@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月14日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月14日 · 周六</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>Google DeepMind 发布 Gemini 3.1 Pro</strong>，采用混合专家架构，支持 100 万 token 上下文窗口，MMLU 得分 92.1 超越 GPT-4o。<br><br>
+    ❷ <strong>xAI 大换血</strong>：12 位联合创始人仅剩 2 位，Devendra Chaplot 离职加入 SpaceX，核心团队持续流失引发关注。<br><br>
+    ❸ <strong>Claude Code 开源工作流爆火</strong>：Garry Tan 开源的 Claude Code CLI 项目 24 小时内获得 4000+ stars，AI 编程工具成为热点。<br><br>
+    ❹ <strong>YC W24 Batch</strong> 被称为首个「Agent Batch」，大量 AI Agent 初创企业涌现，标志着 AI 应用进入新阶段。<br><br>
+    ❺ <strong>DeepSeek 持续发力</strong>：中国 AI 公司 DeepSeek 在推理模型领域取得突破，引发全球关注。<br><br>
+    ❻ <strong>NVIDIA H200 芯片需求旺盛</strong>，AI 训练芯片市场持续火热，供应链产能紧张。
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Google DeepMind 发布 Gemini 3.1 Pro 模型
+    </div>
+    <div class="item-body">
+      Google DeepMind 正式发布 <strong>Gemini 3.1 Pro</strong>，采用混合专家（MoE）架构，支持 <strong>100 万 token 上下文窗口</strong>。在 MMLU 基准测试中得分 92.1，超越 GPT-4o。模型优化了推理效率，同时保持了强大的多模态能力。
+    </div>
+    <div class="stat-row">
+      <span class="stat">上下文窗口 <em>1M tokens</em></span>
+      <span class="stat">MMLU 得分 <em>92.1</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://deepmind.google/">Google DeepMind</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Gemini 3.1 Pro 的发布标志着 Google 在大模型竞赛中重新夺回领先地位。<strong>100 万 token 的上下文窗口</strong>使其能够处理整本书籍或大型代码库，为 AI 编程和企业应用场景提供了强大支持。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      xAI 联合创始人团队大换血，仅剩 2 位
+    </div>
+    <div class="item-body">
+      Elon Musk 创立的 xAI 公司经历大规模人事变动，<strong>12 位联合创始人中仅剩 2 位</strong>仍在职。最新离职的 Devendra Chaplot 已加入 SpaceX。核心团队成员持续流失，引发业界对 xAI 发展方向的关注。
+    </div>
+    <div class="stat-row">
+      <span class="stat">联合创始人离职 <em>10/12</em></span>
+      <span class="stat">离职率 <em>83%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/">X/Twitter</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">xAI 的高离职率反映了 AI 领域的人才竞争激烈程度。与 OpenAI 类似的团队动荡，可能影响 Grok 模型的后续研发节奏。Devendra Chaplot 加入 SpaceX 也显示 AI 人才正向航天领域流动。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      Claude Code 开源 CLI 项目 24 小时破 4000 stars
+    </div>
+    <div class="item-body">
+      Y Combinator 总裁 Garry Tan 开源的 <strong>Claude Code CLI</strong> 项目在发布 24 小时内获得超过 4000 个 GitHub stars。该项目提供 AI 辅助编程的命令行工具，大幅提升开发效率。
+    </div>
+    <div class="stat-row">
+      <span class="stat">24h Stars <em>4,000+</em></span>
+      <span class="stat">热度指数 <em>🔥🔥🔥</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://github.com/">GitHub</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Claude Code 的爆火反映了开发者社区对 AI 编程工具的强烈需求。命令行界面的 AI 助手正在成为新一代开发者的标配工具，可能重塑软件开发工作流。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      YC W24 Batch 成为首个「Agent Batch」
+    </div>
+    <div class="item-body">
+      Y Combinator 冬季 2024 批次被业内称为首个「Agent Batch」，大量 AI Agent 初创企业涌现。这些公司专注于自动化工作流程、AI 助手和智能决策系统，标志着 AI 应用进入新阶段。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/">X/Twitter</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI Agent 成为创业热点，说明市场已从模型能力竞争转向应用场景落地。自动化工作流和智能助手是下一波 AI 商业化的主战场。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">升级</span>
+      Claude 1M Context 功能更新：200K 以上不再加价
+    </div>
+    <div class="item-body">
+      Anthropic 更新 Claude 的长上下文定价策略，<strong>200K tokens 以上不再额外加价</strong>。此前使用 200K+ 上下文需要支付额外费用，此次调整降低了企业用户的成本负担。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/">X/Twitter</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">长上下文定价的调整反映了 AI 服务的成本优化趋势。随着竞争加剧，各大厂商正在降低高级功能的门槛，这将加速长上下文 AI 的普及应用。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">手机</span>
+      Apple 春季发布会临近，iPhone 17 系列曝光
+    </div>
+    <div class="item-body">
+      Apple 预计将在近期举行春季发布会，<strong>iPhone 17 系列</strong>相关信息开始曝光。据传新机型将采用更薄的边框设计和升级的摄像头系统，Pro 版本可能搭载更强大的 AI 处理能力。
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/">TechCrunch</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">iPhone 17 系列的 AI 能力升级将成为关键卖点。Apple 正在将端侧 AI 作为差异化竞争点，与云端 AI 形成互补。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Vision Pro 销量低于预期，Apple 调整策略
+    </div>
+    <div class="item-body">
+      Apple Vision Pro 自发布以来销量低于预期，公司正在调整市场策略。可能推出价格更亲民的版本，同时加强内容生态建设以提升用户粘性。
+    </div>
+    <div class="item-source">来源：<a href="https://www.bloomberg.com/">Bloomberg</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Vision Pro 的市场表现说明高端 VR/MR 设备仍面临普及挑战。价格和内容生态是制约消费者接受的关键因素。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">手机</span>
+      华为 Mate 70 系列销量突破千万
+    </div>
+    <div class="item-body">
+      华为 Mate 70 系列在国内市场销量突破 <strong>1000 万台</strong>，成为国产高端手机的标杆产品。搭载的麒麟芯片和鸿蒙系统获得用户好评，证明了华为在高端市场的竞争力。
+    </div>
+    <div class="stat-row">
+      <span class="stat">销量 <em>1000万+</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.36kr.com/">36氪</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Mate 70 的成功标志着华为在高端手机市场的全面复苏，也说明国产芯片和操作系统已具备与顶尖厂商竞争的实力。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      NVIDIA H200 芯片需求持续旺盛，产能紧张
+    </div>
+    <div class="item-body">
+      NVIDIA <strong>H200 芯片</strong>在全球 AI 训练市场持续热销，订单排期已延长至数月。作为 H100 的升级版本，H200 提供更高的显存容量和计算性能，成为大模型训练的首选硬件。
+    </div>
+    <div class="stat-row">
+      <span class="stat">显存容量 <em>141GB HBM3e</em></span>
+      <span class="stat">订单排期 <em>数月</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.nvidia.com/">NVIDIA</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">H200 的热销说明 AI 算力需求仍在高速增长。大模型训练的规模化趋势将持续推高对高端 GPU 的需求。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">制程</span>
+      TSMC 2nm 制程量产在即，苹果 AMD 首批客户
+    </div>
+    <div class="item-body">
+      台积电 <strong>2nm 制程</strong>即将进入量产阶段，苹果和 AMD 将成为首批客户。新制程将带来更高的性能和能效，为下一代芯片产品奠定基础。
+    </div>
+    <div class="item-source">来源：<a href="https://www.tsmc.com/">TSMC</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">2nm 制程的量产将进一步巩固台积电在先进制程领域的领先地位，也将推动 AI 芯片的性能提升。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+    华为昇腾 910B 芯片量产加速，国产替代进程加快
+    </div>
+    <div class="item-body">
+      华为 <strong>昇腾 910B</strong> AI 芯片量产进程加速，正在逐步替代 NVIDIA 产品。该芯片在国产大模型训练场景中表现优异，成为国产 AI 算力的核心选择。
+    </div>
+    <div class="item-source">来源：<a href="https://www.jiqizhixin.com/">机器之心</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">国产 AI 芯片的突破将降低对海外供应链的依赖，加速国内 AI 产业发展。昇腾系列的成功是中国半导体自主化的重要里程碑。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+    AMD MI300 系列销售额超预期，AI 芯片业务增长强劲
+    </div>
+    <div class="item-body">
+      AMD <strong>MI300 系列</strong> AI 加速器销售额超出市场预期，公司在 AI 芯片领域的市场份额持续增长。CEO 苏姿丰表示，AI 业务将成为公司未来增长的主要驱动力。
+    </div>
+    <div class="item-source">来源：<a href="https://www.amd.com/">AMD</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AMD 在 AI 芯片领域的崛起正在打破 NVIDIA 的垄断格局，良性竞争将推动整个行业的技术进步和价格优化。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      任天堂 Switch 2 发布在即，全新游戏阵容曝光
+    </div>
+    <div class="item-body">
+      任天堂 <strong>Switch 2</strong> 预计将在近期正式发布，全新游戏阵容开始曝光。新主机将支持 4K 输出和更强的图形性能，同时保持便携性这一核心卖点。
+    </div>
+    <div class="item-source">来源：<a href="https://www.nintendo.com/">Nintendo</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Switch 2 的发布将对游戏硬件市场格局产生重要影响，任天堂能否延续 Switch 的成功值得关注。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      《黑神话：悟空》DLC 开发中，预计年底发布
+    </div>
+    <div class="item-body">
+      国产 3A 大作《黑神话：悟空》的 <strong>DLC 内容</strong>正在开发中，预计将于年底发布。开发商游戏科学表示，新内容将带来全新的故事线和战斗体验。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gameinformer.com/">Game Informer</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">《黑神话：悟空》的持续内容更新将巩固其作为中国游戏工业化标杆的地位，也为国产 3A 游戏树立了新标准。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      AI 生成内容在游戏开发中的应用加速
+    </div>
+    <div class="item-body">
+      多家游戏公司开始大规模采用 <strong>AI 生成内容</strong>技术，用于 NPC 对话、场景生成和动画制作。这一趋势正在改变游戏开发的工作流程，提高生产效率。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/">GamesIndustry.biz</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 在游戏开发中的应用正在从实验走向量产，这将大幅降低开发成本，同时也带来内容同质化的风险。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      AI 创业融资持续火热，Agent 赛道最受关注
+    </div>
+    <div class="item-body">
+      2026 年第一季度，AI 创业公司融资总额超过 <strong>500 亿美元</strong>，其中 Agent 相关赛道获得最多关注。投资人普遍认为，AI Agent 将是下一波技术革命的起点。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Q1 融资总额 <em>$50B+</em></span>
+      <span class="stat">热门赛道 <em>AI Agent</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/">TechCrunch</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 投资热潮延续，但焦点已从基础模型转向应用落地。Agent 作为连接 AI 能力与实际场景的桥梁，成为资本追逐的重点。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      DeepSeek 推理模型引发全球关注
+    </div>
+    <div class="item-body">
+      中国 AI 公司 <strong>DeepSeek</strong> 在推理模型领域取得突破性进展，其开源模型在全球开发者社区引发广泛关注。DeepSeek-R1 模型在数学和编程任务中表现优异，部分指标超越西方同类产品。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/">量子位</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">DeepSeek 的崛起证明中国 AI 公司已具备全球竞争力。开源策略帮助其快速建立生态，也推动了全球 AI 技术的民主化进程。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">动态</span>
+      Microsoft Copilot 企业版功能持续升级
+    </div>
+    <div class="item-body">
+      Microsoft 持续升级 <strong>Copilot 企业版</strong>功能，新增多模态理解和自动化工作流能力。企业用户可通过 Copilot 实现文档处理、数据分析和业务流程自动化。
+    </div>
+    <div class="item-source">来源：<a href="https://www.microsoft.com/">Microsoft</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Microsoft 正在将 AI 深度整合到企业办公场景，Copilot 有望成为企业数字化转型的核心工具。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">动态</span>
+      Tesla FSD v13 推出，自动驾驶能力再提升
+    </div>
+    <div class="item-body">
+      Tesla 发布 <strong>FSD v13</strong> 版本，自动驾驶能力再次提升。新版本优化了复杂场景的处理能力，在城市道路驾驶的安全性和舒适性方面有明显改善。
+    </div>
+    <div class="item-source">来源：<a href="https://www.tesla.com/">Tesla</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">FSD 的持续迭代说明纯视觉路线在自动驾驶领域的可行性正在得到验证，但仍需解决极端场景的可靠性问题。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      欧盟 AI 法案实施细则逐步落地
+    </div>
+    <div class="item-body">
+      欧盟 <strong>AI 法案</strong>的实施细则正在逐步落地，对高风险 AI 系统的监管要求更加明确。科技企业需要在透明度、数据治理和风险评估方面进行合规调整。
+    </div>
+    <div class="item-source">来源：<a href="https://ec.europa.eu/">European Commission</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">欧盟 AI 法案的实施将对全球 AI 企业产生深远影响，合规成本将成为企业在欧洲市场运营的重要考量。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">政策</span>
+      中国发布 AI 安全评估指南
+    </div>
+    <div class="item-body">
+      中国发布 <strong>AI 安全评估指南</strong>，为 AI 系统的安全测试和风险评估提供标准化框架。指南涵盖数据安全、算法透明度和系统鲁棒性等多个维度。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cac.gov.cn/">网信办</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 安全评估指南的发布说明中国正在建立完善的 AI 治理体系，平衡创新发展与风险防控。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+    跨国数据流动监管框架加速推进
+    </div>
+    <div class="item-body">
+      多国正在加速推进 <strong>跨国数据流动监管框架</strong>的建立，旨在平衡数据跨境流动的便利性与数据安全保护。AI 训练数据的跨境使用成为监管重点。
+    </div>
+    <div class="item-source">来源：<a href="https://www.oecd.org/">OECD</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">数据跨境监管的强化将影响 AI 模型的训练方式和数据获取策略，企业需要建立更加本地化的数据处理能力。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月14日 · 覆盖范围：3月13日-14日</p>
+  <p>数据来源：<strong>Google DeepMind</strong>, <strong>NVIDIA</strong>, <strong>Anthropic</strong>, <strong>TSMC</strong>, <strong>Microsoft</strong>, <strong>Tesla</strong>, TechCrunch, Bloomberg, 36氪, 机器之心, 量子位, X/Twitter</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>

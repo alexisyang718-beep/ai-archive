@@ -1,0 +1,111 @@
+# 科技资讯日报 — 搜索关键词（按板块分类）
+# 更新：2026-03-13
+# 策略：按板块逐个搜索，每板块 2-3 组关键词。允许跨板块重复（如 Google 同时出现在 AI、手机、科技）。
+# 用法：en 用于 Tavily/web_search，zh 用于百度/微信/中文站
+# AI 必须使用这些关键词搜索，不要自行编造
+
+# ── 全局（每次必搜，覆盖当日热点）──
+global:
+  en:
+    - "AI news today"
+    - "tech news today"
+  zh:
+    - "AI 最新消息"
+    - "科技新闻 今日"
+
+# ── 1. AI 模型与产品 ──
+# 搜索时分 2-3 轮：第一轮搜核心公司，第二轮搜中国 AI，第三轮搜趋势
+ai_models:
+  en:
+    - "OpenAI OR ChatGPT OR GPT-5 OR Codex OR Sora"
+    - "Google DeepMind OR Gemini OR Gemma OR AlphaFold"
+    - "Anthropic OR Claude OR Meta AI OR LLaMA OR Llama 4"
+    - "Microsoft Copilot OR Azure AI OR xAI OR Grok"
+    - "Mistral OR Cohere OR Stability AI OR Midjourney OR Runway OR Perplexity OR Cursor"
+    - "DeepSeek OR Baidu ERNIE OR MiniMax OR Moonshot AI OR Kimi"
+    - "LLM breakthrough OR reasoning model OR AI agent OR agentic AI OR multimodal AI"
+  zh:
+    - "OpenAI OR ChatGPT OR GPT-5 OR Sora"
+    - "谷歌 AI OR DeepMind OR Gemini OR Anthropic OR Claude"
+    - "Meta AI OR LLaMA OR 微软 AI OR Copilot"
+    - "DeepSeek OR 深度求索 OR 文心一言 OR 百度 AI"
+    - "智谱 OR GLM OR ChatGLM OR 通义千问 OR 阿里 AI"
+    - "MiniMax OR 月之暗面 OR Kimi OR 豆包 OR 字节 AI"
+    - "百川智能 OR 零一万物 OR 阶跃星辰 OR 商汤 AI"
+    - "大模型 发布 OR 开源 OR AI 智能体 OR AI Agent"
+
+# ── 2. 手机与消费电子 ──
+# Google、Apple 等在此板块关注硬件产品，与 AI 板块有交叉，没关系
+mobile:
+  en:
+    - "Apple iPhone OR Vision Pro OR iOS OR MacBook"
+    - "Samsung Galaxy OR Google Pixel OR Android"
+    - "Huawei OR Xiaomi OR OPPO OR vivo OR Honor smartphone"
+    - "Meta Quest OR AR glasses OR wearable AI"
+    - "smartphone AI features OR on-device AI OR foldable phone"
+  zh:
+    - "苹果 iPhone OR Apple OR iOS OR MacBook"
+    - "三星 Galaxy OR 三星手机 OR 谷歌 Pixel"
+    - "华为手机 OR Mate OR 鸿蒙 OR HarmonyOS"
+    - "小米手机 OR 小米 SU7 OR Xiaomi OR 澎湃 OS"
+    - "OPPO OR 一加 OR vivo OR iQOO OR 荣耀 OR Honor"
+    - "AR 眼镜 OR 智能穿戴 OR AI 硬件 OR 折叠屏"
+
+# ── 3. 芯片与算力 ──
+# NVIDIA、AMD 等在此关注芯片产品，与 AI 板块有交叉
+chips:
+  en:
+    - "NVIDIA OR H200 OR B200 OR GB200 OR Blackwell OR CUDA"
+    - "AMD OR MI300 OR ROCm OR Intel Gaudi OR Intel Foundry"
+    - "TSMC OR Qualcomm OR Apple silicon OR Broadcom AI chip"
+    - "Huawei Ascend OR Cambricon OR China AI chip"
+    - "AI chip shortage OR GPU supply OR AI data center"
+  zh:
+    - "英伟达 OR NVIDIA OR H200 OR B200 OR GB200 OR Blackwell"
+    - "AMD OR MI300 OR 英特尔 OR Intel OR Gaudi"
+    - "台积电 OR TSMC OR 高通 OR 苹果芯片"
+    - "华为昇腾 OR 昇腾 910 OR 海思 OR 寒武纪"
+    - "摩尔线程 OR 沐曦 OR 壁仞 OR 燧原 OR 国产 GPU"
+    - "算力 短缺 OR 智算中心 OR 芯片 出口管制"
+
+# ── 4. 游戏行业 ──
+gaming:
+  en:
+    - "Xbox OR PlayStation OR PS5 OR Nintendo OR Switch 2 OR Steam OR Epic Games"
+    - "Activision Blizzard OR EA Games OR Ubisoft OR Take-Two OR Rockstar"
+    - "Tencent Games OR NetEase Games OR miHoYo OR HoYoverse OR Genshin"
+    - "AI game OR AI NPC OR game release 2026 OR GDC OR cloud gaming"
+  zh:
+    - "Xbox OR PS5 OR 任天堂 OR Switch 2 OR Steam OR Epic"
+    - "暴雪 OR EA OR 育碧 OR Rockstar OR GTA"
+    - "腾讯游戏 OR 天美 OR 光子 OR 王者荣耀 OR 和平精英"
+    - "网易游戏 OR 米哈游 OR 原神 OR 崩坏 星穹铁道 OR 绝区零"
+    - "叠纸 OR 鹰角 OR 莉莉丝 OR 游戏科学 OR 黑神话"
+    - "AI 游戏 OR AI NPC OR 游戏 裁员 OR 游戏 出海"
+
+# ── 5. 科技行业动态 ──
+# 科技巨头的业务/财务/战略动态（非产品发布），与 AI、手机板块有交叉
+tech_industry:
+  en:
+    - "Google OR Alphabet OR Amazon OR AWS OR Microsoft OR Meta OR Apple"
+    - "Tesla OR SpaceX OR Uber OR Netflix OR Spotify"
+    - "Tencent OR Alibaba OR ByteDance OR TikTok OR Baidu OR BYD OR DJI"
+    - "AI startup funding OR acquisition OR tech IPO OR tech layoffs 2026"
+  zh:
+    - "谷歌 OR 亚马逊 OR 微软 OR Meta OR 苹果"
+    - "特斯拉 OR SpaceX"
+    - "腾讯 OR 阿里巴巴 OR 字节跳动 OR 抖音 OR 百度"
+    - "京东 OR 美团 OR 拼多多 OR 快手 OR B站 OR 小红书"
+    - "华为 OR 比亚迪 OR 大疆 OR 蔚来 OR 小鹏 OR 理想"
+    - "AI 融资 OR 科技 收购 OR 科技 IPO OR 裁员"
+
+# ── 6. 政策与监管 ──
+policy:
+  en:
+    - "AI regulation OR AI policy OR AI act OR AI safety OR AI governance"
+    - "tech antitrust OR big tech regulation OR data privacy OR GDPR"
+    - "chip export ban OR technology sanctions OR AI copyright"
+  zh:
+    - "AI 监管 OR AI 政策 OR 人工智能 法规 OR AI 治理"
+    - "科技 反垄断 OR 互联网 监管 OR 数据隐私 OR 数据安全"
+    - "芯片 禁令 OR 技术制裁 OR AI 版权 OR AI 生成内容 监管"

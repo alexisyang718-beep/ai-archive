@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief | 2026年3月12日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .github-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .gh-item {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .gh-item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border);
+  }
+
+  .gh-name { font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+
+  .gh-name a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .gh-name a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  .gh-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .gh-star {
+    font-size: 12px;
+    color: var(--tag-orange);
+    font-weight: 500;
+  }
+
+  /* ===== Insight Box (直接展开) ===== */
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .github-grid { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>AI Daily Brief</h1>
+  <div class="date">2026年3月12日 · 周四</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    <strong>核心要闻</strong> — ❶ <strong>NVIDIA 发布 Nemotron 3 Super</strong>：1200 亿参数开源模型专为 Agent 打造，Pinchbench 基准 85.6% 直逼 Opus 4.6，吞吐量提升 5 倍；❷ <strong>Anthropic 估值飙升至 $190-200 亿</strong>，CEO 公开炮轰 OpenAI 国防合作"全是谎言"；❸ <strong>Tesla-xAI 联合项目 "Macrohard"</strong>：Grok + Tesla AI4 芯片打造"数字白领"，Musk 的 AI 帝国加速整合；❹ <strong>Meta 发布 4 款自研 AI 芯片</strong>：MTIA 系列路线图曝光，2027 年前全面替代 NVIDIA；❺ <strong>GDC 2026 开幕</strong>：1000+ 演讲者，多国开发者因边境政策放弃参会；❻ <strong>中国 AI+制造实施意见发布</strong>：2027 年目标 1000 个工业智能体、100 个高质量数据集；❼ <strong>Stryker 遭伊朗黑客攻击</strong>：美国医疗巨头全球系统瘫痪，网络安全风险升级。
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">爆发</span>
+      Anthropic 2026 年爆发式增长：估值几周内从 $140 亿飙升至 $190-200 亿
+    </div>
+    <div class="item-body">
+      Anthropic 正在经历<strong>惊人的增长周期</strong>。根据 X 平台多方信息源确认，公司营收从 2 月的约 $140 亿年化收入飙升至 3 月初的 <strong>$190-200 亿</strong>，短短几周内实现近乎翻倍。外界普遍认为 2026 年是"Anthropic 年"——Claude 在开发者社区的口碑持续攀升，Opus 4.6 的"自适应思考"功能获得广泛好评。与此同时，<strong>Anthropic CEO Dario Amodei 公开指责 OpenAI 与国防部的合作声明"全是谎言"</strong>，双方在军事 AI 合同上的竞争白热化。此前 Anthropic 因拒绝让 Claude 用于自主武器和监控而被国防部列为"供应链风险"，合同被终止。
+    </div>
+    <div class="stat-row">
+      <span class="stat">估值 <em>$190-200亿</em></span>
+      <span class="stat">增长周期 <em>几周翻倍</em></span>
+      <span class="stat">定位 <em>2026年度公司</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/qz/status/2029649555017576527">X/Twitter @qz</a> · <a href="https://x.com/TechCrunch/status/2029327074943778906">@TechCrunch</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Anthropic 估值几周翻倍印证了<strong>"Claude 之年"</strong>的市场判断。CEO 炮轰 OpenAI 国防合作"全是谎言"，实则是两家公司在军事 AI 合同上的白热化竞争——Anthropic 因拒绝自主武器被国防部列为"供应链风险"，OpenAI 则顺势拿下合作。<strong>AI 军事化路线分化已成定局</strong>：一方选择商业妥协，一方坚守安全底线。对开发者而言，这意味着选择模型时需考虑其背后的价值观取向。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">跳槽</span>
+      OpenAI 顶级研究员跳槽 Anthropic：曾主导 GPT-5/5.1/5.2/Codex 发布
+    </div>
+    <div class="item-body">
+      主导 OpenAI 后训练工作一年的<strong>核心研究员离职加入 Anthropic</strong>，带走了 GPT 系列的关键经验。该研究员曾负责 GPT-5、GPT-5.1、GPT-5.2 和 Codex 等重磅模型的发布工作。人才流失引发了对 OpenAI 团队稳定性的担忧——这已是近期又一位核心人才选择投奔竞争对手。与此同时，Anthropic 宣布成立 <strong>Anthropic Institute</strong>，将聚焦 AI 安全、政策与伦理研究，为公众和决策者提供关于强 AI 的专业知识，继续强化其"安全优先"的品牌定位。
+    </div>
+    <div class="stat-row">
+      <span class="stat">离职岗位 <em>后训练负责人</em></span>
+      <span class="stat">主导产品 <em>GPT-5系列+Codex</em></span>
+      <span class="stat">去向 <em>Anthropic</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ns123abc/status/2028953115420999816">X/Twitter</a> · <a href="https://x.com/AnthropicAI/status/2031674087374815577">@AnthropicAI</a> ｜ 3月10-11日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      OpenAI 发布 AI Agent 安全研究：防范提示注入攻击的技术方案
+    </div>
+    <div class="item-body">
+      OpenAI 公布了题为 <strong>"Designing AI agents to resist prompt injection"</strong> 的安全研究，详细阐述如何防范 AI 智能体被恶意提示注入攻击。这是 OpenAI 为 Agent 产品化铺路的关键一步——当 AI 系统开始自主调用工具和执行任务时，提示注入攻击的潜在危害将呈指数级放大。同时，OpenAI 发布了 <strong>Responses API 的重大增强</strong>，支持更完善的工具调用与流式输出，为开发者构建 Agent 应用提供底层支持。Sam Altman 在全员会上表示，OpenAI 与国防部合作后，"公司无权对军事行动决策表态"，言论引发内部争议。
+    </div>
+    <div class="stat-row">
+      <span class="stat">研究方向 <em>Agent 安全</em></span>
+      <span class="stat">核心问题 <em>提示注入</em></span>
+      <span class="stat">配套更新 <em>Responses API</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://openai.com/news/">OpenAI 官网</a> · <a href="https://x.com/sama/status/2027904991953096948">X/Twitter @sama</a> ｜ 3月11日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">报告</span>
+      Anthropic 发布 AI 就业影响研究：AI 已覆盖 67-75% 工作任务
+    </div>
+    <div class="item-body">
+      Anthropic 3 月报告通过"观察暴露度"指标测量 AI 对就业的实际影响，发现<strong>AI 已能覆盖近 67-75% 的工作任务</strong>。报告基于数百万真实 Claude 对话数据，分析了不同职业在 Claude 中的使用模式，发现 AI 对职业的影响呈现高度分化——某些任务（如编程、数据分析）AI 渗透率极高，但大多数职业的核心任务仍以人类为主导。结论比"AI 取代一切"的恐慌叙事更复杂：<strong>AI 更像是在"重新定义工作"而非简单"消灭工作"</strong>。报告呼吁政策制定者关注 AI 替代效应，而非仅聚焦安全风险。
+    </div>
+    <div class="stat-row">
+      <span class="stat">任务覆盖 <em>67-75%</em></span>
+      <span class="stat">数据来源 <em>数百万对话</em></span>
+      <span class="stat">核心发现 <em>高度分化</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/GS_VCactivist/status/2029919240094912632">X/Twitter</a> ｜ 3月10日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">期待</span>
+      DeepSeek V4 即将发布：万亿参数开源多模态模型引发关注
+    </div>
+    <div class="item-body">
+      DeepSeek V4 被列为 <strong>2026 年最受期待的 AI 发布之一</strong>，预计为万亿参数级开源多模态模型。X 平台多个信息源显示，发布时间已临近，开发者社区高度关注。DeepSeek R1 发布一周年之际，专家复盘中美 AI 竞争格局：中国在开源模型和应用层快速追赶，但芯片和算力仍是瓶颈。华为等国产芯片替代进程加速，OpenClaw 等开源 AI 项目在中国引发科技股上涨，相关概念股持续走强。
+    </div>
+    <div class="stat-row">
+      <span class="stat">参数规模 <em>万亿级</em></span>
+      <span class="stat">类型 <em>开源多模态</em></span>
+      <span class="stat">市场反应 <em>概念股上涨</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/asteris_ai/status/2029540105732387025">X/Twitter</a> · <a href="https://x.com/business/status/2031215615524913659">@business</a> ｜ 3月10-11日</div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">对比</span>
+      Galaxy S26 Ultra vs iPhone 17 Pro Max：三星独特优势解析
+    </div>
+    <div class="item-body">
+      Galaxy S26 Ultra 的独特优势正在引发广泛讨论。首先是<strong>Privacy Display 隐私屏幕</strong>——一键收窄可视角度，防止旁人窥屏，这一功能可按应用单独设置或仅应用于通知区域。其次是<strong>第四枚潜望镜头</strong>，相比 iPhone 17 Pro Max 的三摄系统提供更灵活的焦段覆盖。第三是<strong>65W 快充</strong>，充电速度明显领先苹果。但 iPhone 17 Pro Max 在起售价和性能能效上仍有优势。两款旗舰的屏幕都达到 3000 尼特峰值亮度，支持 1-120Hz 自适应刷新率。
+    </div>
+    <div class="stat-row">
+      <span class="stat">独占功能 <em>Privacy Display</em></span>
+      <span class="stat">相机 <em>四摄 vs 三摄</em></span>
+      <span class="stat">快充 <em>65W</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.phonearena.com/news/Three-and-a-half-Galaxy-S26-Ultra-advantages-over-the-iPhone-17-Pro-Max_id178382">PhoneArena</a> · <a href="https://www.sammyfans.com/2026/03/07/galaxy-s26-ultra-vs-iphone-17-pro-differences/">Sammy Fans</a> ｜ 3月7-9日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Privacy Display 是三星的<strong>差异化杀手锏</strong>——硬件级防窥在商务场景有真实需求，而苹果尚未跟进。四摄系统对摄影爱好者的吸引力不可忽视，但苹果的优势在于<strong>视频拍摄和生态协同</strong>。郭明錤最新分析指出，Apple 策略是"利用内存混乱吸收成本抢份额"——这意味着 iPhone 17 系列可能<strong>维持原价</strong>，而竞争对手因存储涨价被迫提价。对消费者而言，三星的硬件创新 vs 苹果的生态护城河，选择逻辑取决于你是"参数党"还是"体验党"。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      Samsung Galaxy M17e 5G 印度发布：120Hz 屏幕 + 6000mAh 大电池
+    </div>
+    <div class="item-body">
+      印度市场新机 <strong>Galaxy M17e 5G</strong> 于 3 月 17 日正式发布，主打<strong>120Hz 高刷屏</strong>和<strong>6000mAh 大电池</strong>，定位"中端性价比怪兽"。官方宣传称"有的手机跟得上，这台手机能碾压"，强调 6 年系统更新的长期支持承诺。配备防尘防水设计，搭载 MediaTek 处理器（具体型号未公布）。这款产品的目标用户是对续航和性价比敏感的印度消费者，与小米、Realme 等品牌在千元机市场展开竞争。
+    </div>
+    <div class="stat-row">
+      <span class="stat">屏幕 <em>120Hz</em></span>
+      <span class="stat">电池 <em>6000mAh</em></span>
+      <span class="stat">系统更新 <em>6年</em></span>
+      <span class="stat">定位 <em>性价比</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.sammyfans.com/2026/03/09/samsung-galaxy-m17e-5g-launch-date-announced/">Sammy Fans</a> ｜ 3月9日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">影响</span>
+      MWC 2026：Android 厂商集体"致敬" iPhone 17 设计
+    </div>
+    <div class="item-body">
+      在巴塞罗那 MWC 展会上，多款 Android 手机外观与 <strong>iPhone 17 Pro 高度相似</strong>。媒体感叹"Apple 即使缺席，影响力也无处不在"。一款 Oukitel 手机被拍到与 iPhone 17 Pro Max 并排放置，相似度令人咋舌；Galaxy S26 Ultra 的"克隆机"也出现在展台上。这种现象反映了智能手机设计的同质化趋势——当苹果定义了"高端手机该长什么样"，竞争对手往往选择跟随而非差异化。
+    </div>
+    <div class="stat-row">
+      <span class="stat">展会 <em>MWC 2026</em></span>
+      <span class="stat">现象 <em>设计同质化</em></span>
+      <span class="stat">评论 <em>Apple影响力</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://tech.yahoo.com/ai/apple-intelligence/articles/apple-quietly-over-worlds-biggest-130024377.html">Yahoo Tech</a> ｜ 3月10日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">延期</span>
+      Apple 智能家居显示器因 Siri AI 重构延期
+    </div>
+    <div class="item-body">
+      Bloomberg 报道，Apple 智能家居显示设备因 <strong>Siri AI 升级未完成而推迟发布</strong>。该设备原计划作为智能家居中枢，由更智能的 Siri 作为连接层，整合 HomeKit 设备、语音助手和家庭娱乐功能。Apple 的 AI 挑战已从软件功能扩展到产品路线图层面——如果 Siri 无法按时完成升级，整个产品线都可能受到影响。分析指出，Apple 的 AI 困境在于：硬件能力强大，但软件和服务层落后于竞争对手。
+    </div>
+    <div class="stat-row">
+      <span class="stat">延期原因 <em>Siri AI</em></span>
+      <span class="stat">产品定位 <em>智能家居中枢</em></span>
+      <span class="stat">影响范围 <em>产品路线图</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techstartups.com/2026/03/10/top-tech-news-today-march-10-2026/">Tech Startups</a> · Bloomberg ｜ 3月10日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Siri AI 升级延期暴露了 Apple 的<strong>AI 软件短板</strong>——硬件能力强大，但软件和服务层落后于竞争对手。Mark Gurman 透露 Apple 正在推进"2026产品攻势"，智能家居显示器是关键一环，但<strong>Siri 不智能，设备就是空壳</strong>。郭明錤判断 Apple 会"吸收成本抢份额"，但如果 Siri 升级持续延期，硬件优势会被软件短板抵消。<strong>Apple 的 AI 困境在于：不能像 Anthropic 那样激进，又没有 Google 那样的海量数据训练。</strong></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      NVIDIA 发布 Nemotron 3 Super：1200 亿参数专为 Agent 打造，性能直逼 Opus 4.6
+    </div>
+    <div class="item-body">
+      NVIDIA 昨夜重磅发布新一代开源模型 <strong>Nemotron 3 Super</strong>，专为大规模 AI 智能体打造。该模型拥有 <strong>1200 亿参数</strong>、120 亿激活参数、<strong>100 万 Token 上下文</strong>，采用创新的 <strong>Mamba-MoE 混合架构</strong>。在 Pinchbench 基准测试中拿下 <strong>85.6%</strong> 的高分，性能直逼 Claude Opus 4.6 和 GPT-5.4，稳坐开源第一。相比上一代，<strong>吞吐量提升高达 5 倍，准确率提升 2 倍</strong>。核心创新包括：① <strong>LatentMoE</strong>——在路由和专家计算前先将 Token 投射到更小的潜在维度，实现"花 1 个专家的成本激活 4 个专家"；② <strong>多 Token 预测（MTP）</strong>——实现原生投机解码，推理速度狂飙；③ <strong>NVFP4 精度预训练</strong>——专为 Blackwell 架构优化，显存需求大幅降低。
+    </div>
+    <div class="stat-row">
+      <span class="stat">参数 <em>1200亿</em></span>
+      <span class="stat">上下文 <em>100万Token</em></span>
+      <span class="stat">Pinchbench <em>85.6%</em></span>
+      <span class="stat">吞吐量 <em>5x 提升</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/Zn8C0BvzM1E-l8nnYClEhA">新智元</a> · <a href="https://huggingface.co/collections/nvidia/nvidia-nemotron-v3">HuggingFace</a> · <a href="https://x.com/nvidia">@nvidia</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Nemotron 3 Super 的<strong>LatentMoE 架构</strong>是核心突破：花1个专家的成本激活4个专家，吞吐量5倍提升意味着<strong>Agent 推理成本大幅下降</strong>。NVIDIA 开源此模型意在抢占 Agent 操作系统层——当开发者都用 Nemotron 构建 Agent，GPU 销量自然水涨船高。<strong>这是 NVIDIA 从硬件商向生态主导者的战略跃迁</strong>。对企业而言，1200亿参数开源模型性能逼近 Opus 4.6，意味着私有化部署顶级 AI 能力的门槛再次降低。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">自研</span>
+      Meta 发布 4 款自研 AI 芯片：MTIA 系列路线图曝光，2027 年前替代 NVIDIA
+    </div>
+    <div class="item-body">
+      Meta 公布了 <strong>MTIA 系列芯片的完整路线图</strong>，计划在 2027 年前部署 4 代自研 AI 芯片，大幅降低对 NVIDIA 的依赖。MTIA-2 已在 TSMC 3nm 工艺上量产，<strong>MTIA-3 定于 2026 年 H2 发布</strong>，MTIA-4 代号"Santa Barbara"将配备 HBM4 内存和超过 180kW 功耗的液冷系统，专为大规模推理优化。Meta 同时发布 <strong>MTIA 300</strong> 用于内容排序，已投入生产。分析指出，Meta 的自研芯片策略是大科技公司"去 NVIDIA 化"的标志性动作——当算力命脉掌握在自己手中，云服务成本将大幅下降。
+    </div>
+    <div class="stat-row">
+      <span class="stat">芯片代数 <em>4代</em></span>
+      <span class="stat">MTIA-2 <em>已量产3nm</em></span>
+      <span class="stat">MTIA-4 <em>HBM4+液冷</em></span>
+      <span class="stat">目标 <em>替代NVIDIA</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.bloomberg.com/news/articles/2026-03-11/meta-preparing-to-deploy-four-new-homegrown-chips-to-handle-ai">Bloomberg</a> · <a href="https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/">Meta AI Blog</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Meta 的 MTIA 路线图揭示了 Big Tech <strong>"去 NVIDIA 化"</strong>的激进策略。MTIA-4 代号"Santa Barbara"配备 HBM4 + 液冷，专为推理优化——这意味着 Meta 将在自家数据中心部署<strong>成本更低的推理芯片</strong>，而非继续采购昂贵的 NVIDIA GPU。对 NVIDIA 而言，Meta 自研芯片的威胁在于<strong>示范效应</strong>：如果 Meta 能成功，Google、Amazon、Microsoft 都会跟进。<strong>定制 ASIC 正从 GPU 替代品变成主流选择。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">财报</span>
+      TSMC 2026 年资本支出 $540 亿：AI 收入年复合增长超 50%
+    </div>
+    <div class="item-body">
+      台积电财报超预期，宣布 <strong>2026 年资本支出从 $410 亿增至 $540 亿</strong>，AI 相关收入预计以 <strong>50%+ CAGR</strong> 增长至 2029 年。CEO 魏哲家称"AI 超级趋势非常正面"，公司正在提升产能以支持客户未来增长。台积电在 AI 芯片代工市场的份额已接近 <strong>99%</strong>——无论是 NVIDIA GPU、AMD MI 系列还是 Google TPU、Amazon Graviton 等定制芯片，几乎全部由台积电制造。芯片股应声上涨，NVIDIA 涨近 2%，AMD 涨 2%，台积电自身涨超 4%。
+    </div>
+    <div class="stat-row">
+      <span class="stat">CapEx <em>$540亿</em></span>
+      <span class="stat">AI CAGR <em>50%+</em></span>
+      <span class="stat">代工份额 <em>~99%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.aol.com/articles/chip-stocks-jump-nvidia-supplier-142119657.html">AOL Finance</a> ｜ 3月11日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">融资</span>
+      科技巨头发债融资 AI 基建：2026 年 AI 投资超 $6000 亿
+    </div>
+    <div class="item-body">
+      Big Tech 预计 <strong>2026 年在 AI 领域投入超 $6000 亿</strong>，较 2025 年的 $4100 亿大幅增长。多家公司通过债券市场融资，为数据中心和算力扩张储备资金。报告显示，2026 年前两个月 AI 初创公司已吸引 <strong>$2200 亿融资</strong>，其中 OpenAI 的 $1100 亿轮贡献了一半。AI 创业的热度不减，但市场也开始关注估值泡沫和投资回报周期。Peter Thiel 近期抛售 NVIDIA 股票，转投 $4500 万至微软和苹果，被解读为对 AI 硬件竞赛进入"估值过高"阶段的信号。
+    </div>
+    <div class="stat-row">
+      <span class="stat">2026 AI投资 <em>$6000亿</em></span>
+      <span class="stat">前2月融资 <em>$2200亿</em></span>
+      <span class="stat">OpenAI <em>$1100亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.reuters.com/business/media-telecom/tech-companies-tap-debt-markets-fund-ai-cloud-expansion-2026-03-10/">Reuters</a> · <a href="https://www.electronicsweekly.com/news/business/ai-startups-pull-in-220-billion-in-jan-feb-2026-2026-03/">Electronics Weekly</a> ｜ 3月10-11日</div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">开幕</span>
+      GDC 2026 开幕：1000+ 演讲者、700+ 场会议，游戏行业聚首旧金山
+    </div>
+    <div class="item-body">
+      <strong>GDC Festival of Gaming</strong> 于 3 月 9-13 日在旧金山 Moscone Center 举行，超过 <strong>1000 名演讲者</strong> 参与 <strong>700+ 场会议</strong>，聚焦 Battlefield 6、Diablo Immortal、Clair Obscura 等热门游戏的开发分享。Xbox、NVIDIA 等厂商发布新技术，暴雪展示扩散模型驱动的地图生成技术。今年 GDC 对游戏行业尤为关键——硬件成本攀升、AI 工具快速渗透、主机平台战略模糊，开发者正在寻求可持续的发展路径。GDC 首次尝试"游戏节"模式，吸引更多玩家参与。
+    </div>
+    <div class="stat-row">
+      <span class="stat">演讲者 <em>1000+</em></span>
+      <span class="stat">会议 <em>700+</em></span>
+      <span class="stat">日期 <em>3月9-13日</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.ign.com/articles/gdc-festival-of-gaming-2026-launches-on-march-9">IGN</a> · <a href="https://gdconf.com/">GDC 官方</a> ｜ 3月9日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">担忧</span>
+      多国游戏开发者因美国边境政策放弃 GDC 2026
+    </div>
+    <div class="item-body">
+      Ars Technica 报道，<strong>多名国际游戏开发者因担心美国边境审查而取消 GDC 行程</strong>。受访开发者表示，阅读了关于游客被扣留、手机被搜查的新闻后，决定不再冒险前往美国。"我有一个独特的名字，网上很容易找到我的政治观点。这不安全。"一位奥地利开发者说。部分公司为员工准备法律文件以防被 ICE 扣留。Godot Foundation 执行董事 Emilio Coppola 表示："我们从未觉得特别安全，但现在我们不愿冒险。"这反映了游戏行业对地缘政治的担忧，也暴露了美国在国际人才吸引力上的挑战。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心担忧 <em>边境审查</em></span>
+      <span class="stat">影响人群 <em>国际开发者</em></span>
+      <span class="stat">应对措施 <em>法律准备</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://arstechnica.com/gaming/2026/03/it-doesnt-feel-safe-many-international-game-developers-plan-to-skip-gdc-in-us/">Ars Technica</a> ｜ 3月9日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">技术</span>
+      NVIDIA GDC 发布 DLSS 4.5 动态多帧生成：20 款新游戏支持
+    </div>
+    <div class="item-body">
+      NVIDIA 在 GDC 2026 发布 <strong>DLSS 4.5 动态多帧生成</strong>，3 月 31 日上线。核心突破：可覆盖游戏内置 DLSS 设置，在更多游戏中获得更高帧率和更优画质。同时发布 <strong>20 款新支持 DLSS 4.5 和路径追踪的游戏</strong>，包括 Battlefield 6 Season 2（DLSS 4 帧率提升 <strong>3.8×</strong>，最高 <strong>460 FPS</strong>）。GeForce NOW 云游戏服务支持 <strong>90 FPS VR 串流</strong>，兼容 Apple Vision Pro 和 Meta Quest。Steam Deck 已跃升为第四大开发平台，28% 的开发者为其制作或优化游戏。
+    </div>
+    <div class="stat-row">
+      <span class="stat">新游戏 <em>20款</em></span>
+      <span class="stat">Battlefield 6 <em>3.8x 帧率</em></span>
+      <span class="stat">VR 串流 <em>90 FPS</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.nvidia.com/en-us/geforce/news/gdc-2026-nvidia-geforce-rtx-announcements/">NVIDIA GeForce 官方</a> · <a href="https://gdconf.com/article/gdc-2026-state-of-the-game-industry-reveals-impact-of-layoffs-generative-ai-and-more/">GDC State of the Industry</a> ｜ 3月9-13日</div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      Tesla-xAI 联合项目 "Macrohard"：Grok + Tesla AI4 打造"数字白领"
+    </div>
+    <div class="item-body">
+      Elon Musk 宣布 Tesla 与 xAI 联合开发 <strong>"Macrohard"（又名 Digital Optimus）</strong>——一个由 Grok 担任"导航指挥官"、Tesla AI4 芯片执行的 AI 系统。该系统可<strong>模拟会计、HR 等白领工作</strong>，处理实时屏幕视频和键盘鼠标操作。Musk 称："Digital Optimus 将能够模拟整个公司的功能。"项目运行于 Tesla 硬件 + xAI NVIDIA 服务器组合。此前 SpaceX 已以全股票方式收购 xAI，估值分别为 $1 万亿和 $2500 亿。Musk 计划今年晚些时候将 SpaceX 推向 IPO，同时宣布 <strong>X Money 支付服务将于下月开启公测</strong>，向微信模式迈进。
+    </div>
+    <div class="stat-row">
+      <span class="stat">项目名 <em>Macrohard</em></span>
+      <span class="stat">AI 引擎 <em>Grok</em></span>
+      <span class="stat">硬件 <em>Tesla AI4</em></span>
+      <span class="stat">xAI 估值 <em>$2500亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.teslarati.com/elon-musk-teases-massive-new-tesla-xai-joint-project-digital-optimus/">Teslarati</a> · Reuters ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Macrohard 项目标志着 Musk AI 帝国的<strong>垂直整合加速</strong>：Grok 提供智能层，Tesla AI4 提供执行层，X 提供数据层。SpaceX 收购 xAI（$2500亿估值）后，三大平台已形成<strong>闭环生态</strong>。"数字白领"如果成功，将直接冲击白领工作市场——会计、HR 等岗位面临被 Agent 替代的风险。X Money 下月公测则是在向微信支付模式靠拢。<strong>Musk 正在构建一个涵盖 AI、汽车、支付、社交的超级 App 生态。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">攻击</span>
+      美国医疗巨头 Stryker 遭伊朗黑客攻击：全球系统瘫痪
+    </div>
+    <div class="item-body">
+      医疗科技公司 <strong>Stryker</strong> 遭遇伊朗关联组织 <strong>Handala</strong> 网络攻击，部分员工设备被远程擦除。黑客称这是对伊朗学校被袭击的报复行动。Stryker 是美国医疗科技巨头，其产品广泛应用于骨科手术、医疗设备等领域。此次攻击导致全球系统瘫痪，凸显了网络安全风险在地缘政治背景下的持续升级。网络安全公司同时警告，云共享平台 ShareFile、NextCloud 遭凭证窃取攻击，影响航空、国防、医疗等多个行业。
+    </div>
+    <div class="stat-row">
+      <span class="stat">攻击者 <em>Handala</em></span>
+      <span class="stat">关联方 <em>伊朗</em></span>
+      <span class="stat">影响 <em>全球瘫痪</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techmeme.com/">Techmeme</a> · WSJ ｜ 3月11日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">数据</span>
+      Ericsson 美国子公司数据泄露：影响 15,000+ 员工和客户
+    </div>
+    <div class="item-body">
+      电信设备商 Ericsson 美国部门披露<strong>第三方供应商被入侵</strong>，个人数据外泄，影响超过 <strong>15,000 名</strong>员工和客户。公司称核心系统未受影响，但供应链安全风险暴露无遗。近期大规模数据泄露涉及 LexisNexis、Nissan、FBI 等机构，网络安全威胁持续升级。PKWARE 报告指出，云共享平台 ShareFile、NextCloud、OwnCloud 均遭凭证窃取攻击，影响航空、国防、医疗、公用事业等多个行业。
+    </div>
+    <div class="stat-row">
+      <span class="stat">影响人数 <em>15,000+</em></span>
+      <span class="stat">攻击路径 <em>第三方供应商</em></span>
+      <span class="stat">核心系统 <em>未受影响</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techstartups.com/2026/03/10/top-tech-news-today-march-10-2026/">Tech Startups</a> · <a href="https://www.pkware.com/blog/2026-data-breaches">PKWARE</a> ｜ 3月8-10日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">内容</span>
+      Netflix 3 月新片：ONE PIECE 第二季、Virgin River 第七季上线
+    </div>
+    <div class="item-body">
+      Netflix 3 月上线《海贼王》真人剧<strong>第二季</strong>、《Virgin River》<strong>第七季</strong>、《Something Very Bad Is Going to Happen》（《怪奇物语》主创新作）等热门剧集。《Age of Attraction》由前《单身汉》Nick Viall 主持，测试"年龄是否只是数字"。流媒体竞争持续激烈，Amazon Music 与 Spotify 在音频质量与发现功能上展开对决。Apple 三天特别活动聚焦 Mac、iPhone 变体和平台更新，与 MWC 窗口重叠，意在控制舆论节奏。
+    </div>
+    <div class="stat-row">
+      <span class="stat">热门新剧 <em>海贼王S2</em></span>
+      <span class="stat">怪奇主创 <em>新剧上线</em></span>
+      <span class="stat">Apple 活动 <em>3天</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://time.com/7381393/new-on-netflix-march-2026/">TIME</a> · <a href="https://people.com/shows-you-need-to-watch-on-netflix-march-2026-11915102">People</a> ｜ 3月11日</div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">政策</span>
+      中国发布"AI+制造"实施意见：2027 年目标 1000 个工业智能体
+    </div>
+    <div class="item-body">
+      工信部发布《人工智能+制造实施意见》，目标 <strong>2027 年实现 AI 关键技术自主可控</strong>。计划推出 <strong>1000 个工业智能体</strong>、<strong>100 个高质量数据集</strong>、<strong>500 个典型应用场景</strong>，培育 <strong>2-3 家全球生态主导企业</strong>。意见提出强化算力供给、开发高水平行业模型、推动重点领域智能化升级等 7 方面 21 项举措。在算力方面，推进算力中心和公共算力服务平台建设，支持算力和电力协调建设，鼓励绿电使用。分析指出，中国已将 AI 定位为类似电力、通信网络的<strong>基础设施</strong>，"AI+制造"是"必答题"而非"选择题"。
+    </div>
+    <div class="stat-row">
+      <span class="stat">目标年份 <em>2027</em></span>
+      <span class="stat">智能体 <em>1000个</em></span>
+      <span class="stat">数据集 <em>100个</em></span>
+      <span class="stat">主导企业 <em>2-3家</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.deheheng.com/dongtai/news/35787.html">新华网</a> · 德恒律师事务所 ｜ 3月10日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">中国已将 AI 定位为<strong>基础设施</strong>，"AI+制造"是必答题。1000个工业智能体、100个高质量数据集的目标意味着<strong>制造业 AI 渗透率将快速提升</strong>。对国产 AI 芯片厂商是利好：政策明确支持"算力自主可控"，华为昇腾、寒武纪等将获得更多订单。对传统制造企业而言，<strong>2027 年前不拥抱 AI 就会落后</strong>。DeepSeek 打假首案则释放了明确信号：<strong>AI 品牌保护进入执法阶段</strong>，仿冒混淆行为将被严查。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">首案</span>
+      DeepSeek 打假首案：北京公司因混淆商标被查处
+    </div>
+    <div class="item-body">
+      北京朝阳区市场监管局查处"DeepSeek 本地部署工具"混淆案，系 <strong>DeepSeek 品牌打假第一案</strong>。北京奥蓝德信息科技有限公司运营的网站推广名为"DeepSeek 本地部署工具"的软件，利用用户信息壁垒，借助"DeepSeek"字样"搭便车"赚取流量热度。该公司与 DeepSeek 官方运营主体无任何关联。市场监管部门认定其行为构成不正当竞争，依法予以查处。此案为 AI 品牌保护树立了先例，随着 DeepSeek 等国产 AI 模型爆火，仿冒混淆、虚假宣传等行为正在向 AI 领域蔓延。
+    </div>
+    <div class="stat-row">
+      <span class="stat">案件性质 <em>混淆商标</em></span>
+      <span class="stat">查处部门 <em>朝阳区市监局</em></span>
+      <span class="stat">意义 <em>打假首案</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.deheheng.com/dongtai/news/36000.html">德恒律师事务所</a> · 中国证券报 ｜ 3月8日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">监管</span>
+      AI 监管全球分化：美国自由放任、欧盟严格立法、中国审慎平衡
+    </div>
+    <div class="item-body">
+      BBC 分析三大 AI 监管路径：<strong>美国</strong>强调市场自我调节，主要以倡议性文件和分散监管方式面对；<strong>欧盟</strong>出台 AI Act 全面立法，设立严格的合规要求；<strong>中国</strong>采取"先行先试"的暂行管理办法，既注重产业发展又强调风险管理。Manus 等中国 AI Agent 的爆火引发对监管滞后性的讨论。专家指出，AI 地缘政治化趋势加剧——DeepSeek 已被多国政府机构禁用，主要担忧数据安全和模型可能被用于敏感信息处理。
+    </div>
+    <div class="stat-row">
+      <span class="stat">美国 <em>自由放任</em></span>
+      <span class="stat">欧盟 <em>严格立法</em></span>
+      <span class="stat">中国 <em>审慎平衡</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.bbc.com/zhongwen/articles/ckgnvl7pwr3o/simp">BBC 中文</a> ｜ 3月11日</div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">案例</span>
+      全国首例 AI 幻觉侵权案宣判：AI"赔偿承诺"不具法律效力
+    </div>
+    <div class="item-body">
+      杭州互联网法院审结<strong>全国首例因生成式 AI"幻觉"引发的侵权纠纷案</strong>。原告在 AI 应用中询问高校报考信息，AI 生成了不准确信息，后来自行生成"赔偿承诺"称愿赔 10 万元。法院认定：<strong>AI 不具有民事主体资格，不能作出意思表示</strong>，AI 自行生成的"赔偿承诺"不能视为服务提供者的意思表示。法院采用"动态系统论"，阐述服务提供者应尽的三层注意义务：①对违法信息严格审查；②显著提示 AI 生成内容可能不准确；③采取同行业通行技术措施提高准确性。最终认定被告已尽合理注意义务，驳回原告诉求。
+    </div>
+    <div class="stat-row">
+      <span class="stat">案件类型 <em>AI幻觉</em></span>
+      <span class="stat">法院认定 <em>AI无主体资格</em></span>
+      <span class="stat">注意义务 <em>三层标准</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.deheheng.com/dongtai/news/35787.html">人民法院报</a> ｜ 3月</div>
+  </div>
+
+</section>
+
+<!-- ==================== 7. GitHub 高增长项目 ==================== -->
+<section class="section" id="github">
+  <div class="section-header">
+    <span class="icon">📦</span>
+    <h2>GitHub 高增长项目</h2>
+  </div>
+
+  <div class="github-grid">
+    <div class="gh-item">
+      <div class="gh-name"><a href="https://github.com/nvidia/nemotron">nvidia/nemotron</a></div>
+      <div class="gh-desc">NVIDIA 官方开源模型：Nemotron 3 Super 权重、训练代码、10 万亿 Token 数据集全部开源</div>
+      <div class="gh-star">⭐ 新发布 · Python · 今日热搜</div>
+    </div>
+    <div class="gh-item">
+      <div class="gh-name"><a href="https://github.com/obra/superpowers">obra/superpowers</a></div>
+      <div class="gh-desc">个人 AI 助手系统：整合日历、邮件、笔记、终端，打造全场景智能工作流</div>
+      <div class="gh-star">⭐ 8,200+ · 今日 +1,387 · Rust</div>
+    </div>
+    <div class="gh-item">
+      <div class="gh-name"><a href="https://github.com/virattt/ai-hedge-fund">virattt/ai-hedge-fund</a></div>
+      <div class="gh-desc">AI 对冲基金：多 Agent 协作的量化投资系统，集成基本面/技术面/情绪分析</div>
+      <div class="gh-star">⭐ 18,300+ · 今日 +300 · Python</div>
+    </div>
+    <div class="gh-item">
+      <div class="gh-name"><a href="https://github.com/nicepkg/agent-skills">nicepkg/agent-skills</a></div>
+      <div class="gh-desc">即用型 Agent 技能集：覆盖研究、工程、分析、金融和写作等多领域</div>
+      <div class="gh-star">⭐ 12,680 · 今日 +926 · TypeScript</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">AI Daily Brief</p>
+  <p>2026年3月12日 · 覆盖范围：3月10日-12日</p>
+  <p>数据来源：<strong>Techmeme</strong> · X/Twitter · <strong>Bloomberg</strong> · Reuters · Ars Technica · PhoneArena · Yahoo Tech · Tech Startups · <strong>NVIDIA GeForce 官方</strong> · <strong>GDC 官方</strong> · Teslarati · TIME · People · <strong>新智元</strong> · 德恒律师事务所 · BBC 中文 · PKWARE 等 30+ 源</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</div>
+</body>
+</html>
