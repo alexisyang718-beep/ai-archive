@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月16日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月16日 · 周一</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>NVIDIA GTC 2026</strong>今日开幕：发布开源企业AI Agent平台NemoClaw + Nemotron 3 Super 120B模型<br>
+    ❷ <strong>315晚会</strong>曝光AI大模型"投毒"黑产：39.9元即可篡改AI搜索答案，GEO灰产成完整产业链<br>
+    ❸ <strong>Perplexity</strong>宣布放弃MCP协议转向CLI，引发"MCP已死"行业热议<br>
+    ❹ <strong>手机厂商集体涨价</strong>：OPPO/vivo/小米全面调价，存储芯片半年暴涨500%，千元机即将消失<br>
+    ❺ <strong>OpenClaw安全</strong>风暴升级：从部委到高校发布限令汇总，腾讯电脑管家推出"龙虾管家"<br>
+    ❻ <strong>半导体4月涨价潮</strong>：联电/世界先进/力积电等晶圆代工厂最高涨10%
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">GTC</span>
+      NVIDIA GTC 2026今日开幕：Nemotron 3 Super 120B登顶开源Agent模型
+    </div>
+    <div class="item-body">
+      <strong>NVIDIA GTC 2026大会于3月16-19日在圣何塞召开</strong>，黄仁勋今日发表主题演讲。最大看点之一是刚刚开源的<strong>Nemotron 3 Super 120B MoE模型</strong>——在PinchBench测试中以85.6%高分登顶开源Agent模型榜首，SWE-Bench准确率60.47%（GPT-OSS仅41.9%）。该模型采用混合Mamba-Transformer架构，原生支持<strong>100万Token上下文</strong>，吞吐量为上一代5倍，面向Blackwell架构优化。财务文件还曝光NVIDIA已准备<strong>260亿美元</strong>用于未来五年构建开源AI模型。
+    </div>
+    <div class="stat-row">
+      <span class="stat">PinchBench <em>85.6%</em></span>
+      <span class="stat">SWE-Bench <em>60.47%</em></span>
+      <span class="stat">上下文 <em>100万Token</em></span>
+      <span class="stat">开源投入 <em>260亿美元</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/98eGWRobJtsTS_1liuaxPg">量子位</a> ｜ <a href="https://www.nvidia.com/gtc/">NVIDIA官网</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">NVIDIA从"卖铲人"向"平台玩家"的关键一步。260亿美元开源投入+硬件无关策略（支持AMD/Intel），借鉴了<strong>Kubernetes控制软件层的成功路径</strong>。Nemotron 3 Super在Agent能力上全面碾压GPT-OSS，标志着NVIDIA正式从硬件霸权扩展到AI软件编排层。GTC同期还将发布NemoClaw企业Agent平台，Agentic AI市场预计2027年达280亿美元。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">争议</span>
+      Perplexity放弃MCP协议转向CLI："MCP已死"引发行业热议
+    </div>
+    <div class="item-body">
+      Perplexity联合创始人兼CTO <strong>Denis Yarats宣布公司内部正在放弃MCP，转而使用API和CLI</strong>。此举引发全网讨论，Y Combinator总裁Garry Tan直言"MCP sucks"。MCP的核心问题在于：①<strong>线性上下文成本</strong>——10个服务×5个工具，未开始任务就已烧掉数千Token；②初始化极不稳定，经常需要重启；③权限管理非黑即白。而CLI经过数十年设计迭代，可组合、可调试、可复现，LLM在海量man手册和Shell脚本中训练过，天然擅长使用CLI。AI聊天工具Duetchat v2也彻底删除了MCP集成。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心问题 <em>上下文成本过高</em></span>
+      <span class="stat">替代方案 <em>CLI + API</em></span>
+      <span class="stat">MCP协议推出 <em>2024年11月</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/NWtAPK88zGq0gVD3yaBtuA">机器之心</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">MCP的困境揭示了<strong>AI工具集成领域"过度抽象"的陷阱</strong>。Anthropic在2024年11月推出MCP试图统一Agent与外部服务的通信协议，但一年多后"builder多于user"的质疑成为现实。讽刺的是，就在Chrome 146刚内置MCP协议的同一周，行业先锋就开始放弃它。CLI的"古法"路线之所以胜出，核心在于<strong>LLM本身就是在CLI生态中训练的</strong>——不需要新协议，已有的工具链就够用了。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">收购</span>
+      OpenAI收购Promptfoo：强化Agent安全测试，25%财富500强已采用
+    </div>
+    <div class="item-body">
+      <strong>3月9日，OpenAI宣布收购AI安全与评估初创公司Promptfoo</strong>。Promptfoo已被25%以上财富500强企业采用，技术将集成到OpenAI Frontier企业平台。覆盖能力：Prompt注入检测、数据泄露防护、越狱识别、工具滥用检测、合规监控。开源项目将继续维护，团队仅11名工程师。2026年OpenAI已收购Torch（医疗，~$6000万）、Software Applications（Sky AI）。
+    </div>
+    <div class="stat-row">
+      <span class="stat">采用率 <em>25%+ F500</em></span>
+      <span class="stat">团队 <em>11名工程师</em></span>
+      <span class="stat">2026年收购 <em>第3家</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://openai.com/index/openai-to-acquire-promptfoo/">OpenAI官方</a> ｜ <a href="https://www.forbes.com/sites/janakirammsv/2026/03/10/openai-acquires-promptfoo-to-embed-security-testing-into-its-agents/">Forbes</a> ｜ 3月9日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">OpenAI正通过收购快速填补Frontier平台的能力空白——<strong>安全评估是企业AI Agent部署的"入场券"</strong>。但Promptfoo被收购后的中立性存疑：用被审计公司控制的工具审计自家模型，可能引发治理担忧。这也暴露了AI安全评估领域缺乏独立第三方的行业痛点。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">产品</span>
+      Google Maps新增"Ask Maps" AI问答 + 十年最大导航重设计
+    </div>
+    <div class="item-body">
+      <strong>3月12日，Google Maps引入Gemini驱动的对话式AI功能</strong>。<strong>Ask Maps</strong>支持自然语言提问，如"手机快没电了，哪里可以充电且不用排队买咖啡？"已在美国和印度的Android/iOS上线。<strong>Immersive Navigation</strong>是十年来最大导航重设计：3D视图显示建筑、立交桥、地形，高亮车道、斑马线、红绿灯，支持CarPlay和Android Auto。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心功能 <em>Ask Maps对话</em></span>
+      <span class="stat">导航更新 <em>十年最大</em></span>
+      <span class="stat">上线市场 <em>美国+印度</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/12/google-maps-is-getting-an-ai-ask-maps-feature-and-upgraded-immersive-navigation/">TechCrunch</a> ｜ <a href="https://arstechnica.com/gadgets/2026/03/google-maps-gets-its-biggest-navigation-redesign-in-a-decade-plus-more-ai/">Ars Technica</a> ｜ 3月12日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Google将Gemini嵌入Maps，标志着<strong>AI从"独立聊天框"走向"嵌入式系统智能"</strong>。Ask Maps的复杂问答能力远超传统搜索，可能改变本地搜索和商户引流模式。3D沉浸导航则是对Apple Maps近年3D功能的直接回应，地图应用正成为AI落地的关键场景。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">延期</span>
+      Meta推迟"Avocado"AI模型至5月：性能不及竞品，或暂时授权Google Gemini
+    </div>
+    <div class="item-body">
+      据NYT报道，<strong>Meta将AI模型"Avocado"从3月推迟至至少5月发布</strong>。原因是性能介于Gemini 2.5和Gemini 3之间，无法匹配最新竞品。更令人震惊的是，Meta AI领导层甚至<strong>考虑暂时授权使用Google Gemini</strong>。2026年资本支出计划$1150-1350亿，主要投向Superintelligence Labs。
+    </div>
+    <div class="stat-row">
+      <span class="stat">延期至 <em>至少5月</em></span>
+      <span class="stat">资本支出 <em>$1150-1350亿</em></span>
+      <span class="stat">备选方案 <em>授权Gemini</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.yahoo.com/news/meta-delays-rollout-ai-model-235602299.html">Reuters/NYT</a> ｜ 3月12日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Meta花费天价资本支出却无法在模型竞赛中领跑，反映了<strong>"钱不能买来一切"</strong>的AI行业现实。考虑授权Google Gemini更是前所未有——这意味着即使资金最雄厚的公司，在核心AI技术上也可能被迫求助于竞争对手。这为"AI军备竞赛=烧钱竞赛"的论调泼了一盆冷水。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">开源</span>
+      微软BitNet.cpp开源：CPU运行100B参数大模型，能耗降低82%
+    </div>
+    <div class="item-body">
+      微软开源<strong>BitNet.cpp框架</strong>——1.58位三值量化推理框架。首次实现<strong>单CPU流畅运行100B参数大模型</strong>：ARM CPU加速1.37-5.07倍，x86 CPU加速2.37-6.17倍，能耗降低55.4%-82.2%。单CPU每秒5-7 Token（接近人类阅读速度），模型体积仅为传统FP16的1/6，支持Windows/Linux/macOS。
+    </div>
+    <div class="stat-row">
+      <span class="stat">量化精度 <em>1.58位</em></span>
+      <span class="stat">能耗降低 <em>82%</em></span>
+      <span class="stat">速度 <em>5-7 Token/s</em></span>
+      <span class="stat">体积缩减 <em>1/6</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://cloud.tencent.com/developer/article/2472888">腾讯云/微软官方</a> ｜ 3月12日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">BitNet.cpp打破了<strong>"无GPU不AI"的硬件枷锁</strong>。虽然1.58位量化在知识密集型任务上表现较弱，但对边缘设备、IoT和资源受限场景意义重大。这可能推动AI从云端向终端的大规模迁移，让普通消费者的笔记本电脑也能运行百亿参数模型，是AI普惠化的重要里程碑。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">涨价</span>
+      手机厂商集体涨价：OPPO/vivo/小米全面调价，千元机即将消失
+    </div>
+    <div class="item-body">
+      <strong>3月16日起，OPPO正式对A系列、K系列及一加品牌调价</strong>，涨幅200-500元不等，涉及一加15、Ace 6、Ace 6T、Turbo 6等7款主力机型。<strong>vivo与iQOO宣布3月18日起调价</strong>，涨幅300-800元，原本1999元机型直接涨至2499元。<strong>小米已悄悄执行涨价</strong>，Redmi千元机涨100-200元，中端机型涨300-500元。仅<strong>华为按兵不动</strong>，全系未跟进涨价。此轮涨价源于存储芯片成本暴涨——DRAM内存、NAND闪存半年涨幅最高达500%。
+    </div>
+    <div class="stat-row">
+      <span class="stat">OPPO涨幅 <em>200-500元</em></span>
+      <span class="stat">vivo涨幅 <em>300-800元</em></span>
+      <span class="stat">存储芯片涨幅 <em>最高500%</em></span>
+      <span class="stat">华为 <em>未涨价</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.donews.com/news/detail/8/6468159.html">DoNews</a> ｜ <a href="https://www.toutiao.com/article/7617394962765709864/">今日头条</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">存储芯片涨价正在<strong>重塑手机行业价格体系</strong>。千元机阵营面临"灭绝"危机，中端机价格带上移，行业竞争从"性价比"转向"质价比"。华为不跟涨的策略可能借机扩大市场份额，但也考验其供应链承压能力。对消费者而言，"等等党"时代暂时终结，有购机需求的用户需尽快决策。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">涨价</span>
+      半导体酝酿4月集体涨价：联电/世界先进/力积电晶圆代工厂调价
+    </div>
+    <div class="item-body">
+      <strong>据台湾经济日报，成熟制程晶圆代工厂联电、世界先进、力积电等最快4月起调升报价</strong>，幅度最高达一成甚至更多。联电表示目前订价环境"确实较先前有利"；世界先进涨价函显示拟自2026年4月起调整代工价格；力积电证实本季起已陆续涨价，主要调整毛利率较低的产品线。此外，<strong>德州仪器、恩智浦、英飞凌等IDM大厂也计划4月调价</strong>，AI算力需求推动上游供应链持续紧张。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涨价企业 <em>联电/世界先进/力积电</em></span>
+      <span class="stat">涨幅 <em>最高10%</em></span>
+      <span class="stat">生效时间 <em>2026年4月</em></span>
+      <span class="stat">驱动因素 <em>AI算力需求</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://new.qq.com/rain/a/20260316A038FI00">腾讯网/台湾经济日报</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">晶圆代工厂集体涨价反映了<strong>AI对全产业链的"虹吸效应"</strong>。不仅高端GPU供不应求，连成熟制程、模拟芯片、功率半导体等基础器件也在AI数据中心扩建的带动下出现供需紧张。以驱动IC为首的IC设计厂因成本上扬也规划涨价，涨价潮正从上游向下游传导。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">合作</span>
+      亚马逊AWS部署Cerebras晶圆级AI芯片CS-3：与Trainium配套挑战NVIDIA推理霸权
+    </div>
+    <div class="item-body">
+      <strong>3月13日，亚马逊AWS与Cerebras宣布合作</strong>，Amazon Bedrock平台将在未来数月部署结合双方芯片产品的混合AI推理系统。<strong>Cerebras CS-3晶圆级芯片</strong>与<strong>AWS Trainium3</strong>配套使用：Trainium负责推理"预填充"阶段（提示处理，将用户请求转为Token，并行工作负载，要求大算力），CS-3承担"解码"阶段（输出生成，串行工作负载，要求高内存带宽），两者通过AWS EFA弹性网络适配器连接。这种分工发挥各自芯片优势，提供最佳用户体验。Cerebras估值约231亿美元，今年初还与OpenAI签署了100亿美元芯片供应协议。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Cerebras估值 <em>231亿美元</em></span>
+      <span class="stat">OpenAI订单 <em>100亿美元</em></span>
+      <span class="stat">部署平台 <em>Amazon Bedrock</em></span>
+      <span class="stat">连接方式 <em>AWS EFA</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.sina.com.cn/tech/digi/2026-03-16/doc-inhrctqz8931963.shtml">新浪财经/IT之家</a> ｜ <a href="https://mp.weixin.qq.com/s/FejM_UjYYEUtD_m3vrYe7Q">芯片产业</a> ｜ 3月14-16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这笔交易凸显了<strong>算力市场从训练向推理的重大转变</strong>。GPU在训练时速度快，但在需要更高响应速度的推理场景并不理想。随着AI用户达到数百万级，企业正积极寻求多元化芯片供应。"异构推理"正成为行业新范式——不同芯片负责推理不同阶段，实现最优性价比。AWS预计其方案将在性价比方面持续领先GPU。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">独家</span>
+      全球首次！国星宇航完成太空算力"养虾"试验
+    </div>
+    <div class="item-body">
+      《科创板日报》记者独家获悉，近日，基于开源智能体"龙虾"OpenClaw，<strong>国星宇航-上海交通大学太空计算联合实验室完成一项技术试验</strong>：通过自然语言指令远程调用太空算力，实现对地面人形机器人的操控。据称，这是<strong>全球首次实现通过太空算力远程驱动地面机器人</strong>，全球首次实现"自然语言指令→太空AI推理→地面机器人执行"的完整闭环，也完成了全球首次验证太空算力为地面硅基智能体提供AI认知服务的可行性。
+    </div>
+    <div class="stat-row">
+      <span class="stat">技术突破 <em>太空算力驱动地面机器人</em></span>
+      <span class="stat">技术路径 <em>自然语言→太空AI→地面执行</em></span>
+      <span class="stat">合作方 <em>国星宇航×上海交大</em></span>
+      <span class="stat">技术底座 <em>OpenClaw</em></span>
+    </div>
+    <div class="item-source">来源：《科创板日报》（记者 李明明）｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是<strong>太空计算与AI Agent结合的里程碑</strong>。将AI推理放到太空卫星上执行，再远程控制地面机器人，意味着未来太空算力可以成为地面智能体的"云端大脑"。这对偏远地区、灾害救援、军事等场景意义重大——即使地面网络中断，也可通过卫星链路获得AI能力。国星宇航正在布局的"星算计划"，目标就是构建太空算力网络。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">供应链</span>
+      消息称受HBM4供应影响，英伟达下修Rubin GPU投片
+    </div>
+    <div class="item-body">
+      《科创板日报》16日讯，<strong>供应链透露，由于HBM4供应不如预期，英伟达下修新一代Rubin GPU平台投片</strong>。有晶圆代工厂商透露，英伟达原先规划Rubin GPU自2026年起逐步取代Blackwell平台，并占用相当比例先进封装产能。不过，<strong>受HBM4供应链出现技术调整与产能限制，Rubin量产节奏可能延后</strong>，使其在英伟达整体CoWoS封装产能占比低于先前预估。
+    </div>
+    <div class="stat-row">
+      <span class="stat">受影响产品 <em>Rubin GPU平台</em></span>
+      <span class="stat">限制因素 <em>HBM4供应不足</em></span>
+      <span class="stat">原规划 <em>2026年取代Blackwell</em></span>
+      <span class="stat">影响 <em>CoWoS产能占比下调</em></span>
+    </div>
+    <div class="item-source">来源：《科创板日报》（台湾工商时报）｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">HBM（高带宽内存）已成为AI芯片的<strong>"卡脖子"环节</strong>。Rubin是英伟达下一代旗舰GPU平台，原计划2026年接替Blackwell，但HBM4的供应瓶颈可能导致延期。这再次凸显了存储芯片在AI算力产业链中的战略地位——三星、SK海力士、美光三大HBM供应商的产能分配，将直接影响英伟达、AMD等芯片大厂的产品节奏。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">政策</span>
+      "游戏出海"写入国家"十五五"规划：全国多地出台扶持政策
+    </div>
+    <div class="item-body">
+      <strong>3月13日，新华社正式发布"十五五"规划纲要</strong>，网络游戏与游戏出海被多次写入重点专栏。这是继"十四五"规划之后，游戏再次成为国家战略的组成部分。纲要在<strong>第三十五章"加快发展文化产业"</strong>和<strong>第三十六章"提升中华文明传播力影响力"</strong>中均有涉及。《黑神话：悟空》《原神》《燕云十六声》等优秀国产游戏走向全球，验证了游戏在文化出海和区域经济发展中的重大作用。自2025年4月游戏出海纳入国家战略以来，全国多地纷纷出台游戏产业扶持政策。
+    </div>
+    <div class="stat-row">
+      <span class="stat">规划层级 <em>国家五年规划</em></span>
+      <span class="stat">涉及章节 <em>第35/36章</em></span>
+      <span class="stat">代表游戏 <em>黑神话/原神/燕云</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/Fb_qOKvZ1lmqBleU37kdXQ">GameQuest</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">游戏出海连续两个五年规划被写入国家战略，标志着<strong>政策层面对游戏产业定位的根本性转变</strong>——从"需要管控的娱乐"到"文化输出的先锋"。《黑神话：悟空》的全球爆火证明了中国游戏的文化传播力。各地竞相出台扶持政策，游戏行业正从"版号焦虑"走向"出海红利"的新阶段。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">GDC</span>
+      GDC 2026：Elden Ring Switch 2优化版Demo / Xbox Project Helix 2027
+    </div>
+    <div class="item-body">
+      GDC 2026本周在旧金山举行，多个重磅消息。<strong>Bandai Namco展示Elden Ring Switch 2新优化版Demo</strong>——帧率约30-40 FPS，优于Gamescom 2025版，支持掌机和底座模式，新增两个职业。<strong>Xbox Project Helix下一代主机</strong>Alpha开发机2027年向开发者发货，定制AMD SoC集成AI/ML神经渲染，Windows 11将在4月推出Xbox Mode。<strong>Mina the Hollower</strong>（Shovel Knight团队新作）Switch 2试玩大获好评。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Elden Ring帧率 <em>30-40 FPS</em></span>
+      <span class="stat">Xbox Helix <em>2027年发货</em></span>
+      <span class="stat">Xbox Mode <em>4月上线Win11</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.polygon.com/elden-ring-switch-2-preview/">Polygon</a> ｜ <a href="https://www.gematsu.com/2026/03/project-helix-alpha-development-kits-to-ship-in-2027-xbox-mode-coming-to-windows-11-in-april">Gematsu</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">GDC 2026揭示了<strong>主机行业的分化趋势</strong>——Switch 2通过优质移植吸引核心玩家，Xbox则押注PC/主机融合的"万能设备"策略。Elden Ring的大幅优化让人对Switch 2的第三方支持更有信心。Xbox Mode进入Windows 11意味着微软正在模糊主机和PC的边界，游戏行业的平台概念正在被重新定义。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">新品</span>
+      腾讯《洛克王国：世界》公布实机演示：3月26日正式上线
+    </div>
+    <div class="item-body">
+      <strong>3月14日，腾讯魔方工作室《洛克王国：世界》在前瞻直播中公布最新实机演示</strong>。游戏支持<strong>iOS、安卓、PC及鸿蒙多平台数据互通</strong>，将于3月17日开启预注册，3月23日开放预下载，<strong>3月26日正式上线</strong>。本作基于虚幻4引擎打造，是2010年公测的经典页游《洛克王国》的正统续作。腾讯表示这是对存量用户情感价值的深度挖掘，有望为腾讯在怀旧社交赛道开辟新的增长空间。
+    </div>
+    <div class="stat-row">
+      <span class="stat">上线时间 <em>3月26日</em></span>
+      <span class="stat">支持平台 <em>iOS/安卓/PC/鸿蒙</em></span>
+      <span class="stat">引擎 <em>虚幻4</em></span>
+      <span class="stat">预注册 <em>3月17日</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.eastmoney.com/a/202603163672528965.html">东方财富网</a> ｜ 3月14日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">《洛克王国：世界》的<strong>多端互通+鸿蒙接入</strong>展现了腾讯在全终端布局上的技术储备。经典IP的移动化、多端化转型已成为行业趋势——《摩尔庄园》《奥比岛》等怀旧IP都取得了不错的市场表现。洛克王国拥有庞大的90后、00后用户基础，情怀+品质的双轮驱动可能创造新的爆款。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-green">财报</span>
+      创梦天地预计2025财年扭亏为盈：净利润1000万-3000万元
+    </div>
+    <div class="item-body">
+      <strong>3月16日，创梦天地(01119)发布公告</strong>，预计2025财年净利润将介于<strong>1000万元至3000万元</strong>，而去年同期为净亏损约5.45亿元，实现扭亏为盈。主要原因：自研游戏产品表现良好、整体利润率同比上升、自研产品进入商业化阶段、研发投入同比减少、精细化成本管控。预计2025财年经营活动现金流净流入将介于<strong>6000万元至8000万元</strong>。公告发布后，创梦天地早盘涨超8%。
+    </div>
+    <div class="stat-row">
+      <span class="stat">预计净利润 <em>1000-3000万</em></span>
+      <span class="stat">同比改善 <em>亏5.45亿→盈利</em></span>
+      <span class="stat">经营现金流 <em>6000-8000万</em></span>
+      <span class="stat">股价反应 <em>涨超8%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="http://finance.eastmoney.com/a/202603163672605951.html">东方财富网</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">创梦天地的扭亏为盈验证了<strong>"聚焦自研+精细运营"</strong>策略的有效性。从代理发行转向自研，虽然前期投入大，但一旦产品进入商业化阶段，利润率显著高于代理业务。这也反映了游戏行业整体回暖——版号常态化发放、用户付费意愿回升，中小游戏公司迎来业绩修复窗口期。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">政策</span>
+      苹果下调中国区App Store佣金率：30%降至25%
+    </div>
+    <div class="item-body">
+      <strong>3月13日，苹果公司宣布下调中国区App Store佣金率</strong>，自2026年3月15日起生效。标准佣金率由<strong>30%降至25%</strong>；小型开发者计划及小程序合作伙伴计划项下符合条件的佣金率由<strong>15%降至12%</strong>。苹果表示此次调整是根据与中国监管部门的沟通结果，无需开发者重新签署条款。这是苹果成立50周年之际面向中国市场放出的重磅政策。
+    </div>
+    <div class="stat-row">
+      <span class="stat">标准费率 <em>30%→25%</em></span>
+      <span class="stat">小型开发者 <em>15%→12%</em></span>
+      <span class="stat">生效时间 <em>3月15日</em></span>
+      <span class="stat">背景 <em>苹果50周年</em></span>
+    </div>
+    <div class="item-source">来源：<a href="http://finance.sina.com.cn/wm/2026-03-13/doc-inhqvamv4215675.shtml">新浪财经</a> ｜ 3月13日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">佣金下调是苹果对中国监管压力的回应，也是<strong>与欧盟、韩国等地保持一致</strong>的全球化策略。对开发者而言，5个百分点的降幅意味着可观的收入提升——以年收入1000万的开发者为例，每年可多获得约50万收入。但对苹果而言，中国区App Store收入占比高，这一调整将对其服务业务营收产生一定影响。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">安全</span>
+      腾讯电脑管家推出"龙虾管家"：首个为OpenClaw打造的一站式安全方案
+    </div>
+    <div class="item-body">
+      <strong>腾讯电脑管家上线"龙虾管家"功能</strong>——首个专为OpenClaw打造的安全管家。核心功能：①<strong>文件安全保护</strong>——手动添加受保护文件夹，OpenClaw无法修改或删除其中内容，被拦截时立即弹窗提醒；②<strong>公网暴露检测</strong>——一键扫描端口是否对外开放，检测密码强度，发现ngrok等内网穿透工具即时拦截；③<strong>一键傻瓜扫描</strong>——全面检查AI应用网络端口暴露风险。设计理念是"选择性开放"——大部分区域给权限，核心隐私区域锁起来。目前OpenClaw全球公网暴露资产达38万个。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心功能 <em>文件/端口/扫描</em></span>
+      <span class="stat">公网暴露 <em>38万个</em></span>
+      <span class="stat">设计理念 <em>选择性开放</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/Vj6BvmaM5XZzgRlBCKDwhw">卡兹克</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">腾讯这次在OpenClaw安全上的反应速度令人印象深刻。<strong>"龙虾管家"填补了Agent时代的安全真空</strong>——不是全开（风险太大），不是全关（Agent就废了），而是"选择性开放"。38万个公网暴露资产说明绝大多数用户缺乏安全意识，腾讯的"一键扫描"模式降低了安全防护门槛。安全行业在AI Agent时代迎来了新的增长引擎。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">融资</span>
+      阿里腾讯联合投资脑机接口：阶梯医疗获5亿元战略融资，年底有望反超Neuralink
+    </div>
+    <div class="item-body">
+      国内头部脑机接口企业<strong>阶梯医疗完成5亿元战略融资</strong>，由阿里巴巴领投，国投创合跟投，腾讯、启明创投、礼来亚洲基金等老股东跟进。近一年累计融资超<strong>11亿元</strong>，这也是阿里和腾讯在脑机接口领域布局的首家企业。阶梯医疗已完成国内首例256通道侵入式脑机接口临床植入，<strong>计划2026年中开展大规模多中心注册临床试验</strong>，年内完成约40例患者入组。到2026年底，临床植入总例数有望接近甚至反超Neuralink（当前约21例）。
+    </div>
+    <div class="stat-row">
+      <span class="stat">本轮融资 <em>5亿元</em></span>
+      <span class="stat">年度累计 <em>11亿元+</em></span>
+      <span class="stat">通道数 <em>256通道</em></span>
+      <span class="stat">年度目标 <em>40例植入</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/lv4r0tTWOBj8i6Hr1DaZtQ">科创板日报</a> ｜ 3月15日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">阿里腾讯同时出手投资同一家脑机接口企业，释放了<strong>互联网巨头布局"下一代人机交互"</strong>的强烈信号。2026年政府工作报告首次将脑机接口纳入未来产业培育清单，与量子科技、6G、具身智能并列。中国信通院测算2030年市场规模可达100-140亿元。阶梯医疗的100毫秒端到端响应速度，已让四肢瘫痪患者实现"意念控制"轮椅出行和机器狗取物，真正进入临床商用阶段。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">315</span>
+      315晚会曝光AI大模型"投毒"黑产：39.9元即可篡改AI搜索答案
+    </div>
+    <div class="item-body">
+      <strong>2026年315晚会重磅曝光AI大模型被"投毒"乱象</strong>，话题迅速冲上热搜，阅读量近3000万。<strong>DeepSeek、豆包、元宝、千问、文心一言、Kimi、纳米AI、智谱清言"无一幸免"</strong>。记者虚构"Apollo-9智能手环"（捏造"量子纠缠传感""黑洞级续航"），利用"力擎GEO"系统自动生成十余篇虚假软文并发布。仅<strong>2小时</strong>后，五款AI大模型就开始推荐这款完全虚构的产品。追加11篇虚假软文后，3天内两个主流大模型将其列入推荐榜前列。GEO系统套餐价格从基础版<strong>2980元/年</strong>到高级版<strong>16980元/年</strong>，高级版一年可生成23040篇文章。被曝公司一年服务200多个客户，遍布医疗、教培、安防等各行各业。
+    </div>
+    <div class="stat-row">
+      <span class="stat">投毒速度 <em>2小时见效</em></span>
+      <span class="stat">涉及大模型 <em>8款</em></span>
+      <span class="stat">GEO年费 <em>2980-16980元</em></span>
+      <span class="stat">日均生成 <em>63篇文章</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/8VxKJkQFqlB25UxMWaM4FQ">智东西</a> ｜ <a href="https://mp.weixin.qq.com/s/je800VXivBm-99fqInB6Hw">央视315</a> ｜ 3月15日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是央视首次在315晚会聚焦<strong>AI搜索生态污染</strong>。GEO（生成引擎优化）从传统SEO的"网页排名"转向AI时代的"获取AI引用权"，已成完整灰产。当AI大模型逐渐成为消费者获取信息的主渠道，虚假内容一旦被AI学习并反复引用，将以"权威推荐"面目持续误导公众。国家市场监管总局已将AI生成广告列为2026年集中整治重点。力擎负责人甚至暗示大手机品牌也在花数百万做GEO——这意味着问题可能比想象中严重得多。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">预警</span>
+      中国互联网金融协会发布OpenClaw金融安全风险提示
+    </div>
+    <div class="item-body">
+      <strong>3月15日</strong>（国际消费者权益日），中国互联网金融协会发布《关于OpenClaw在互联网金融行业应用安全的风险提示》。指出四大风险：<strong>资金损失</strong>（漏洞+恶意插件窃取网银密码）、<strong>交易责任</strong>（自动化误操作金融交易）、<strong>数据合规</strong>（持久记忆传输敏感数据）、<strong>新型诈骗</strong>（"AI代炒股""稳赚不赔"话术）。建议金融消费者<strong>极其谨慎安装</strong>，建议从业机构<strong>不在金融业务终端安装</strong>。警告"养虾理财"等名义可能是金融诈骗。
+    </div>
+    <div class="stat-row">
+      <span class="stat">发布机构 <em>中国互金协会</em></span>
+      <span class="stat">四大风险 <em>资金/交易/数据/诈骗</em></span>
+      <span class="stat">建议 <em>极其谨慎安装</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.caixin.com/2026-03-15/102423222.html">财新网</a> ｜ 3月15日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是继工信部、CNCERT、国家工业信息安全中心之后，<strong>又一个国家级机构对OpenClaw发出风险预警</strong>。金融领域的特殊性使监管尤为审慎——AI智能体自主交易的责任认定在法律上仍是空白。"养虾理财"骗局的出现说明不法分子已开始利用AI热度实施金融诈骗，监管介入的及时性对保护普通投资者至关重要。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">汇总</span>
+      从部委到高校：OpenClaw限令密集出台，国有银行已禁止安装
+    </div>
+    <div class="item-body">
+      截至3月14日，OpenClaw在国内遭遇密集安全预警和使用限制。<strong>国家级机构</strong>：工信部"六要六不要"、CNCERT风险提示、国家工业信息安全中心禁止与工控网络连通、国家网络安全通报中心监测到境内2.3万个暴露资产。<strong>金融领域</strong>：多家国有银行和政府机关明确禁止员工安装，江浙沪上市银行"内网不允许部署"。<strong>高校</strong>：珠海科技学院、山西应用科技学院等<strong>严禁使用+强制卸载</strong>；北京建筑大学、华南师范大学等禁止在办公设备安装；北京大学、天津大学等发布风险提醒和规范使用建议。
+    </div>
+    <div class="stat-row">
+      <span class="stat">国家级预警 <em>4个机构</em></span>
+      <span class="stat">金融限制 <em>多家国有银行</em></span>
+      <span class="stat">高校限令 <em>15+所</em></span>
+      <span class="stat">暴露资产 <em>2.3万个</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/Fb_qOKvZ1lmqBleU37kdXQ">科创板日报</a> ｜ 3月15日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">OpenClaw限令的层级之广、速度之快，在中国科技监管史上罕见。从工信部到CNCERT、从国有银行到985高校，<strong>一个月内形成了从上到下的"安全防线"</strong>。值得注意的是，各机构态度分化明显：部分高校"一刀切严禁"，而北大、天大等采取"扫描整改+规范使用"的柔性策略。这反映了监管层面在"拥抱创新"与"防范风险"之间的艰难平衡。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月16日 · 覆盖范围：3月12日-16日</p>
+  <p>海外来源：<strong>NVIDIA GTC</strong>、<strong>OpenAI</strong>、<strong>TechCrunch</strong>、<strong>Ars Technica</strong>、<strong>Forbes</strong>、<strong>Reuters</strong>、<strong>Polygon</strong>、<strong>Gematsu</strong></p>
+  <p>国内来源：量子位、机器之心、智东西、科创板日报、GameQuest、财新网、央视315</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
