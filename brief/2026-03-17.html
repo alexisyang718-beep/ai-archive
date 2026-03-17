@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月17日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .github-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .gh-item {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .gh-item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border);
+  }
+
+  .gh-name { font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+
+  .gh-name a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .gh-name a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  .gh-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .gh-star {
+    font-size: 12px;
+    color: var(--tag-orange);
+    font-weight: 500;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .github-grid { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月17日 · 周二</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>NVIDIA GTC 2026</strong>今日开幕：发布Vera Rubin平台（336B晶体管/50 PFLOPS）+ Feynman 2028路线图 + 200亿美元收购Groq后首款LPU<br>
+    ❷ <strong>腾讯全面押注"养虾"</strong>：马化腾凌晨2点站台，发布WorkBuddy+QClaw全系龙虾矩阵，股价单日涨超7%<br>
+    ❸ <strong>阿里巴巴</strong>成立Alibaba Token Hub（ATH）事业群：CEO吴泳铭挂帅，"悟空事业部"首次曝光<br>
+    ❹ <strong>Kimi</strong>发布Attention Residuals论文：将注意力"旋转90度"，等效免费获得1.25倍算力<br>
+    ❺ <strong>OPPO Find N6</strong>今日全球首发：首发无痕钛合金铰链+自修复记忆玻璃，哈苏2亿四摄<br>
+    ❻ <strong>4月国产新机</strong>密集爆料：小米16（6.36"+8000mAh）、Find X9 Ultra（6.9"直屏+2nm）、华为Pura90系列
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">突破</span>
+      Kimi团队发布Attention Residuals论文：将注意力"旋转90度"，等效免费获得1.25倍算力
+    </div>
+    <div class="item-body">
+      月之暗面（Moonshot AI）Kimi团队发布<strong>Attention Residuals（AttnRes）</strong>论文，提出将残差连接从"深度方向"旋转到"注意力头方向"的全新架构。论文指出，当前主流LLM采用的<strong>PreNorm存在"稀释问题"</strong>——无论模型有50层还是100层，第1层与最后一层的输出权重相同，导致深层网络大量冗余。AttnRes通过让每个注意力头拥有独立的残差通道，使深层网络的每一层都能有效发挥作用。谷歌高级AI产品经理Shubham Saboo评价称"<strong>他们触碰了那个十年没人敢碰的部分</strong>"。实测显示AttnRes可让模型性能提升相当于<strong>免费获得1.25倍算力</strong>——不增加任何硬件即可实现。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心创新 <em>残差连接旋转90°</em></span>
+      <span class="stat">性能提升 <em>等效1.25x算力</em></span>
+      <span class="stat">解决问题 <em>PreNorm稀释</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://github.com/MoonshotAI/Attention-Residuals" target="_blank">GitHub/MoonshotAI</a> ｜ <a href="https://www.sohu.com/a/997302022_121885030" target="_blank">搜狐科技</a> ｜ 3月17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AttnRes的突破性在于它是对<strong>Transformer最底层架构的修改</strong>——自2017年Transformer论文以来，残差连接的设计几乎没有被质疑过。Kimi团队的发现意味着现有所有大模型（GPT、Claude、Gemini）都存在深层冗余。如果AttnRes被广泛采用，相当于整个行业的推理成本可以降低20%。这比开发新芯片来得更快、更便宜，是"软件定义算力"的典型案例。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">开源</span>
+      Mistral开源Leanstral：首个Lean 4形式化数学证明AI代理
+    </div>
+    <div class="item-body">
+      <strong>3月16日，Mistral在Hugging Face上开源Leanstral-2603</strong>——首个专为Lean 4语言设计的形式化数学证明AI代理。该模型可集成到Mistral自家的<strong>Vibe IDE</strong>中（输入<code>/leanstall</code>即可安装），也支持通过vLLM本地部署。Leanstral针对Lean 4的证明助手语法进行了深度优化，能够理解数学定理的逻辑结构并自动生成形式化证明代码。模型支持<strong>168K上下文窗口</strong>，推理时默认温度1.0以增强探索性。开发者可直接在PrimeNumberTheoremAnd等标准Lean项目上测试其能力。
+    </div>
+    <div class="stat-row">
+      <span class="stat">目标语言 <em>Lean 4</em></span>
+      <span class="stat">上下文 <em>168K Token</em></span>
+      <span class="stat">集成方式 <em>Vibe IDE + vLLM</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://huggingface.co/mistralai/Leanstral-2603" target="_blank">Hugging Face</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Leanstral的意义远超"又一个开源模型"。Lean 4是一种<strong>证明助手语言</strong>，要求严格的逻辑推导——AI不仅要"生成代码"，还要"证明代码的正确性"。这在航天、金融、密码学等安全关键系统中有巨大商业价值。Mistral选择这个小众赛道切入，避开了与OpenAI/Google在通用模型上的正面竞争，走的是<strong>"垂直深耕"路线</strong>。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">预言</span>
+      Anthropic CEO Dario Amodei：AI将在2026-2027年达到"天才国家"智能水平
+    </div>
+    <div class="item-body">
+      Anthropic CEO <strong>Dario Amodei</strong>近期在多个场合发出警告：AI将在2026-2027年达到相当于"<strong>一个由5000万天才组成的国家</strong>"的智能水平——这些"天才"在化学、工程、生物等各领域能力均超越诺贝尔奖得主。他在Axios专栏中写道："如果指数级进步继续——虽然不确定，但已有十年的轨迹支撑——那么AI在几年内超越人类几乎所有能力是不可避免的。"他将此描述为"<strong>一个世纪以来最严重的国家安全威胁</strong>"。此前在巴黎AI行动峰会上，他批评国际社会的治理步伐太慢，称峰会是"错失的机会"。
+    </div>
+    <div class="stat-row">
+      <span class="stat">时间预测 <em>2026-2027年</em></span>
+      <span class="stat">类比规模 <em>5000万超级天才</em></span>
+      <span class="stat">最晚时间 <em>2030年</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/infrastructure/anthropic-ceo-dario-amodei-warns-ai-will-match-country-of-geniuses-by-2026" target="_blank">VentureBeat</a> ｜ <a href="https://www.axios.com/2026/01/26/anthropic-ai-dario-amodei-humanity" target="_blank">Axios</a> ｜ 2026年1-3月</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Amodei的预测之所以值得重视，是因为他同时在<strong>建造和警告</strong>这项技术。"5000万诺贝尔级天才"的类比极具冲击力——这不是抽象讨论，而是一个拥有Claude模型训练数据的人给出的具体预测。如果他是对的，当前全球的AI治理框架将在2-3年内彻底过时。这也解释了为什么NVIDIA的万亿美元芯片订单看起来不那么疯狂——算力需求的增长可能比最乐观的预测还要快。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">首发</span>
+      OPPO Find N6今日全球首发：无痕钛合金铰链+自修复记忆玻璃+哈苏2亿四摄
+    </div>
+    <div class="item-body">
+      <strong>3月17日19:00，OPPO Find N6折叠屏手机全球首发</strong>。该机主打"全球最平整"折叠屏，已通过莱茵认证。核心卖点包括：首发<strong>"无痕钛合金天穹铰链"</strong>与<strong>"天穹记忆玻璃"</strong>（自修复折痕技术），实现"无感折痕、久用平整"。影像方面搭载折叠屏首个<strong>哈苏2亿超清四摄</strong>系统，支持专业哈苏拍摄和XPAN宽画幅模式。硬件配备骁龙8 Elite Gen5处理器、<strong>8.12英寸2K LTPO内屏</strong>、6000mAh电池+80W快充，预装ColorOS 16，提供北斗卫星通信版。发布前已在全国线下门店铺货展出。
+    </div>
+    <div class="stat-row">
+      <span class="stat">内屏 <em>8.12英寸2K</em></span>
+      <span class="stat">处理器 <em>骁龙8 Elite Gen5</em></span>
+      <span class="stat">电池 <em>6000mAh</em></span>
+      <span class="stat">影像 <em>哈苏2亿四摄</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.donews.com/news/detail/8/6468609.html" target="_blank">DoNews</a> ｜ <a href="https://new.qq.com/rain/a/20260309A03DCD00" target="_blank">腾讯网</a> ｜ 3月17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Find N6的核心卖点<strong>"自修复记忆玻璃"是折叠屏行业的材料学突破</strong>——如果真能实现"久用平整"，将彻底解决折叠屏最大的用户体验痛点。此前MWC 2026上该机已经惊艳亮相。哈苏2亿四摄也是折叠屏首次达到直板旗舰级影像水平。OPPO在折叠屏赛道持续押注，试图用技术创新抢在三星Galaxy Z Fold之前定义行业标准。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">爆料</span>
+      4月国产新机密集爆发：Find X9 Ultra、小米16、华为Pura90系列、阔折叠
+    </div>
+    <div class="item-body">
+      微博 @数码闲聊站 今日爆料，<strong>4月暂定待发新机</strong>包括：<strong>OPPO Find X9 Ultra</strong>、Find X9s Pro、<strong>华为Pura90系列</strong>（TBD）、华为Pura X2阔折叠（TBD）、一台天玑9500风扇性能机、一台天玑9500性能机。此前爆料还指出<strong>小米16</strong>也在4月档期。另有消息称<strong>vivo X300 Ultra等新品将于3月30日发布</strong>、4月3日开售。4月将出现性能机、影像旗舰、阔折叠同台竞技的盛况。
+    </div>
+    <div class="stat-row">
+      <span class="stat">旗舰 <em>Find X9 Ultra</em></span>
+      <span class="stat">小屏 <em>小米16</em></span>
+      <span class="stat">折叠 <em>Pura X2</em></span>
+      <span class="stat">时间 <em>4月密集发布</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/6048569942/5276409339052576" target="_blank">微博 @数码闲聊站</a> ｜ <a href="https://phone.cnmo.com/news/light/2/" target="_blank">CNMO</a> ｜ 3月17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">4月国产新机的<strong>密集程度创下近年之最</strong>。小米16主打小直屏+大电池（下面有详细爆料），Find X9 Ultra主打影像（双2亿主摄+唯一10倍光变），Pura90是华为P系列继任者，阔折叠是全新品类。手机厂商在春季扎堆发布，一方面是抢在苹果WWDC之前争夺关注度，另一方面也是上游存储芯片涨价压力下"早发布早锁价"的策略选择。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">爆料</span>
+      OPPO Find X9 Ultra详细配置曝光：6.9英寸2D纯直屏+2nm芯片+双2亿像素
+    </div>
+    <div class="item-body">
+      综合 @数码闲聊站 多条爆料及CNMO消息，OPPO Find X9 Ultra将采用<strong>6.9英寸2D纯直屏</strong>（LIPO极窄物理四等边、国产定制新基材、1nit低亮度显示、BT.2020色域），搭载<strong>2nm制程芯片</strong>。影像方面配备<strong>200MP主摄+50MP超广角+200MP潜望长焦+50MP 10X超长焦</strong>四摄组合，拥有"同级最大光圈的双2亿"配置，是该系列唯一搭载双潜望系统的版本。真机照已曝光，采用圆形镜头模组设计，深化与哈苏联名。
+    </div>
+    <div class="stat-row">
+      <span class="stat">屏幕 <em>6.9英寸2D直屏</em></span>
+      <span class="stat">制程 <em>2nm</em></span>
+      <span class="stat">主摄 <em>双2亿像素</em></span>
+      <span class="stat">长焦 <em>10X光变</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mobile.pconline.com.cn/2046/20465435.html" target="_blank">太平洋电脑网</a> ｜ <a href="https://phone.cnmo.com/news/light/2/" target="_blank">CNMO</a> ｜ 3月13-17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content"><strong>Find X9 Ultra的产品定位是"直屏+影像"双极端</strong>——6.9英寸大屏选择纯直屏在旗舰中罕见（主流是曲屏），可能在对标iPhone Pro Max的手握感，同时用直屏吸引"直屏党"。双2亿像素+唯一10倍光变则直接对标三星S26 Ultra，OPPO在影像赛道上展现了"all in"的决心。2nm制程意味着这很可能是首批搭载台积电N2的安卓旗舰之一。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">爆料</span>
+      小米16配置曝光：6.36英寸直屏+8000mAh+潜望镜+超声波指纹
+    </div>
+    <div class="item-body">
+      综合 @数码闲聊站 多条爆料，<strong>小米16</strong>将采用<strong>6.36英寸华星光电M10双层OLED直屏</strong>，小直屏迭代旗舰定位（中杯）。电池方面新开方案争取<strong>8000mAh±</strong>。确认搭载<strong>潜望式长焦镜头、无线充电、超声波指纹</strong>三大旗舰配置。Pro版配备6.8英寸大屏。值得注意的是，同一博主还爆料小米正在测试<strong>16GB LPDDR6+1TB UFS 5.0</strong>方案（骁龙8 Elite Gen6 Pro），其内存成本已超过SoC本身——这是手机行业首次。
+    </div>
+    <div class="stat-row">
+      <span class="stat">屏幕 <em>6.36英寸直屏</em></span>
+      <span class="stat">电池 <em>8000mAh</em></span>
+      <span class="stat">镜头 <em>潜望镜</em></span>
+      <span class="stat">存储 <em>LPDDR6+UFS 5.0</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/6048569942/5276409339052576" target="_blank">微博 @数码闲聊站</a> ｜ 3月17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content"><strong>小米16的配置组合是"小屏去妥协化"的教科书</strong>——过去小屏旗舰意味着砍电池砍镜头砍指纹，但8000mAh+潜望镜+无线充+超声波指纹的全配方案打破了这一惯例。更值得关注的是LPDDR6+UFS 5.0方案：内存成本首超SoC意味着存储芯片正在成为手机BOM成本的新高地，这将推动行业定价逻辑的根本转变。16GB RAM也意味着可在手机端运行10B参数级别的本地AI模型。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      苹果发布AirPods Max 2：H2芯片驱动，降噪提升1.5倍，3999元3月25日预购
+    </div>
+    <div class="item-body">
+      <strong>3月16日，苹果正式发布AirPods Max 2头戴式降噪耳机</strong>，这是初代AirPods Max发布五年后的首次迭代升级。核心升级为全面换装<strong>H2芯片</strong>，主动降噪效果较前代提升<strong>1.5倍</strong>，首次支持<strong>自适应音频、对话感知、语音突显</strong>等此前仅AirPods Pro 2拥有的智能功能。音质方面配备新的<strong>高动态范围放大器</strong>，支持24-bit/48kHz无损音频（需USB-C有线连接），空间音频乐器定位更精准。新增<strong>录音棚级音频录制</strong>和<strong>相机遥控</strong>（按数码旋钮可远程控制iPhone拍照）等实用功能。提供午夜色、星光色、橙色、紫色、蓝色五款配色，售价<strong>3999元</strong>（较一代4399元降价400元），3月25日预购，4月初发售。
+    </div>
+    <div class="stat-row">
+      <span class="stat">芯片 <em>H2（升级）</em></span>
+      <span class="stat">降噪 <em>提升1.5倍</em></span>
+      <span class="stat">售价 <em>3999元（降400）</em></span>
+      <span class="stat">预购 <em>3月25日</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://m.ithome.com/html/929661.htm" target="_blank">IT之家</a> ｜ <a href="https://tech.ifeng.com/c/8rY42UK4wJn" target="_blank">凤凰网科技</a> ｜ <a href="https://9to5mac.com/2026/03/16/airpods-max-2-vs-airpods-max-heres-everything-new/" target="_blank">9to5Mac</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AirPods Max 2最大的信号不是产品本身，而是<strong>苹果的定价策略——五年后迭代反而降价400元</strong>。初代4399元被广泛批评"定价离谱"，二代3999元是苹果罕见的价格回调，说明高端头戴耳机市场竞争加剧（索尼WH-1000XM6、Bose 800等对手持续蚕食份额）。技术层面，H2芯片的加入终于让AirPods Max补齐了AirPods Pro 2早已拥有的自适应音频全家桶功能，但外观设计几乎不变，说明苹果判断这一代的核心任务是<strong>"补课"而非"革新"</strong>——先把该有的功能补全，真正的设计革新可能留给下一代。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">GTC</span>
+      NVIDIA发布Vera Rubin平台：6芯片一体设计、336B晶体管、50 PFLOPS推理算力
+    </div>
+    <div class="item-body">
+      <strong>3月16日GTC 2026主题演讲，黄仁勋正式发布Vera Rubin AI加速平台</strong>。这不是一颗芯片，而是<strong>6颗芯片的协同设计</strong>：Vera CPU + Rubin GPU + NVLink 6 Switch + ConnectX-9 SuperNIC + BlueField-4 DPU + Spectrum-6以太网交换机。Rubin GPU采用台积电<strong>3nm工艺</strong>，集成<strong>336B晶体管</strong>（Blackwell为208B，提升62%），配备<strong>288GB HBM4</strong>（Blackwell为192GB HBM3e），内存带宽达<strong>22 TB/s</strong>（Blackwell的2.75倍）。NVFP4推理算力<strong>50 PFLOPS</strong>，训练算力<strong>35 PFLOPS</strong>，分别是Blackwell的5倍和3.5倍。<strong>2026年下半年</strong>开始出货，首批部署伙伴包括AWS、Google Cloud、Microsoft、OCI及CoreWeave、Lambda等。
+    </div>
+    <div class="stat-row">
+      <span class="stat">晶体管 <em>336B（+62%）</em></span>
+      <span class="stat">HBM4 <em>288GB</em></span>
+      <span class="stat">推理算力 <em>50 PFLOPS（5x）</em></span>
+      <span class="stat">内存带宽 <em>22 TB/s（2.75x）</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.nvidia.com/gtc/keynote/" target="_blank">NVIDIA GTC官网</a> ｜ <a href="https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/" target="_blank">NVIDIA开发者博客</a> ｜ <a href="https://tech-insider.org/nvidia-gtc-2026-rubin-gpu-analysis/" target="_blank">Tech Insider</a> ｜ 3月16-17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Vera Rubin最大的意义不是单芯片指标，而是<strong>"6芯片协同设计"的系统思维</strong>——NVIDIA正在从卖GPU转向卖"AI超级计算机"。288GB HBM4是解锁长序列推理的关键（当前GPT-4级模型的KV Cache就需要数百GB），22 TB/s带宽则直接决定了大模型的推理速度上限。5倍推理性能提升意味着同等算力下成本可以降低80%，这对AI应用的商业化至关重要。微软已宣布将在Fairwater AI超级工厂中部署Vera Rubin NVL72机架系统。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">GTC</span>
+      NVIDIA公布Feynman架构：1nm级GPU、硅光子互连、2028年量产
+    </div>
+    <div class="item-body">
+      黄仁勋在keynote中<strong>提前两年曝光了Feynman架构</strong>——面向世界模型与物理AI的下一代GPU。采用台积电<strong>1.6nm A16工艺</strong>（业界首次1nm级GPU），搭载<strong>硅光子光互连</strong>技术，带宽提升10倍、能耗降低90%。Feynman定位为"物理AI的基础设施"，目标是让AI理解重力、碰撞、因果等物理世界规律。计划<strong>2028年量产</strong>。NVIDIA还同步公布了完整路线图：2026年Vera Rubin → 2027年Kyber机架（144 GPU插槽/600kW单机架）→ 2028年Feynman。
+    </div>
+    <div class="stat-row">
+      <span class="stat">工艺 <em>1.6nm A16</em></span>
+      <span class="stat">互连 <em>硅光子</em></span>
+      <span class="stat">带宽提升 <em>10x</em></span>
+      <span class="stat">量产 <em>2028年</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://ongoingnow.com/business/nvidia-gtc-2026-unveils-feynman-chip-and-agentic-ai/" target="_blank">OngoingNow</a> ｜ <a href="https://www.theregister.com/2026/03/14/nvidia_gtc_2026_rubin_gpu/" target="_blank">The Register</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">黄仁勋提前两年公布Feynman路线图，目的是<strong>锁定客户预期、阻止竞争对手</strong>。硅光子是真正的"游戏改变者"——当前数据中心的电互连已经成为瓶颈（铜线发热、带宽有限），光互连可以从根本上解决这个问题。但从Vera Rubin到Kyber到Feynman，NVIDIA每年一代的迭代速度也意味着客户的投资回收周期被大幅压缩——去年买的Blackwell明年就"过时"，这是算力军备竞赛的甜蜜负担。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">收购</span>
+      NVIDIA发布Groq 3 LPU：200亿美元收购后首款芯片，Q3出货
+    </div>
+    <div class="item-body">
+      GTC 2026同步发布<strong>Groq 3 LPU</strong>（Language Processing Unit），这是去年12月NVIDIA以约<strong>200亿美元</strong>收购Groq以来推出的首款芯片。NVIDIA为推理构建了<strong>异构分工架构</strong>：Vera Rubin GPU负责"预填充"（Prefill，将用户请求转换为Token，属于并行密集型任务），Groq LPU负责"解码"（Decode，逐Token生成回答，属于串行带宽密集型任务）。Groq的<strong>RealScale网络</strong>采用无交换机直连拓扑，576颗LPU可作为统一内存空间运行。<strong>LPX推理机柜</strong>将于2026-2027年推出，预计Q3开始出货。
+    </div>
+    <div class="stat-row">
+      <span class="stat">收购金额 <em>~200亿美元</em></span>
+      <span class="stat">出货时间 <em>2026 Q3</em></span>
+      <span class="stat">架构 <em>预填充+解码分离</em></span>
+      <span class="stat">规模 <em>576 LPU统一内存</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://tspasemiconductor.substack.com/p/gtc-2026-outlook-how-nvidia-is-redefining" target="_blank">TSPA Semiconductor</a> ｜ <a href="https://www.youtube.com/watch?v=jIviHI7fqyc" target="_blank">GTC Keynote (YouTube)</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"预填充+解码分离"正在成为<strong>AI推理的新范式</strong>——这与昨天报道的AWS+Cerebras合作（Trainium预填充+CS-3解码）异曲同工。NVIDIA用200亿美元收购Groq后迅速推出产品，证明其对"推理市场"的重视已超过训练市场。黄仁勋在keynote中明确表示"<strong>推理拐点已至</strong>"——过去两年AI算力需求增长了百万倍，推理需求增速远超训练。Groq的确定性调度（编译器预计算所有数据传输时序）是其核心壁垒。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      黄仁勋：2027年Blackwell+Rubin订单目标1万亿美元，较去年预期翻倍
+    </div>
+    <div class="item-body">
+      黄仁勋在GTC 2026主题演讲中宣布，预计到<strong>2027年</strong>，Blackwell与Vera Rubin两代芯片产生的采购订单总额将达到<strong>1万亿美元</strong>——是去年NVIDIA自身预测的整整两倍（去年预期5000亿）。Bloomberg报道指出NVIDIA已连续11个季度实现超过55%的营收增长，本季度营收预计同比增长约77%。与此同时，据供应链消息，<strong>HBM4供应不及预期</strong>，导致Rubin GPU在CoWoS先进封装中的产能占比低于原先规划，量产节奏可能受到影响。
+    </div>
+    <div class="stat-row">
+      <span class="stat">2027年目标 <em>1万亿美元</em></span>
+      <span class="stat">同比增长 <em>翻倍（vs 5000亿）</em></span>
+      <span class="stat">营收增速 <em>~77%</em></span>
+      <span class="stat">风险 <em>HBM4供应瓶颈</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.youtube.com/watch?v=jIviHI7fqyc" target="_blank">GTC Keynote (YouTube/Yahoo Finance)</a> ｜ <a href="https://blog.barrack.ai/nvidia-rubin-specs-architecture-2026/" target="_blank">Barrack.ai</a> ｜ 3月16-17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content"><strong>1万亿美元的芯片订单堪比苹果的市值</strong>。从5000亿到1万亿的翻倍，说明AI算力需求的增长超过了连NVIDIA自己的预期。但HBM4供应瓶颈是真正的隐忧——三星、SK海力士、美光三大供应商的产能分配将直接决定Rubin的交付节奏。这场"万亿军备竞赛"最终可能不是被需求限制，而是被存储芯片的物理产能天花板限制。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">GDC</span>
+      Google Play Games引入Gemini Live AI助手 + Game Trials试玩 + Buy Once Play Anywhere
+    </div>
+    <div class="item-body">
+      <strong>GDC 2026上，Google宣布Google Play一系列游戏功能更新</strong>。<strong>Play Games Sidekick</strong>将Gemini Live AI助手嵌入游戏内覆盖层，为付费游戏提供实时对话式攻略辅助。<strong>Game Trials</strong>允许玩家免费试玩付费游戏完整版，购买后试玩进度完整保留——该功能即将在移动端上线，PC端稍后跟进。<strong>Buy Once Play Anywhere</strong>实现一次购买即可在移动端和PC端通过Google Play Games同步游玩，首批支持Moonlight Peaks、Potion Craft等独立游戏。Google还披露每月超过<strong>1.6亿玩家</strong>使用Play Games的"You"标签追踪游戏进度。
+    </div>
+    <div class="stat-row">
+      <span class="stat">月活玩家 <em>1.6亿+</em></span>
+      <span class="stat">AI功能 <em>Gemini Live</em></span>
+      <span class="stat">新政策 <em>跨端购买</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/11/google-play-is-adding-new-paid-and-pc-games-game-trials-community-posts-and-more/" target="_blank">TechCrunch</a> ｜ <a href="https://androidguys.com/news/google-play-introduces-new-gaming-features-and-cross-platform-purchases-at-gdc/" target="_blank">AndroidGuys</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Google正在三管齐下重塑游戏分发：<strong>AI辅助降低玩家门槛、试玩降低付费门槛、跨端降低平台门槛</strong>。Game Trials解决了付费游戏最大的转化痛点——"买完后悔"，进度保留消除了试用与正式版之间的断裂感。Buy Once Play Anywhere则直接对标Steam的跨端策略，Google不再满足于移动游戏平台，而是要成为全平台游戏入口。1.6亿月活是一个庞大的基础盘。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">GDC</span>
+      Google Play Game Trials上线：付费游戏免费试玩完整版，进度购买后完整保留
+    </div>
+    <div class="item-body">
+      GDC 2026上Google宣布的<strong>Game Trials</strong>功能正式上线，允许玩家<strong>免费试玩付费游戏的完整版本</strong>，而非阉割的Demo。试玩有时间限制，但关键创新在于——<strong>购买后所有游戏进度完整保留</strong>，无需从头开始。该功能即将在<strong>移动端率先上线</strong>，PC端稍后跟进。Google表示Game Trials旨在解决付费游戏最大的转化痛点："玩家不愿为未体验过的游戏付费"。开发者可通过Play Console自主配置试玩时长和触发条件。Google披露每月超过<strong>1.6亿玩家</strong>使用Play Games服务，Game Trials有望显著提升付费游戏的转化率。
+    </div>
+    <div class="stat-row">
+      <span class="stat">模式 <em>完整版限时试玩</em></span>
+      <span class="stat">核心 <em>进度保留</em></span>
+      <span class="stat">平台 <em>移动端先行</em></span>
+      <span class="stat">基础盘 <em>1.6亿月活</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/11/google-play-is-adding-new-paid-and-pc-games-game-trials-community-posts-and-more/" target="_blank">TechCrunch</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Game Trials本质上是<strong>游戏分发领域的"先体验后付费"革命</strong>。传统Demo只展示游戏一小部分且进度不保留，玩家体验断裂严重。Game Trials让玩家以零风险体验完整游戏，心理上从"花钱赌博"变成"确认购买"——这对付费游戏的转化率提升可能是颠覆性的。对独立游戏开发者尤其利好：他们最缺的不是产品质量，而是<strong>让玩家愿意迈出"第一步付费"的信任</strong>。如果数据验证有效，这一模式很可能被Steam和Epic效仿。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">GDC</span>
+      Google Play新PC游戏区上线 + 独立游戏扩展阵容：Moonlight Peaks、Potion Craft等
+    </div>
+    <div class="item-body">
+      GDC 2026上Google还宣布在Play Store游戏标签中新增<strong>独立的PC游戏区</strong>，专门展示针对Windows PC优化的游戏。首批扩展阵容包括<strong>Moonlight Peaks、Sledding Game、9 Kings、Potion Craft、Low-Budget Repairs</strong>等付费独立游戏，均支持移动端+PC端双端游玩，Gamer Profile同步跨设备进度。同时推出<strong>Wishlist</strong>功能，用户可收藏即将上线的游戏并在发售或打折时收到通知。<strong>Community Posts</strong>功能已在英语区部分热门游戏中上线，后续将扩展更多语言和游戏。
+    </div>
+    <div class="stat-row">
+      <span class="stat">新区 <em>PC游戏专区</em></span>
+      <span class="stat">首批游戏 <em>5款独立</em></span>
+      <span class="stat">新功能 <em>Wishlist+社区</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/11/google-play-is-adding-new-paid-and-pc-games-game-trials-community-posts-and-more/" target="_blank">TechCrunch</a> ｜ 3月11日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content"><strong>Google正在构建"移动+PC"双端游戏生态</strong>，直接挑战Steam和Epic的统治地位。独立PC游戏专区意味着Google不再满足于免费手游+内购的旧模式，而是要吸引付费用户和高质量独立游戏开发者。Wishlist+Community Posts复制了Steam的核心社交功能。对独立开发者而言，Google Play的1.6亿月活玩家基础盘+跨端购买政策是极具吸引力的分发渠道。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">GTC</span>
+      NVIDIA宣布DLSS 5：AI驱动的下一代游戏图形技术，今年秋季推出
+    </div>
+    <div class="item-body">
+      GTC 2026上NVIDIA还宣布<strong>DLSS 5</strong>将于今年秋季推出。DLSS 5在前代基础上进一步利用AI注入逼真光照和材质效果，为游戏带来更接近电影级的视觉体验。这是NVIDIA在游戏图形领域持续投入的最新成果，配合即将推出的RTX系列显卡将实现最佳效果。
+    </div>
+    <div class="stat-row">
+      <span class="stat">版本 <em>DLSS 5</em></span>
+      <span class="stat">发布 <em>2026年秋季</em></span>
+      <span class="stat">核心 <em>AI光照+材质</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.nvidia.com/gtc/keynote/" target="_blank">NVIDIA GTC Keynote</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">DLSS是NVIDIA在游戏领域的<strong>"护城河"技术</strong>——AMD FSR和Intel XeSS始终难以匹敌。DLSS 5的AI超分辨率+光照注入，意味着中端显卡也能跑出接近4K光追的画质。对于占NVIDIA收入近30%的游戏业务而言，每一代DLSS都是驱动玩家换卡的核心动力。秋季发布的时间节点暗示可能与新一代GeForce显卡同步亮相。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">组织</span>
+      阿里巴巴成立Alibaba Token Hub事业群：CEO吴泳铭挂帅，"悟空事业部"首次曝光
+    </div>
+    <div class="item-body">
+      <strong>3月16日晚间，阿里巴巴宣布正式成立Alibaba Token Hub（ATH）事业群</strong>，由集团CEO<strong>吴泳铭</strong>直接负责，与电商事业群、阿里云智能事业群并列为集团最核心的事业群。吴泳铭在内部信中写道："当下正处于<strong>AGI爆发前夜</strong>。大量数字化工作将由数以百亿计的AI Agent来支撑，而这些AI Agent将由模型产生的Token支撑运行。"ATH事业群以"创造Token、输送Token、应用Token"为核心目标，下辖五大事业部：<strong>通义实验室</strong>（基础模型研发）、<strong>MaaS业务线</strong>（模型服务平台）、<strong>千问事业部</strong>（个人AI助手）、<strong>悟空事业部</strong>（首次曝光，B端AI原生工作平台）、<strong>AI创新事业部</strong>（AI创新应用探索）。阿里巴巴将于3月19日发布Q3财报。
+    </div>
+    <div class="stat-row">
+      <span class="stat">负责人 <em>CEO吴泳铭</em></span>
+      <span class="stat">定位 <em>与电商/云并列</em></span>
+      <span class="stat">事业部 <em>5个</em></span>
+      <span class="stat">新曝光 <em>悟空事业部(B端)</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2026-03-16/doc-inhrevak5905027.shtml" target="_blank">新浪财经/环球网</a> ｜ <a href="https://www.21jingji.com/article/20260317/herald/7b6d2b7c98a9c7ed8e483e62172188ee.html" target="_blank">21财经</a> ｜ 3月16日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">阿里将ATH事业群提升到与电商、云并列的地位，释放了<strong>"Token是新流量"</strong>的战略信号。正如21财经所言："人工智能时代的Token（词元），相当于互联网时代的流量"——随着OpenClaw等智能体的爆火，Token消耗量比普通问答大幅攀升。<strong>悟空事业部的曝光尤为关键</strong>：这意味着阿里不仅做C端千问App，还要将模型能力深度嵌入企业工作流，直接对标微软Copilot和字节的豆包企业版。3月19日的财报将首次反映AI业务的财务影响。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">开源</span>
+      MiroMind MiroThinker 1.5：陈天桥创办，30B小模型跑赢万亿参数竞品
+    </div>
+    <div class="item-body">
+      盛大集团创始人<strong>陈天桥</strong>与清华AI学者<strong>代季峰</strong>联合创办的<strong>MiroMind</strong>，其旗舰模型<strong>MiroThinker 1.5</strong>持续引发关注。该模型仅有<strong>30B参数</strong>，却在BrowseComp-ZH等搜索智能体基准测试中跻身全球第一梯队，与Kimi-K2-Thinking等万亿参数模型表现相当。核心理念是"<strong>发现式智能</strong>"——不追求把世界"背进参数"，而是训练模型像科学家一样"研究→查证→修正"。MiroThinker 1.5的调用成本仅<strong>$0.07/次</strong>，是万亿模型成本的1/20。235B版本也已发布，进一步拓展推理能力。
+    </div>
+    <div class="stat-row">
+      <span class="stat">参数 <em>30B（轻量）</em></span>
+      <span class="stat">对比 <em>比肩万亿模型</em></span>
+      <span class="stat">成本 <em>$0.07/次（1/20）</em></span>
+      <span class="stat">理念 <em>发现式智能</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.163.com/dy/article/KIOQUSV805119FMA.html" target="_blank">网易/极客公园</a> ｜ <a href="https://finance.sina.com.cn/tech/roll/2026-01-06/doc-inhfiznp1329911.shtml" target="_blank">新浪科技</a> ｜ 2026年1-3月</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">MiroThinker 1.5印证了2026年的一个重要趋势：<strong>"小模型+工具调用"可能比"大模型独立推理"更高效</strong>。其Interactive Scaling理论提出了与模型大小、上下文长度并列的第三个可扩展维度——工具交互频率与深度。陈天桥从脑科学转向AI创业，将"人类认知方式"（假设→取证→纠错→收敛）内化为模型设计哲学，这种"逆共识"路线可能代表了小模型时代的方向。如果30B模型真能做到万亿级效果，AI算力民主化的速度将远超预期。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">生态</span>
+      腾讯全面押注"养虾"：马化腾凌晨2点站台，发布全系龙虾产品矩阵
+    </div>
+    <div class="item-body">
+      <strong>3月9-10日，腾讯密集发布全系"龙虾"产品矩阵</strong>，全面拥抱OpenClaw智能体生态。3月9日，全场景AI智能体<strong>WorkBuddy</strong>正式上线，兼容OpenClaw功能且无需复杂部署，像安装普通App一样即可使用。次日，腾讯进一步推出面向大众用户的WorkBuddy、面向开发者的<strong>QClaw</strong>、面向企业的腾讯云Lighthouse一键部署、智能体开发平台<strong>ADP</strong>以及腾讯云桌面等全栈产品。马化腾<strong>凌晨2:06发朋友圈</strong>亲自为"龙虾"带货，称"还有一批龙虾系产品陆续赶来"。消息发出后腾讯控股<strong>单日大涨超7%</strong>，市值重返5万亿港元。元宝当前MAU约<strong>1.09亿</strong>，日均Token调用量28万亿，与豆包（3.15亿MAU/63万亿Token）仍有差距，但腾讯14亿微信月活的分发能力是其最大底牌。
+    </div>
+    <div class="stat-row">
+      <span class="stat">产品矩阵 <em>5款全栈</em></span>
+      <span class="stat">元宝MAU <em>1.09亿</em></span>
+      <span class="stat">股价涨幅 <em>+7%</em></span>
+      <span class="stat">微信月活 <em>14亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.36kr.com/p/3718104797034115" target="_blank">36氪</a> ｜ <a href="https://caifuhao.eastmoney.com/news/20260310183040272236320" target="_blank">东方财富/征探财经</a> ｜ 3月9-10日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">腾讯"养虾"战略的核心逻辑是<strong>用生态能力弥补模型差距</strong>。马化腾自己承认"动作慢了"，元宝日活仅768万远逊豆包的1.03亿。但OpenClaw的爆火提供了一个"换道超车"窗口——<strong>从Chatbot竞争转向Agent平台竞争</strong>。腾讯的杀手锏不是模型本身，而是微信14亿月活+小程序+企业微信的超级分发网络。如果WorkBuddy能像小程序一样嵌入微信生态，"养虾"的门槛将从开发者降至普通用户。各地政府"抢虾"补贴（深圳200万/无锡500万/合肥1000万算力券）也说明AI Agent正从技术概念变成产业政策。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">地缘</span>
+      微软公开声援Anthropic：首家在美国国防部供应链风险争端中站队的科技巨头
+    </div>
+    <div class="item-body">
+      美国五角大楼此前将Anthropic列为"供应链风险"，引发行业震动。<strong>微软成为首家公开声援Anthropic的科技巨头</strong>，在这场企业与政府的AI安全博弈中率先站队。这一动向背景是AI安全治理正从行业自律走向政府监管。与此同时，NVIDIA在GTC 2026上宣布其承载全球三分之一的AI算力基础设施，Anthropic、Meta、Microsoft等公司均已深度绑定NVIDIA生态——AI供应链的集中度正在引发地缘风险关注。
+    </div>
+    <div class="stat-row">
+      <span class="stat">争端方 <em>Anthropic vs 五角大楼</em></span>
+      <span class="stat">声援方 <em>微软（首家）</em></span>
+      <span class="stat">NVIDIA份额 <em>全球1/3 AI算力</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/infrastructure/anthropic-ceo-dario-amodei-warns-ai-will-match-country-of-geniuses-by-2026" target="_blank">VentureBeat</a> ｜ 3月16-17日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">微软声援Anthropic的深层逻辑是<strong>保护"开放AI开发"的行业生态</strong>。如果国防部能以"供应链风险"为由限制AI公司，这把剑未来可能指向任何人——包括微软自己的Azure AI和OpenAI合作。这场博弈的结果将定义AI行业未来10年的监管框架：究竟是"政府审查供应链"还是"行业自律+第三方审计"。NVIDIA承载全球1/3 AI算力的事实则让这个问题更加尖锐——单点依赖+地缘风险，是整个行业的系统性风险。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月17日 · 覆盖范围：3月16日-17日</p>
+  <p>海外来源：<strong>NVIDIA GTC</strong>、<strong>TechCrunch</strong>、<strong>VentureBeat</strong>、<strong>Axios</strong>、<strong>Hugging Face</strong>、<strong>NVIDIA Developer Blog</strong></p>
+  <p>国内来源：新浪财经、21财经、搜狐科技、DoNews、CNMO、太平洋电脑网、微博 @数码闲聊站</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
