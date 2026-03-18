@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# IDE
+.codebuddy/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 临时/过程文件（只保留最终网页版）
+output/
+*.log
+
+# 中间生成文件（自动生成的，不需要提交）
+brief/*-wechat.html
+brief/*.md
+brief/*-email*.html
+brief/*_inline.html
+brief/*-copy.html
+
+# 依赖
+node_modules/
