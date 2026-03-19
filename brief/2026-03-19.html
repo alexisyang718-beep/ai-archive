@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月19日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月19日 · 周四</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>小米深夜连发三款自研大模型</strong>：MiMo-V2-Pro 以 1 万亿参数/420 亿激活的 MoE 架构跻身全球第 8，性能逼近 GPT-5.2/Opus 4.6，定价仅为 Claude 的 1/7，此前以 Hunter Alpha 代号在 OpenRouter 匿名登顶验证实力<br>
+❷ <strong>MiniMax 发布 M2.7「自我进化」模型</strong>：能在强化学习研究工作流中自主完成 30-50% 任务，成本仅为 GLM-5 的 1/3，标志着模型从「对话工具」向「自主代理」演进<br>
+❸ <strong>阿里云、百度云同日宣布涨价</strong>：最高涨 34%，云服务「价格战」时代终结，GPU/HBM 算力成本压力传导至终端<br>
+❹ <strong>美光 FY2026Q2 营收暴增 138%</strong>：HBM 产能锁定至 2027 年，HBM4 已量产带宽达 2.8 TB/s，存储市场进入「卖方市场」<br>
+❺ <strong>Google Stitch 升级为 AI-native 设计平台</strong>：从单纯的 UI 生成工具进化为支持「vibe design」的全流程设计画布，可一句话生成高保真 UI 并支持团队协作<br>
+❻ <strong>OpenAI 发布 GPT-5.4 mini/nano</strong>：小模型路线验证，在 SWE-Bench Pro 等基准上接近大模型性能，成本和延迟大幅降低，面向高频调用和边缘设备场景<br>
+❼ <strong>GDC 2026 参展人数骤降 30%</strong>：从 3 万跌至 2 万，游戏行业裁员潮、签证收紧、预算收缩三重打击
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      小米深夜连发三款自研大模型：MiMo-V2-Pro 揭晓 OpenRouter 神秘模型 Hunter Alpha 真身
+    </div>
+    <div class="item-body">
+      小米深夜连发三款大模型：<strong>MiMo-V2-Pro</strong>（旗舰基座）、<strong>MiMo-V2-Omni</strong>（全模态 Agent）、<strong>MiMo-V2-TTS</strong>（语音合成）。MiMo-V2-Pro 揭晓了此前在 OpenRouter 匿名登顶的"Hunter Alpha"真身。该模型采用稀疏 MoE 架构，<strong>总参 1 万亿、激活 420 亿</strong>，支持 100 万 token 上下文。Artificial Analysis 智能指数全球第 8，性能接近 GPT-5.2/Opus 4.6，编程能力超越 Sonnet 4.6。定价极具侵略性：输入 $1、输出 $3/百万 token，仅为 Opus 4.6 的 <strong>1/7</strong>。MiMo-V2-Omni 统一文本/视觉/语音输入，音频理解超 Gemini 3 Pro。MiMo-V2-TTS 支持方言和歌声合成。项目负责人称将"足够稳定时开源"。
+    </div>
+    <div class="stat-row">
+      <span class="stat">总参数 <em>1T</em></span>
+      <span class="stat">激活参数 <em>42B</em></span>
+      <span class="stat">MoE 比例 <em>24:1</em></span>
+      <span class="stat">上下文 <em>100万 token</em></span>
+      <span class="stat">全球排名 <em>#8</em></span>
+      <span class="stat">定价 <em>Opus 1/7</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance">VentureBeat</a> · <a href="https://mimo.xiaomi.com/mimo-v2-pro">MiMo 官网</a> · <a href="https://x.com/_LuoFuli">@_LuoFuli</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">小米通过<strong>匿名测试验证模型实力</strong>的策略非常聪明——Hunter Alpha 在 OpenRouter 上登顶后才揭晓身份，避免了"先吹牛后翻车"的风险。MoE 架构 + 超低定价的组合拳直接冲击 OpenAI/Anthropic 的高端市场。更关键的是小米作为硬件巨头，将 AI 与手机、汽车、IoT 生态整合，这是纯 AI 公司难以复制的优势。MiMo-V2-Pro 已接入金山 WPS 灵犀、小米手机端 Agent 产品 miclaw 及小米浏览器，<strong>场景落地能力</strong>是其核心竞争力。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      MiniMax 发布 M2.7「自我进化」模型：强化学习工作流 30-50% 任务可自主完成
+    </div>
+    <div class="item-body">
+      MiniMax 发布 M2.7 模型，主打<strong>"自我进化"</strong>能力——模型能自主规划、执行、反思和调整，在强化学习工作流中 <strong>30-50% 任务无需人类干预</strong>。M2.7 可自动构建和优化自己的 RL 工具链，用于自动化仓库管理、生产事故诊断（恢复时间压缩至 3 分钟以内）等复杂场景。该模型专为 AI Agent 和第三方工具链（Claude Code、Kilo Code、OpenClaw）优化，在 Office 文档工作流和 GDPval-AA 基准中表现突出。成本极具竞争力：<strong>176 美元 vs GLM-5 的 547 美元</strong>，仅为 1/3。MiniMax 同时开放了基于 M2.7 的通用 Agent 平台。
+    </div>
+    <div class="stat-row">
+      <span class="stat">自主任务比例 <em>30-50%</em></span>
+      <span class="stat">成本 <em>GLM-5 的 1/3</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50">VentureBeat</a> · <a href="https://www.minimaxi.com/models/text/m27">MiniMax 官网</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"自我进化"是 Agent 赛道的核心命题。MiniMax 的进展表明<strong>大模型正在从"回答问题"向"完成任务"演进</strong>，能够自主优化自己的工具链意味着模型具备了递归改进能力。与小米的"action space"理念呼应，两家都瞄准了"AI 能做什么"而非"AI 能说什么"。但需注意：MiniMax 作为中国公司（总部上海），其模型受中国法律管辖，且目前不支持离线或本地部署，这对欧美企业（尤其是高度监管行业）可能是障碍。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      OpenAI 发布 GPT-5.4 mini/nano：小模型路线验证，接近大模型性能
+    </div>
+    <div class="item-body">
+      OpenAI 推出 GPT-5.4 的 mini 和 nano 版本，针对<strong>边缘设备和高频调用场景</strong>优化。GPT-5.4 mini 在编程、推理、多模态理解和工具调用方面相比 GPT-5 mini 显著提升，运行速度提升 2 倍以上，在 SWE-Bench Pro 和 OSWorld-Verified 等基准上接近大模型 GPT-5.4 的性能。GPT-5.4 nano 是 GPT-5.4 系列中最小、最便宜的版本，推荐用于分类、数据提取、排序和处理简单任务的编程子代理。这两个模型专为延迟直接决定产品体验的场景设计：编程助手需要快速响应、子代理快速完成辅助任务、计算机使用系统实时截屏分析、多模态应用实时图像推理。GPT-5.4 mini 已向 ChatGPT Free 用户开放，支持处理最多 76,000 张照片，费用仅 $52。
+    </div>
+    <div class="stat-row">
+      <span class="stat">速度提升 <em>2x+</em></span>
+      <span class="stat">免费用户 <em>可用</em></span>
+      <span class="stat">照片处理 <em>76K 张</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://openai.com/index/introducing-gpt-5-4-mini-and-nano">OpenAI Blog</a> · <a href="https://simonwillison.net/2026/Mar/17/mini-and-nano/">Simon Willison</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">小模型赛道竞争激烈。OpenAI 的 mini/nano 策略表明<strong>模型尺寸与成本的平衡</strong>是商业化关键——在很多场景下，"最佳模型"不是最大的，而是能快速响应、可靠使用工具、同时保持复杂专业任务表现的模型。未来"小而强"模型将成为主流，与万亿参数模型形成互补，共同构建分层推理架构。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Perplexity 发布 Comet iOS 浏览器：AI 搜索入口战争升级
+    </div>
+    <div class="item-body">
+      Perplexity 推出 <strong>Comet</strong>，一款深度集成 AI 搜索的 iOS 浏览器，主打"搜索即答案"体验。这是 Perplexity 从 AI 搜索引擎向<strong>原生浏览器入口</strong>扩张的重要一步。Comet 将 Perplexity 的 AI 搜索能力直接嵌入浏览器核心，用户无需跳转即可获得即时答案，与 Safari/Chrome 等传统浏览器形成差异化竞争。此举标志着 AI 搜索正在从"插件/扩展"走向"原生入口"，Perplexity 通过自有浏览器建立用户心智护城河，与 Google/Apple 的竞争将从搜索引擎升级到浏览器层面。
+    </div>
+    <div class="item-source">来源：<a href="http://www.techmeme.com/260318/p50#a260318p50">Techmeme</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 搜索正在从"插件"走向"原生入口"。Perplexity 通过自有浏览器<strong>建立用户心智护城河</strong>，与 Google/Apple 的竞争将升级——未来浏览器市场的竞争不再只是速度和隐私，而是"谁能更好地整合 AI"。但对 Perplexity 而言，挑战在于如何在 iOS 生态中突破 Safari 的默认地位。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">升级</span>
+      Google Stitch 升级为 AI-native 设计平台：从 UI 生成工具到「vibe design」画布
+    </div>
+    <div class="item-body">
+      Google Labs 宣布 Stitch 升级为<strong> AI-native 软件设计画布</strong>，从单纯的"用 AI 生成 UI"工具进化为支持完整设计工作流的平台。升级前，Stitch 只能根据文字描述生成静态 UI 原型；升级后，Stitch 支持"vibe design"——用户可以用自然语言描述设计意图，平台会生成高保真 UI，并支持<strong>迭代修改、团队协作、设计系统管理</strong>等完整流程。具体能力包括：一句话生成完整界面原型、实时预览和调整、多人协作编辑、与 Figma 等设计工具导出对接。这意味着 Stitch 正在从"AI 生成工具"进化为"Figma + 前端开发者的结合体"，可能重塑 UI/UX 工作流，让非专业设计师也能参与产品原型设计。
+    </div>
+    <div class="stat-row">
+      <span class="stat">核心升级 <em>迭代/协作/管理</em></span>
+      <span class="stat">定位 <em>AI-native 设计画布</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/">Google Blog</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Stitch 的升级标志着 AI 设计工具从"辅助"走向"原生"。此前它只是生成静态原型，现在支持完整设计流程——这意味着<strong>产品经理、创业者等非设计背景的人也能快速产出专业级 UI</strong>，降低产品设计门槛。对 Figma 而言这是直接竞争，但 Stitch 的优势在于与 Google 生态（Gemini、Google Workspace）的深度整合，可能成为企业内部设计协作的新选择。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      Kimi 披露 K2.5 技术路线图：三大底层架构重构，马斯克点赞「令人印象深刻」
+    </div>
+    <div class="item-body">
+      月之暗面杨植麟在 GTC 2026 上首次系统披露 K2.5 三项底层架构重构：<strong>MuonClip 优化器</strong>革新沿用自 2014 年的 Adam，引入 Newton-Schulz 迭代与 QK-Clip 机制，实现 <strong>2 倍 AdamW 计算效率</strong>；<strong>Kimi Linear</strong> 混合线性注意力架构，在 128K-1M 超长上下文中<strong>解码速度提升 5-6 倍</strong>；<strong>Attention Residuals</strong> 将传统残差连接替换为跨层 Softmax 注意力，让每层主动从前序层提取信息。马斯克评论"令人印象深刻"，Karpathy 感叹"我们还没把 Attention is All You Need 按字面理解透"，OpenAI o1 发明者 Jerry Tworek 称其为"深度学习 2.0"的开端。杨植麟表示将坚持开源。
+    </div>
+    <div class="stat-row">
+      <span class="stat">计算效率 <em>2x AdamW</em></span>
+      <span class="stat">解码速度 <em>5-6x</em></span>
+      <span class="stat">上下文 <em>128K-1M</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://eu.36kr.com/en/p/3728304913661058">36Kr English</a> · <a href="https://www.leanware.co/insights/kimi-k2">Leanware 技术解读</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">K2.5 的三项创新都在挑战深度学习的"默认假设"——Adam 优化器、全注意力机制、残差连接都是 2014-2017 年确立的基础架构，Kimi 的探索表明<strong>底层架构仍有巨大优化空间</strong>。尤其 Attention Residuals 引发的行业讨论，说明"让模型主动选择从哪些层提取信息"可能是提升模型效率的关键方向。坚持开源策略也将加速这些创新的行业普及。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">旗舰</span>
+      vivo X300 Ultra/X300s 发布日期和配置泄露：首发 35mm 人像主摄
+    </div>
+    <div class="item-body">
+      GSMArena 报道，vivo X300 Ultra 和 X300s 的发布日期、配置和配色已泄露。X300 Ultra 将首发 <strong>35mm 主摄</strong>——这是人像摄影的黄金焦段，区别于主流旗舰采用的 23-24mm 广角主摄。35mm 焦段更接近人眼视角，拍摄人像时畸变更小、构图更自然，是专业人像摄影师的首选焦段。与此同时，OPPO Find X9 Ultra 和小米 17 Ultra 也在筹备中，<strong>年度影像旗舰三强对决</strong>即将上演。三大厂商的差异化策略逐渐清晰：vivo 主打"人像旗舰"、OPPO 强调"哈苏色彩"、小米延续"徕卡影调"。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gsmarena.com/vivo_x300_ultra_x300s_launch_date_configurations_and_colors_leaked-news-71970.php">GSMArena</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">35mm 主摄是 vivo 的差异化赌注——这个焦段更接近人眼视角和人像黄金比例，意味着 vivo 正在从"参数竞争"转向"场景定义"。Ultra 之战本质是<strong>影像定义权</strong>之争：vivo 用 35mm 定义"人像旗舰"、OPPO 用哈苏定义"色彩旗舰"、小米用徕卡定义"影调旗舰"。谁能讲好"影像故事"，谁就能在高端市场站稳脚跟。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">涨价</span>
+      OPPO/OnePlus/vivo 官宣中国市场手机涨价：成本压力传导至终端
+    </div>
+    <div class="item-body">
+      受芯片、存储、面板等核心元器件成本上涨影响，OPPO、OnePlus、vivo 等品牌<strong>正式宣布中国市场产品涨价</strong>，涨幅在 100-500 元不等。这是手机行业近年来首次大规模涨价潮，与同日阿里云、百度云宣布涨价的背景一致：GPU、HBM、存储芯片等上游成本持续上涨，叠加 AI 训练需求爆发，硬件成本压力正在从云计算传导至消费电子。此前手机行业长期处于"价格战"模式，厂商以低价换取市场份额，利润空间被压缩。涨价潮标志着手机行业<strong>"性价比战争"正在降温</strong>，厂商开始追求利润而非单纯份额，这可能加速行业洗牌，二三线品牌压力更大。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涨幅 <em>100-500 元</em></span>
+      <span class="stat">涉及品牌 <em>OPPO/vivo/OnePlus</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.notebookcheck.net/Oppo-OnePlus-and-Vivo-officially-announce-smartphone-price-increase-in-China.1251229.0.html">Notebookcheck</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">手机涨价与云服务涨价同日发生，说明<strong>硬件成本上涨正在全面传导</strong>。对消费者而言，"性价比时代"可能正在结束；对厂商而言，这是改善利润率的契机，但也可能加速市场份额向头部集中——涨价后消费者会更谨慎选择，二三线品牌的"性价比"优势被削弱，品牌溢价能力成为关键。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">折叠屏</span>
+      iPhone Fold 产能大幅提升：苹果正式加码折叠屏
+    </div>
+    <div class="item-body">
+      供应链消息显示，<strong>苹果 iPhone Fold 产能规划大幅提升</strong>，预计 2026 年内发布。定价将匹配三星 Galaxy Z Fold 系列，约 $1,799 起。这是苹果首次正式加码折叠屏市场，意味着苹果认为折叠屏品类已从"实验性产品"进入"主流市场"。苹果入局将带来两方面影响：一是供应链层面，苹果的大规模采购将推动折叠屏面板、铰链等核心部件成本下降，利好整个折叠屏生态；二是市场层面，苹果的品牌效应将加速折叠屏从"小众尝鲜"走向"主流选择"。但 iPhone Fold 面临的挑战不仅是技术——如何说服"够用党"为更大屏幕买单，才是商业成功的关键。
+    </div>
+    <div class="stat-row">
+      <span class="stat">预计定价 <em>~$1,799</em></span>
+      <span class="stat">发布时间 <em>2026 年内</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.forbes.com/sites/jaymcgregor/2026/03/16/apple-iphone-fold-iphone-18-production-number-leak/">Forbes</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">苹果入局折叠屏意味着<strong>品类正式进入主流</strong>。苹果的产能规划大幅提升，说明其对市场接受度有信心。但 iPhone Fold 面临的挑战不仅是技术——如何说服"够用党"为更大屏幕买单，才是商业成功的关键。苹果的优势在于生态整合（iPadOS 应用适配、多设备联动），这可能成为其折叠屏的杀手锏。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">新品</span>
+      一加 15T 定档 3 月 24 日：起售价或涨 500 元
+    </div>
+    <div class="item-body">
+      一加 15T 正式定档 3 月 24 日发布，预计起售价相比前代上涨约 500 元。这是 OPPO/OnePlus/vivo 涨价潮中的首款新品，将成为检验消费者对涨价接受度的"试金石"。一加 15T 预计搭载最新的骁龙 8 Gen 4 处理器，配合 OPPO 的影像算法下放，主打"性能+影像"双旗舰定位。涨价后能否维持"性价比"标签，将是一加面临的核心挑战。
+    </div>
+    <div class="stat-row">
+      <span class="stat">发布日期 <em>3 月 24 日</em></span>
+      <span class="stat">预计涨价 <em>~500 元</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.notebookcheck.net/OnePlus-15T-Official-launch-date-revealed-for-compact-flagship-phone.1253283.0.html">Notebookcheck</a> · <a href="https://www.digitaltrends.com/phones/oneplus-15t-finally-gets-a-launch-date-bringing-big-things-in-a-small-package/">Digital Trends</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">一加 15T 是涨价潮后的首款新品，将成为<strong>市场接受度的风向标</strong>。如果销量未受明显影响，说明消费者对温和涨价有一定接受度；如果销量下滑，可能迫使厂商重新考虑定价策略。一加需要在"涨价"和"性价比标签"之间找到平衡。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      阿里云、百度云同日宣布涨价：最高涨 34%，云服务「价格战」终结
+    </div>
+    <div class="item-body">
+      阿里云、百度云在同一天宣布云服务价格调整，<strong>部分产品涨幅高达 34%</strong>。这是中国云市场近年来首次大规模涨价，标志着云服务"价格战"时代的终结。涨价原因包括：GPU/HBM 等算力成本持续上涨、AI 训练需求爆发导致供需紧张、电力成本上升。腾讯云在财报会议上表示，"小云厂商拿不到硬件，大云厂商才有资格涨价"——这意味着涨价潮可能蔓延至腾讯云、华为云等头部厂商。对使用云服务的企业而言，IT 成本将进入上升周期，需要重新评估云上预算和架构设计。
+    </div>
+    <div class="stat-row">
+      <span class="stat">最高涨幅 <em>34%</em></span>
+      <span class="stat">涉及产品 <em>计算/存储/网络</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.theregister.com/2026/03/18/alibaba_cloud_hikes_prices_by/">The Register</a> · <a href="https://www.scmp.com/tech/big-tech/article/3306000/alibaba-and-baidu-lift-cloud-computing-prices-amid-rising-costs">SCMP</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">云服务涨价是<strong>供需关系转折</strong>的信号。算力成本（GPU、HBM、电力）持续上涨，叠加 AI 训练需求爆发，云厂商的利润空间被压缩。涨价潮标志着云服务从"增量市场"进入"存量博弈"，<strong>企业 IT 成本将进入上升周期</strong>。对云厂商而言，这是改善利润率的契机；对企业用户而言，需要评估云上成本优化方案或考虑混合云/私有云替代。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">财报</span>
+      美光 FY2026Q2 营收暴增 138%：HBM 产能锁定至 2027 年，HBM4 已量产
+    </div>
+    <div class="item-body">
+      美光发布 FY2026Q2 财报：<strong>营收 238.6 亿美元，同比增长 138%</strong>，接近上年同期的 3 倍。EPS 同比增长 <strong>452%</strong>。HBM（高带宽内存）产能<strong>已全部锁定至 2027 年</strong>，AI 算力需求持续驱动存储业务增长。与此同时，美光宣布 <strong>HBM4 已进入量产</strong>，专为 NVIDIA 下一代 GPU Vera Rubin 设计，带宽达 2.8 TB/s，相比 HBM3E 提升 50% 以上。美光财报是存储市场爆发的缩影——HBM 成为增长引擎，产能锁定至 2027 年意味着供需紧张将持续，存储厂商的"好日子"至少还有 2 年。HBM4 量产是存储芯片的技术里程碑，带宽突破 2.8 TB/s 将显著提升大模型训练效率。
+    </div>
+    <div class="stat-row">
+      <span class="stat">营收增长 <em>+138% YoY</em></span>
+      <span class="stat">EPS 增长 <em>+452% YoY</em></span>
+      <span class="stat">HBM 产能锁定 <em>至 2027</em></span>
+      <span class="stat">HBM4 带宽 <em>2.8 TB/s</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.ainvest.com/news/micron-sold-2026-hbm4-supply-creates-premium-pricing-play-vera-rubin-exclusion-2603/">ainvest</a> · <a href="https://247wallst.com/technology-3/2026/03/18/live-will-micron-blowout-earnings-again-when-it-reports-tonight/">24/7 Wall Street</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">美光财报是<strong>存储市场爆发的缩影</strong>。HBM 成为增长引擎，产能锁定至 2027 年意味着供需紧张将持续——这对 AI 芯片厂商和云服务商是成本压力，但对存储厂商是"黄金时代"。HBM4 量产是<strong>存储芯片的技术里程碑</strong>，带宽突破 2.8 TB/s 将显著提升大模型训练效率，是为 NVIDIA Vera Rubin 准备的"弹药"。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">风险</span>
+      SK 集团会长：DRAM 短缺将持续至 2030 年，缺口超 20%
+    </div>
+    <div class="item-body">
+      SK 集团会长崔泰源在英伟达 GTC 2026 大会上表示，全球 DRAM 芯片短缺的状况预计将持续至 2030 年，基础 DRAM 晶圆的短缺幅度将超过 20%。他认为 DRAM 产业至少需要"四到五年"来完成产能扩张，制约海外扩产的核心障碍并非资金或政府补贴，而是能源、水资源供应以及当地产业生态系统的成熟度。SK 海力士目前将优先在韩国本土新建晶圆厂，而非向海外扩张。崔泰源还提醒，若过度聚焦 HBM 生产，通用 DRAM 的短缺将进一步加剧，并对智能手机、笔记本电脑等消费电子市场造成冲击。
+    </div>
+    <div class="stat-row">
+      <span class="stat">短缺持续时间 <em>至 2030 年</em></span>
+      <span class="stat">短缺幅度 <em>>20%</em></span>
+      <span class="stat">扩产周期 <em>4-5 年</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.bloomberg.com/news/articles/2026-03-17/sk-group-chairman-says-memory-shortage-to-last-until-2030">Bloomberg</a> · <a href="https://evertiq.com/design/2026-03-17-sk-group-chairman-wafer-shortage-could-persist-until-2030">Evertiq</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">DRAM 短缺将持续至 2030 年，意味着<strong>存储成本上涨是长期趋势</strong>。关键点在于：制约扩产的不是资金，而是能源、水资源和产业生态——这是"芯片制造不只是钱的问题"的体现。另一个警告是：过度聚焦 HBM 会导致通用 DRAM 更短缺，<strong>消费电子市场将受到双重挤压</strong>（成本上涨+供应不足）。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">风险</span>
+      三星电子工会 93.1% 赞成罢工：8.9 万员工或于 5 月 21 日-6 月 7 日行动
+    </div>
+    <div class="item-body">
+      三星电子全国工会投票结果：<strong>93.1% 赞成全国总罢工</strong>，计划于 <strong>5 月 21 日-6 月 7 日</strong>举行。涉及 <strong>8.9 万名员工</strong>，可能影响 DRAM、NAND、晶圆代工业务。这是三星历史上<strong>最大规模的罢工威胁</strong>，全球芯片供应链面临不确定性。如果罢工成行，全球 DRAM/NAND 供应将受冲击，可能推高存储价格。在 DRAM 短缺已持续至 2030 年的背景下，三星罢工将进一步加剧供应紧张。
+    </div>
+    <div class="stat-row">
+      <span class="stat">赞成率 <em>93.1%</em></span>
+      <span class="stat">涉及员工 <em>8.9 万</em></span>
+      <span class="stat">罢工日期 <em>5.21-6.7</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.yahoo.com/news/samsung-elec-workers-strike-plan-220300094.html">Reuters/Yahoo Finance</a> · <a href="http://www.xinhuanet.com/english/asiapacific/20260318/d9c173c618154a29baa64c0189b61392/c.html">Xinhua English</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">如果罢工成行，全球 DRAM/NAND 供应将受冲击，可能推高存储价格。在 SK 会长预测 DRAM 短缺持续至 2030 年的背景下，三星罢工将<strong>进一步加剧供应紧张</strong>。建议关注备货节奏和对美光、SK 海力士的替代机会。对终端厂商而言，这是提前锁定存储产能的信号。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">政策</span>
+      NVIDIA 重启 H200 对华出口：黄仁勋 GTC 确认，美政府或抽成 25%
+    </div>
+    <div class="item-body">
+      黄仁勋在 GTC 2026 上确认，<strong>NVIDIA 将重启 H200 对华出口</strong>。据传美政府将从销售额中<strong>抽取 25% 分成</strong>，作为出口许可条件。马斯克同时表示，SpaceX AI 和特斯拉将继续大规模采购 NVIDIA 芯片，一块 AI6 芯片有望顶两块 AI5。H200 重启出口是中美芯片博弈的新动态——"分成"模式可能成为未来技术出口管制的新范式：既限制又获利。对中国 AI 企业而言，H200 是喘息之机，但<strong>自主算力替代仍是长期任务</strong>。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/17/nvidia-ceo-jensen-huang-says-chipmaker-has-received-orders-from-china.html">CNBC</a> · <a href="https://www.tomshardware.com/tech-industry/nvidia-has-received-pos-from-chinese-customers">Tom's Hardware</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">H200 重启出口是<strong>中美芯片博弈的新动态</strong>。"分成"模式可能成为未来技术出口管制的新范式——既限制又获利。对中国 AI 企业而言，H200 是喘息之机，但<strong>自主算力替代仍是长期任务</strong>。25% 的"抽成"也意味着中国企业的实际采购成本将进一步上升。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">自研</span>
+      Meta 公布自研 AI 芯片 MTIA 路线图：24 个月推 4 代，单代周期仅 6 个月
+    </div>
+    <div class="item-body">
+      Meta 公布自研 AI 芯片 MTIA 路线图：<strong>24 个月内推出 4 代产品</strong>，单代开发周期仅 <strong>6 个月</strong>。目标是降低对 NVIDIA 的依赖，优化自家 AI 工作负载（推荐系统、LLM 推理等）。Meta 的 6 个月迭代周期是"互联网速度"造芯的范例，与 NVIDIA 18-24 个月的迭代周期形成鲜明对比。大厂自研芯片已成趋势，NVIDIA 的垄断地位正在被稀释。但 MTIA 的核心价值是<strong>成本优化而非性能超越</strong>——Meta 不需要 MTIA 打败 NVIDIA，只需要在自家场景下更划算。
+    </div>
+    <div class="stat-row">
+      <span class="stat">迭代周期 <em>6 个月</em></span>
+      <span class="stat">4 代产品 <em>24 个月</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.telecoms.com/ai/meta-details-its-in-house-ai-chip-roadmap">Telecoms.com</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Meta 的 6 个月迭代周期是<strong>"互联网速度"造芯</strong>的范例。大厂自研芯片已成趋势，NVIDIA 的垄断地位正在被稀释。但 MTIA 的核心价值是<strong>成本优化而非性能超越</strong>——Meta 不需要 MTIA 打败 NVIDIA，只需要在自家场景下更划算。这是"专用芯片"对"通用芯片"的降维打击。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">自研</span>
+      蔚来分拆芯片业务神玑科技，向零跑、吉利供货：M97 算力 700 TOPS
+    </div>
+    <div class="item-body">
+      蔚来旗下芯片子公司神玑科技正积极向外部车企拓展芯片供应业务。神玑与爱芯元智合作研发的芯片 M97 完成流片后，双方已开始接触零跑、吉利等车企。M97 算力超 700 TOPS，性能对标地平线征程 J6P（官方标称 560 TOPS），预计于今年三季度正式发布。蔚来于去年 6 月将芯片业务独立拆分，成立安徽神玑技术公司。去年 11 月，神玑与爱芯元智及其母公司豪威集成电路共同出资成立合资公司"重庆创元智航科技有限公司"，M97 芯片将从该合资公司出货，标志着蔚来辅助驾驶芯片技术首次对外供应。此外，神玑与爱芯元智还在规划一款低端芯片，项目代号为 9031e，性能对标地平线征程 J6M（官方标称 128 TOPS），旨在进一步拓展外供版图。
+    </div>
+    <div class="stat-row">
+      <span class="stat">M97 算力 <em>700 TOPS</em></span>
+      <span class="stat">对标 <em>J6P (560 TOPS)</em></span>
+      <span class="stat">发布时间 <em>Q3 2026</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://eletric-vehicles.com/nio/nios-chip-unit-targets-leapmotor-and-geely-with-cheaper-alternative-to-nvidia/">EV News</a> · <a href="https://cnevpost.com/2026/03/18/nio-chip-unit-shenji-m97-leapmotor-geely/">CNEVPost</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">蔚来芯片分拆对外供货标志着<strong>车企自研芯片进入"技术变现"阶段</strong>——自研不仅降本增效，还可成为利润中心。对地平线等芯片供应商而言竞争压力正在加剧。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">颁奖</span>
+      《光与影：33号远征队》获 GDCA 年度游戏：独立游戏斩获 5 项大奖
+    </div>
+    <div class="item-body">
+      游戏开发者选择奖（GDCA）揭晓：<strong>《光与影：33号远征队》（Clair Obscur: Expedition 33）</strong>斩获<strong>年度游戏、最佳设计、最佳叙事、最佳技术、最佳视觉艺术</strong>5 项大奖。该作同时获得 BAFTA 12 项提名，成为独立游戏年度最大赢家。这是一款由小团队开发的回合制 RPG，以精美的手绘风格和深刻叙事著称，击败了众多 3A 大作。独立游戏在 2026 年逆势崛起，《33号远征队》的成功证明：创意和叙事仍能击败 3A 大作的工业化堆料，这是"小而美"战胜"大而全"的典型案例，也给游戏行业敲响警钟——<strong>堆料不是答案</strong>。
+    </div>
+    <div class="stat-row">
+      <span class="stat">GDCA 大奖 <em>5 项</em></span>
+      <span class="stat">BAFTA 提名 <em>12 项</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/clair-obscur-expedition-33-wins-game-of-the-year-at-game-developers-choice-awards-2026">GamesIndustry.biz</a> · <a href="https://www.gamedeveloper.com/design/gdca-2026">Game Developer</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">独立游戏在 2026 年<strong>逆势崛起</strong>。《33号远征队》的成功证明：创意和叙事仍能击败 3A 大作的工业化堆料。这是"小而美"战胜"大而全"的典型案例，也给游戏行业敲响警钟——<strong>堆料不是答案</strong>。在 3A 开发成本动辄数亿美元的背景下，小团队的创意突破更具性价比。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">寒冬</span>
+      GDC 2026 参展人数骤降 30%：从 3 万跌至 2 万，行业裁员潮缩影
+    </div>
+    <div class="item-body">
+      游戏开发者大会（GDC）2026 参展人数<strong>从去年的 3 万跌至 2 万</strong>，降幅达 <strong>30%</strong>。原因包括：<strong>行业裁员潮、美国签证收紧</strong>，以及厂商预算收缩。这是游戏行业寒冬的缩影，与 GDCA 颁奖的独立游戏狂欢形成鲜明对比——一个分裂的行业正在形成：独立游戏在创意上高歌猛进，传统 3A 产业却在收缩。签证问题则反映了<strong>全球游戏人才流动的政治壁垒</strong>。
+    </div>
+    <div class="stat-row">
+      <span class="stat">去年参展 <em>30,000</em></span>
+      <span class="stat">今年参展 <em>20,000</em></span>
+      <span class="stat">降幅 <em>-30%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.sfchronicle.com/bayarea/article/tech-conference-attendance-plunged-22079584.php">SF Chronicle</a> · Polygon</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">GDC 参展人数下滑是<strong>游戏行业寒冬的缩影</strong>。裁员、项目取消、预算收缩形成恶性循环。签证问题则反映了<strong>全球游戏人才流动的政治壁垒</strong>。一个分裂的行业正在形成：独立游戏在创意上高歌猛进，传统 3A 产业却在收缩。这对游戏行业的启示是：创意和效率可能比规模更重要。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">市场</span>
+      Newzoo 报告：PC 游戏收入 2028 年超主机，低价游戏占 Steam 收入 32%
+    </div>
+    <div class="item-body">
+      Newzoo 发布市场预测：<strong>PC 游戏收入将在 2028 年超越主机</strong>。关键数据：<strong>低价游戏（$30 以下）占 Steam 收入的 32%</strong>，而 $70 的 3A 大作风险加剧。这表明玩家的性价比敏感度提升，$70 定价模式可能难以为继。市场结构性变化正在发生：低价游戏正在崛起，Steam 上 $30 以下游戏贡献 32% 收入，说明玩家对性价比的敏感度提升。$70 的 3A 定价模式可能难以为继，厂商需要重新思考定价策略——要么降低定价，要么提供更多价值。
+    </div>
+    <div class="stat-row">
+      <span class="stat">低价游戏 Steam 收入占比 <em>32%</em></span>
+      <span class="stat">PC 超越主机时间点 <em>2028</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://kotaku.com/steam-game-prices-clair-obscur-data-sales-2000678987">Kotaku</a> · Newzoo</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">市场结构性变化：<strong>低价游戏正在崛起</strong>。Steam 上 $30 以下游戏贡献 32% 收入，说明玩家对性价比的敏感度提升。$70 的 3A 定价模式可能难以为继——要么厂商降低定价，要么提供更多价值。这与《33号远征队》的成功呼应：玩家愿意为"创意"买单，而不是为"堆料"买单。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">AI</span>
+      Xbox Gaming Copilot 登陆现世代主机，Take-Two CEO 否定 AI 能做 GTA 6
+    </div>
+    <div class="item-body">
+      微软宣布 <strong>Xbox Gaming Copilot 将登陆现世代主机</strong>，为玩家提供游戏攻略、成就提示等辅助功能。与此同时，<strong>Take-Two CEO 明确表示 AI 无法制作 GTA 6</strong>，强调人工创意的不可替代性。游戏行业对 AI 呈现<strong>两极态度</strong>：微软拥抱 AI 作为辅助工具（Gaming Copilot 提供攻略、成就提示），Take-Two 则强调人工创意的核心地位。这反映了 AI 在游戏中的<strong>定位分歧</strong>——是"工具"还是"创作者"？答案可能是：AI 能做辅助，但做不了 GTA 6。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/gaming-copilot-coming-to-current-gen-xbox-consoles-in-2026">GamesIndustry.biz</a> · <a href="https://www.eurogamer.net/take-two-ceo-ai-gta6">Eurogamer</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">游戏行业对 AI 呈现<strong>两极态度</strong>：微软拥抱 AI 作为辅助工具，Take-Two 则强调人工创意的核心地位。这反映了 AI 在游戏中的<strong>定位分歧</strong>——是"工具"还是"创作者"？答案可能是：AI 能做辅助（攻略、提示、测试），但做不了 GTA 6（核心创意、叙事、世界观）。AI 的价值在于提升效率，而非替代创意。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      Anthropic 发布约 81,000 名 Claude 用户调研：迄今最大规模 AI 用户态度研究
+    </div>
+    <div class="item-body">
+      Anthropic 发布了一份覆盖<strong>约 81,000 名 Claude 用户</strong>的深度调研，这是迄今<strong>规模最大、语言覆盖最广</strong>的 AI 用户态度研究。研究覆盖 <strong>159 个国家、70 种语言</strong>，识别出用户对 AI 的<strong>九大核心愿景</strong>。核心发现：工作层面（约 35%）包括职业卓越（18.8%，希望 AI 处理琐事）和创业赋能（8.7%，视 AI 为"资本绕过机制"）；个人层面包括学习、健康、关系管理；社会层面包括社区参与和公民参与。研究方法上，通过 Claude 本身辅助分析 80K+ 用户对话，形成"AI 研究 AI 用户"的闭环。关键洞察是：用户对 AI 的期待远超"工具"定位，而是将其视为<strong>职业加速器、创业杠杆、学习伙伴</strong>。"创业赋能"的发现尤其值得注意——用户视 AI 为"资本绕过机制"，无需传统资源即可创业。
+    </div>
+    <div class="stat-row">
+      <span class="stat">样本量 <em>~81,000</em></span>
+      <span class="stat">覆盖国家 <em>159</em></span>
+      <span class="stat">语言数 <em>70</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.anthropic.com/features/81k-interviews">Anthropic 官方报告</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是迄今<strong>规模最大、语言覆盖最广</strong>的 AI 用户态度研究。关键发现：用户对 AI 的期待远超"工具"定位，而是将其视为<strong>职业加速器、创业杠杆、学习伙伴</strong>。"创业赋能"的发现尤其值得注意——用户视 AI 为"资本绕过机制"，无需传统资源即可创业。这解释了为什么 AI 对个人用户的吸引力如此之大：它降低了创业和职业发展的门槛。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">IPO</span>
+      2026 超级 IPO 年：SpaceX/OpenAI/Anthropic 合计估值 2.4 万亿美元
+    </div>
+    <div class="item-body">
+      PitchBook 分析师预测，<strong>2026 年将是 VC 史上最大的退出年</strong>。SpaceX（估值约 $1.5T）、OpenAI（估值约 $300B）、Anthropic（估值约 $60B）等明星公司可能启动 IPO，<strong>合计估值达 2.4 万亿美元</strong>。如果预测成真，这将是<strong>VC 史上最大规模的退出潮</strong>。关键问题是：二级市场能否承接如此体量？IPO 后估值能否维持？这些是关键变量。对一级市场而言，流动性释放将推动新一轮投资。
+    </div>
+    <div class="stat-row">
+      <span class="stat">SpaceX 估值 <em>~$1.5T</em></span>
+      <span class="stat">OpenAI 估值 <em>~$300B</em></span>
+      <span class="stat">Anthropic 估值 <em>~$60B</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://pitchbook.com/news/reports/q1-2026-analyst-note-mega-ipos-could-threaten-2026-ipo-class">PitchBook</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">如果预测成真，这将是<strong>VC 史上最大规模的退出潮</strong>。关键问题是：二级市场能否承接如此体量？IPO 后估值能否维持？这些是关键变量。对一级市场而言，<strong>流动性释放将推动新一轮投资</strong>，VC 机构将有更多弹药投入新项目。但对二级市场而言，这些高估值 IPO 的表现将直接影响投资者对科技股的信心。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">财报</span>
+      腾讯 2025Q4 营收 1943.7 亿元同比增 13%，股价下跌因 AI 战略不及预期
+    </div>
+    <div class="item-body">
+      腾讯发布 2025Q4 财报：营收 <strong>1943.7 亿元，同比增长 13%</strong>。但股价因市场对"AI Agent 愿景"的期待未达预期而<strong>下跌</strong>。腾讯云在财报会议上提到"小龙虾"（OpenClaw）生态，但市场反应平淡。财报超预期但股价下跌，反映市场对腾讯<strong>AI 战略的不满</strong>。在百度、阿里、字节纷纷推出大模型产品的背景下，腾讯的 AI 布局显得保守。市场期待更激进的 Agent 战略——毕竟腾讯拥有微信这个超级入口，但腾讯的 AI 动作似乎慢了半拍。
+    </div>
+    <div class="stat-row">
+      <span class="stat">营收 <em>1943.7 亿</em></span>
+      <span class="stat">同比增长 <em>+13%</em></span>
+      <span class="stat">全年 AI 投资 <em>792 亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.bloomberg.com/news/articles/2026-03-18/tencent-s-sales-rise-13-in-boost-for-broader-ai-ambitions">Bloomberg</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">财报超预期但股价下跌，反映市场对腾讯<strong>AI 战略的不满</strong>。在百度、阿里、字节纷纷推出大模型产品的背景下，腾讯的 AI 布局显得保守。市场期待更激进的 Agent 战略——毕竟腾讯拥有微信这个超级入口，AI Agent 与微信的结合可能是最大的想象空间，但腾讯的 AI 动作似乎慢了半拍。全年 792 亿 AI 投资是巨大投入，但市场想知道这些投入如何转化为产品竞争力。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">裁员</span>
+      Block/Atlassian/Dell CEO 宣布用 AI 替代员工：科技行业结构性调整
+    </div>
+    <div class="item-body">
+      Block（Square 母公司）、Atlassian、Dell 等科技公司 CEO 公开表示<strong>将用 AI 替代部分员工</strong>。这标志着科技行业裁员从"降本"转向"提效"，AI 替代人力进入第二波。科技行业正在经历<strong>结构性调整</strong>——部分岗位被 AI 取代，新的 AI 相关岗位正在创造。对从业者而言，"会用 AI"正在成为核心技能。"AI 替代员工"从威胁变成现实，科技企业正在用 AI 来提升效率、降低成本，这将改变科技行业的用工结构。
+    </div>
+    <div class="item-source">来源：<a href="https://thenextweb.com/news/block-atlassian-dell-ai-replace-workers">The Next Web / Business Insider</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"AI 替代员工"从威胁变成现实。<strong>科技行业正在经历结构性调整</strong>——部分岗位被 AI 取代（如客服、测试、基础编程），新的 AI 相关岗位正在创造（如 AI 产品经理、AI 工程师、提示词工程师）。对从业者而言，"会用 AI"正在成为核心技能——不是 AI 替代人，而是会用 AI 的人替代不会用 AI 的人。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">争议</span>
+      曝网易使用 AI 清退上千外包员工，官方回应「不实」但承认 AI 全流程接入
+    </div>
+    <div class="item-body">
+      社交平台流传网易将"使用 AI 清退全部外包员工"的传闻，称"4 月 1 日裁 30%、5 月 1 日全裁"。网易回应称该信息不实，表示近期人员变动仅为部分项目的正常业务调整。但据游戏新知，此轮调整涉及人数或超过 1000 人。网易在今年复工后即要求所有员工必须使用 AI 工具，新项目须全流程接入 AI，老项目的 AI 使用率也须超过 50%。在 2025 年财报中，网易披露 AI 原生管线已在美术、策划、编程、动画等环节实现大规模部署，部分环节效能提升达 300%。CEO 丁磊表示"AI 已成为我们研发与运营的基础核心能力"。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涉及人数 <em>>1000 人</em></span>
+      <span class="stat">AI 使用率要求 <em>>50%</em></span>
+      <span class="stat">效能提升 <em>最高 300%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://longbridge.com/en/news/279609355">Longbridge/华尔街见闻</a> · <a href="https://www.eurogamer.net/suda51-says-netease-told-grasshopper-manufacture-not-to-use-ai-at-all">Eurogamer</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">效能提升 300% 意味着同样人力可做 3 倍工作——不必然导致裁员但必然改变用工结构。<strong>AI 驱动的效率革命</strong>正在深刻改变游戏研发流程，从业者需适应新工具和新流程。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">翻车</span>
+      乐天「日本最强 AI」塌房：代码全是 DeepSeek，删除开源协议
+    </div>
+    <div class="item-body">
+      日本乐天 3 月 17 日发布号称"日本最大规模"的 AI 模型 Rakuten AI 3.0，但开源社区在 Hugging Face 配置文件中发现其架构来自 DeepSeek V3，乐天仅在日语数据上做了微调。更引发公愤的是乐天在发布时<strong>删除了 DeepSeek 的 MIT 开源协议文件</strong>，被社区曝光后才匆忙添加回名为"NOTICE"的声明。日本网友批评乐天接受政府补贴却仅微调中国开源模型"不可接受"。MIT 协议虽允许商用，但删除原始声明属违规行为。
+    </div>
+    <div class="item-source">来源：<a href="https://english.dotdotnews.com/a/202603/18/AP69ba7a4ce4b0c32d4f6c3757.html">DotDotNews</a> · <a href="https://news.aibase.com/news/26347">AIBase</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">乐天翻车暴露了 AI 行业的<strong>知识产权灰色地带</strong>：开源模型可使用和修改但不能删除协议。更深层问题是：什么是"自研"？基于开源模型的微调算不算？行业需要更清晰的定义。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">管理</span>
+      库克否认退休传言：「无法想象没有苹果的生活」
+    </div>
+    <div class="item-body">
+      苹果 CEO Tim Cook 在 ABC《早安美国》节目上否认退休传言："28 年前我走进苹果，此后每一天我都深爱着这份工作。我无法想象没有苹果的生活。"苹果将于 4 月 1 日迎来创立 50 周年。此外苹果在成都太古里 Apple Store 举办 50 周年庆祝活动（全球第二站、亚洲第一站），库克亲临现场。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/17/apple-ceo-tim-cook-retire-rumors-gma.html">CNBC</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">库克执掌苹果 14 年、年近 65 岁，<strong>接班人问题始终是隐忧</strong>。成都举办 50 周年庆典显示对中国市场的重视——中国是苹果最重要海外市场，但近年面临本土品牌竞争和监管压力。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重磅</span>
+      美国白宫准备阻止各州 AI 立法：可能禁止 10 年
+    </div>
+    <div class="item-body">
+      《华盛顿邮报》报道，美国白宫和共和党正在推动立法，<strong>可能阻止各州在未来 10 年内通过 AI 监管法案</strong>。这是联邦政府对 AI 监管权的"抢占"行动。科技巨头倾向于联邦统一监管以降低合规成本，但这也可能造成监管真空——如果联邦层面没有实质性立法，各州又被禁止立法，AI 行业将处于"无监管"状态。这是美国<strong>AI 监管权的重大博弈</strong>：联邦层面希望通过"抢占"避免各州立法碎片化，但也可能造成监管真空。
+    </div>
+    <div class="stat-row">
+      <span class="stat">禁止期限 <em>10 年</em></span>
+      <span class="stat">涉及层级 <em>州级立法</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/03/16/white-house-house-gop-prepare-block-state-ai-laws/">Washington Post</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是美国<strong>AI 监管权的重大博弈</strong>。联邦层面希望通过"抢占"避免各州立法碎片化，但也可能造成监管真空。科技巨头倾向于联邦统一监管以降低合规成本——在美国 50 个州分别合规的成本是巨大的。但如果联邦层面没有实质立法，各州又被禁止立法，AI 行业将处于<strong>"无监管"状态</strong>，这可能带来安全风险。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">监管</span>
+      华盛顿邮报：国会正输掉 AI 监管竞赛，德州 TRAIGA 法案或成新模型
+    </div>
+    <div class="item-body">
+      《华盛顿邮报》评论指出，<strong>美国国会正输掉 AI 监管竞赛</strong>。欧盟《AI 法案》已生效，而美国联邦层面仍无实质立法。<strong>德州 TRAIGA 法案</strong>可能成为新的监管模型。AI 监管的<strong>美欧分歧正在扩大</strong>：欧盟采取"预防性监管"（AI 必须先证明安全才能使用），美国则倾向于"事后追责"（出了问题再追责）。德州 TRAIGA 法案可能成为州级监管的新范本，试图在创新与安全之间找到平衡。
+    </div>
+    <div class="item-source">来源：<a href="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/03/17/congress-is-losing-race-regulate-ai/">Washington Post</a> · <a href="https://news.bloomberglaw.com/bloomberg-law-analysis/analysis-new-texas-ai-law-seeks-to-balance-safety-innovation">Bloomberg Law</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 监管的<strong>美欧分歧正在扩大</strong>。欧盟采取"预防性监管"——AI 必须先证明安全才能使用，这保护了用户但也可能抑制创新。美国倾向于"事后追责"——出了问题再追责，这鼓励创新但也可能带来安全风险。德州 TRAIGA 法案可能成为州级监管的新范本，试图在创新与安全之间找到平衡。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">政策</span>
+      美国商务部推「全栈 AI 出口套餐」：GPU/HBM/模型权重/数据打包管控
+    </div>
+    <div class="item-body">
+      美国商务部推出<strong>"全栈 AI 出口套餐"计划</strong>，将 GPU、HBM、模型权重、训练数据等打包管控。这意味着 AI 出口管制正在<strong>从芯片扩展到全栈</strong>，模型、数据也将成为管制对象。这对中国 AI 发展构成更全面的挑战：不仅芯片受限，模型和数据出口也将受限。同时，<strong>Google 开发 AI 搜索退出选项</strong>，以应对英国监管要求——这反映了监管对 AI 产品的影响正在全球化。
+    </div>
+    <div class="item-source">来源：<a href="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/03/17/commerce-ai-export-packages/">Washington Post</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 出口管制正在<strong>从芯片扩展到全栈</strong>。"全栈套餐"意味着模型、数据也将成为管制对象。这对中国 AI 发展构成更全面的挑战——不仅芯片受限，模型和数据出口也将受限。这对中国 AI 企业的启示是：<strong>自主可控需要从芯片延伸到模型和数据</strong>，不能依赖外部供应链的任何环节。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">审核</span>
+      苹果叫停多款 Vibe Coding 工具更新：App Store 审核准则争议
+    </div>
+    <div class="item-body">
+      苹果正向 Replit、Vibecode 等 AI"vibe coding"应用施压，要求修改后才能上架更新。苹果援引 App Store 审核准则第 2.5.2 条，禁止应用"下载或执行改变功能的代码"。Replit 认为其 AI 生成的应用运行于独立虚拟机并通过应用内 Web 视图预览，与 X、Facebook 等应用的网页浏览功能无本质区别。经数月申诉，苹果倾向于批准更新，但要求将 AI 生成应用的预览改为在独立浏览器中打开。Vibecode 方面则被要求移除为苹果平台生成软件的能力。
+    </div>
+    <div class="item-source">来源：<a href="https://www.macrumors.com/2026/03/18/apple-blocks-updates-for-vibe-coding-apps/">MacRumors</a> · <a href="https://www.neowin.net/news/report-apple-goes-after-vibe-coding-apps-by-silently-blocking-new-updates/">Neowin</a></div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">核心是<strong>App Store 审核准则如何适应 AI 时代</strong>。2.5.2 条是为防止动态加载代码设计的，但 AI 生成应用本质上就是动态创建代码。苹果的妥协方案是"打补丁"式解决方案，可能成为审核政策演变的转折点。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月19日 · 覆盖范围：3月17日-19日</p>
+  <p>数据来源：<strong>OpenAI Blog</strong> · <strong>Google Blog</strong> · <strong>Anthropic</strong> · <strong>VentureBeat</strong> · <strong>Bloomberg</strong> · <strong>CNBC</strong> · <strong>The Register</strong> · <strong>Washington Post</strong> · <strong>GamesIndustry.biz</strong></p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
