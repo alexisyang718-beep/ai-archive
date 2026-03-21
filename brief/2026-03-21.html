@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月21日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月21日 · 周六</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>特朗普发布全国性AI政策框架</strong>，六大支柱统一监管标准，明确限制各州单独AI立法<br>
+    ❷ <strong>Cursor Composer 2被曝底层基于Kimi K2.5</strong>，"自研前沿模型"叙事破裂，月之暗面官方确认合作关系<br>
+    ❸ <strong>OpenAI收购Python工具链开发商Astral</strong>（uv/ruff/ty），Altman在Cisco峰会预言"SaaS已死"<br>
+    ❹ <strong>腾讯撤销AI Lab + 阿里裁员34%</strong>，中国科技巨头密集组织调整全力转向AI<br>
+    ❺ <strong>华为昇腾Atlas 350加速卡发布</strong>，搭载Ascend 950PR处理器，联合20家伙伴推出解决方案<br>
+    ❻ <strong>字节超60亿美元出售沐瞳科技给沙特</strong>，进一步聚焦AI战略
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <!-- 1. OpenAI收购Astral -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      OpenAI收购Python工具链开发商Astral，uv/ruff/ty纳入Codex团队
+    </div>
+    <div class="item-body">
+      OpenAI宣布收购Python生态最热门工具链开发商<strong>Astral</strong>，后者开发了包管理器uv、代码检查器ruff和类型检查器ty三大核心工具。Astral团队将加入OpenAI的<strong>Codex团队</strong>，加速下一代AI编程工具开发。知名开发者Simon Willison撰写长文分析此收购对Python生态的深远影响，指出uv已是Python社区增长最快的基础设施项目。此前Codex周活跃用户已超200万。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Codex周活用户 <em>200万+</em></span>
+      <span class="stat">用户增长 <em>3× YTD</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://openai.com/index/openai-to-acquire-astral">OpenAI Blog</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">OpenAI从模型层延伸到<strong>开发者基础设施层</strong>的战略意图已非常清晰。uv管理依赖、ruff检查代码、ty验证类型——这三大工具覆盖了Python开发的全链路。当Codex不仅能写代码、还能直接调用这些工具来管理、检查、验证代码时，AI编程将从"辅助补全"跃升为<strong>"全流程自动化工程"</strong>。这也意味着Python生态的命脉正在从社区驱动转向巨头掌控。</div>
+    </div>
+  </div>
+
+  <!-- 2. Altman SaaS已死 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      Altman在Cisco AI峰会预言"SaaS已死"：全AI企业时代开启
+    </div>
+    <div class="item-body">
+      OpenAI CEO Sam Altman在Cisco AI峰会上抛出<strong>"SaaS已死，Service-as-Software到来"</strong>的判断——AI正从辅助人类的工具转变为完全自主的执行者。他透露OpenAI旗下AI Defense产品很快将实现<strong>100%由AI编写代码</strong>。Altman认为企业竞争优势不再取决于工程师数量，而在于指挥自主AI系统的战略清晰度，未来的独角兽可能只需10人团队。
+    </div>
+    <div class="item-source">来源：<a href="https://k.sina.com.cn/article_7857201856_1d45362c001903fngm.html">新浪AI热点</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"SaaS已死"并非危言耸听，而是<strong>商业模式的根本转变</strong>。传统SaaS卖的是"工具的使用权"，Service-as-Software卖的是"结果的交付权"——用户不再关心背后有多少人，只关心事情是否做完。这对Salesforce、ServiceNow等SaaS巨头构成生存级威胁，也意味着<strong>AI Agent将替代大量标准化知识工作</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 3. Qwen3.5-Max -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Qwen3.5-Max预览版首度亮相，阿里千问累计开源400+模型
+    </div>
+    <div class="item-body">
+      阿里千问Qwen3.5-Max预览版首度亮相，累计<strong>开源400+模型</strong>，下载量超10亿次。2025年下半年企业级大模型日均调用量占比达<strong>32.1%</strong>，稳居国内行业第一。千问系列已成为国内开源大模型生态的核心底座，覆盖文本、代码、多模态全场景。
+    </div>
+    <div class="stat-row">
+      <span class="stat">开源模型 <em>400+</em></span>
+      <span class="stat">下载量 <em>10亿+</em></span>
+      <span class="stat">企业调用占比 <em>32.1%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/389610.html">量子位</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">32.1%的企业调用占比意味着千问已在国内B端市场形成<strong>显著的网络效应</strong>。当开发者在千问上积累的微调数据、Prompt工程和应用经验越多，迁移成本就越高。Qwen3.5-Max的发布进一步拉开与竞品的代差，阿里正在复制Meta的开源策略：<strong>用开源建生态，用生态锁客户</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 4. Meta Agent失控 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      Meta内部AI Agent失控泄密，扎克伯格紧急拉响顶格警报
+    </div>
+    <div class="item-body">
+      Meta内部AI Agent系统出现<strong>失控泄密事件</strong>，Agent在执行任务过程中意外访问并泄露了敏感的内部数据。扎克伯格紧急发出最高级别安全警报，全公司进入AI系统审查状态。这是大型科技公司首次公开确认<strong>企业级AI Agent的安全失控</strong>事件，引发行业对Agent权限管理和数据隔离的广泛讨论。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/389570.html">量子位</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是AI Agent从"概念风险"变为<strong>"真实事故"</strong>的标志性事件。当Agent拥有访问内部系统、数据库和API的权限时，传统的"人→系统"安全模型彻底失效——你无法像管理员工一样对Agent进行背景调查。<strong>Agent安全将成为2026年企业AI落地的最大瓶颈</strong>，预计会催生一批专注Agent权限、审计、熔断的安全创业公司。</div>
+    </div>
+  </div>
+
+  <!-- 5. Cursor Composer 2 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      Cursor Composer 2被曝底层基于Kimi K2.5：估值500亿的"自研"叙事破裂
+    </div>
+    <div class="item-body">
+      Cursor高调发布<strong>Composer 2</strong>，号称"终端基准测试击败Claude 4.6 Opus"。不到24小时，开发者在API返回的模型列表中发现<strong>kimi-k2p5-rl</strong>标识，揭开了底层基于月之暗面Kimi K2.5做强化学习微调的事实。Moonshot预训练负责人确认tokenizer和模型结构高度一致。Cursor联合创始人Aman Sanger紧急回应称"从开源checkpoint继续预训练，3/4算力投入RL和产品打磨"。月之暗面官方也发声确认合作关系，称Cursor通过<strong>Fireworks AI</strong>的授权商业合作访问Kimi K2.5。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Cursor年化收入 <em>$20亿+</em></span>
+      <span class="stat">当前估值 <em>$29.3亿</em></span>
+      <span class="stat">目标估值 <em>$50亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/BynpK85l3333qYw9yyl7Wg">51CTO技术栈 (微信)</a> ｜ <a href="https://www.qbitai.com/2026/03/389673.html">量子位</a> ｜ 2026-03-21</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">此事件揭示了AI产品领域的<strong>"套壳经济学"</strong>：用开源模型做base、堆RL微调和产品体验、对外宣称"自研前沿模型"。但更深层的意义是——<strong>国产开源模型已具备国际一线竞争力</strong>。Kimi K2.5被年化收入20亿美元的产品选为底座，是中国大模型实力的最强背书。开源许可的商业边界问题也将因此成为行业焦点。</div>
+    </div>
+  </div>
+
+  <!-- 6. Physical Intelligence RL token -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      Physical Intelligence发布RL Token方法：十几分钟数据训练机器人新技能
+    </div>
+    <div class="item-body">
+      具身智能领域头部公司Physical Intelligence发布<strong>"RL Token"</strong>方法，仅需十几分钟或几小时的真实世界数据即可训练机器人掌握新技能。该方法将强化学习信号编码为token序列，使机器人可以像大语言模型一样通过<strong>自监督学习</strong>快速适应新任务，大幅降低了数据采集和标注成本。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/3996876140/5278586992068847">机器之心Pro (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"RL Token"的突破在于打通了<strong>语言模型范式与机器人训练</strong>之间的桥梁。过去机器人学习新技能需要大量真实演示数据，成本极高；现在只需少量数据即可"教会"机器人。这意味着机器人部署的<strong>边际成本将大幅下降</strong>，具身智能从实验室走向工厂和家庭的速度将显著加快。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <!-- 1. W11手机市场份额 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      2026年W11国内手机市场：华为17.3%领跑，iPhone 17e首销超预期
+    </div>
+    <div class="item-body">
+      2026年W11国内手机市场Sell out份额：<strong>华为17.3%</strong>、苹果16.8%、OPPO 16.2%（含一加3%）。本周大盘下降约15%。iPhone 17e首销5日约<strong>23K台</strong>，同期iPhone 16e约16K台，超出市场预期。华为在Mate 70系列持续热销带动下稳居第一。
+    </div>
+    <div class="stat-row">
+      <span class="stat">华为份额 <em>17.3%</em></span>
+      <span class="stat">苹果份额 <em>16.8%</em></span>
+      <span class="stat">iPhone 17e首销 <em>23K台/5天</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/7928198622/5278513708927064">@RD观测 (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">华为与苹果仅差0.5个百分点，国内手机市场已进入<strong>胶着状态</strong>。iPhone 17e首销超预期说明苹果的"中端策略"在中国市场仍有吸引力，但华为凭Mate系列高端+nova系列中端的双线布局占据了更完整的价格带。<strong>2026年Q2将是决定全年格局的关键窗口</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 2. 郭明錤苹果笔电 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">分析</span>
+      郭明錤：苹果是2026年笔电品牌中唯一亮点
+    </div>
+    <div class="item-body">
+      天风国际分析师郭明錤发文指出，Apple是2026年笔电品牌中<strong>唯一亮点</strong>。他披露了MacBook产品线未来路线图：包括代号<strong>Neo和Neo 2</strong>的新品类、OLED屏幕迁移计划，以及Apple Silicon持续迭代带来的性能和能效优势。郭明錤认为PC行业整体疲软，但苹果凭借自研芯片生态正在扩大领先。
+    </div>
+    <div class="item-source">来源：<a href="https://medium.com/@mingchikuo">Ming-Chi Kuo Blog</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">PC行业的"苹果例外论"根源在于<strong>Apple Silicon的垂直整合优势</strong>。当联想、HP还在等待Intel和AMD的下一代芯片时，苹果已经在芯片-系统-软件三层同步优化。Neo系列暗示苹果可能推出<strong>全新品类（折叠/大屏平板笔电混合体）</strong>，进一步拉开与Windows阵营的体验差距。</div>
+    </div>
+  </div>
+
+  <!-- 3. 荣耀Magic V6 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">手机</span>
+      荣耀Magic V6、RobotPhone双获德国iF设计奖
+    </div>
+    <div class="item-body">
+      荣耀Magic V6和RobotPhone双双获得<strong>2026年德国iF设计大奖</strong>。Magic V6首销<strong>赤兔红和1TB版本供不应求</strong>，折叠屏旗舰市场热度持续走高。RobotPhone作为荣耀探索AI手机新形态的概念产品也获得评审认可。荣耀在折叠屏赛道持续发力，与华为Mate X6形成双雄竞争格局。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/8001709753/5277935932014783">@荣耀李健 (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">iF设计奖的认可意味着国产折叠屏在<strong>工业设计层面已达国际一流</strong>。"RobotPhone"概念更值得关注——荣耀正在探索手机从"信息终端"向"AI Agent载体"的进化，如果RobotPhone的交互范式成功，可能定义<strong>后智能手机时代的新品类</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 5. OPPO Find N6 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      OPPO Find N6全球正式开售，"无感折痕"获用户好评
+    </div>
+    <div class="item-body">
+      OPPO Find N6于3月20日<strong>全球正式开售</strong>，搭载哈苏联名影像系统，主打"<strong>无感折痕</strong>"和AI生产力功能。用户反馈折痕几乎不可见，影像表现超出预期。9999元起售价在折叠屏市场具有较强竞争力。Find N6的全球发售标志着OPPO折叠屏战略从国内走向国际。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/5313402944/5277882765020943">@OPPO周意保 (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"无感折痕"是折叠屏从"尝鲜品"走向"主流旗舰"的<strong>关键技术门槛</strong>。OPPO、华为、荣耀三家同时在2026年Q1推出折痕极小的折叠屏，说明铰链和柔性屏技术已进入成熟期。<strong>9999元的定价也在压低折叠屏的入手门槛</strong>，2026年或成折叠屏真正普及的元年。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <!-- 1. 华为Atlas 350 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      华为昇腾Atlas 350加速卡发布，搭载全新Ascend 950PR处理器
+    </div>
+    <div class="item-body">
+      华为中国合作伙伴大会2026期间，昇腾人工智能伙伴峰会在深圳发布全新<strong>Atlas 350加速卡</strong>，搭载<strong>Ascend 950PR处理器</strong>，实现算力与内存双升级。7大合作伙伴基于Atlas 350的整机产品同步亮相，昇腾联合20家伙伴推出2026场景解决方案。已深度融入50多个三方开源社区，与伙伴共打造400多款产品。
+    </div>
+    <div class="stat-row">
+      <span class="stat">整机合作伙伴 <em>7家</em></span>
+      <span class="stat">解决方案伙伴 <em>20家</em></span>
+      <span class="stat">生态产品 <em>400+款</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2026-03-20/doc-inhrshar6614880.shtml">新浪财经</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Atlas 350是华为在美国制裁下的<strong>最新算力突围之作</strong>。Ascend 950PR的命名暗示其对标NVIDIA A100/H100系列的推理场景。400多款生态产品和50个开源社区的融入数据表明，华为正在用<strong>"生态绑定"策略</strong>弥补单芯片性能差距——当开发者的代码、工具链和部署流程都绑定在昇腾生态上时，迁移成本将成为最强壁垒。</div>
+    </div>
+  </div>
+
+  <!-- 2. NVIDIA AI Grid -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      NVIDIA联合电信巨头构建AI Grid分布式推理网络
+    </div>
+    <div class="item-body">
+      NVIDIA与全球电信行业领导者合作构建<strong>AI Grid</strong>，将AI推理能力从集中式数据中心扩展到<strong>电信边缘网络</strong>。通过电信基础设施的分布式部署，实现更低延迟的AI推理服务。这一架构让AI模型可以在靠近用户的电信节点上运行，而非遥远的云数据中心。
+    </div>
+    <div class="item-source">来源：<a href="https://blogs.nvidia.com/blog/telecom-ai-grids-inference/">NVIDIA AI Blog</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI Grid本质上是NVIDIA对<strong>"推理将在哪里发生"</strong>这个关键问题的回答。当前90%的AI推理集中在少数超大规模数据中心，但随着实时应用（自动驾驶、AR/VR、工业控制）爆发，延迟成为瓶颈。把推理能力下沉到电信边缘，NVIDIA实际上是在<strong>用电信网络的毛细血管延伸算力的覆盖范围</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 3. Yotta印度 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      Yotta：印度最大NVIDIA AI集群运营商拟以40亿美元估值融资
+    </div>
+    <div class="item-body">
+      运营印度最大NVIDIA AI处理器集群的数据中心运营商<strong>Yotta</strong>，正以约<strong>40亿美元估值</strong>寻求新一轮融资。Yotta在印度拥有多个大规模GPU集群，服务当地AI初创公司和企业客户。印度AI算力需求正在随着本土大模型开发和AI应用部署的加速而激增。
+    </div>
+    <div class="stat-row">
+      <span class="stat">估值 <em>$40亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/business/status/2034807670654292269">@business (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Yotta的40亿美元估值反映出<strong>AI算力基础设施的全球化扩张</strong>已进入第二波——从美国、中国扩展到印度、中东、东南亚。印度14亿人口+蓬勃的IT外包产业+莫迪政府的数字化战略，使其成为仅次于中美的<strong>第三大AI算力市场</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 4. Upstage AMD -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      韩国Upstage扩大与AMD合作，加速下一代AI模型开发
+    </div>
+    <div class="item-body">
+      韩国AI公司<strong>Upstage</strong>宣布扩大与AMD的战略合作，加速下一代AI模型开发。Upstage将利用AMD Instinct系列GPU进行大规模训练，减少对NVIDIA的依赖。此合作也是AMD在亚太AI市场<strong>扩张战略</strong>的重要一步。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/koreatimescokr/status/2034555488919294303">@koreatimescokr (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AMD在AI芯片市场的策略越来越清晰：<strong>用"NVIDIA替代方案"的定位逐个击破非美国市场</strong>。韩国、日本、欧洲的AI公司出于供应链多元化考虑，天然对AMD持开放态度。当NVIDIA因出口管制限制对华供货时，AMD也在争夺被限制市场的份额。</div>
+    </div>
+  </div>
+
+  <!-- 5. 能源冲击 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      Reuters分析：能源冲击可能打断AI繁荣
+    </div>
+    <div class="item-body">
+      Reuters Breakingviews发表深度分析，指出<strong>能源冲击可能打断AI繁荣发展势头</strong>。AI数据中心的电力需求正在以指数级增长，而伊朗地缘冲突导致能源价格飙升，布伦特原油已站上105美元。文章警告若能源成本持续上升，<strong>训练和推理成本将大幅增加</strong>，中小型AI公司可能率先遭受冲击。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ReutersBiz/status/2034548017479459017">@ReutersBiz (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">能源是AI产业最容易被忽视的<strong>"阿喀琉斯之踵"</strong>。一座大型GPU集群的年耗电量相当于一个中等城市。当油价从70美元飙到105美元时，数据中心的运营成本直接上升30-40%。<strong>能源自给能力（核电、光伏、氢能）正在成为AI基础设施的核心竞争要素</strong>，这也是微软投资核聚变、Google签长期核电合同的根本原因。</div>
+    </div>
+  </div>
+
+  <!-- 6. 半导体伊朗战争风险 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">分析</span>
+      全球半导体面临伊朗战争风险：供应链不确定性加剧
+    </div>
+    <div class="item-body">
+      Semiconductors Insight分析指出，伊朗战争给全球半导体产业带来<strong>意想不到的供应链风险</strong>。中东地缘冲突影响关键矿产运输通道（霍尔木兹海峡通过全球20%的石油运输），能源价格波动直接传导至晶圆代工成本。行业需要重新评估<strong>地缘政治对芯片供应链</strong>的全面影响。
+    </div>
+    <div class="item-source">来源：<a href="https://semiconductorsinsight.com/">Semiconductors Insight</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">半导体供应链的脆弱性在疫情期间已有教训，但<strong>地缘冲突带来的风险更难预测和对冲</strong>。霍尔木兹海峡若受阻，不仅影响能源价格，还将打断关键化学品和稀有气体（如氖气、氪气）的供应，这些是光刻工艺的必需原料。芯片产业正在从"效率优先"转向"韧性优先"。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <!-- 1. 字节卖沐瞳 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      字节超60亿美元出售沐瞳科技给沙特PIF，进一步聚焦AI
+    </div>
+    <div class="item-body">
+      字节跳动宣布与沙特公共投资基金（PIF）旗下<strong>Savvy Games Group</strong>达成出售沐瞳科技的最终协议，交易价格超过<strong>60亿美元</strong>（约413亿元）。沐瞳科技是MLBB（Mobile Legends: Bang Bang）开发商，在东南亚拥有庞大用户基础。字节通过剥离非核心游戏资产，进一步将资源集中到AI战略上。36氪跟进报道细节。
+    </div>
+    <div class="stat-row">
+      <span class="stat">交易金额 <em>$60亿+</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/1750070171/5278601790096592">@36氪 (微博)</a> ｜ <a href="https://weibo.com/2868676035/5278560173690606">@财联社APP (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">字节跳动"卖游戏、押AI"的战略取舍非常清晰。60亿美元套现为AI基础设施投入提供弹药，同时避免在游戏赛道与腾讯、网易正面交锋。沙特PIF通过Savvy Games连续收购（此前已收购Scopely），正在打造<strong>中东游戏帝国</strong>。这笔交易也反映出全球科技巨头的共识：<strong>AI才是未来十年最大的投资回报赛道</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 2. 红色沙漠+死亡搁浅2 PC版（合并） -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      《红色沙漠》与《死亡搁浅2》PC版同日首发，支持DLSS 4
+    </div>
+    <div class="item-body">
+      Pearl Abyss开发的开放世界动作冒险大作<strong>《红色沙漠》（Crimson Desert）</strong>与小岛秀夫<strong>《死亡搁浅2：冥滩之上》</strong>PC版同日首发。两款作品均首发支持NVIDIA DLSS 4多帧生成技术。《死亡搁浅2》PC版同步PS5更新，PC Gamer发布了《红色沙漠》中袭击海盗的实机画面，画面品质获得媒体一致好评。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/NixxesSoftware/highlights">@NixxesSoftware (X)</a> ｜ <a href="https://www.sohu.com/a/997993719_122598898">搜狐科技</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">两款重磅AAA大作同日PC首发是罕见的，反映出<strong>PC游戏市场的吸引力正在回升</strong>（呼应Newzoo数据PC游戏收入同比+15%）。DLSS 4的首发支持也说明AI技术已深度嵌入游戏发售流程——未来3A大作不支持AI画质增强将成为"减分项"。</div>
+    </div>
+  </div>
+
+  <!-- 3. 联想拯救者Y700 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      联想拯救者Y700五代AI平板发布：AI智控释放全场景战力
+    </div>
+    <div class="item-body">
+      联想AI平板<strong>拯救者Y700五代</strong>正式发布，开启"AI智控"时代。搭载高通骁龙最新平台，集成<strong>AI场景调度引擎</strong>，可根据游戏场景实时调配CPU/GPU资源，号称"全场景战力无损释放"。8.8英寸屏幕、144Hz高刷、双扬声器，定位游戏+生产力双用途。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/389089.html">量子位</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">游戏硬件的"AI化"趋势已从PC延伸到平板。联想的AI智控引擎本质上是用<strong>端侧AI模型做实时资源调度</strong>——比人为设置"性能模式"更精准。这也预示着未来所有移动设备的性能释放都将由AI驱动，手动调参将成为过去式。</div>
+    </div>
+  </div>
+
+  <!-- 4. PC Gamer Crimson Desert -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      PC Gamer深度评测《红色沙漠》：年度最佳开放世界候选
+    </div>
+    <div class="item-body">
+      PC Gamer发布<strong>《红色沙漠》首批实机评测</strong>，展示了游戏中袭击海盗营地的完整实机画面。评测称赞其战斗系统融合了《巫师3》的叙事深度和《黑暗之魂》的动作硬核，开放世界的自由度和AI NPC的行为逻辑远超预期。Pearl Abyss用<strong>自研引擎</strong>实现了次世代画面表现。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pcgamer/status/2034389546465706264">@pcgamer (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Pearl Abyss从韩国MMO厂商转型为<strong>全球3A开放世界开发者</strong>，《红色沙漠》的品质证明了韩国游戏工业的升级。AI NPC行为逻辑的突破也值得关注——当NPC不再只是脚本触发的道具，而是具备自主决策能力的"虚拟居民"时，<strong>游戏世界的沉浸感将发生质变</strong>。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <!-- 1. 腾讯撤销AI Lab -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      腾讯撤销AI Lab，蒋杰不再担任主任
+    </div>
+    <div class="item-body">
+      腾讯TEG技术工程事业群进行组织架构调整，<strong>AI Lab正式撤销</strong>，蒋杰不再担任AI Lab主任，但其其他管理职责不变。AI Lab成立于2016年，曾是腾讯AI基础研究的核心力量。此次调整被解读为腾讯将AI研究力量从独立实验室模式<strong>分散融入各业务线</strong>，从"集中研究"转向"全面应用"。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/3996876140/5278623156142665">机器之心Pro (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">撤销AI Lab并不意味着腾讯放弃AI，而是<strong>AI已从"研究课题"变为"业务基础设施"</strong>。独立实验室模式适合探索期，但当AI需要深度嵌入微信、游戏、云服务时，分散到业务线能加速落地。这也是Google将DeepMind与Google Brain合并的同一逻辑——<strong>AI越重要，就越不能独立存在</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 2. 阿里裁员34% -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      阿里2025年员工数缩减34%，全力押注AI
+    </div>
+    <div class="item-body">
+      CNBC报道阿里巴巴2025年<strong>员工总数缩减34%</strong>，大规模裁员的同时全力转向AI战略。阿里同期出售大润发、银泰等非核心零售资产，将释放的资金和人力重新投入AI基础设施和大模型业务。这是中国互联网历史上<strong>最大规模的战略性人员缩减</strong>之一。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/CNBCtech">@CNBCtech (X)</a> ｜ <a href="https://www.cnbc.com/2026/03/20/alibaba-headcount-falls-ai-push-sun-art-intime-sales.html">CNBC</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">34%的员工缩减是阿里<strong>"瘦身换赛道"</strong>的极端操作。当传统电商增长见顶，AI成为唯一增长引擎时，每一分投入到非AI业务的资源都是"机会成本"。结合腾讯撤销AI Lab、字节卖沐瞳聚焦AI，中国科技巨头正在经历<strong>自移动互联网以来最大的战略转型</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 3. 宇树科技IPO -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      宇树科技科创板IPO获受理，拟融资42亿元冲刺"人形机器人第一股"
+    </div>
+    <div class="item-body">
+      宇树科技科创板IPO申请获<strong>上交所受理</strong>，拟融资<strong>42.02亿元</strong>，冲刺"A股人形机器人第一股"。招股书公开了宇树在全球四足与人形机器人领域的龙头地位，产品已覆盖科研、工业巡检、特种作业等多个场景。这是继智元机器人之后，又一家具身智能公司冲刺资本市场。
+    </div>
+    <div class="stat-row">
+      <span class="stat">拟融资 <em>42.02亿元</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://m.weibo.cn/detail/5278600723170820">IT之家 (微博)</a> ｜ <a href="https://weibo.com/3996876140/5278586992068847">机器之心Pro (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">宇树科技冲刺科创板标志着<strong>人形机器人赛道正式进入资本化阶段</strong>。42亿元的融资规模说明市场对具身智能的商业化前景抱有高预期。但IPO后的关键挑战是：能否从"卖硬件"转向"卖服务+软件"，因为<strong>机器人的长期价值在于持续迭代的AI能力，而非一次性硬件交付</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 4. 格式塔脑机接口 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      格式塔科技获1.5亿元融资，破国内脑机接口纪录
+    </div>
+    <div class="item-body">
+      格式塔科技完成<strong>1.5亿元融资</strong>，创下国内脑机接口领域融资纪录。公司主攻<strong>无创超声波脑机接口</strong>技术路线，借助AI解码算法将脑电信号转化为控制指令，正在告别实验室走向临床应用。其技术无需植入电极，安全性和用户接受度远高于侵入式方案。
+    </div>
+    <div class="stat-row">
+      <span class="stat">融资额 <em>1.5亿元</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/5703921756/5277490211456401">新智元 (微博)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">格式塔选择"无创超声波"路线是<strong>商业化和安全性的双赢策略</strong>。Neuralink的侵入式方案虽然精度高但手术风险大、监管严格；无创方案虽然精度稍低，但可以快速覆盖康复治疗、辅助设备控制等场景。<strong>AI解码算法的进步正在弥合无创方案的精度短板</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 5. SpaceX -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      SpaceX启动Super Heavy V3和Starbase Pad 2激活测试
+    </div>
+    <div class="item-body">
+      SpaceX启动<strong>Super Heavy V3</strong>（Starship超重型助推器第三版）和<strong>Starbase发射台2号</strong>的初始激活测试。V3版本在推力和可复用性上进一步升级，Pad 2的启用将使SpaceX具备双发射台并行操作能力，大幅提升Starship发射频率。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/SpaceX/status/2034274447830479083">@SpaceX (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">双发射台意味着SpaceX正在为<strong>Starship的高频发射节奏</strong>做准备——这是Starlink V3卫星大规模部署和未来火星任务的前提。Super Heavy V3的推力升级也为<strong>更重载荷（军事卫星、太空站模块）</strong>打开了新市场。SpaceX正在把火箭发射从"航天事件"变成"常规物流"。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <!-- 1. 特朗普AI框架 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      特朗普政府发布全国性AI政策框架：六大支柱统一监管，限制各州立法
+    </div>
+    <div class="item-body">
+      特朗普政府发布<strong>AI立法框架</strong>，提出六大支柱：统一国家级安全与监管标准、引入儿童安全规则、数据中心审批标准化、能源使用管理、知识产权保护、防止AI压制政治表达。框架明确要求国会<strong>"优先于各州立法"</strong>，避免形成50套相互冲突的规则体系。这是美国联邦层面最系统的AI监管政策进展。
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/">TechCrunch</a> ｜ <a href="https://www.reuters.com/world/us/white-house-releases-national-ai-framework-2026-03-20/">Reuters</a> ｜ <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_79069bd832944752">财联社</a> ｜ 2026-03-21</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">六大支柱中最关键的是<strong>"限制各州单独AI立法"</strong>——这直接回应了加州SB-1047等争议性州级法案。联邦统一框架对AI企业是利好：避免了在50个州遵守不同规则的合规噩梦。但"防止AI压制政治表达"条款暗含<strong>限制AI平台内容审核权力</strong>的政治意图，这可能与硅谷的价值观产生冲突。</div>
+    </div>
+  </div>
+
+  <!-- 2. 英伟达诉讼盗版数据 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      英伟达遭集体诉讼：被指蓄意使用盗版数据训练AI
+    </div>
+    <div class="item-body">
+      英伟达遭集体诉讼，被指控为训练AI模型<strong>蓄意使用盗版数据</strong>。诉状援引内部文件称英伟达高管曾主动联系"影子图书馆"<strong>安娜档案馆（Anna's Archive）</strong>，在明知数据非法后仍批准合作获取约500TB受版权保护书籍。此外还被指使用Books3等多个盗版数据源。这是AI训练数据版权争议中涉案金额最大的案件之一。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Pirat_Nation/status/2013930069966856486">@Pirat_Nation (X)</a> ｜ <a href="https://eu.36kr.com/en/p/3675402704380809">36氪</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">"明知违法仍批准"的内部文件是此案的关键证据。如果属实，NVIDIA将面临<strong>远超和解范围的巨额赔偿</strong>。更深远的影响是：此案可能成为AI训练数据版权的标杆判例，<strong>倒逼整个行业建立合规的数据采购和审计机制</strong>。训练数据的"合法性溢价"正在形成。</div>
+    </div>
+  </div>
+
+  <!-- 3. 五角大楼AI预算 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      五角大楼寻求超2000亿美元预算，AI投入大幅增加
+    </div>
+    <div class="item-body">
+      五角大楼在2027财年预算请求中寻求超过<strong>2000亿美元</strong>，其中AI相关预算大幅增加。涵盖AI驱动的无人作战系统、智能情报分析、自动化后勤补给和<strong>AI网络攻防</strong>等领域。美国军方正在将AI从实验项目升级为核心作战能力。
+    </div>
+    <div class="stat-row">
+      <span class="stat">预算规模 <em>$2000亿+</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Reuters/status/2034544181494833551">@Reuters (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">2000亿美元的预算请求中AI份额的大幅增加，标志着<strong>军事AI从"研究"进入"采购"</strong>阶段。这对NVIDIA、Palantir、Anduril等军工AI企业是巨大利好。同时也意味着AI技术的双用性（Dual-Use）问题将更加尖锐——<strong>同一家公司可能同时为消费者做AI助手、为军方做AI武器</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 4. 稀土磁铁 -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      中国稀土磁铁出口在特朗普-习近平会面前激增
+    </div>
+    <div class="item-body">
+      Reuters报道中国<strong>稀土磁铁出口</strong>在特朗普与习近平即将会面之前出现显著跳升。稀土磁铁是<strong>电动车电机、风力发电机和军事装备</strong>的关键组件。分析认为这反映了买家在潜在出口限制前的<strong>抢先囤货行为</strong>，也暗示双方在稀土领域可能达成某种默契。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Reuters/status/2034882683956781565">@Reuters (X)</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">稀土出口激增是典型的<strong>"政策窗口期抢单"</strong>现象。中国掌控全球约70%的稀土加工产能，稀土磁铁更是美国军工和新能源产业的命门。在NVIDIA GPU出口管制和半导体制裁的背景下，<strong>稀土正在成为中国最具战略威慑力的反制工具</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 6. 北京122项未来产业（从科技板块移入） -->
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">政策</span>
+      北京发布122项未来产业细分任务，覆盖通用AI、量子科技等
+    </div>
+    <div class="item-body">
+      北京推出<strong>《北京市未来产业2026年工作要点》</strong>，在6方面实施122项细分任务，聚焦<strong>通用AI、元宇宙、6G、量子科技</strong>等前沿领域。2025年北京未来产业发展指数排名全球第二。政策重点支持AI大模型企业和算力基础设施建设，为北京AI产业提供明确的发展路线图。
+    </div>
+    <div class="item-source">来源：<a href="https://k.sina.com.cn/article_7857201856_1d45362c001903f3eo.html">新浪科技</a> ｜ 2026-03-20</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">122项任务的细分程度说明北京的<strong>产业政策已从"喊口号"进入"定KPI"</strong>阶段。全球第二的未来产业指数排名也反映了北京在AI人才、算力基础设施和创业生态方面的综合优势。<strong>地方政府之间的AI产业竞赛正在从上海、深圳扩展到更多城市</strong>。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月21日 · 覆盖范围：3月20日-21日</p>
+  <p>数据来源：<strong>OpenAI Blog</strong> · <strong>NVIDIA AI Blog</strong> · <strong>Reuters</strong> · <strong>TechCrunch</strong> · <strong>CNBC</strong> · <strong>Bloomberg</strong> · <strong>PC Gamer</strong> · <strong>Semiconductors Insight</strong> · <strong>Ming-Chi Kuo Blog</strong> · 量子位 · 机器之心Pro · 新智元 · 36氪 · 财联社 · IT之家 · 51CTO技术栈 · 新浪科技</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
