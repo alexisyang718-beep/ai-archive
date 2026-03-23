@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月23日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* 标签色系：
+     tag-hot    = 🔥热点  红色
+     tag-new    = 🆕新品  绿色
+     tag-blue   = 🔧技术/升级  蓝色
+     tag-purple = 💜制程/颁奖  紫色
+     tag-orange = 💰投资/数据  橙色
+     tag-teal   = 📱手机/折叠  青色
+  */
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .github-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .gh-item {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .gh-item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border);
+  }
+
+  .gh-name { font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+
+  .gh-name a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .gh-name a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  .gh-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .gh-star {
+    font-size: 12px;
+    color: var(--tag-orange);
+    font-weight: 500;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .github-grid { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月23日 · 周一</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>马斯克启动 Terafab 芯片计划</strong>，Tesla+SpaceX 联合建厂，目标年产 1 太瓦算力，80% 部署太空<br>
+❷ <strong>浙大团队破解多模态模型"盲目自信"</strong>，CA-TTS 框架在 CVPR'26 四大基准全面 SOTA<br>
+❸ <strong>YC CEO Garry Tan 开源 GStack</strong>，用 Claude Code 构建虚拟工程团队，韩国等地爆火<br>
+❹ <strong>宇树科技 IPO 招股书揭秘</strong>：2025 年人形机器人出货超 5500 台全球第一，募资 42 亿<br>
+❺ <strong>手游公司用 AI 制作内容已一年</strong>，零玩家投诉，GamesIndustry.biz 深度调查<br>
+❻ <strong>台积电 2nm 订单塞爆至 2028 年</strong>，先进制程连续四年涨价<br>
+❼ <strong>DeepSeek 核心工程师郭达雅离职</strong>，V2/V3/R1 核心作者引发大厂争抢
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-blue">CVPR'26</span>浙大团队破解多模态模型「盲目自信」：先校准置信度，再分配算力</div>
+    <div class="item-body">浙江大学联合阿里、港城大、密歇根大学提出 <strong>CA-TTS 框架</strong>，破解多模态大模型"图像都看不清还高度自信"的痼疾。核心思路是先通过 <strong>CDRL 强化学习</strong>校准置信度——让模型在"看不清"时承认不确定，再将校准后的置信度作为推理资源分配信号。在 Math-Vision 基准上准确率从基线 23% 跃升至 <strong>42.4%</strong>，四大视觉推理基准全面 SOTA，平均超越现有最优方法 8.8%。论文已被 CVPR 2026 接收。</div>
+    <div class="stat-row"><span class="stat">Math-Vision <em>42.4%</em></span><span class="stat">平均提升 <em>+8.8%</em></span><span class="stat">扩展效率 <em>3.1×</em></span></div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/391014.html">量子位</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">核心贡献在于<strong>重新定义了 test-time scaling 的效率上限</strong>。CA-TTS 的扩展斜率是 Majority Voting 的 2.2 倍，意味着"多算一点"第一次变得有方向感。这代表范式转换：从"先推理后感知"到"先感知后推理"。当多模态 AI 进入医疗影像、自动驾驶等高风险场景，模型"知道自己什么时候不该太自信"将成为基本安全要求。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">新品</span>阶跃星辰率先适配微信生态，StepClaw「龙虾」即插即养即用</div>
+    <div class="item-body">阶跃星辰宣布 <strong>StepClaw（阶跃龙虾）正式接入微信</strong>，成为首个适配微信个人聊天场景的 AI Agent。通过"阶跃AI桌面伙伴"安装，在微信 ClawBot 插件中配置后，即可在聊天界面发送指令完成学习辅助、内容创作等任务。StepClaw 搭载 <strong>Step 3.5 Flash</strong> 模型，在 OpenRouter 总榜周排名第一，OpenClaw 调用量持续榜首。</div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/391010.html">量子位</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">微信 12 亿用户的社交底座开放 AI Agent 接入是<strong>标志性节点</strong>。AI 助手从"新装一个 App"变成"已有 App 里长出新能力"，零迁移成本是最大分发优势。但微信生态的封闭性决定了第三方 Agent 功能天花板，阶跃先发优势能否持续取决于微信后续的开放程度。更值得关注的是这是否标志着国内 AI Agent 分发从独立 App 转向超级 App 内嵌。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">热点</span>DeepSeek 核心工程师郭达雅离职，大厂争抢进行时</div>
+    <div class="item-body">DeepSeek 核心成员<strong>郭达雅</strong>被曝离职。他是 <strong>V2、V3、R1</strong> 等多款模型的核心作者，博士毕业于中山大学，曾在 MSRA 完成 CodeBERT 和 GraphCodeBERT 研究。在 DeepSeek 期间参与了从 Coder、Math 到 V3、R1 的完整主线研发，其中 DeepSeek-Math 提出的 <strong>GRPO 方法</strong>后成为 R1 推理的关键。其导师寄语他成为"中山大学的雷军"。</div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/390990.html">量子位</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">郭达雅的离职折射出<strong>中国 AI 顶尖人才流动加速</strong>的大趋势。他的研究主线始终围绕 Coding——从 CodeBERT 到 DeepSeek-Coder，下一站大概率在 AI 编程方向。对 DeepSeek 而言连续流失核心人才是否影响 V4 研发值得关注；对行业而言，这类流动正将 DeepSeek 的技术经验扩散至更多机构，客观上加速了中国 AI 整体能力提升。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">热点</span>YC CEO Garry Tan 开源 GStack：用 Claude Code 构建虚拟工程团队</div>
+    <div class="item-body">Y Combinator CEO <strong>Garry Tan</strong> 发布并持续迭代 <strong>GStack</strong>——基于 Claude Code 的开源 AI 软件工厂。将结构化 prompt 组织成工作流，让个人开发者模拟完整虚拟工程团队。开发者 Igor Os 实测评价"印象深刻"，项目在韩国等地迅速传播。Garry Tan 表示每天用 GStack 扩展自己的能力，"这是它最差的状态"。</div>
+    <div class="item-source">来源：<a href="https://x.com/garrytan/status/2035898554448036111">@garrytan (X)</a> ｜ 2026-03-23</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">GStack 的意义不在于技术创新——本质是 prompt 工程最佳实践封装——而在于<strong>谁在用它</strong>。YC CEO 亲自下场日常使用并开源，信号是：AI 编程已从"开发者工具"升级为"创始人基础设施"。当一人可用 Claude Code + 工作流顶替 20 人团队，创业的<strong>最低可行团队规模</strong>正在被重新定义，这与 YC 近年青睐"极小团队+极高杠杆"的投资逻辑完全一致。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">重磅</span>GTC 2026 复盘：NVIDIA 补齐 Token 速度短板，Rubin + LPU 异构架构颠覆 AI 加速器格局</div>
+    <div class="item-body">据技术分析师 fin（@fi56622380）深度复盘，NVIDIA 在 GTC 2026 发布的<strong>Rubin + LPX 异构架构</strong>直击 AI 推理的 Token 生成速度瓶颈。新架构采用精巧分工：<strong>Prefill 阶段和 Attention 放在 GPU</strong>，<strong>Decode 阶段的 MLP/FFN 放在 LPU（LPX）</strong>——FFN 占 decode 阶段 50%-60%，LPU 的 SRAM 仅存放固定 FFN 权重，KV Cache 保留在 GPU HBM。这种设计使最高速度突破 <strong>1000 token/s</strong>，吞吐量相比 Blackwell 提升 35 倍。黄仁勋同时宣布收购 Groq 核心技术，进一步巩固其在 AI 基础设施领域的统治地位。</div>
+    <div class="stat-row"><span class="stat">峰值速度 <em>1000+ token/s</em></span><span class="stat">吞吐提升 <em>35×</em></span><span class="stat">FFN 加速 <em>50-60%</em></span></div>
+    <div class="item-source">来源：<a href="https://x.com/fi56622380/status/2035578249024053436">@fi56622380 (X)</a> ｜ 2026-03-23</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">fin 的分析揭示了一个关键转变：<strong>NVIDIA 正在用系统级整合碾压 AI 加速器初创公司</strong>。Cerebras、d-Matrix、SambaNova 等公司的核心优势（极致速度、存内计算、私有化部署）被 NVIDIA 的新架构逐一覆盖。半导体行业的历史规律正在重演——早期百花齐放，最终大厂通过收购 + 整合将功能做全、成本做低，初创公司失去独立生存空间。对行业而言，这意味着 AI 算力竞争进入"寡头垄断"新阶段，<strong>创业公司的机会窗口正在关闭</strong>，而英伟达的"AI 基础设施建造者"定位已不可撼动。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">分析</span>Greg Isenberg：当每个 App 都变成应用商店，苹果 30% 抽成将被瓦解</div>
+    <div class="item-body">知名投资人 <strong>Greg Isenberg</strong> 发表长推分析"每个 App/网站都变成应用商店"的<strong>二三阶效应</strong>。他认为：① AI Agent 让任何界面都能成为分发入口，应用不再需要通过 App Store 触达用户；② <strong>苹果/谷歌 30% 抽成</strong>在新范式下将被绕开；③ 新的分发格局正在形成——游戏内嵌小游戏、聊天窗口内购物、浏览器即商店。这对 AI 应用分发影响尤其深远——Agent 可以在聊天中直接推荐并启动服务，App Store 从"必经之路"变成"可选通道"。</div>
+    <div class="item-source">来源：<a href="https://x.com/gregisenberg/status/2035878210508878318">@gregisenberg (X)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Greg Isenberg 点出了一个<strong>正在发生但被低估的结构性变化</strong>：AI Agent + 小程序/WebApp 正在让"分发"变得无形化。Epic vs Apple 的法律战只是前奏——真正颠覆 30% 抽成的不是法规而是技术。当 AI 助手可以在对话中直接完成推荐、支付、启动全流程，传统应用商店的垄断地位将被釜底抽薪。<strong>分发权的去中心化</strong>将重塑整个数字内容产业的价值链，AI 原生应用的获客成本可能因此下降一个数量级。</div></div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">新品</span>三星 Galaxy S26 正式兼容苹果 AirDrop，Quick Share 跨平台传输上线</div>
+    <div class="item-body">三星电子 MX 事业部 COO 崔元俊在日本记者会上正式确认：<strong>Galaxy S26 系列将支持与苹果 AirDrop 兼容的跨平台文件传输</strong>。该功能基于 Google Quick Share 技术，用户从屏幕顶部下滑打开 Quick Panel，进入设置 > 连接设备 > Quick Share > 开启"与苹果设备共享"，即可向附近的 iPhone、Mac、iPad 无缝传输照片、视频等大容量文件。功能于 <strong>3 月 23 日起在韩国率先推送</strong>，随后在美国等地区陆续上线。三星同时推出 <strong>Galaxy S26 Ultra 企业版</strong>，强化 AI 数据保护功能，满足企业级安全合规需求。</div>
+    <div class="stat-row"><span class="stat">首发地区 <em>韩国</em></span><span class="stat">支持设备 <em>iPhone/iPad/Mac</em></span><span class="stat">上线时间 <em>3月23日</em></span></div>
+    <div class="item-source">来源：<a href="https://x.com/UniverseIce/status/2035885392801714390">@UniverseIce</a>、<a href="https://9to5google.com/2026/03/22/samsung-galaxy-s26-airdrop-quick-share/">9to5Google</a>、<a href="https://www.androidheadlines.com/2026/03/samsung-galaxy-s26-ultra-enterprise-edition-ai-data-protection.html">Android Headlines</a>、<a href="https://www.sohu.com/a/999824285_122004016">搜狐</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">三星 S26 兼容 AirDrop 是<strong>Android 与 iOS 生态壁垒首次实质性打破</strong>。长期以来，跨平台传输是 iPhone 用户"绑架"在苹果生态的核心痛点之一。三星通过 Google Quick Share 实现与 AirDrop 互通，既补齐了 Android 阵营的最大短板，也试图在"后硬件创新时代"争夺生态互联的<strong>标准制定权</strong>。企业版的推出则瞄准了苹果最稳固的高端商务市场——AI 数据保护功能直接对标 Apple 的 Enterprise 级安全能力。这一组合拳显示三星的战略意图：在硬件参数趋同的背景下，<strong>生态开放性和企业级服务</strong>将成为高端手机的新战场。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-teal">独家</span>iQOO Neo11 开案：换芯小迭代，排期 Q2</div>
+    <div class="item-body">据微博博主智慧皮卡丘独家爆料，<strong>iQOO Neo11 已正式开案</strong>，定位换芯小迭代，排期 <strong>Q2</strong>。物料成本有所上涨，预计搭载新一代处理器提升性能。Neo 系列是 iQOO 走量核心产品线，此次策略偏保守，主打性价比换代而非大幅设计革新。</div>
+    <div class="item-source">来源：<a href="https://weibo.com/5888095979/5279194292685947">智慧皮卡丘 (微博)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">"小迭代"策略反映<strong>中国手机市场竞争的微妙变化</strong>：2000-3000 元档性价比旗舰仍是出货量基本盘。物料上涨但选择小迭代，说明 vivo 系要"守住价格带"而非冲击更高段位。Q2 发布避开了 Q1 旗舰扎堆期，是典型的错峰竞争打法。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-teal">新品</span>iPad 搭载 A18 芯片，计划 2026 年初发布</div>
+    <div class="item-body">据 <strong>Apple Insider</strong>，苹果正准备推出搭载 <strong>A18 芯片</strong>的新款 iPad，计划 2026 年初发布。A18 基于台积电 3nm 工艺，此次下放 iPad 将显著提升入门级 iPad 的 AI 能力和图形性能，使其支持 <strong>Apple Intelligence</strong> 全套功能。</div>
+    <div class="item-source">来源：<a href="https://x.com/appleinsider/status/2035869201416470795">@appleinsider (X)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">A18 下放 iPad 核心逻辑是<strong>让整个产品线都能跑 Apple Intelligence</strong>。苹果正面临 AI 功能只有最新设备能用导致生态碎片化的问题。通过将 3nm 芯片扩展到入门级 iPad，确保教育和消费市场主力设备也具备端侧 AI 能力，暗示苹果对端侧 AI 推理的押注非常坚决。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">人事</span>John Ternus：Tim Cook 的可能继任者，重塑苹果硬件版图</div>
+    <div class="item-body"><strong>Techmeme</strong> 头条：苹果硬件高级副总裁 <strong>John Ternus</strong> 被广泛视为 Tim Cook 继任者。他主导了 Mac 从 Intel 到 Apple Silicon 迁移、Vision Pro 头显及 Apple Car 方向调整。其工程背景和产品直觉被内部认为是引领苹果下一个十年的关键资质。</div>
+    <div class="item-source">来源：<a href="https://x.com/Techmeme/status/2035869471014101095">@Techmeme (X)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Tim Cook 执掌苹果 15 年，<strong>权力交接预期加速</strong>。Ternus 作为硬件负责人被视为首选，意味着董事会认为苹果下一阶段核心竞争力仍在<strong>硬件+芯片的垂直整合</strong>。这与微软选 Nadella（云/AI）、谷歌选 Pichai（AI）形成对比——每家巨头的接班人选择本质是对"未来十年什么最重要"的押注。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-blue">技术</span>多台 MacBook 通过 RDMA 集群运行 300B 参数大模型</div>
+    <div class="item-body">开发者 <strong>@twistedmatrices</strong> 展示：利用 <strong>exolabs</strong> 项目，多台支持 RDMA 的 MacBook 可组成集群，<strong>协同运行 300B 参数</strong>大模型。打破"大模型必须依赖数据中心级 GPU"的认知——通过高速网络互联，消费级设备也能组合成推理集群。</div>
+    <div class="item-source">来源：<a href="https://x.com/twistedmatrices/status/2035848802377375980">@twistedmatrices (X)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Apple Silicon 统一内存架构天然适合大模型推理，加上 RDMA 低延迟网络，多机协同效率损耗远低于传统 x86 集群。如果苹果官方支持这种集群能力，将开辟"企业用一堆 Mac 替代一张 H100"的新市场。<strong>去中心化 AI 推理</strong>正从极客玩具变成实用方案。</div></div>
+  </div>
+
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">研报</span>大摩最新研判：中美 AI GPU 差距，没想象那么大</div>
+    <div class="item-body">摩根士丹利最新研报对中美 <strong>AI GPU 差距</strong>进行了系统评估。研报指出，尽管美国在高端芯片设计和制造方面仍保持领先，但中国通过<strong>国产替代加速、封装技术追赶和 AI 软件栈优化</strong>，正在快速缩小实际可用算力差距。华为昇腾 910C 等芯片虽然单卡性能仍落后 NVIDIA H100，但在特定推理场景下已能实现 80% 以上的效能比。研报还强调中国在<strong>部署规模</strong>上的优势——即使单卡弱于美方，庞大的装机量和日益成熟的集群调度能力使整体可用算力差距远小于芯片参数差距。</div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s?__biz=MzkyNTY1MjE2OA==&mid=2247493467&idx=1&sn=46a0ab4f49912a62e60e8998d5">硅基观察Pro</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">大摩这份研报的核心信号是：<strong>衡量 AI 竞争力的指标正在从"单芯片峰值性能"转向"系统级可用算力"</strong>。中国在芯片代际上可能落后 1-2 代，但在部署规模、软件适配和应用场景上的追赶速度被市场低估了。对投资者而言，这意味着"中国 AI 因芯片封锁而注定落后"的叙事需要修正；对政策制定者而言，出口管制的实际效果比预期更复杂。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-purple">制程</span>台积电 2nm 订单塞爆至 2028 年，NVIDIA Feynman 被迫改设计</div>
+    <div class="item-body">据台湾《经济日报》及分析师 Dan Nystedt，<strong>台积电 2nm 及 A16 制程订单已完全排满至 2028 年</strong>，先进制程代工价格将<strong>连续四年上涨</strong>。NVIDIA、Broadcom、MediaTek 已锁定未来两年产能，Meta、Intel 持续加单。由于 A16 产能极度紧缺，<strong>NVIDIA 被迫调整 2028 年 Feynman GPU 设计</strong>——仅在最关键裸片采用 A16，其余 Die 改用产能更充沛的 N3P。苹果、AMD、Google、AWS 等大客户也在排队抢产能，AI 与 HPC 需求爆发使台积电成为算力军备竞赛的最大赢家。</div>
+    <div class="stat-row"><span class="stat">订单排满至 <em>2028年</em></span><span class="stat">锁定客户 <em>NVIDIA/博通/联发科</em></span><span class="stat">涨价周期 <em>连涨4年</em></span></div>
+    <div class="item-source">来源：<a href="https://x.com/QQ_Timmy/status/2035883688605720661">@QQ_Timmy</a>、<a href="https://x.com/dnystedt/status/2035873960605421598">@dnystedt</a>、<a href="https://money.udn.com/money/story/5612/9396266">经济日报</a>、<a href="https://www.culpium.com/p/tsmcs-n2-node-is-almost-booked-out">Culpium</a>、<a href="https://news.cnyes.com/news/id/6391994">钜亨网</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">台积电产能紧缺已迫使<strong>最大客户 NVIDIA 修改芯片设计</strong>，这在半导体行业极为罕见。Feynman 被迫"降级"使用 N3P，意味着即使强如英伟达也无法随心所欲获取最先进制程。更深层的信号是：AI 算力需求的增长速度已超越摩尔定律的供给能力，<strong>先进制程产能成为比芯片设计更重要的战略资源</strong>。对国产替代而言，这既是挑战（2nm 以下被锁死）也是机遇——当头部客户都拿不到足够产能，对成熟制程 + 先进封装方案的接受度将大幅提升。华为昇腾的 Chiplet 路线可能因此获得更大生存空间。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">国产</span>华为发布昇腾 950PR 芯片，Atlas 350 算力达 H20 的 2.87 倍</div>
+    <div class="item-body">在 2026 华为中国合作伙伴大会上，华为正式发布 <strong>昇腾 950PR（Ascend 950PR）</strong>AI 处理器及搭载该芯片的 <strong>Atlas 350 训练推理加速卡</strong>。Atlas 350 单卡 <strong>FP4 算力达 1.56P</strong>，带宽 1.4TB/s，HBM 容量 112GB（是 H20 的 1.16 倍），算力约为英伟达 H20 的 <strong>2.87 倍</strong>，是目前<strong>国内唯一支持 FP4 低精度的推理产品</strong>。昇腾 950PR 采用 SIMD 架构，支持 FP32/HF32/FP16/BF16/FP8/MXFP8/HiF8/MXFP4/HiF4 等多种数据格式，内存访问颗粒度从 512 字节优化至 128 字节，小算子访存效率提升 4 倍，多模态生成速度提升 60%。</div>
+    <div class="stat-row"><span class="stat">FP4 算力 <em>1.56P</em></span><span class="stat">vs H20 <em>2.87×</em></span><span class="stat">HBM 容量 <em>112GB</em></span></div>
+    <div class="item-source">来源：<a href="https://www.sohu.com/a/999761602_655634">搜狐</a>、<a href="https://wallstreetcn.com/articles/3768071">华尔街见闻</a>、<a href="http://news.pconline.com.cn/2118/21189712.html">太平洋科技</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">昇腾 950PR 的发布标志着<strong>国产 AI 芯片从"可用"迈向"好用"的关键跨越</strong>。2.87 倍于 H20 的算力 + FP4 低精度支持，意味着在推理场景下 Atlas 350 已具备替代英伟达产品的硬实力。更值得关注的是"芯片一亮相，整机就上市"——华为已完成从芯片设计到供应链再到整机制造的全链条打通。在中美科技脱钩背景下，<strong>昇腾 950PR 的量产不是孤立的技术新闻，而是国产算力生态进入良性循环的信号</strong>。对国内企业而言，这意味着 AI 算力供应链的"去美化"已从政策驱动转向市场驱动——当国产芯片性价比超越进口产品，替代将加速发生。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-blue">技术</span>三星 ISSCC 突破：4F² DRAM 采用晶圆对晶圆混合键合技术</div>
+    <div class="item-body">据 Dr. Frederick Chen（@DrFrederickChen）分享，三星在 ISSCC 2026 发表重磅论文《A Vertical-Cell-Transistor-Based 4F² DRAM with Cell-on-Peripheral Architecture Using Wafer-to-Wafer Hybrid Bonding》。该研究实现三大突破：① <strong>Cell-on-Peripheral 架构</strong>——利用晶圆对晶圆混合铜键合技术，将 DRAM 外设电路与存储阵列分离到两个晶圆；② <strong>4F² 高密度工艺</strong>——在 D1a 节距上实现 D0a 级别的单元面积；③ <strong>垂直晶体管结构</strong>——4F² 单元采用浮体设计的垂直沟道晶体管。Fred Chen 推测未来可能部署 IGZO 材料进一步优化。</div>
+    <div class="stat-row"><span class="stat">单元面积 <em>D0a级别</em></span><span class="stat">键合技术 <em>混合铜键合</em></span><span class="stat">晶体管 <em>垂直沟道</em></span></div>
+    <div class="item-source">来源：<a href="https://x.com/DrFrederickChen/status/2035674604661010570">@DrFrederickChen</a>、<a href="https://ieeexplore.ieee.org/document/11409152">IEEE Xplore</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">三星这项 DRAM 技术突破代表了<strong>存储器微缩的新方向</strong>。传统 DRAM 的微缩受限于平面晶体管的物理极限，而垂直晶体管 + 混合键合的组合打开了新的 scaling 路径。Cell-on-Peripheral 架构让外设电路可以采用更宽松的设计规则提升性能和良率，同时存储阵列追求极致密度。对 AI 算力而言，<strong>HBM 的密度和带宽是模型训练的关键瓶颈</strong>，三星的技术路线可能在下一代 HBM4/HBM5 中得到应用。这也解释了为何 NVIDIA 与三星在 Groq 芯片上展开代工合作——存储技术正在成为 AI 芯片竞争的核心变量。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">重磅</span>马斯克启动 Terafab 芯片计划：Tesla + SpaceX 联合建厂，80% 算力部署太空</div>
+    <div class="item-body">马斯克正式宣布启动 <strong>Terafab 芯片制造计划</strong>——史上最大规模的私人芯片项目。工厂选址奥斯汀，由 <strong>Tesla、SpaceX 和 xAI</strong> 联合推进，目标年产超 <strong>1 太瓦</strong>算力，是当前全球 AI 算力年产出（约 20 GW）的 <strong>50 倍</strong>。计划生产 2nm 制程芯片，覆盖电动车/Robotaxi 边缘推理和太空高性能计算两条线。最惊人的是 <strong>80% 算力将部署至太空</strong>——马斯克认为太空拥有更丰沛的太阳能和天然散热优势。瑞银估算项目总成本可能高达 <strong>3000 亿美元</strong>。</div>
+    <div class="stat-row"><span class="stat">目标产能 <em>1 TW/年</em></span><span class="stat">现全球产能 <em>50×</em></span><span class="stat">预估成本 <em>$3000亿</em></span></div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/391045.html">量子位</a> ｜ 2026-03-23</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Terafab 的真正意义不在于芯片本身，而在于<strong>马斯克正在构建从设计到制造的完整垂直整合体系</strong>——"自己做英伟达+台积电"。这打破了半导体行业数十年来设计与制造分离的 fabless 范式。3000 亿美元的预估成本和没有时间线的"画饼"让市场存疑，但 SpaceX 预计 500 亿美元 IPO 可为项目提供资金弹药。更深层看，太空数据中心概念将 AI 算力从地缘竞争延伸到<strong>太空主权</strong>新维度。</div></div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">数据</span>Newzoo 预测：2028 年 PC 游戏收入或超主机，年复合增长率 6.6%</div>
+    <div class="item-body">据微博账号"竞核"分享的 <strong>Newzoo</strong> 最新预测数据，<strong>2028 年 PC 游戏市场收入有望首次超越主机</strong>。PC 市场年复合增长率达 <strong>6.6%</strong>，高于主机的 4.4%。驱动因素包括：Steam 等平台的全球化扩展、PC 独占 / 首发策略增多（如《黑神话：悟空》效应）、电竞和直播生态持续壮大。这一趋势对游戏开发商的平台优先级选择有深远影响。</div>
+    <div class="stat-row"><span class="stat">PC CAGR <em>6.6%</em></span><span class="stat">主机 CAGR <em>4.4%</em></span><span class="stat">超越时间 <em>2028年</em></span></div>
+    <div class="item-source">来源：<a href="https://weibo.com/2648435521/5277104439561585">竞核 (微博)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">PC 超越主机的预测反映了<strong>游戏行业权力结构的根本性转移</strong>。PC 平台的开放性让 Steam、Epic 等数字商店成为分发核心，而主机的"硬件亏钱、软件赚钱"模式在订阅制和云游戏冲击下承压。对中国开发者而言这是利好——国内 PC 市场基础雄厚，Steam 中国区已是全球最大市场。但"PC 超主机"也意味着主机独占策略将更快瓦解。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">深度</span>手游公司用 AI 制作内容已一整年——零玩家投诉</div>
+    <div class="item-body"><strong>GamesIndustry.biz</strong> 深度调查揭露：德国开发商 <strong>InnoGames</strong> 旗下手游《Sunrise Village》过去一年已将<strong>全部内容生产转为 AI 完成</strong>——故事、关卡、物品、过场动画均由 GPT-4o + Claude + Gemini 混合生成。团队从 25 人缩至 <strong>2-4 人</strong>，零玩家投诉，用户数和参与度保持稳定。InnoGames 自研"AI Stage Designer"工具集，6 步流程覆盖从叙事到布局。该团队预测两年内 AI 辅助将成为手游行业标准。</div>
+    <div class="stat-row"><span class="stat">团队缩减 <em>25→2人</em></span><span class="stat">玩家投诉 <em>0</em></span><span class="stat">运行时长 <em>1年</em></span></div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/this-mobile-game-has-been-made-using-ai-for-a-year-now-and-no-one-noticed">GamesIndustry.biz</a> ｜ 2026-03-20</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">这个案例的震撼之处不在于"AI 能做游戏内容"——而在于<strong>"做了一年，没人发现"</strong>。25 人到 2 人的团队缩减意味着 AI 已经跨过了休闲手游内容的质量阈值。更关键的逻辑是：这款游戏原本要关服，AI 让它继续活着并盈利。行业调查显示 84% 从业者反对 AI 生成内容，但在"关服 vs AI 续命"的二选一面前，玩家用脚投票选择了后者。<strong>手游将成为 AI 内容生产最先规模化的战场</strong>。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">新作</span>Minecraft Dungeons 2 正式公布，今年秋季全平台发售</div>
+    <div class="item-body">在 <strong>Minecraft Live</strong> 发布会上，<strong>Mojang</strong> 正式公布了 <strong>Minecraft Dungeons 续作</strong>。新作保留了系列标志性的积木式美术风格和 Dungeon Crawler 玩法核心，加入了全新的职业系统、更大的开放世界地图和跨平台联机功能。游戏计划 <strong>2026 年秋季</strong>全平台发售（PC / Xbox / PlayStation / Switch / 移动端）。初代发布于 2020 年，全球累计销量超 2500 万份。</div>
+    <div class="item-source">来源：<a href="https://www.gamespot.com/articles/minecraft-dungeons-2-revealed-and-its-coming-this-year/1100-6538930">GameSpot</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Minecraft 宇宙的扩展策略非常清晰：<strong>用子品牌 Spin-off 触达不同游戏类型的玩家</strong>。Dungeons 面向轻度 ARPG 玩家，Legends 面向 RTS 玩家，主线面向沙盒创造。初代 2500 万份的销量证明了这一策略的有效性。秋季发售避开了暑期和年末大作混战期，但需要与《暗黑破坏神》等竞品正面交锋。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">更新</span>Minecraft 下一个大更新"Chaos Cubed"：史上最混乱的一次</div>
+    <div class="item-body"><strong>Minecraft Live</strong> 同步公布了主线游戏的下一个重大更新 <strong>"Chaos Cubed"</strong>。Mojang 形容这将是"史上最混乱的 Minecraft 更新"——暗示将引入大量随机性和不可预测的游戏机制。此前 Minecraft 的更新以主题化的大版本为主（如 Caves & Cliffs、Wild Update），"混乱"定位标志着设计理念的转变。</div>
+    <div class="item-source">来源：<a href="https://www.gamespot.com/articles/the-next-minecraft-drop-could-be-its-most-chaotic-yet/1100-6538930">GameSpot</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">"混乱"定位是 Minecraft <strong>对抗内容疲劳的策略创新</strong>。一个已运营 17 年的游戏，传统的"加新生物群系、加新材料"更新模式边际效用递减。引入随机性和不可预测机制，本质是用<strong>程序化生成</strong>对抗内容通胀——同样的基础素材可以组合出无穷变化，既降低开发成本又提升重玩价值。这也暗合 AI 生成内容的大趋势。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-teal">爆料</span>CDPR 暗示《巫师 3》2026 年新 DLC</div>
+    <div class="item-body"><strong>CD Projekt Red</strong> 官方确认目前有一个未公布的神秘项目正在开发中，其时间线和近期传言均指向<strong>《巫师 3：狂猎》新 DLC</strong>。这将是继 2016 年《血与酒》之后，时隔 <strong>10 年</strong>的首个新扩展内容。《巫师 3》至今累计销量超 <strong>5000 万份</strong>，次世代版本发布后再度焕发活力。Game Rant 率先报道了这一暗示。</div>
+    <div class="item-source">来源：<a href="https://store.steampowered.com/news/group/1450625/view/502853084910716311">Steam News / Game Rant</a> ｜ 2026-03-23</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">《巫师 3》发售 11 年后仍在出 DLC，说明<strong>经典 IP 的长尾价值正在被重新定义</strong>。GTA V 跨三代主机的模式已被证明可行，CDPR 在《巫师 4》开发期间用低成本 DLC 维持品牌热度是聪明的策略。但 10 年后的新内容对品质要求极高——玩家期望值已被《血与酒》拉到了天花板。这也是 CDPR 重建《赛博朋克 2077》口碑后，小心试探市场反应的信号。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">展览</span>Capcom 宣布《生化危机》30 周年大型展览 2026 年秋登陆东京涩谷</div>
+    <div class="item-body">Capcom 正式宣布举办全球首个大型《生化危机》系列展览<strong>"The World of Biohazard 30th Anniversary Exhibition"</strong>，将于<strong>2026 年秋季在东京涩谷</strong>举行。展览内容包括：回顾生化危机系列历史、游戏和角色的设定及制作资料、独家周边商品，以及<strong>"让你仿佛置身于游戏世界的沉浸式体验"</strong>。更多详情将于 6 月公布。这是该系列诞生 30 年来首次举办大规模官方展览，标志着 Capcom 对 IP 长线运营和粉丝经济的深度挖掘。</div>
+    <div class="stat-row"><span class="stat">举办时间 <em>2026年秋</em></span><span class="stat">地点 <em>东京涩谷</em></span><span class="stat">系列周年 <em>30周年</em></span></div>
+    <div class="item-source">来源：<a href="https://x.com/Genki_JPN/status/2035892545214091678">@Genki_JPN (X)</a> ｜ 2026-03-23</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">《生化危机》30 周年展览反映了<strong>游戏 IP 运营从"卖游戏"向"卖体验"转型的趋势</strong>。沉浸式展览、主题乐园、影视改编正在成为游戏公司收入多元化的重要路径。Capcom 近年来通过《生化危机》重制版和《怪物猎人》系列的成功，证明了经典 IP 的长尾价值。此次展览不仅是对粉丝的回馈，更是为《生化危机 9》等新作预热——<strong>用线下体验强化品牌认知，反哺线上销售</strong>，这种"虚实联动"的 IP 运营模式将成为行业标配。</div></div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-orange">独家</span>前阴阳师制作人芥子游戏获莉莉丝投资，估值超 10 亿</div>
+    <div class="item-body">据"竞核"独家报道，<strong>阴阳师前制作人金韬</strong>创立的<strong>芥子游戏</strong>获得 <strong>莉莉丝游戏</strong>和少云新基金投资，估值超 <strong>10 亿人民币</strong>。金韬是网易《阴阳师》系列的核心制作人，离职创业后专注于二次元+开放世界赛道。莉莉丝作为《剑与远征》《万国觉醒》的开发商，此次投资标志着中国头部游戏公司对顶级制作人创业项目的押注。</div>
+    <div class="stat-row"><span class="stat">估值 <em>超10亿</em></span><span class="stat">投资方 <em>莉莉丝+少云</em></span></div>
+    <div class="item-source">来源：<a href="https://weibo.com/2648435521/5277434092192978">竞核 (微博独家)</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">金韬出走创业获 10 亿估值，折射的是<strong>中国游戏行业"制作人 IP 化"的趋势</strong>。类似米哈游蔡浩宇，顶级制作人的个人品牌效应正在取代公司品牌成为资本追逐的标的。莉莉丝投资的战略意图明确：自身擅长 SLG 和卡牌，需要通过投资补齐二次元赛道短板。这也暗示中国游戏投资正从"赛道投资"转向"人才投资"，制作人就是最大的 Alpha。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-blue">深度</span>看懂阿里 AI，先看懂悟空｜Token Hub 成立第二天</div>
+    <div class="item-body">"赛博禅心"发表深度分析：要理解阿里的 AI 战略，核心是看懂 <strong>悟空体系</strong>。文章指出阿里刚成立 <strong>Token Hub</strong>，试图将通义千问系列模型、达摩院技术积累和阿里云算力统一整合为"AI 基础设施中台"。悟空作为阿里 AI 的统一品牌和技术入口，承载着从大模型到智能体、从 To B 到 To C 的全链路落地使命。</div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247514426&idx=1&sn=db2aba9b42e83a670556da3814">赛博禅心</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">阿里成立 Token Hub 的核心逻辑是<strong>解决"AI 能力散落"问题</strong>——通义千问做模型、达摩院做研究、阿里云做算力，但彼此之间缺乏统一的产品化出口。悟空体系试图扮演"iOS 之于苹果"的角色，成为阿里 AI 对外的统一接口。但挑战在于：阿里的 AI 战略频繁调整（从"所有产品接 AI"到"独立 AI 产品"再到"中台化"），执行层能否跟上战略变化是最大的不确定性。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-teal">市场</span>新款小米 SU7："融冰"比销量更重要</div>
+    <div class="item-body">虎嗅深度分析新款 <strong>小米 SU7</strong> 的市场策略。文章指出这次改款的核心不是追求销量数据，而是<strong>"融冰"——化解首批车主的不满和市场质疑</strong>。通过细节改进和价格调整，小米试图将 SU7 从"话题车"转变为"口碑车"。新款在续航、智驾和做工方面均有明显提升，但定价策略仍在"性价比"和"品牌溢价"之间摇摆。</div>
+    <div class="item-source">来源：<a href="http://www.huxiu.com/article/4843852.html">虎嗅</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">小米汽车的核心挑战是<strong>如何从"流量驱动"转向"产品驱动"</strong>。SU7 首发靠雷军个人 IP 和发布会营销创造了惊人的订单数据，但"融冰"一词暗示首批车主的真实体验并非完美。对小米而言，第二款车（SU7 改款）比第一款更重要——它决定了"小米造车"是一时话题还是持久品牌。虎嗅用"融冰"定性很精准：信任的建立需要的是持续的产品力证明，而非下一场发布会。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">IPO</span>宇树科技招股书揭秘：2025 年人形机器人出货超 5500 台全球第一，募资 42 亿</div>
+    <div class="item-body"><strong>InfoQ</strong> 深度解读宇树科技 IPO 招股书的 <strong>8 个关键发现</strong>：注册资本从 10 万元到估值 <strong>127 亿元</strong>；2025 年全年收入 <strong>17.08 亿元</strong>，净利润 6 亿元；人形机器人出货超 <strong>5500 台</strong>全球第一，四足机器人 9 个月售出 17946 台；人形机器人收入占比首次超越四足（51.53%）；人形机器人单价从 59 万元降至 <strong>16.76 万元</strong>；京东是最大客户；计划募资 <strong>42 亿元</strong>，超 20 亿将投向 AI 模型研发。</div>
+    <div class="stat-row"><span class="stat">人形出货 <em>5500+台</em></span><span class="stat">年收入 <em>17.08亿</em></span><span class="stat">募资 <em>42亿</em></span></div>
+    <div class="item-source">来源：<a href="https://www.infoq.cn/article/lOkVPrOqAP8df2JEbwmU">InfoQ</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">宇树最值得关注的数据是<strong>人形机器人单价从 59 万降至 16.76 万</strong>，降幅 72%——这才是真正的"量产信号"。以价换量策略让出货量全球第一的同时利润转正（净利 6 亿），证明了机器人可以像消费电子一样走规模化路径。募资 42 亿中超半数投向模型研发，暗示宇树的野心不止于硬件——它想做<strong>具身智能时代的"安卓"</strong>，用装机量优势构建数据和生态护城河。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-new">产品</span>字节跳动小云雀短剧 Agent 上线，底层引擎 Seedance 2.0</div>
+    <div class="item-body">据"数字生命卡兹克"报道，字节跳动旗下 <strong>小云雀</strong>正式推出短剧 AI Agent——用户输入剧本描述即可自动生成完整短剧视频。底层引擎为字节自研的 <strong>Seedance 2.0</strong> 视频生成模型，支持角色一致性、多镜头切换和字幕自动匹配。这标志着字节将 AI 视频生成能力从实验室推向<strong>产品化落地</strong>，直接瞄准短剧这一增长最快的内容赛道。</div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647680850&idx=1&sn=98cf18fa4224c89c3601cf0cb3">数字生命卡兹克</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">字节做短剧 Agent 的逻辑极其清晰：<strong>抖音是最大的短剧分发平台，自研生成引擎 = 掌控供给端</strong>。当制作成本从百万级降至近乎零，短剧供给量将爆发式增长，这既巩固了抖音的内容优势，也让字节可以向 B 端（短剧制作公司）收取 AI 工具费。Seedance 2.0 在角色一致性上的突破是技术关键——此前 AI 视频的最大痛点就是"换一个镜头脸就变了"。</div></div>
+  </div>
+
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">争议</span>合规创业公司 Delve 被指控"虚假合规"，误导数百客户</div>
+    <div class="item-body"><strong>TechCrunch</strong> 报道：一篇匿名 Substack 文章指控 YC 支持的合规初创公司 <strong>Delve</strong>"系统性欺诈"——伪造董事会会议记录、测试过程和合规证据，让数百客户误以为已通过 <strong>HIPAA 和 GDPR</strong> 合规审查。指控称 Delve 同时扮演"实施者"和"检查者"双重角色，审计机构 Accorp 和 Gradient 实为同一实体，仅做"橡皮图章"式盖章。Delve 由 21 岁 MIT 辍学生创立，2025 年 A 轮融资 <strong>3200 万美元</strong>、估值 3 亿。事发后安全专家还曝光了 Delve 的多个安全漏洞。</div>
+    <div class="stat-row"><span class="stat">估值 <em>$3亿</em></span><span class="stat">A轮 <em>$3200万</em></span><span class="stat">受影响客户 <em>数百家</em></span></div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/">TechCrunch</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">Delve 事件暴露了<strong>合规科技（RegTech）行业的深层问题</strong>：当"自动化合规"变成"自动化造假"，客户面临的不是效率提升而是刑事风险。更讽刺的是——一家卖合规的公司自己都有安全漏洞。这对整个 RegTech 赛道是信任危机：企业花钱买的到底是真正的合规保障，还是一张"看起来合规"的纸？<strong>YC 背书和 3 亿估值</strong>并未阻止此类问题发生，也说明投资人在 ToB SaaS 的尽调中存在盲区。</div></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><span class="tag tag-hot">安全</span>国家互联网应急中心联合发布 OpenClaw 安全使用实践指南</div>
+    <div class="item-body">国家互联网应急中心（<strong>CNCERT</strong>）与中国网络空间安全协会联合发布《<strong>OpenClaw 安全使用实践指南</strong>》，面向普通用户、企业用户、云服务商及技术开发者提出分级防护建议。<strong>普通用户</strong>建议使用虚拟机或专用设备隔离运行、禁用管理员权限、不处理隐私数据、及时更新版本；<strong>企业</strong>需强化权限管控、操作审计与供应链管理；<strong>云服务商</strong>应加强镜像安全、API 调用防护及恶意插件阻断；<strong>开发者</strong>须落实沙箱化部署、最小权限配置与安全审计。指南旨在提升 AI 智能体应用的安全可控水平。</div>
+    <div class="item-source">来源：<a href="https://mp.weixin.qq.com/s/L9AKvAFMB6kE2EcRSvTxZw">国家互联网应急中心</a> ｜ 2026-03-22</div>
+    <div class="insight-box"><div class="insight-label">💡 深度洞察</div><div class="insight-content">CNCERT 发布 OpenClaw 安全指南标志着<strong>中国 AI 智能体监管进入"实操阶段"</strong>。与欧美偏向宏观框架的 AI 法案不同，中国的监管风格是"问题导向、快速响应"——OpenClaw 作为当前最流行的 AI 编程工具，其高权限特性（可执行系统命令、访问文件系统）确实带来实际风险。指南的分级建议（普通用户用虚拟机、企业强化审计、开发者沙箱化）体现了<strong>"精准监管"思路</strong>——不是一刀切禁止，而是根据风险等级提出差异化要求。这为后续 AI Agent 产品的合规设计提供了明确指引。</div></div>
+  </div>
+
+
+</section>
+
+<!-- ==================== 7. GitHub 高增长项目（可选） ==================== -->
+<!--
+<section class="section" id="github">
+  <div class="section-header">
+    <span class="icon">📦</span>
+    <h2>GitHub 高增长项目</h2>
+  </div>
+
+  <div class="github-grid">
+    {{SECTION_GITHUB_ITEMS}}
+  </div>
+</section>
+-->
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月23日 · 覆盖范围：3月21日-23日</p>
+  <p>数据来源：<strong>X/Twitter</strong> · <strong>Weibo</strong> · <strong>RSS</strong> · Tavily · 手动补充</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
+
+<!--
+==========================================================
+占位符说明
+==========================================================
+
+日期类：
+  {{DATE_TITLE}}      页面 <title> 中的日期，如 "2026年3月13日"
+  {{DATE_CN}}         正文中的日期，如 "2026年3月13日"
+  {{WEEKDAY}}         星期，如 "周五"
+  {{COVERAGE_RANGE}}  覆盖日期范围，如 "3月11日-13日"
+
+核心洞察：
+  {{SUMMARY}}         用 ❶❷❸… 编号，每条用 <strong> 高亮关键词，5-7 条
+
+板块新闻（每板块 ≥ 5 条）：
+  {{SECTION_MODEL_ITEMS}}      🧠 AI 模型与产品
+  {{SECTION_PHONE_ITEMS}}      📱 手机与消费电子
+  {{SECTION_CHIP_ITEMS}}       🔧 芯片与算力
+  {{SECTION_GAME_ITEMS}}       🎮 游戏行业
+  {{SECTION_INDUSTRY_ITEMS}}   🏛️ 科技行业动态
+  {{SECTION_POLICY_ITEMS}}     📜 政策与监管
+
+页脚：
+  {{SOURCES_LIST}}    信源列表，英文一手源用 <strong> 加粗
+
+==========================================================
+新闻条目 HTML 示例
+==========================================================
+
+<div class="item">
+  <div class="item-title">
+    <span class="tag tag-hot">标签</span>
+    新闻标题
+  </div>
+  <div class="item-body">
+    正文内容，关键信息用 <strong>加粗</strong>。
+  </div>
+  <div class="stat-row">
+    <span class="stat">指标名 <em>数值</em></span>
+    <span class="stat">指标名 <em>数值</em></span>
+  </div>
+  <div class="item-source">来源：<a href="URL">源名</a> ｜ 日期</div>
+  <div class="insight-box">
+    <div class="insight-label">💡 深度洞察</div>
+    <div class="insight-content">洞察内容（≤300字符，必须基于全文抓取撰写）</div>
+  </div>
+</div>
+
+注：
+- stat-row 可选，仅新闻包含数据指标时使用
+- insight-box 必需，每条新闻都要有
+- tag class 对照：tag-hot(红/热点) tag-new(绿/新品) tag-blue(蓝/技术)
+  tag-purple(紫/制程) tag-orange(橙/投资) tag-teal(青/手机)
+
+==========================================================
+GitHub 项目条目 HTML 示例（用于可选的 GitHub 板块）
+==========================================================
+
+<div class="gh-item">
+  <div class="gh-name"><a href="https://github.com/owner/repo">owner/repo</a></div>
+  <div class="gh-desc">项目描述</div>
+  <div class="gh-star">⭐ 12,345 · Language · 日期</div>
+</div>
+
+-->
