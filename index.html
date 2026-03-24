@@ -700,7 +700,14 @@ function renderTimeline() {
   container.innerHTML = html;
 }
 
-renderTimeline();
+// 渲染时间线
+try {
+  renderTimeline();
+  console.log('Timeline rendered successfully, BRIEFS count:', BRIEFS.length);
+} catch (e) {
+  console.error('Error rendering timeline:', e);
+  document.getElementById('timeline').innerHTML = '<div style="padding: 40px; text-align: center; color: var(--text-tertiary);">加载时间线失败，请刷新页面重试</div>';
+}
 
 // Theme
 function toggleTheme() {
