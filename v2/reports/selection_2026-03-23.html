@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选题报告 - 2026-03-23</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+        }
+        .section-icon {
+            font-size: 28px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+        }
+        .section-count {
+            background: #ecf0f1;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .candidate-list {
+            display: grid;
+            gap: 16px;
+        }
+        .candidate-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .candidate-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .candidate-card.selected {
+            background: #e8f5e9;
+            border-left-width: 6px;
+        }
+        .candidate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .candidate-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.5;
+            flex: 1;
+            margin-right: 12px;
+        }
+        .score-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .candidate-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        .trust-l1 { background: #ffebee; color: #c62828; }
+        .trust-l2 { background: #fff3e0; color: #ef6c00; }
+        .trust-l3 { background: #e8f5e9; color: #2e7d32; }
+        .type-official { background: #e3f2fd; color: #1565c0; }
+        .type-exclusive { background: #f3e5f5; color: #7b1fa2; }
+        .type-report { background: #e0f2f1; color: #00695c; }
+        .type-default { background: #f5f5f5; color: #616161; }
+        .candidate-source {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        .source-link {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .entity-tag {
+            background: #f0f0f0;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #ddd;
+        }
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .checkbox-wrapper label {
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+        }
+        .actions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            z-index: 100;
+        }
+        .btn {
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #555;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .empty-section {
+            text-align: center;
+            padding: 40px;
+            color: #95a5a6;
+            background: white;
+            border-radius: 12px;
+        }
+        .timestamp {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 12px;
+            margin: 40px 0 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 科技资讯日报选题</h1>
+        <div class="subtitle">2026-03-23 | 预筛选候选内容</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">36</div>
+                <div class="stat-label">候选内容</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">6</div>
+                <div class="stat-label">板块分类</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+
+        <div class="section">
+            <div class="section-header" style="border-color: #e74c3c;">
+                <span class="section-icon">🤖</span>
+                <span class="section-title">🤖 AI模型与产品</span>
+                <span class="section-count">目标 5 条 | 候选 10 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_1348" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">#问界M6静态评测首发##华为发布会# 
+
+如果你觉得 M5 空间差点意思，M7、M8、M9 又过于商务了，那就不妨来看看问界 M6 吧。 http://t.cn/AXfY36mL ​​​</div>
+                        <span class="score-badge">得分 110</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 爱范儿</span>
+                        <a href="https://weibo.com/1642720480/5279662718846286" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Huawei</span><span class="entity-tag">Apple M5</span><span class="entity-tag">AITO</span><span class="entity-tag">http://t.cn/AXfY36mL</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1348" data-atom-id="atom_20260323_1348">
+                        <label for="sel_atom_20260323_1348">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1097" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">An exclusive tour of Amazon’s Trainium lab, the chip that’s won over Anthropic, OpenAI, even Apple</div>
+                        <span class="score-badge">得分 110</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 TechCrunch AI</span>
+                        <a href="https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI</span><span class="entity-tag">Anthropic</span><span class="entity-tag">Apple</span><span class="entity-tag">Amazon</span><span class="entity-tag">AWS</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1097" data-atom-id="atom_20260323_1097">
+                        <label for="sel_atom_20260323_1097">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_990" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【实测 MiniMax M2.7：AI 狠起来，连自己都卷】
+龙虾爆火之后，全网的注意力都盯着「它该怎么用」——本地部署还是云端、一键安装还是敲命令、要不要接微信飞书……反而没人再认真问那个老问题：驱</div>
+                        <span class="score-badge">得分 100</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 爱范儿</span>
+                        <a href="https://weibo.com/1642720480/5278513780496847" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI</span><span class="entity-tag">Google</span><span class="entity-tag">MiniMax</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_990" data-atom-id="atom_20260323_990">
+                        <label for="sel_atom_20260323_990">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1227" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【MiniMax 新模型M2.7即将发布 | 独家】 #MiniMax 新模型即将发布#钛媒体App 3月18日消息，在2026亚马逊云科技出海大会上，MiniMax发言人透露了部分关于新模型M2.7</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 钛媒体APP</span>
+                        <a href="https://m.weibo.cn/detail/5277782936650877" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">MiniMax</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1227" data-atom-id="atom_20260323_1227">
+                        <label for="sel_atom_20260323_1227">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1116" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Scale AI launches Voice Showdown, the first real-world benchmark for voice AI — and the results are humbling for some top models</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 VentureBeat</span>
+                        <a href="https://venturebeat.com/data/scale-ai-launches-voice-showdown-the-first-real-world-benchmark-for-voice-ai" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI</span><span class="entity-tag">Anthropic</span><span class="entity-tag">Google</span><span class="entity-tag">DeepMind</span><span class="entity-tag">xAI</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1116" data-atom-id="atom_20260323_1116">
+                        <label for="sel_atom_20260323_1116">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_656" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">小米首款自研旗舰大模型，MiMo-V2-Pro来了！
+万亿参数规模，百万上下文，超强Agentic能力，
+全球权威AI测评榜单第一梯队，开发者好评如潮。
+速度快、效果准、智商情商双在线，欢迎体验！
+官</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 小米手机</span>
+                        <a href="https://weibo.com/2202387347/5278287124241197" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_656" data-atom-id="atom_20260323_656">
+                        <label for="sel_atom_20260323_656">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_657" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">小米首款手机龙虾Xiaomi miclaw，已启动封测，
+AI开始从聊天机器人，化身为真正生产力，
+搭载MiMo大模型，深度融合OS与人车家全生态，
+无需费心说明，AI自主寻求更优方案，安全执行，
+这</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 小米手机</span>
+                        <a href="https://weibo.com/2202387347/5278286701400553" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_657" data-atom-id="atom_20260323_657">
+                        <label for="sel_atom_20260323_657">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_682" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">小米首款手机龙虾Xiaomi miclaw，已启动封测，
+AI开始从聊天机器人，化身为真正生产力。
+
+搭载MiMo大模型，深度融合OS与人车家全生态，
+无需费心说明，AI自主寻求更优方案，安全执行，
+</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 卢伟冰</span>
+                        <a href="https://weibo.com/1892653244/5279199937955757" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_682" data-atom-id="atom_20260323_682">
+                        <label for="sel_atom_20260323_682">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_856" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">和余承东写代码是种怎样的体验？这次在华为开发者大会上，我有幸与余总 @余承东 一起体验了鸿蒙原生应用开发。借着这个机会我还问了余总几个问题，咱们一起听听他对自己软件工程师生涯的回忆、和对鸿蒙世界的期待</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 林亦LYi</span>
+                        <a href="https://weibo.com/6444741184/5048035025621040" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Huawei</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_856" data-atom-id="atom_20260323_856">
+                        <label for="sel_atom_20260323_856">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1009" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">CLAUDE_CODE_NEW_INIT=1 claude
+可以体验新版本 /init
+现在中间会有更多互动和选项，不止是帮你生成 CLAUDE MD，还可以帮你的项目量身定制添加 hooks，ski</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 宝玉xp</span>
+                        <a href="https://weibo.com/1727858283/5279488061472776" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1009" data-atom-id="atom_20260323_1009">
+                        <label for="sel_atom_20260323_1009">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #3498db;">
+                <span class="section-icon">📱</span>
+                <span class="section-title">📱 手机与消费电子</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_1304" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">今天不仅是新老朋友交接，更是爆料局，我和@OPPO卓世杰 给大家准备了双料惊喜！#OPPO Find X9 Ultra##OPPO Find X9s Pro# http://t.cn/AXfjmZoB</div>
+                        <span class="score-badge">得分 100</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 OPPO周意保</span>
+                        <a href="https://weibo.com/5313402944/5279584463618277" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OPPO</span><span class="entity-tag">http://t.cn/AXfjmZoB</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1304" data-atom-id="atom_20260323_1304">
+                        <label for="sel_atom_20260323_1304">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_595" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">后天除夕夜，小伙伴们都期待在春晚上看到谁？推荐大家体验竖屏打开方式，剧透一下：#华为Mate80# 系列独家机位，可以看到演员们在舞台侧的表现和精彩互动[嘻嘻]</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 华为何刚</span>
+                        <a href="https://weibo.com/1663983930/5266316938445071" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Huawei</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_595" data-atom-id="atom_20260323_595">
+                        <label for="sel_atom_20260323_595">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_641" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">#小米笔记本Pro14# 已全渠道开售
+第一批用户已提机，上手高性能超轻薄本
+1.08kg轻盈机身，50W高性能释放
+3.1K OLED屏幕、19.8小时长续航
+还有惊喜的远程关机唤醒功能
+欢迎大家周</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 小米手机</span>
+                        <a href="https://weibo.com/2202387347/5279223385686891" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI o1</span><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_641" data-atom-id="atom_20260323_641">
+                        <label for="sel_atom_20260323_641">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_648" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">“小米笔记本Pro 14，不仅轻薄好看，性能也很能打，关键是续航稳。出门带一台小米笔记本Pro 14 就够了。不光你的包轻了，办公也轻松了。” 这是媒体对#小米笔记本Pro14#的真实评价，明早10点</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 小米手机</span>
+                        <a href="https://weibo.com/2202387347/5278612564741344" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI o1</span><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_648" data-atom-id="atom_20260323_648">
+                        <label for="sel_atom_20260323_648">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_696" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">今晚7点，我想邀请你见证折叠屏的下一个时代。
+
+#OPPO Find N6#，不止是无感折痕、久用平整，还有为大屏而生的AI生产力。
+
+3月17日 19:00，全球首发，一起见证。 ​​​</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 刘作虎</span>
+                        <a href="https://weibo.com/1110411735/5277399207641858" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OPPO</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_696" data-atom-id="atom_20260323_696">
+                        <label for="sel_atom_20260323_696">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_699" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">OPPO的每一代折叠屏，都在回答一个问题：用户还需要什么？我们还能突破什么？#OPPO Find N6# 首发两大行业黑科技「新一代钛合金天穹铰链」和「天穹记忆玻璃」，攻克了困扰行业8年的折痕难题，开</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 刘作虎</span>
+                        <a href="https://weibo.com/1110411735/5275298225717365" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OPPO</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_699" data-atom-id="atom_20260323_699">
+                        <label for="sel_atom_20260323_699">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #f39c12;">
+                <span class="section-icon">🔧</span>
+                <span class="section-title">🔧 芯片与算力</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_1093" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Do you want to build a robot snowman?</div>
+                        <span class="score-badge">得分 85</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 TechCrunch AI</span>
+                        <a href="https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Jensen Huang</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1093" data-atom-id="atom_20260323_1093">
+                        <label for="sel_atom_20260323_1093">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_130" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">早安！3/23 外電綜合整理
+
+- 6515穎崴：美系升目標
+美系券商表示公司在AI GPU 之外，伺服器 CPU 與 AI ASIC 的強勁需求，加上SLT市場的市占提升，將提供穩固的營收支撐。隨著</div>
+                        <span class="score-badge">得分 75</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @QQ_Timmy</span>
+                        <a href="https://x.com/QQ_Timmy/status/2035872637365477580" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Google</span><span class="entity-tag">NVIDIA</span><span class="entity-tag">NVIDIA Rubin</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_130" data-atom-id="atom_20260323_130">
+                        <label for="sel_atom_20260323_130">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_131" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Good Morning! 3/23 Foreign Media Summary
+
+- 6515 WinWay: US brokerage raises target price
+A US broke</div>
+                        <span class="score-badge">得分 75</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @QQ_Timmy</span>
+                        <a href="https://x.com/QQ_Timmy/status/2035877109084958729" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Google</span><span class="entity-tag">NVIDIA</span><span class="entity-tag">NVIDIA Rubin</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_131" data-atom-id="atom_20260323_131">
+                        <label for="sel_atom_20260323_131">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_419" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">It was an honor to hang out with Jensen Huang, CEO of @nvidia, and do a long-form podcast with him. </div>
+                        <span class="score-badge">得分 75</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @lexfridman</span>
+                        <a href="https://x.com/lexfridman/status/2035833853357830640" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Jensen Huang</span><span class="entity-tag">Honor</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_419" data-atom-id="atom_20260323_419">
+                        <label for="sel_atom_20260323_419">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_646" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">#小米笔记本Pro14#，Pro 级高性能超轻薄本
+至高搭载第三代英特尔酷睿Ultra X7 358H 处理器
+配备10000mm² VC 模组，双风扇、三风道散热
+1.08Kg 超轻薄机身，带来50</div>
+                        <span class="score-badge">得分 70</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 小米手机</span>
+                        <a href="https://weibo.com/2202387347/5278860997822199" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI o1</span><span class="entity-tag">Xiaomi</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_646" data-atom-id="atom_20260323_646">
+                        <label for="sel_atom_20260323_646">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1364" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【黄仁勋骗了所有人，DLSS 5 真是个纯 AI 滤镜】
+英伟达卖铲子，卖得比任何人都好。
+这没什么问题，本来就是一门好生意。
+只是卖铲子的人，从来不会在乎挖出来的是什么。 http://t.cn/A</div>
+                        <span class="score-badge">得分 70</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 爱范儿</span>
+                        <a href="https://weibo.com/1642720480/5279598361185232" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Jensen Huang</span><span class="entity-tag">http://t.cn/AXfjFOHz</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1364" data-atom-id="atom_20260323_1364">
+                        <label for="sel_atom_20260323_1364">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #9b59b6;">
+                <span class="section-icon">🎮</span>
+                <span class="section-title">🎮 游戏行业</span>
+                <span class="section-count">目标 2 条 | 候选 4 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_792" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">作为一款大屏旗舰，超能小V单#vivo X300s#除了视听触的Super，还把蓝厂最强的性能电竞体验全家桶，都给移植进来了：
+
+第一是Super稳帧，X系列首发搭载口碑绝佳的Monster超核引擎，</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 vivo韩伯啸</span>
+                        <a href="https://weibo.com/3657968361/5274925353143003" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">vivo</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_792" data-atom-id="atom_20260323_792">
+                        <label for="sel_atom_20260323_792">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_846" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">独家，游戏本体验了很长时间了，完成度很高。
+附加主动散热还带控制音效/灯光，氛围感拉满。
+有iP生态定制。[污][污]
+#新品驾到##荣耀Win游戏本##智慧皮卡丘[超话]# ​​​</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 智慧皮卡丘</span>
+                        <a href="https://weibo.com/5888095979/5278548384550393" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Honor</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_846" data-atom-id="atom_20260323_846">
+                        <label for="sel_atom_20260323_846">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_434" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">🚀Big News! Issac Asimov's Foundation series,
+Foundation: Galactic Frontier is live on iOS, Android,W</div>
+                        <span class="score-badge">得分 70</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @FoundationGF_EN</span>
+                        <a href="https://x.com/FoundationGF_EN/status/2035221426232307987" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Steam</span><span class="entity-tag">Epic Games</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_434" data-atom-id="atom_20260323_434">
+                        <label for="sel_atom_20260323_434">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_614" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">峡谷太卷？C位太累？人生何必硬C，躺好也能Carry？本期#华为游戏中心编辑推荐#带来《决胜巅峰》全新英雄——薯片！实验着火他拍照，世界乱套他睡觉，不抢风头不吃压力，松弛感拉满还能一键传送支援，默默护</div>
+                        <span class="score-badge">得分 65</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 华为终端云服务</span>
+                        <a href="https://weibo.com/2280893642/5276060159314972" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Huawei</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_614" data-atom-id="atom_20260323_614">
+                        <label for="sel_atom_20260323_614">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #1abc9c;">
+                <span class="section-icon">🏢</span>
+                <span class="section-title">🏢 科技行业动态</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_911" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">#前阴阳师制作人公司获莉莉丝投资# 竞核独家获悉，阴阳师前制作人金韬跟前网易艺设中心总监易修钦（大师）创业公司芥子游戏，估值超过10亿人民币（约1.5亿美元）。公司本轮融资，拿到了数千万美元。莉莉丝游</div>
+                        <span class="score-badge">得分 95</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 竞核</span>
+                        <a href="https://weibo.com/2648435521/5277434092192978" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NetEase</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_911" data-atom-id="atom_20260323_911">
+                        <label for="sel_atom_20260323_911">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1342" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【#OpenClaw创始人回应360发现漏洞#，已报送国家漏洞平台】
+据北京商报消息，360安全云团队收到OpenClaw创始人Peter的官方邮件，Peter在邮件中正式确认了由360团队独家发现的</div>
+                        <span class="score-badge">得分 90</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 36氪</span>
+                        <a href="https://weibo.com/1750070171/5279618023817778" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1342" data-atom-id="atom_20260323_1342">
+                        <label for="sel_atom_20260323_1342">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_956" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【#睡眠疗愈搜索量暴增近350%#，“睡眠体验馆”相关搜索量同比增长227%】
+据央视财经报道，近年来，围绕睡眠的线下体验服务越来越丰富，颂钵音疗等新兴业态悄然兴起，相关门店的客流量也持续走高。数据显</div>
+                        <span class="score-badge">得分 85</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 36氪</span>
+                        <a href="https://weibo.com/1750070171/5278940161115452" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_956" data-atom-id="atom_20260323_956">
+                        <label for="sel_atom_20260323_956">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_958" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">新小米SU7逆势涨价，华为出手围剿：尚界和启境，两面包夹 #小米SU7##小米汽车##鸿蒙智行##虎嗅视界# http://t.cn/AXfxOTph ​​​</div>
+                        <span class="score-badge">得分 80</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 虎嗅APP</span>
+                        <a href="https://weibo.com/2357213493/5278485169838296" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Huawei</span><span class="entity-tag">Xiaomi</span><span class="entity-tag">Xiaomi SU7</span><span class="entity-tag">Xiaomi Auto</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_958" data-atom-id="atom_20260323_958">
+                        <label for="sel_atom_20260323_958">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1113" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">You thought the generalist was dead — in the 'vibe work' era, they're more important than ever</div>
+                        <span class="score-badge">得分 75</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 VentureBeat</span>
+                        <a href="https://venturebeat.com/technology/you-thought-the-generalist-was-dead-in-the-vibe-work-era-theyre-more" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1113" data-atom-id="atom_20260323_1113">
+                        <label for="sel_atom_20260323_1113">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_952" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【#氪星播报#｜3月21日晚间都有哪些#今日大事件#？】
+￼￼[星星]Top3大新闻
+1、#金饰价格已下跌超300元#，多家跌破1400元/克
+2、#马斯克说这就是kimi#，kimi回复表示感谢
+3</div>
+                        <span class="score-badge">得分 70</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 36氪</span>
+                        <a href="https://weibo.com/1750070171/5278996889340033" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Tim Cook</span><span class="entity-tag">Elon Musk</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_952" data-atom-id="atom_20260323_952">
+                        <label for="sel_atom_20260323_952">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #34495e;">
+                <span class="section-icon">📜</span>
+                <span class="section-title">📜 政策与监管</span>
+                <span class="section-count">目标 2 条 | 候选 4 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260323_1096" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Delve accused of misleading customers with ‘fake compliance’</div>
+                        <span class="score-badge">得分 75</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 TechCrunch AI</span>
+                        <a href="https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1096" data-atom-id="atom_20260323_1096">
+                        <label for="sel_atom_20260323_1096">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1389" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【“升级版”中欧出口管制对话机制第二次会议在京举行】财联社3月23日电，据商务部消息，2026年3月23日，中国商务部安全与管制局江前良局长与欧委会贸易总司雷东内副总司长在北京举行“升级版”中欧出口管</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 财联社APP</span>
+                        <a href="https://weibo.com/2868676035/5279690178170637" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1389" data-atom-id="atom_20260323_1389">
+                        <label for="sel_atom_20260323_1389">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1390" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【阿联酋据悉已重启哈布尚天然气工厂】财联社3月23日电，据知情人士透露，阿联酋已重启哈布尚（HABSHAN）天然气工厂，但大部分液化天然气（LNG）产能仍处于闲置状态。 ​​​​</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 财联社APP</span>
+                        <a href="https://weibo.com/2868676035/5279684954689976" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1390" data-atom-id="atom_20260323_1390">
+                        <label for="sel_atom_20260323_1390">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260323_1391" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">【#伊朗战争致全球债市重挫2.5万亿美元# 势创2022年以来最大单月跌幅】财联社3月23日电，伊朗战争引发滞胀担忧，已导致全球债券价值在3月蒸发超过2.5万亿美元，势将创下三年多来最大单月跌幅。随着</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 财联社APP</span>
+                        <a href="https://weibo.com/2868676035/5279678166467994" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260323_1391" data-atom-id="atom_20260323_1391">
+                        <label for="sel_atom_20260323_1391">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="timestamp">
+            报告生成时间: 2026-03-23 22:59:58
+        </div>
+    </div>
+    
+    <div class="actions">
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ 打印/PDF</button>
+        <button class="btn btn-primary" onclick="exportSelection()">📋 导出选中项</button>
+    </div>
+    
+    <script>
+        // 导出选中的内容
+        function exportSelection() {
+            const selected = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                const card = cb.closest('.candidate-card');
+                const title = card.querySelector('.candidate-title').textContent;
+                const source = card.querySelector('.source-link').href;
+                selected.push({title, source});
+            });
+            
+            if (selected.length === 0) {
+                alert('请先选中至少一条内容');
+                return;
+            }
+            
+            let text = `已选中 ${selected.length} 条内容：\n\n`;
+            selected.forEach((item, i) => {
+                text += `${i+1}. ${item.title}\n   ${item.source}\n\n`;
+            });
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('已复制到剪贴板！');
+            });
+        }
+        
+        // 点击卡片切换选中状态
+        document.querySelectorAll('.candidate-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // 如果点击的是链接或复选框，不处理
+                if (e.target.tagName === 'A' || e.target.tagName === 'INPUT') return;
+                
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+            });
+        });
+        
+        // 复选框变化时更新样式
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', function() {
+                const card = this.closest('.candidate-card');
+                card.classList.toggle('selected', this.checked);
+            });
+        });
+    </script>
+</body>
+</html>

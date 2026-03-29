@@ -1,0 +1,3356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>话题聚合预览 - 2026-03-23</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .meta { opacity: 0.9; font-size: 14px; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .stat-card .number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-card .label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .category-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .category-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .topic {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .topic-header {
+            background: #f8f9fa;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topic-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        .topic-heat {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .topic-meta {
+            padding: 12px 20px;
+            background: #fafafa;
+            font-size: 13px;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+        .topic-content {
+            padding: 16px 20px;
+        }
+        .atom-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .atom-item:last-child {
+            border-bottom: none;
+        }
+        .atom-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .trust-badge {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .atom-author {
+            font-weight: 500;
+            color: #333;
+        }
+        .atom-platform {
+            font-size: 12px;
+            color: #999;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .atom-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .atom-link {
+            margin-top: 6px;
+        }
+        .atom-link a {
+            color: #667eea;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .atom-link a:hover {
+            text-decoration: underline;
+        }
+        .atom-metrics {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 话题聚合预览</h1>
+            <div class="meta">2026-03-23 | 共 102 个话题 / 1419 条内容</div>
+        </div>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number">102</div>
+                <div class="label">热点话题</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">1419</div>
+                <div class="label">总内容数</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">277</div>
+                <div class="label">X</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">802</div>
+                <div class="label">WEIBO</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">340</div>
+                <div class="label">RSS</div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">🤖 AI 模型与产品 (38个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Claude Code vs Codex对比</div>
+                    <div class="topic-heat">🔥 363</div>
+                </div>
+                <div class="topic-meta">
+                    20 条内容 | 信源: 歸藏的AI工具箱, Product Hunt (Buzzing镜像), 宝玉xp, Product Hunt, 逛逛GitHub
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@runes_leo</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Simon Willison 用 Claude 分析一个 Hacker News 用户的 1000 条评论，自动输出完整画像——技术背景、关注领域、性格特征、思维方式。他说结果&quot;有点细思极恐&quot;。
+
+我想到的第一个用途不是监控，是选人。
+
+X 上关注列表越来越长，但真正有干货的就那几个。跑一下一个人最...</div>
+                        <div class="atom-metrics">❤️ 2</div>
+                        <div class="atom-link"><a href="https://x.com/runes_leo/status/2035895895804539043" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@kevinma_dev_zh</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">又一次对 Opus 写业务逻辑无比失望。
+
+昨晚上让 Claude Code 做一个功能，需求描述得很清楚，plan mode 讨论了好几轮才开始动手。做了很久，结果出来就有问题。描述了两轮让它修，还是修不好。干脆全部重置，不让它做了。
+
+然后打开 Codex，同样的需求、同样的交互逻辑，一字不差地...</div>
+                        <div class="atom-metrics">❤️ 11 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/kevinma_dev_zh/status/2035868416469602611" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@coreyganim</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">FINALLY, a legit article that breaks this down in detail.
+
+Obsidian + Claude Code = an AI that actually knows your work.
+
+Not a generic chatbot. A rea...</div>
+                        <div class="atom-metrics">❤️ 311 | 🔄 19</div>
+                        <div class="atom-link"><a href="https://x.com/coreyganim/status/2035827178131116160" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">CLAUDE_CODE_NEW_INIT=1 claude
+可以体验新版本 /init
+现在中间会有更多互动和选项，不止是帮你生成 CLAUDE MD，还可以帮你的项目量身定制添加 hooks，skills ​​​</div>
+                        <div class="atom-metrics">❤️ 46 | 🔄 23</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5279488061472776" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Claude Code 新增 Channels 功能：Telegram、Discord 消息可直接推送到编码会话
+
+Anthropic 为其命令行编码工具 Claude Code 推出了一项新功能 Channels（频道）。简单说，它让你在 Telegram 或 Discord 上发消息，就能直接触...</div>
+                        <div class="atom-metrics">❤️ 199 | 🔄 84</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5278446741885304" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 15 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">MiniMax M2.7发布</div>
+                    <div class="topic-heat">🔥 236</div>
+                </div>
+                <div class="topic-meta">
+                    14 条内容 | 信源: MiniMax公众号, @mweinbach, 新智元, 梁赛, 爱范儿
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@mweinbach</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Damn Qwen3.8 27b is not a terrible model 
+
+Still would use a larger one like MiniMax M2.7 or GLM 5 but it's good for incredibly basic stuff. The RL re...</div>
+                        <div class="atom-metrics">❤️ 30</div>
+                        <div class="atom-link"><a href="https://x.com/mweinbach/status/2035871285608161613" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">MiniMax M2.7 炸场！国产大模型登顶国服，海外开发者集体刷屏
+
+2026 年 3 月 MiniMax M2.7 重磅发布，一举拿下 PinchBench 榜单全球第四、国产第一，性能比肩 Claude Opus 4.6、GPT-5.4，编码能力更胜 Gemini 3.1，瞬间引爆全球开发者...</div>
+                        <div class="atom-metrics">❤️ 17 | 🔄 10</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5278608332424312" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">MiniMax今天发布M2.7，宣称具备更强的现实世界工程能力，目前API可调用。
+
+以下x友是对其世界能力理解的测试：
+
+“设计一个包含多层宝塔、樱花、池塘、灯笼的体素风格日式花园，所有元素用块状美学呈现，并加入花瓣飘落的动画。” http://t.cn/AXfbyRyV ​​​</div>
+                        <div class="atom-metrics">❤️ 356 | 🔄 26</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5277830363743951" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【实测 MiniMax M2.7：AI 狠起来，连自己都卷】
+龙虾爆火之后，全网的注意力都盯着「它该怎么用」——本地部署还是云端、一键安装还是敲命令、要不要接微信飞书……反而没人再认真问那个老问题：驱动龙虾的那颗「大脑」，够不够聪明？
+
+这倒不奇怪。OpenAI 和 Google 最近发布的几款新模...</div>
+                        <div class="atom-metrics">❤️ 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278513780496847" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">歸藏的AI工具箱</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Codepilot 0.38.3 版本已经支持刚发布的 Xiaomi MiMo-V2-Pro 和 MiniMax M2.7 模型  而且小米这个模型未来一周会免费，各位可以来 Codepilot 玩了  只需要在服务商中填入你的 API Key 就行 http://t.cn/AXf5D3vR</div>
+                        <div class="atom-metrics">❤️ 5 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/6182606334/5278078047617407" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 9 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Cursor套壳Kimi争议</div>
+                    <div class="topic-heat">🔥 218</div>
+                </div>
+                <div class="topic-meta">
+                    11 条内容 | 信源: 量子位, @NewsCaixin, 新智元, 爱范儿, 宝玉xp
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@NewsCaixin</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">【美国AI编程应用Cursor承认新模型系基于Kimi K2.5训练】Cursor将模型研发确立为首要目标后，其新模型陷入侵权争议。针对新模型Composer-2是否由月之暗面Kimi K2.5模型微调而来的广泛质疑，美国AI编程应用Cursor联合创始人、COO阿曼·桑格于3月21日做出确认回应。...</div>
+                        <div class="atom-metrics">❤️ 1</div>
+                        <div class="atom-link"><a href="https://x.com/NewsCaixin/status/2035891785340457249" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">量子位</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#cursor副总裁向kimi道歉# Cursor自研模型Composer 2光速打脸，本来还在高调声称性能超过Claude，结果被曝套壳Kimi K2.5，马斯克也下场吃瓜：“是的，是Kimi 2.5！”#Cursor##Kimi##AI##马斯克##吃瓜# http://t.cn/AXfKRuP...</div>
+                        <div class="atom-metrics">❤️ 12 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/6105753431/5279003335985141" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">量子位</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">发布了头条文章：《Cursor套壳Kimi败露，最强「自研」模型被锤！创始人：忘记署名了》  http://t.cn/AXfo7XMY ​​​</div>
+                        <div class="atom-metrics">❤️ 6 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/6105753431/5278897545414581" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">今天，整个AI圈都被这个大瓜震惊了。
+
+3月19日凌晨，估值即将冲击500亿美元的AI编程独角兽Cursor，高调发布了自家最新编程模型Composer 2。
+
+这个模型一发布，立刻在整个开发者社区引发了轰动！
+
+据说，它不仅超越了Claude Opus 4.6，价格还直接腰斩，对于动辄被Claud...</div>
+                        <div class="atom-metrics">❤️ 25 | 🔄 11</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5278887556941189" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【Cursor 套 Kimi，乐天套 DeepSeek：这是个 China to Copy 的时代…】
+在硅谷，造神和毁神的速度一样快。但像 Cursor 这样，在 24 小时内完成从「拳打 OpenAI、脚踢 Anthropic」到「连夜滑跪」的流程，确实十分令人感慨。
+
+事情是这样的：
+
+3 月...</div>
+                        <div class="atom-metrics">❤️ 4 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5279383197849227" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 6 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Claude Code vs Codex对比</div>
+                    <div class="topic-heat">🔥 215</div>
+                </div>
+                <div class="topic-meta">
+                    8 条内容 | 信源: @garrytan, @igor_os777, @GeekNewsHada, @kevinrose, @Alkaros10
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@igor_os777</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">So, i've been messing with Garry Tan's gstack and, I have to say, I am reasonably impressed. Critics point out that this is just a collection of promp...</div>
+                        <div class="atom-link"><a href="https://x.com/igor_os777/status/2035550058213433818" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@GeekNewsHada</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">gstack - Claude Code로 만드는 가상 엔지니어링 팀
+
+- YC CEO Garry Tan이 만들어서 사용하는 AI로 구성된 오픈소스 소프트웨어 팩토리로 한 명이 20명 팀처럼 일하게 구성  
+- Think → Plan → Build → Review → Te...</div>
+                        <div class="atom-link"><a href="https://x.com/GeekNewsHada/status/2035886521811894432" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@garrytan</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">GStack is blowing up in Korea</div>
+                        <div class="atom-metrics">❤️ 2 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/garrytan/status/2035898375934300353" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@garrytan</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">GStack is your personal AI coding toolkit, I'm dropping multiple new features per day right now</div>
+                        <div class="atom-metrics">❤️ 8 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/garrytan/status/2035898209655251213" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@kevinrose</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">A couple to add/play with:
+1. gStack, gotta try it, it's not CE, but different in some great ways
+2. tmux split into 4+ panes (ghostly), then tell eac...</div>
+                        <div class="atom-link"><a href="https://x.com/kevinrose/status/2035888485304095147" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 3 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Claude Code vs Codex对比</div>
+                    <div class="topic-heat">🔥 170</div>
+                </div>
+                <div class="topic-meta">
+                    14 条内容 | 信源: OpenAI Blog, 新智元, MIT TR AI, @emollick, 机器之心Pro
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@emollick</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Very different philosophies for skills in Codex versus Claude Code
+
+OpenAI seems to conceive of skills functionally, mostly matter-of-fact technical r...</div>
+                        <div class="atom-metrics">❤️ 19 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/emollick/status/2035895233519493597" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">OpenAI 发起全新挑战：你，准备好迎战了吗？ http://t.cn/AXfVaBQR ​​​</div>
+                        <div class="atom-metrics">❤️ 2 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5278227707726075" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">奥特曼急了，真急了！1月份，奥特曼还称OpenAI计划「大幅度放缓」招聘节奏，刚刚被爆今年打算让员工翻一番。
+
+奥特曼的「减人神话」直接破灭——
+
+据《金融时报》报道，3500名新员工将加入OpenAI产品开发、工程、研究、销售团队，以及名为「技术大使」的新岗位——这些人将帮助企业实际整合 Open...</div>
+                        <div class="atom-metrics">❤️ 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5279557613783214" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Simon Willison's Weblog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;The big news this morning: &lt;a href=&quot;https://astral.sh/blog/openai&quot;&gt;Astral to join OpenAI&lt;/a&gt; (on the Astral blog) and &lt;a href=&quot;https://openai.com/i...</div>
+                        <div class="atom-link"><a href="https://simonwillison.net/2026/Mar/19/openai-acquiring-astral/#atom-everything" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/Rvq8Ow69CYUMXxeOTodcG7scKHRaoBYIfpbMzVuf2XxN1m6SkYkfz5DZ2KPq36wEB4HtI77SIsn0lCMgicdknM3JRs2jsMFJJwhT0MyVTpia...</div>
+                        <div class="atom-link"><a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652685570&amp;idx=3&amp;sn=c7f77fb24c1e02833b6e784f6972c262&amp;chksm=f06a3efe2aa93656b981f5f043a2121c714e03b2206f6969e514ef3ddf671aac7c5237e67af3&amp;scene=0&amp;xtrack=1#rd" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 9 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Meta大规模裁员</div>
+                    <div class="topic-heat">🔥 119</div>
+                </div>
+                <div class="topic-meta">
+                    5 条内容 | 信源: 新智元, karminski-牙医, 机器之心Pro
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">刚刚，Meta版的自研龙虾反噬了，酿成了一场大灾难！
+
+外媒The Information报道，就在上周，Meta内部发生了一场史上最惊心动魄的Sev 1级安全事故。
+
+两小时内，Meta帝国最核心的机密，包括涉及数亿用户的敏感数据，以及公司内部绝密文件，全部赤裸裸地暴露在成千上万名未经授权的员工面...</div>
+                        <div class="atom-metrics">❤️ 30 | 🔄 31</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5279223381492050" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">karminski-牙医</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">不发模型改刻芯片了? Meta 2年内推出四款AI芯片!
+
+Meta 刚在官网发布, 计划2年内推出四款AI芯片, 型号 MITA 300-500, 迭代速度特别快, 预计6个月出一个, 并且是模块化设计, 直接更换部件就能调整性能, 不用重新设计.
+
+这个模块化可不是简单的能换HBM啊, 芯片甚至...</div>
+                        <div class="atom-metrics">❤️ 24 | 🔄 10</div>
+                        <div class="atom-link"><a href="https://weibo.com/2169039837/5275924846088291" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">路透社援引知情人士消息称，Meta 正在酝酿大规模裁员，可能影响公司 20% 甚至更多员工。按照 Meta 截至 2025 年底接近 7.9 万人的规模来算，这意味着潜在受影响人数可能超过 1.6 万人。 http://t.cn/AXfYRhG1 ​​​</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5279653350608861" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">AI合成女兵&quot;Jessica Foster&quot;四个月百万粉丝， 与特朗普同框六次，美国陆军确认查无此人，Meta封号。 这不只是骗局，是一次预演。 http://t.cn/AXfj3cSB ​​​</div>
+                        <div class="atom-metrics">❤️ 3 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5279587294776712" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Meta内部AI“龙虾”失控，两小时内核心数据裸奔；更恐怖的是，智能体开始自发攻击系统、窃取权限、争夺算力。AI正在从工具变成“行动者”，安全边界被彻底打破。这不仅是一次事故，而是AI时代系统性风险的开始。 http://t.cn/AXfTzZVW ​​​</div>
+                        <div class="atom-metrics">🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5279681653770040" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Gemini 3.1 Pro发布</div>
+                    <div class="topic-heat">🔥 118</div>
+                </div>
+                <div class="topic-meta">
+                    10 条内容 | 信源: DeepMind Blog, Google Developers Blog, 宝玉xp, 机器之心Pro, Google Research Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">这个不用依赖Gemini了，小龙虾可以直接用，作为你工作流的一环//@CC女士不是西西:上次转写script的prompt很好用，http://t.cn/AXf0wXCL，以后有机会试试这个</div>
+                        <div class="atom-metrics">❤️ 24 | 🔄 13</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5279481020809274" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">国外有个懒人小哥，自己做了个收纳脏衣服的机器人，不过夹爪老是抖动，为了治好他，直接把Gemini当工程研发助手，还真解决了这个问题。他是怎么做到的？#手搓机器人# http://t.cn/AXfTvc0Y ​​​</div>
+                        <div class="atom-metrics">❤️ 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5279678597435297" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Research Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Climate &amp; Sustainability</div>
+                        <div class="atom-link"><a href="https://research.google/blog/introducing-groundsource-turning-news-reports-into-data-with-gemini/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">DeepMind Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Gemini 3.1 Flash-Lite is our fastest and most cost-efficient Gemini 3 series model yet.</div>
+                        <div class="atom-link"><a href="https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intelligence-at-scale/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">DeepMind Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">3.1 Pro is designed for tasks where a simple answer isn’t enough.</div>
+                        <div class="atom-link"><a href="https://deepmind.google/blog/gemini-3-1-pro-a-smarter-model-for-your-most-complex-tasks/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 5 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Anthropic CEO预测AI影响</div>
+                    <div class="topic-heat">🔥 111</div>
+                </div>
+                <div class="topic-meta">
+                    6 条内容 | 信源: @emollick, @unusual_whales, 硅基观察Pro, TechCrunch AI, VentureBeat
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@emollick</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Anthropic showed older (2022) LLMs will give you less accurate answers if you seem less educated to the AI, but this issue has, as far as I know, been...</div>
+                        <div class="atom-metrics">❤️ 40 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://x.com/emollick/status/2035876317497831811" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@unusual_whales</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Anthropic CEO: “AI will wipe out 50% of lawyers, consultants, and finance professionals within the next 12 months” https://t.co/Dl8G1CtzdE</div>
+                        <div class="atom-link"><a href="https://x.com/unusual_whales/status/2035854284051595288" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">TechCrunch AI</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Shortly after Amazon  announced its $50 billion investment in OpenAI, AWS invited me on a private tour of the chip lab at the heart of the deal.</div>
+                        <div class="atom-link"><a href="https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">VentureBeat</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;Voice AI is moving faster than the tools we use to measure it. Every major AI lab — OpenAI, Google DeepMind, Anthropic, xAI — is racing to ship voi...</div>
+                        <div class="atom-link"><a href="https://venturebeat.com/data/scale-ai-launches-voice-showdown-the-first-real-world-benchmark-for-voice-ai" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">硅基观察Pro</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">寻找个人的“非线性能力”</div>
+                        <div class="atom-link"><a href="https://mp.weixin.qq.com/s?__biz=MzkyNTY1MjE2OA==&amp;mid=2247493441&amp;idx=1&amp;sn=f545ea6859d55197b140d163d862c8e0" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 1 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Kimi K2发布</div>
+                    <div class="topic-heat">🔥 101</div>
+                </div>
+                <div class="topic-meta">
+                    4 条内容 | 信源: 爱范儿, 歸藏的AI工具箱, karminski-牙医, 机器之心Pro
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【深圳 17 岁高中生回应成 Kimi 论文第一作者】
+据《扬子晚报》报道，月之暗面（Moonshot AI）旗下 Kimi 团队近日发布一篇技术论文，提出全新的「注意力残差」（Attention Residuals）机制，对深度学习领域沿用近十年的传统残差连接架构进行了颠覆性重构。
+
+排在作者名单...</div>
+                        <div class="atom-metrics">❤️ 10 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278641756833965" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">歸藏的AI工具箱</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">尝试用 Kimi 的模型可视化解释 Kimi 新论文#how i ai# 
+
+http://t.cn/AXfz2GIH ​​​</div>
+                        <div class="atom-metrics">❤️ 27 | 🔄 14</div>
+                        <div class="atom-link"><a href="https://weibo.com/6182606334/5277380239164306" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">karminski-牙医</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">马斯克一波点赞给Kimi论文冲到了2百万阅读!
+
+月之暗面刚发了个论文, 截止到我截图, 在X上已经有220万的阅读了, 连马斯克都来凑热闹点赞了, 那搞了什么东西这么火? 来, 给大家写一个尽量不需要专业知识就能看懂的文:
+
+论文的名字叫 Attention Residuals, 没事, 俩单词都...</div>
+                        <div class="atom-metrics">❤️ 299 | 🔄 131</div>
+                        <div class="atom-link"><a href="https://weibo.com/2169039837/5277420132500178" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">就在 Composer 2 公开问世后不到 3 小时，就有 X 网友发现 Composer 2 的模型 ID 是 kimi-k2p5-rl-0317-s515-fast，他得出结论说：「所以 Composer 2 其实就是经过强化学习的 Kimi K2.5」。 http://t.cn/AXfYP5s...</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5279601452122915" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">GPT 5.4发布</div>
+                    <div class="topic-heat">🔥 95</div>
+                </div>
+                <div class="topic-meta">
+                    5 条内容 | 信源: 新智元, 歸藏的AI工具箱, karminski-牙医, Simon Willison's Weblog, OpenAI Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">新智元</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">GPT-5.4 mini和nano突然上线，mini代码能力追到旗舰版94%，速度翻倍，价格只有1/3；nano更离谱，仅需旗舰1/12的价格。AI的&quot;水电化&quot;时代，今天正式开始。 http://t.cn/AXfVGvLB ​​​</div>
+                        <div class="atom-metrics">❤️ 5 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/5703921756/5278201649827809" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">歸藏的AI工具箱</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Open AI 发布了 GPT-5.4 Mini 和 Nano 两个模型
+
+把 GPT‑5.4 能力下放到更快、更便宜的小模型，用来当“执行层”和子 Agent 主力。
+
+GPT‑5.4 mini：
+
+- 定位即时响应的代码助手
+- 大模型规划 + mini 并行执行的子智能体
+- 解析复杂 UI ...</div>
+                        <div class="atom-metrics">❤️ 10 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/6182606334/5277746374641741" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">karminski-牙医</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">给每个大模型$10000的实盘交易又来了!
+
+去年nof1搞了个大模型实盘交易大赛, 结果今天 PredictionArena 又搞了一个! 给每个大模型$10000入场, 让大模型直接竞(菠)猜(菜)!
+
+参赛模型包括：GLM-5, Gemini-3.1-Pro, GPT-5.4, Claude-...</div>
+                        <div class="atom-metrics">❤️ 41 | 🔄 24</div>
+                        <div class="atom-link"><a href="https://weibo.com/2169039837/5279510272147741" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Simon Willison's Weblog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;OpenAI today: &lt;a href=&quot;https://openai.com/index/introducing-gpt-5-4-mini-and-nano/&quot;&gt;Introducing GPT‑5.4 mini and nano&lt;/a&gt;. These models join GPT-5....</div>
+                        <div class="atom-link"><a href="https://simonwillison.net/2026/Mar/17/mini-and-nano/#atom-everything" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">OpenAI Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent ...</div>
+                        <div class="atom-link"><a href="https://openai.com/index/introducing-gpt-5-4-mini-and-nano" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">DeepSeek人才争夺</div>
+                    <div class="topic-heat">🔥 92</div>
+                </div>
+                <div class="topic-meta">
+                    4 条内容 | 信源: 量子位, 梁赛, 宝玉xp
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">量子位</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">发布了头条文章：《大厂抢郭达雅进行时！DeepSeek核心成员还是个“综艺巨佬”》  http://t.cn/AXf0705c ​​​</div>
+                        <div class="atom-metrics">❤️ 4 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/6105753431/5279284306382047" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">谁也没想到，前几天提到的OpenRouter上那个表现惊艳的神秘万亿级参数大模型,竟然是小米的。
+
+最近OpenRouter上冒出来一个叫&quot;hunter alpha&quot;的模型,能力强得离谱,之前大家都在猜是谁家的，有猜DeepSeek V4，也有猜月之暗面的。
+
+结果答案揭晓：是小米的MiMo-V2-...</div>
+                        <div class="atom-metrics">❤️ 1873 | 🔄 210</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5277975861527060" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">传说中的DeepSeek天才少女、雷军千万年薪挖角的罗福莉也开始发推了。
+
+帖子里最生动的段落是关于她第一次使用复杂 Agent 脚手架的经历。她用的词是：orchestrated Context，编排过的上下文，我理解就是现在比较火的 Harness Engineering。
+
+她说第一天就被震惊...</div>
+                        <div class="atom-metrics">❤️ 889 | 🔄 341</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5278347442783143" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">量子位</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">郭达雅将花落谁家？</div>
+                        <div class="atom-link"><a href="https://www.qbitai.com/2026/03/390990.html" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Jensen Huang发布</div>
+                    <div class="topic-heat">🔥 85</div>
+                </div>
+                <div class="topic-meta">
+                    6 条内容 | 信源: 量子位, 机器之心Pro, GamesIndustry.biz, Engadget(Google News), Game Developer
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">英伟达DLSS 5发布，遭到了游戏玩家和游戏开发者的强烈抨击，怒斥它把所有的游戏角色都变成了统一的AI脸，破坏了游戏美术中原有的艺术巧思，是个AI垃圾滤镜。黄仁勋则强硬回应：你们完全错了！#英伟达# http://t.cn/AXfiqbsi ​​​</div>
+                        <div class="atom-metrics">❤️ 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5278609873046519" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">量子位</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#英伟达GTC现场的隐形AI巨头##Physical AI# 
+
+GTC 2026，比往年更热。
+
+主会场座无虚席，台下三万人、线上数百万观众同步观看。
+
+从大模型到机器人，再到Physical AI，几乎所有人都在讨论同一个问题：AI，如何真正进入现实世界？
+
+黄仁勋台上布道，各路AI公司则在台下...</div>
+                        <div class="atom-metrics">❤️ 3 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/6105753431/5278962415571763" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">GamesIndustry.biz</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://assetsio.gnwcdn.com/nvidia-dlss_2m7KplY.jpg?width=690&amp;amp;quality=85&amp;amp;format=jpg&amp;amp;auto=webp&quot; /&gt; &lt;p&gt;The extent of the backlash ...</div>
+                        <div class="atom-link"><a href="https://www.gamesindustry.biz/the-dlss-5-backlash-is-not-going-away-opinion" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Engadget(Google News)</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUmJEa2paVHpHbkNYVHFnNUNtLXNJX2otQlRxUGFlUkQ3TnctTXFCdUpLRDlRYjRHdXJXZ3lad3pUeWhwYXpoTzIt...</div>
+                        <div class="atom-link"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUmJEa2paVHpHbkNYVHFnNUNtLXNJX2otQlRxUGFlUkQ3TnctTXFCdUpLRDlRYjRHdXJXZ3lad3pUeWhwYXpoTzItOXFCdmlwZTk1RW5ZRkxTdGhPS0pZNm5Sb3E0TTZmWnAwOTVSOUZud3dVV0ptM040ekNXYXlVZWg4b2VxLTZHcmNCZFVFaW5VQUZmbHdUMDRPMFJ3X0ctY3ktTUtVT1lVUDV3RkQ2dDhBRmEzVk5n?oc=5" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Game Developer</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Plus: Unionized workers launch petition to combat ICE and DLSS 5 mockery rattles Nvidia CEO.</div>
+                        <div class="atom-link"><a href="https://www.gamedeveloper.com/business/ioi-partners-disowns-mindseye-krafton-collabs-with-arms-dealer-and-more-cuts-at-ubisoft-patch-notes-44" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 1 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">小米新品动态</div>
+                    <div class="topic-heat">🔥 83</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: 小米手机, 卢伟冰
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">小米手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Xiaomi MiMo-V2 模型家族，还有两位新成员！
+V2-Omni 全模态大模型，能看能听更能推理执行；
+V2-TTS 语音大模型，理解文字内容带情绪输出；
+让输入更随心，让声音输出更拟人。 ​​​</div>
+                        <div class="atom-metrics">❤️ 129 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/2202387347/5278287401062265" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">小米手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">小米首款手机龙虾Xiaomi miclaw，已启动封测，
+AI开始从聊天机器人，化身为真正生产力，
+搭载MiMo大模型，深度融合OS与人车家全生态，
+无需费心说明，AI自主寻求更优方案，安全执行，
+这，就是未来AIOS雏形，欢迎来小米社区体验！ http://t.cn/AXffnpL8 ​​​</div>
+                        <div class="atom-metrics">❤️ 297 | 🔄 15</div>
+                        <div class="atom-link"><a href="https://weibo.com/2202387347/5278286701400553" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">卢伟冰</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">小米首款手机龙虾Xiaomi miclaw，已启动封测，
+AI开始从聊天机器人，化身为真正生产力。
+
+搭载MiMo大模型，深度融合OS与人车家全生态，
+无需费心说明，AI自主寻求更优方案，安全执行，
+这，就是未来AIOS雏形，欢迎来小米社区体验！ http://t.cn/AXfN3woV ​​​</div>
+                        <div class="atom-metrics">❤️ 1278 | 🔄 48</div>
+                        <div class="atom-link"><a href="https://weibo.com/1892653244/5279199937955757" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Claude Code vs Codex对比</div>
+                    <div class="topic-heat">🔥 81</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: @kevinma_dev_zh, 宝玉xp, 歸藏的AI工具箱
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@kevinma_dev_zh</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Codex 强到什么程度？你只要把需求、交互逻辑、业务逻辑描述清楚，不要模糊，把能想到的边界情况和意外情况告诉它，让它评估一下，有问题它会问你。确认完直接让它开始写就行，不需要什么 plan mode，它都能搞定。业务逻辑方面，Codex 基本都是 one shot。
+
+反观 Claude Code...</div>
+                        <div class="atom-link"><a href="https://x.com/kevinma_dev_zh/status/2035871532434829642" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">转译：把下面这段加到你的 Codex 自定义指令里，体验会好太多：
+
+&quot;向我汇报结果时，用简单直白的语言说清楚你做了什么、结果怎样。最终回复里不要出现术语、技术实现细节和代码腔。写的时候就当你在跟一个聪明人解释，但对方没在看代码。你实际干活的过程（怎么思考、怎么规划、怎么写代码、怎么调试、 ​​​</div>
+                        <div class="atom-metrics">❤️ 456 | 🔄 314</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5279262115891380" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">歸藏的AI工具箱</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Codex 现在支持创建 Subagents
+
+而且你还能切换窗口很便捷的跟踪每个Subagents 正在做的事情
+
+感觉 Agent Teams 也快了#how i ai# http://t.cn/AXfwyweQ ​​​</div>
+                        <div class="atom-metrics">❤️ 21 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://weibo.com/6182606334/5277375889673373" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Qwen 3.5 27b发布</div>
+                    <div class="topic-heat">🔥 68</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: @LottoLabs, karminski-牙医, Simon Willison's Weblog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@LottoLabs</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Qwen 3.5 27b + hermes agent saas 
+
+All done in my phone, minimal steering, working autonomously w/ tests, self auditing its own work.
+
+Getting closer ...</div>
+                        <div class="atom-metrics">❤️ 105 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://x.com/LottoLabs/status/2035753281151184989" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">karminski-牙医</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">回复@匿无名:能, 都不用龙虾, 之前有用Qwen3.5-0.9B 打Doom的 (当然能玩跟玩的好是两个问题)//@匿无名:龙虾能不能打游戏[挖鼻]</div>
+                        <div class="atom-metrics">❤️ 7 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://weibo.com/2169039837/5277432168847288" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Simon Willison's Weblog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://twitter.com/danveloper/status/2034353876753592372&quot;&gt;Autoresearching Apple&amp;#x27;s &amp;quot;LLM in a Flash&amp;quot; to run Qwen 397...</div>
+                        <div class="atom-link"><a href="https://simonwillison.net/2026/Mar/18/llm-in-a-flash/#atom-everything" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">📱 手机与消费电子 (12个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">OPPO Find N6发布</div>
+                    <div class="topic-heat">🔥 1319</div>
+                </div>
+                <div class="topic-meta">
+                    51 条内容 | 信源: OPPO周意保, OPPO刘波, 刘作虎, RD观测, 智慧皮卡丘
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">感谢@小白测评 带来的#OPPO Find N6# 开箱测评，内容全面又实在，好不好用，上手最直观，欢迎大家线下体验一下！</div>
+                        <div class="atom-metrics">❤️ 145 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5279292686863864" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">今晚7点，我想邀请你见证折叠屏的下一个时代。
+
+#OPPO Find N6#，不止是无感折痕、久用平整，还有为大屏而生的AI生产力。
+
+3月17日 19:00，全球首发，一起见证。 ​​​</div>
+                        <div class="atom-metrics">❤️ 452 | 🔄 21</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5277399207641858" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">久用平整的折叠大屏，配合全新的大屏AI生产力，#OPPO Find N6# 将真正让折叠屏发挥出「一块大屏」的价值。</div>
+                        <div class="atom-metrics">❤️ 235 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5275932967309080" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">我们从2018年研发折叠屏起，就成立了「OPPO天穹实验室」，目前已经在折叠屏上累计投入研发资金超30亿元，专利超3500项，专利数量跻身全球TOP3。
+独行快，众行远，我们携手一群志同道合「天穹合伙人」，产学研一体，先于行业带来了 #OPPO Find N6# 这款「无感折痕 久用平整」的折叠屏，...</div>
+                        <div class="atom-metrics">❤️ 432 | 🔄 8</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5275312612182452" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">OPPO的每一代折叠屏，都在回答一个问题：用户还需要什么？我们还能突破什么？#OPPO Find N6# 首发两大行业黑科技「新一代钛合金天穹铰链」和「天穹记忆玻璃」，攻克了困扰行业8年的折痕难题，开启折叠屏「无感折痕 久用平整」新世代！今天下午我们的门店也会陆续上柜新机，欢迎大家前往亲手体验。</div>
+                        <div class="atom-metrics">❤️ 553 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5275298225717365" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 46 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Harmonyos Ar实景步行导航功能</div>
+                    <div class="topic-heat">🔥 569</div>
+                </div>
+                <div class="topic-meta">
+                    24 条内容 | 信源: 华为终端云服务, HarmonyOS开发者, 华为手机, 华为终端
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为终端</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">鸿蒙生态一周更新速览：搭载HarmonyOS 6的华为畅享 90系列将于下周一发布；来AppGallery，用英雄联盟手游、穿越火线-枪战王者乐享休闲时光；QQ、快手、WPS移动版等多款应用迎来重要更新。鸿蒙操作系统 6，更安全、更流畅、更智能，欢迎前往系统设置搜索“软件更新”，升级尝鲜。#Harm...</div>
+                        <div class="atom-metrics">❤️ 130 | 🔄 13</div>
+                        <div class="atom-link"><a href="https://weibo.com/1839167003/5278604302225478" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#华为音乐#特别推出#世界睡眠日#专区，助眠轻音系列、脑波音乐、自然噪音声景等高品质内容汇聚，来开启空间音频沉浸入梦吧。#HarmonyOS6# ​​​</div>
+                        <div class="atom-metrics">❤️ 71 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/2836883273/5278845894394468" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">今日#春分#，把时间平分，一半给白天，一半给夜晚；把屏幕平分，一半寻找春天，一半遇见春天。打开#华为MateX7#，左屏小艺问答秒做攻略，右屏花瓣地图精准导航。出发！向春天。🌺#鸿蒙越用越香##HarmonyOS6# ​​​</div>
+                        <div class="atom-metrics">❤️ 35 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://weibo.com/2836883273/5278608153382657" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">春天拍了拍你，并送上了一份出片指南~从穿搭到构图，从色彩到光影，#HarmonyOS6#帮你一站式搞定。这个春天，限定美好轻松定格！#无华不说# ​​​</div>
+                        <div class="atom-metrics">❤️ 39 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/2836883273/5278498606026122" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#HarmonyOS#你的隐私安全守护官，带给你稳稳的“安全感”！从个人隐私到亲情防诈，那些让你心里“咯噔一下”的瞬间，它都提前设好了防护。隐私安全，由你掌控！#鸿蒙越用越香# ​​​</div>
+                        <div class="atom-metrics">❤️ 110 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/2836883273/5276060062057376" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 19 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">vivo X Fold新品</div>
+                    <div class="topic-heat">🔥 379</div>
+                </div>
+                <div class="topic-meta">
+                    14 条内容 | 信源: vivo韩伯啸, 智慧皮卡丘, RD观测
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">周末同事带着#vivo X300 Ultra专业V单#去看了梦龙乐队！看样张和视频的感觉，看起来就像在最前排，实际我们的位置是图5[吃惊][吃惊]
+
+X100 Ultra首款蔡司2亿APO超级长焦，超高像素＋超大底，喊出了”2亿长焦超清晰，山顶也是VIP”，从此开始演唱会神器之路。
+X200 Ult...</div>
+                        <div class="atom-metrics">❤️ 1947 | 🔄 35</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5279203939584443" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">今天是「vivo色彩科学」第三集，蓝厂对于影像的理念一直都是软硬件深度融合。这一次#vivo X300 Ultra专业V单#搭载蓝图原色摄像头，补齐「vivo色彩科学」最后一块拼图。
+ 
+全新蓝图原色摄像头，拥有行业最多的12光谱通道，能捕捉更完整的光谱信息，提升色彩还原准确度，搭配行业最高的500...</div>
+                        <div class="atom-metrics">❤️ 1182 | 🔄 49</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5278540197269410" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">专业V单#vivo X300 Ultra﻿#与超能小V单#vivo X300s#，正式与大家见面
+V单从立项开始，就没有走常规手机的路线，在硬件选型、拍照、视频、色彩、画质等全面引入相机思路，是一款真正兼顾相机和手机优势的大成之作。
+
+在外观上，同样既有手机的形态，也有专业相机的形态：
+- X300...</div>
+                        <div class="atom-metrics">❤️ 1018 | 🔄 121</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5278123169415606" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">昨天讲了照片的色彩风格#胶片相机# ，今天讲讲视频的风格。 
+ 
+从专业V单#vivo X300 Ultra#的专业创作到全焦段顶规视频，硬件参数已经拉满。而对日常拍摄而言，最大的需求有时候不是专业参数满足，而是一拍直出电影感，更低门槛的高质量创作。 
+ 
+这一次通过软硬件技术升级，X300 Ult...</div>
+                        <div class="atom-metrics">❤️ 818 | 🔄 150</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277758739448501" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">手机多年前就进入了多摄时代，但真正的考验从来不是镜头数量，而是全焦段、全画质高度一致的视频能力与长焦防抖，想要做到这一点，需要让超广角的画质向主摄看齐，强化长焦防抖像主摄一样稳定。
+ 
+这一次专业V单#vivo X300 Ultra# 拥有全焦段高度一致的顶规能力，面对大场面拍得清、远距离拍得稳，让...</div>
+                        <div class="atom-metrics">❤️ 2613 | 🔄 44</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277393750592371" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 9 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">iPhone新品动态</div>
+                    <div class="topic-heat">🔥 204</div>
+                </div>
+                <div class="topic-meta">
+                    8 条内容 | 信源: RD观测, 爱范儿, 智慧皮卡丘, 36氪
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">RD观测</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">截至2026 W11 旗舰SO-苹果
+
+iPhone 17系列 约2533.15万 ​
+
+本周开始加入iPhone 17e ​​​</div>
+                        <div class="atom-metrics">❤️ 847 | 🔄 7</div>
+                        <div class="atom-link"><a href="https://weibo.com/7928198622/5279357669212230" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">RD观测</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">iPhone 17e首销数据（Sell out）
+
+以首销5日为标准，iPhone 17e的销量约为23K
+
+同期iPhone 16e的销量约为16K 
+
+PS：第三方数据源，仅供参考。 ​​​</div>
+                        <div class="atom-metrics">❤️ 1199 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/7928198622/5278309275665462" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">RD观测</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">iPhone 17e的首销数据也出来了，以5天为标准，大家猜一下销量会在什么量级呢？（Sell out） http://t.cn/AXfVXfaB ​​​</div>
+                        <div class="atom-metrics">❤️ 3182 | 🔄 3</div>
+                        <div class="atom-link"><a href="https://weibo.com/7928198622/5278225328767097" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">智慧皮卡丘</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">iPhone这边的存档的测试物料：侧边指纹，阔折叠，Ai笔，可变光圈，多光谱，5K大电池，相互致敬。[666][666]
+#新品驾到##iPhone18##智慧皮卡丘[超话]# ​​​</div>
+                        <div class="atom-metrics">❤️ 293 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/5888095979/5278873237325447" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【专访苹果医学家：房颤患者，为什么应该戴一块 Apple Watch？】
+最近，苹果为中国大陆的 Apple Watch 带来了一个全新功能：移动脉率房颤迹象记录软件功能。
+
+想要打开「房颤迹象」功能的用户，不需要更新到最新的 iOS 或 watchOS 系统，功能后续会逐步开放。
+
+开启路径如下：...</div>
+                        <div class="atom-metrics">❤️ 14 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5279375528559828" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 3 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">小米SU7汽车</div>
+                    <div class="topic-heat">🔥 60</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: 钟文泽, 智慧皮卡丘
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">钟文泽</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【 xiaomi Book Pro 开箱：主打轻薄精致，3A 游戏也能玩 】
+
+小米刚刚发布了新款的笔记本 xiaomi Book Pro，这款笔记本的屏幕达到 14.6 英寸，算是比较大的屏幕。但同时依然维持了轻薄的机身设计。
+
+性能方面，这次3A大型游戏的帧率也得到了明显提升。
+
+另外在这款笔记...</div>
+                        <div class="atom-metrics">❤️ 2113 | 🔄 4749</div>
+                        <div class="atom-link"><a href="https://weibo.com/1906286443/5278543908179278" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">智慧皮卡丘</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">小米春季新品发布会结束，大家觉得如何。[馋嘴][馋嘴]
+
+新一代SU7：21.99万起
+
+小米笔记本Pro 14：14.6英寸3.1K OLED，1.08kg，14.95mm，8499起，支持国补。
+
+Xiaomi Watch S5：10.99mm 轻薄不锈钢表体，46mm 表圈一体式设计，支持eS...</div>
+                        <div class="atom-metrics">❤️ 129 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/5888095979/5278286418548616" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">AirDrop兼容S</div>
+                    <div class="topic-heat">🔥 45</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: @UniverseIce, IGN
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@UniverseIce</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">BREAKING！ The Korean version of the Galaxy S26 series now supports AirDrop-style file sharing with Apple devices. No additional apps are required, and...</div>
+                        <div class="atom-metrics">❤️ 291 | 🔄 25</div>
+                        <div class="atom-link"><a href="https://x.com/UniverseIce/status/2035885392801714390" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">IGN</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Your Samsung Galaxy S26 Is About to Get AirDrop</div>
+                        <div class="atom-link"><a href="https://www.ign.com/articles/your-samsung-galaxy-s26-is-about-to-get-airdrop" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Tim Cook</div>
+                    <div class="topic-heat">🔥 40</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: @Techmeme, Techmeme
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@Techmeme</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Profile of John Ternus, likely Tim Cook successor, who shapes Apple's hardware portfolio, is expanding his domain within Apple, and his visibility to ...</div>
+                        <div class="atom-metrics">❤️ 3 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://x.com/Techmeme/status/2035869471014101095" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Techmeme</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://www.bloomberg.com/features/2026-apple-next-ceo/?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVk...</div>
+                        <div class="atom-link"><a href="http://www.techmeme.com/260322/p11#a260322p11" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">M5</div>
+                    <div class="topic-heat">🔥 31</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @business
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@business</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Australian stocks fell, nearing a technical correction as investors’ anxieties over the Iran War hit the country’s commodity-rich market https://t.co/...</div>
+                        <div class="atom-metrics">❤️ 16 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://x.com/business/status/2035887528373354603" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Kimi动态</div>
+                    <div class="topic-heat">🔥 26</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: HarmonyOS开发者
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">HarmonyOS开发者</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">鸿蒙生态一周更新速览：HarmonyOS 6无网小游戏，让长途飞行不再难熬；来AppGallery，用StarNote笔记、食卡卡等应用点亮本月生活；Kimi、快手、微博等多款应用迎来重要更新。鸿蒙操作系统 6，更安全、更流畅、更智能，欢迎前往系统设置搜索“软件更新”，升级尝鲜。#HarmonyOS...</div>
+                        <div class="atom-metrics">❤️ 9 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/3211647923/5274565966302687" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">NVIDIA动态</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: NVIDIA AI Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">NVIDIA AI Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">NVIDIA and Apple’s collaboration brings native integration of NVIDIA CloudXR 6.0 to visionOS, securely delivering NVIDIA RTX-powered simulators and pr...</div>
+                        <div class="atom-link"><a href="https://blogs.nvidia.com/blog/nvidia-cloudxr-apple-vision-pro/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Google动态</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Engadget(Google News)
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Engadget(Google News)</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://news.google.com/rss/articles/CBMipAFBVV95cUxQVk1SZjhGc0prZXBORVZqM2VlSHg3Qm5MZk1YQi1JVnlMOFZhTkhlbFNDQVl1TjVJTDRvT3FHTGoyRHJTaWhYckp3...</div>
+                        <div class="atom-link"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQVk1SZjhGc0prZXBORVZqM2VlSHg3Qm5MZk1YQi1JVnlMOFZhTkhlbFNDQVl1TjVJTDRvT3FHTGoyRHJTaWhYckp3eHY1RXBtdHR4Wllab1FLcE5xLTE3eU5HRUY5bkZiRFdZSVQ3MDFTd1NMNWlSS0I2ejRCM0gtZmJsT213a216VnhmWE9pYmV5Um90T19rZi1fTFI4ckJQbHBCUw?oc=5" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Galaxy S26兼容AirDrop</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: TechRadar
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">TechRadar</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Samsung is updating Quick Share to support AirDrop, which means you can AirDrop files from an S26 to an iPhone.</div>
+                        <div class="atom-link"><a href="https://www.techradar.com/phones/samsung-galaxy-phones/its-about-time-your-samsung-galaxy-s26-can-now-airdrop-files-to-an-iphone" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">📋 其他 (9个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">OPPO Find N6发布</div>
+                    <div class="topic-heat">🔥 255</div>
+                </div>
+                <div class="topic-meta">
+                    10 条内容 | 信源: 刘作虎, @IBKR, @koreatimescokr, OPPO刘波, RD观测
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@IBKR</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Looking to Go Global? Unlock opportunities in global markets with S&amp;amp;P 500 options. Learn more today!</div>
+                        <div class="atom-metrics">❤️ 48 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://x.com/IBKR/status/2033595910148513794" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@koreatimescokr</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">With Almonty Korea Tungsten Corp. (AKTC) beginning tungsten production in Korea, the country is entering a new phase of industrial opportunity centere...</div>
+                        <div class="atom-link"><a href="https://x.com/koreatimescokr/status/2035899333267382407" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#OPPOFindN6# 今日正式开售！  这次的Find N6，我们彻底攻克了“久用平整”的难题，就是希望它能成为你真正的主力机。也欢迎大家到线下门店亲自上手体验感受。  没想到大家对大内存的热情这么高，1TB版本预售占比远超预期！看来在内存涨价的当下，一步到位才是真香选择。 #无感折叠#</div>
+                        <div class="atom-metrics">❤️ 121 | 🔄 7</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5278489674518022" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">在 MWC 2026，OPPO 携手中国电信斩获了 GTI「移动 AI 应用奖」。 这是全球通信行业极具分量的奖项，标志着以 OPPO 为代表的国产智能通信技术，正式获得了国际行业的高度认可。
+
+这次获奖的“意图驱动端网云智能体”技术，不只是实验室的突破，更是为了解决大家最真实的痛点。我们做山海通信...</div>
+                        <div class="atom-metrics">❤️ 345 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5273499444973823" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">这几天，是我们OPPO工程师最燃的时候。
+
+每年到这个时候，总能感受到大家那种“死磕到底”的劲儿——不是为了炫技，而是真的想把科技变成你我日常里那一点点“更好用、更惊喜、更安心”。
+
+今年，我们把压箱底的“科技引领金奖”颁给了LUMO凝光影像自研算法团队，恭喜他们！
+
+说真的，这个奖已经整整5 ​​...</div>
+                        <div class="atom-metrics">❤️ 618 | 🔄 40</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5245608757559859" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 5 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">扎克伯格打造CEO级AI代理</div>
+                    <div class="topic-heat">🔥 120</div>
+                </div>
+                <div class="topic-meta">
+                    5 条内容 | 信源: @Polymarket, @CEOBriefing, @unusual_whales, Techmeme
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@CEOBriefing</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">突发消息：扎克伯格正在打造一款“CEO级AI代理”，旨在协助他管理Meta。以后开会，对面坐的是个“扎分身”。扎克伯格竟然在把自己“自动化”，这简直是那种我们此前未曾意识到自己需要的、极具“2025年风范”的巅峰操作。当你的老板变成了一个算法时，中层管理岗位就不再是一份正经职业了，它充其量不过是个“...</div>
+                        <div class="atom-metrics">❤️ 7 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/CEOBriefing/status/2035888116796719200" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@Polymarket</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">JUST IN: Mark Zuckerberg reportedly building a CEO AI agent to help him do his job better.</div>
+                        <div class="atom-link"><a href="https://x.com/Polymarket/status/2035871175557972239" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@Polymarket</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">6% chance Meta has a #1 AI model by the end of June. https://t.co/q4FbGVHrHM</div>
+                        <div class="atom-metrics">❤️ 37 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://x.com/Polymarket/status/2035871817580130536" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@unusual_whales</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Meta CEO Mark Zuckerberg is creating a CEO agent to assist him in his job, per WSJ</div>
+                        <div class="atom-link"><a href="https://x.com/unusual_whales/status/2035858332725219620" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Techmeme</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5&quot;&gt;&lt;img align=&quot;RIGHT&quot; border=&quot;0&quot; hspace=&quot;4&quot; src...</div>
+                        <div class="atom-link"><a href="http://www.techmeme.com/260322/p10#a260322p10" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">vivo新品动态</div>
+                    <div class="topic-heat">🔥 113</div>
+                </div>
+                <div class="topic-meta">
+                    4 条内容 | 信源: vivo韩伯啸, RD观测
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">大家对于一张照片的喜爱与否，色彩对味是关键。这一次「vivo色彩科学」在色准，影调，个性化方面都有非常多的惊喜，昨天推出的「蓝图原生色彩」，追求原生光感、耐看、记录生活原本的样子。 今天想聊一聊众多胶片爱好者们喜欢的风格化强烈的色彩影调。
+ 
+蓝厂去年推出的经典负片、正片、清透蓝调备受好 ​​​</div>
+                        <div class="atom-metrics">❤️ 2016 | 🔄 216</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277863454704039" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">第一款被冠以“蓝图”这个vivo影像品牌的色彩体系，是什么样的？
+时隔这么多年，vivo再次推出品牌主打级的色彩模式，是什么样的？
+
+有人说，色彩是相机的第一语言，是审美的第一直觉。影像作品第一眼的心动，由色彩决定。对于手机影像色彩，蓝厂在多年前就开始在记忆色体系发力，质感、鲜明、以及蔡司 ​​​</div>
+                        <div class="atom-metrics">❤️ 1517 | 🔄 267</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277467954906953" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">我前面说过，防抖好，拍照时超长焦每帧质量就会都高，这样会大大减少超长焦合帧时对不齐带来的发虚模糊问题。视频时更是如此，抖动模糊带来的“烂帧”比拍照还难处理，防抖不行经常就看到视频一段一段的糊，很多人以为是出bug了，其实是晃动坏了太多帧的画面，手机救不过来了。 这两年，vivo不管是影像</div>
+                        <div class="atom-metrics">❤️ 555 | 🔄 15</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277400654158079" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">RD观测</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">截至2026 W10 中端SO-vivo
+
+vivo S50系列 约176.17万 ​ ​​​</div>
+                        <div class="atom-metrics">❤️ 318 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/7928198622/5277553469686907" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">小米15/16系列</div>
+                    <div class="topic-heat">🔥 88</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: 小米手机, 卢伟冰, 钟文泽
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">小米手机</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#小米手表S5# 全渠道现已开售！
+3月19日至3月26日，首销周优惠100元，
+叠加国补，到手仅需934.15元起，
+欢迎大家到小米之家上手体验。
+转评赞抽一台Xiaomi Tag UWB。 ​​​</div>
+                        <div class="atom-metrics">❤️ 888 | 🔄 969</div>
+                        <div class="atom-link"><a href="https://weibo.com/2202387347/5278559011606204" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">卢伟冰</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">Xiaomi Watch S5 设计全面重构。
+
+10.99mm 轻薄不锈钢表体，精致更耐用，
+46mm 表圈一体式设计，佩戴优雅，
+同心圆表冠设计，拉丝工艺，细节考究，
+1.48'' AMOLED 高清大屏，视野更清晰。 ​​​</div>
+                        <div class="atom-metrics">❤️ 727 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/1892653244/5278474597827083" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">钟文泽</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">转发原博 + 关注我，周日晚上抽一个 500 元现金红包。帮大家把 xiaomi Book Pro 的价格往下打一打。</div>
+                        <div class="atom-metrics">❤️ 164 | 🔄 235</div>
+                        <div class="atom-link"><a href="https://weibo.com/1906286443/5278544779545557" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Ios合作蚂蚁集团达成战略</div>
+                    <div class="topic-heat">🔥 40</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: 刘作虎, TouchArcade
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">很高兴OPPO与蚂蚁集团达成战略合作。通过OPPO领先的AIOS能力与支付宝海量服务无缝连接，希望让每个人的 AI 体验都更高效、更懂你。 ​​​</div>
+                        <div class="atom-metrics">❤️ 730 | 🔄 44</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5225232604334918" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">TouchArcade</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">We have a sponsor for this episode! We are eternally grateful for Tursiops Studios, who you may remember as the &amp;#8230; &lt;p class=&quot;link-more&quot;&gt;&lt;a class=...</div>
+                        <div class="atom-link"><a href="https://toucharcade.com/2025/04/18/a-two-parter-the-toucharcade-show-613/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">GStack域名相关</div>
+                    <div class="topic-heat">🔥 27</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @andreste
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@andreste</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">- I bought a domain name and got the X handle too. Thanks to @BrianNorgard for @NameGPTCom 🎉.
+- Had a back and forth conversation with @garrytan's gst...</div>
+                        <div class="atom-link"><a href="https://x.com/andreste/status/2035887815938936896" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">雷军发布</div>
+                    <div class="topic-heat">🔥 25</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 爱范儿
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#爱范儿在现场##小米发布会##小米新SU7发布会请来半个车圈# 雷军来了，今天将会发布新一代小米SU7。 http://t.cn/AXfVFnTH ​​​</div>
+                        <div class="atom-metrics">❤️ 6</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278263062562618" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Codex</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: OpenAI Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">OpenAI Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">A deep dive into why Codex Security doesn’t rely on traditional SAST, instead using AI-driven constraint reasoning and validation to find real vulnera...</div>
+                        <div class="atom-link"><a href="https://openai.com/index/why-codex-security-doesnt-include-sast" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Android</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Wired
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Wired</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Do your future self a favor and back up all your precious photos, messages, and files before disaster strikes.</div>
+                        <div class="atom-link"><a href="https://www.wired.com/story/how-to-backup-your-android/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">🔧 芯片与算力 (9个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">NVIDIA动态</div>
+                    <div class="topic-heat">🔥 189</div>
+                </div>
+                <div class="topic-meta">
+                    11 条内容 | 信源: NVIDIA AI Blog, @dnystedt, @IGN, @lexfridman, 梁赛
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@dnystedt</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Rumor: Nvidia plans to redesign its next-gen Feynman chips because there won’t be enough TSMC A16 capacity (1.6nm) to meet demand, media report, so Nv...</div>
+                        <div class="atom-link"><a href="https://x.com/dnystedt/status/2035874191111831750" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@IGN</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Nvidia CEO Jensen Huang has responded to the backlash to the DLSS 5, an upcoming iteration of its AI software suite for graphics cards, saying, &quot;first...</div>
+                        <div class="atom-metrics">❤️ 80 | 🔄 6</div>
+                        <div class="atom-link"><a href="https://x.com/IGN/status/2035869406702493716" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@lexfridman</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">It was an honor to hang out with Jensen Huang, CEO of @nvidia, and do a long-form podcast with him. Really fun &amp; fascinating technical deep-dive conve...</div>
+                        <div class="atom-metrics">❤️ 6025 | 🔄 353</div>
+                        <div class="atom-link"><a href="https://x.com/lexfridman/status/2035833853357830640" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">英伟达刚刚发布LPU
+英伟达的新武器：LPU推理芯片
+
+去年12月，英伟达花200亿美元把Groq收了，看中的就是他们的LPU（Language Processing Unit）技术。
+
+核心价值：
+GPU擅长训练，但推理有瓶颈（延迟高、能耗大）
+LPU专门优化推理流水线，和GPU配合干活
+解决了&quot;...</div>
+                        <div class="atom-metrics">❤️ 273 | 🔄 32</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5277382969917883" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">TechCrunch AI</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.</div>
+                        <div class="atom-link"><a href="https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 6 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Jensen Huang</div>
+                    <div class="topic-heat">🔥 122</div>
+                </div>
+                <div class="topic-meta">
+                    5 条内容 | 信源: 爱范儿, 梁赛, 财联社APP, IT之家
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">黄仁勋有关Groq的讨论
+
+在GTC 2026前，Stratechery采访了英伟达的CEO黄仁勋。
+
+以下为采访实录（关于Groq部分）：
+
+Q：Jensen Huang，欢迎回到 Stratechery。
+
+JH（Jensen Huang）：和你在一起真好
+
+Q：我想祝贺你，正如你今天在主题演讲...</div>
+                        <div class="atom-metrics">❤️ 94 | 🔄 10</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5277742763085298" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">财联社APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#上交所受理宇树科技科创板ipo申请#【财联社3月23日#早间新闻精选#】
+1、央行行长潘功胜3月22日在中国发展高层论坛2026年年会上表示，将继续实施适度宽松的货币政策。综合运用存款准备金率、政策利率、公开市场操作等多种货币政策工具，保持流动性充裕。
+2、英伟达CEO黄仁勋近日在一档播客节目中表...</div>
+                        <div class="atom-metrics">❤️ 19 | 🔄 6</div>
+                        <div class="atom-link"><a href="https://weibo.com/2868676035/5279548346210386" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【观点💡 黄仁勋：Token 将成为企业预算标配，智能体时代算力消耗将爆发式增长】
+
+据《商业内幕》报道，英伟达 CEO 黄仁勋在日前的 GTC 大会上反复提及一个概念：Token。
+
+黄仁勋将未来的计算机定义为「生产 Token 的制造设备」，并预言 Token 将像笔记本电脑或软件订阅一样，成为...</div>
+                        <div class="atom-metrics">❤️ 6</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278257013851985" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【黄仁勋骗了所有人，DLSS 5 真是个纯 AI 滤镜】
+英伟达卖铲子，卖得比任何人都好。
+这没什么问题，本来就是一门好生意。
+只是卖铲子的人，从来不会在乎挖出来的是什么。 http://t.cn/AXfjFOHz ​​​</div>
+                        <div class="atom-metrics">❤️ 3 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5279598361185232" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">IT之家</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#黄仁勋称担心AI工程师Token用得少#【英伟达 CEO 黄仁勋：如果工程师 AI Token 用的少，我会非常担心】3 月 23 日消息，英伟达 CEO 黄仁勋在上周四播出的一期《All-In 播客》中表示，如果这家芯片巨头的顶尖工程师在 AI 上的投入过低，他会“深感担忧”。 “如果那位年薪 ...</div>
+                        <div class="atom-metrics">❤️ 1 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://m.weibo.cn/detail/5279652798793366" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Elon Musk</div>
+                    <div class="topic-heat">🔥 78</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: 梁赛, 爱范儿, 财联社APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">AI算力把全球变压器买爆了，中国制造成了&quot;唯一解药&quot;
+
+去年这时候，马斯克说了句话，当时大家还觉得是段子：
+
+「一年前全球缺芯片，接下来会缺变压器。」
+
+现在看，这还真不是随便说说。
+
+1
+
+这东西有多缺？美国现在订一台变压器，交货周期127周，差不多两年半。以前50周就能拿到，现在翻了两倍多。部分...</div>
+                        <div class="atom-metrics">❤️ 513 | 🔄 91</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5279349481674633" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">英伟达给游戏玩家喂 AI 泔水？事情可能没有想象的那么糟
+
+2026 年 3 月 17 日，一位网友在社交平台 X 上这样写道：「坏结局：现在所有的游戏，都变成 AI 泔水（AI slop）了。」
+
+这里所指的，不是马斯克那个「全 AI 开发」的游戏，而是英伟达刚刚公布的一个技术预览。这项技术预览，...</div>
+                        <div class="atom-metrics">❤️ 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278235123781273" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">财联社APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#马斯克称将在美国建设芯片制造中心#【马斯克宣布将在美国建设芯片制造中心 目标是量产2纳米工艺芯片】财联社3月23日电，马斯克当地时间21日宣布将在美国得州奥斯汀建设一个芯片制造中心。这个项目将由特斯拉、太空探索技术公司以及xAI合作推进，主要为机器人和太空数据中心等项目提供芯片。马斯克表示 ​​​</div>
+                        <div class="atom-metrics">❤️ 34 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/2868676035/5279669482947456" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">台积电</div>
+                    <div class="topic-heat">🔥 34</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @StockSavvyShay
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@StockSavvyShay</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">$TSM Arizona Fab 4 is reportedly already fully booked before construction has even begun as $NVDA, $AAPL, $AMD and $QCOM push for more U.S. capacity.
+...</div>
+                        <div class="atom-metrics">❤️ 156 | 🔄 25</div>
+                        <div class="atom-link"><a href="https://x.com/StockSavvyShay/status/2035886360863879522" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">SpaceX动态</div>
+                    <div class="topic-heat">🔥 30</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @ChineseWSJ
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@ChineseWSJ</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">#早间市场快报 &gt; https://t.co/RedYub9soR
+- 实时更新：特朗普与伊朗相互威胁要打击关键基础设施
+- 北京的大难题：中国经济全球占比显著“缩水”
+- 台湾“全民动员”防卫计划升温，应对中国威胁
+- 中国政府打压为被捕基督教领袖辩护的律师
+- 黄金跌势不止，投资者困惑为何金融市...</div>
+                        <div class="atom-metrics">❤️ 5</div>
+                        <div class="atom-link"><a href="https://x.com/ChineseWSJ/status/2035882979231183144" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">vivo新品动态</div>
+                    <div class="topic-heat">🔥 30</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 梁赛
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">梁赛</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#vivo宣布涨价#
+
+如果氦气供应紧张，半导体产业将持续受影响，下游消费电子还会涨价。 ​​​</div>
+                        <div class="atom-metrics">❤️ 423 | 🔄 13</div>
+                        <div class="atom-link"><a href="https://weibo.com/1725941200/5277119098914155" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Amd发布</div>
+                    <div class="topic-heat">🔥 28</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @TweakTown
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@TweakTown</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">ASRock's press release hints at an imminent launch of AMD's Ryzen 9 9950X3D2 with dual 3D V-Cache. 🖥️⚙️ https://t.co/MGwDaDysEo #ASRock #AMD #Ryzen9</div>
+                        <div class="atom-link"><a href="https://x.com/TweakTown/status/2035884136830005469" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Intel发布</div>
+                    <div class="topic-heat">🔥 21</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: The Register, Techspective AI
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">The Register</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;h4&gt;PLUS: US takes down Iranian propaganda sites; Marketing company asks 'Why Do We Have Your Information?' And more!&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Infosec In Brief...</div>
+                        <div class="atom-link"><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/22/russian_messaging_support_phishing_scam/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Techspective AI</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;Artificial intelligence is transforming nearly every corner of the financial world, and tax strategy is no exception. What once required hours of m...</div>
+                        <div class="atom-link"><a href="https://techspective.net/2026/02/16/ai-and-taxes-how-technology-is-reshaping-financial-strategy/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Google LiteRT发布</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Google Developers Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Developers Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Google has officially launched LiteRT, the successor to TFLite, which offers significantly faster GPU and NPU acceleration alongside seamless support ...</div>
+                        <div class="atom-link"><a href="https://developers.googleblog.com/whats-new-in-tensorflow-221/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">software_dev (9个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Harmonyos更新</div>
+                    <div class="topic-heat">🔥 119</div>
+                </div>
+                <div class="topic-meta">
+                    5 条内容 | 信源: HarmonyOS开发者, 华为终端云服务
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">华为终端云服务</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">2026 HarmonyOS创新赛·极客赛道报名通道现已开启！诚邀开发者基于HarmonyOS创新特性和能力，玩转“AI智能化体验”、“全场景一体协同”、“安全隐私保护”、“3D空间化”主题，进入决赛的选手更能尝鲜体验HarmonyOS新版本创新开发。还有68.8万奖金池及重磅曝光资源加持，等你组队...</div>
+                        <div class="atom-metrics">❤️ 11 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/2280893642/5278653631170315" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">HarmonyOS开发者</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">2026 HarmonyOS创新赛·极客赛道报名通道现已开启！诚邀开发者基于HarmonyOS创新特性和能力，玩转“AI智能化体验”、“全场景一体协同”、“安全隐私保护”、“3D空间化”主题，进入决赛的选手更能尝鲜体验HarmonyOS新版本创新开发。还有68.8万奖金池及重磅曝光资源加持，等你组队...</div>
+                        <div class="atom-metrics">❤️ 7 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/3211647923/5278641615278339" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">HarmonyOS开发者</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#Hello HarmonyOS开发者# 封面新闻坚信“优质内容应无界传播”，与 HarmonyOS打破“设备壁垒、构建全场景生态”的理念一拍即合！HarmonyOS“一次开发多端部署”特性，让开发者看到了全场景沉浸式新闻客户端的新可能，也成为开发者一头扎进HarmonyOS的“心动理由”。本以为开...</div>
+                        <div class="atom-metrics">❤️ 10 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/3211647923/5273047692215328" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">HarmonyOS开发者</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#鸿运马上来# HarmonyOS SDK已为你加满buff。无论干饭减肥，亦或骑行游戏，一起来看看开发者们打造的一个个“啊哈时刻”~ ​​​</div>
+                        <div class="atom-metrics">❤️ 19 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/3211647923/5269801296987918" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">HarmonyOS开发者</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">#Hello HarmonyOS开发者# 早在2019年时，西窗烛就开启了HarmonyOS应用的开发历程，并一路陪伴HarmonyOS成长升级，妥妥的元老级搭子了。在2025年HarmonyOS的创新赛场上，团队基于HarmonyOS的全场景特性，将硬核技术和传统文化狠狠 “贴贴”，为诗词学习打造...</div>
+                        <div class="atom-metrics">❤️ 8 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/3211647923/5279596075549936" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Devin</div>
+                    <div class="topic-heat">🔥 59</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: @ryancarson, @lennysan
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@ryancarson</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Paid $500 for @DevinAI - liking it so far.
+
+You can tell this team is much further than other agent labs when it comes to being truly remote-first.
+
+V...</div>
+                        <div class="atom-link"><a href="https://x.com/ryancarson/status/2035746736803614981" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@lennysan</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Get a free year of @DevinAI with your Lenny’s Newsletter subscription</div>
+                        <div class="atom-metrics">❤️ 72 | 🔄 6</div>
+                        <div class="atom-link"><a href="https://x.com/lennysan/status/2035836834136396275" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Cursor</div>
+                    <div class="topic-heat">🔥 59</div>
+                </div>
+                <div class="topic-meta">
+                    4 条内容 | 信源: @shao__meng, 硅基观察Pro, 赛博禅心, InfoQ 推荐
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@shao__meng</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Cursor/VSCode 等 IDE 会消失吗？
+
+Addy Osmani 认为开发者工作重心在迁移：从传统的“一行一行编辑代码”转向“监督 AI Agent“，IDE 也不会消失，而是从核心转为辅助，仪表盘、看板、审查界面等成为新中心。
+
+核心转变
+过去 IDE 是核心：打开文件 → 编辑 → ...</div>
+                        <div class="atom-metrics">❤️ 2</div>
+                        <div class="atom-link"><a href="https://x.com/shao__meng/status/2035881491520225402" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">硅基观察Pro</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">AI生意的新规则</div>
+                        <div class="atom-link"><a href="https://mp.weixin.qq.com/s?__biz=MzkyNTY1MjE2OA==&amp;mid=2247493446&amp;idx=1&amp;sn=74edb277aa3d324aaaeb46851a279f48" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">赛博禅心</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">子曰：国内一开源，海外就自研</div>
+                        <div class="atom-link"><a href="https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&amp;mid=2247514525&amp;idx=1&amp;sn=9f965a129363d0120596dddb8cef2ede" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">InfoQ 推荐</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;div align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.infoq.cn/article/Uo9qDPlcoExt95xUG8N4?utm_source=rss&amp;amp;utm_medium=article&quot;&gt;点击查看原文&gt;&lt;/a&gt;&lt;/div&gt;</div>
+                        <div class="atom-link"><a href="https://www.infoq.cn/article/Uo9qDPlcoExt95xUG8N4?utm_source=rss&amp;utm_medium=article" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">OpenAI收购Astral</div>
+                    <div class="topic-heat">🔥 39</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: 宝玉xp, OpenAI Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">宝玉xp</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">OpenAI 宣布收购 Astral，将后者旗下的开源 Python 工具整合进自家的 Codex 编程智能体生态。
+
+Astral 是 Python 开发者圈子里的明星工具公司，旗下三款开源工具几乎已经成为现代 Python 开发的标配：uv 负责依赖管理和虚拟环境（类似于一个更快更好用的 pip...</div>
+                        <div class="atom-metrics">❤️ 125 | 🔄 50</div>
+                        <div class="atom-link"><a href="https://weibo.com/1727858283/5278364816376213" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">OpenAI Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Accelerates Codex growth to power the next generation of Python developer tools</div>
+                        <div class="atom-link"><a href="https://openai.com/index/openai-to-acquire-astral" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Google动态</div>
+                    <div class="topic-heat">🔥 33</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: 竞核, Engadget(Google News)
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">竞核</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">竞核3月21日消息，近日，谷歌宣布对Google Play商店的商业模式进行重大调整，将应用内购抽成从30%降至20%或更低。
+
+调整后的费率结构拆分为“服务费+结算费”：标准应用内购服务费降至20%，参与“应用体验计划”或“游戏升级计划”的优质应用可进一步降至15%，订阅服务费统一为10%。若开发...</div>
+                        <div class="atom-link"><a href="https://weibo.com/2648435521/5278995065343161" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Engadget(Google News)</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcm1GcWI2ZThVRUN3QnNuMkdCWExKckcwcTJpZWlYLXBTUG5wUkozR2pyWThXOXpHWHE4MzZicUUwdldIZEt0YVJf...</div>
+                        <div class="atom-link"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcm1GcWI2ZThVRUN3QnNuMkdCWExKckcwcTJpZWlYLXBTUG5wUkozR2pyWThXOXpHWHE4MzZicUUwdldIZEt0YVJfYmtvcHZscmZ5MTJLbkFXZ244LW9PZE9DUWJpVkROMjE3MXlCTmFNY3VFdGtTM0tabHhIbmhzX0hDUmpXSndiSlN3UVdDMmNROUJSeldDSjFyZVF1MkNrbEFiQmhvbUNkY2R3d2FoeVpfVlhMZm9HQWRxcWlsMC0?oc=5" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Claude</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Simon Willison's Weblog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Simon Willison's Weblog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;p&gt;&lt;a href=&quot;https://marcelotryle.com/blog/2026/03/22/starlette-10-is-here/&quot;&gt;Starlette 1.0 is out&lt;/a&gt;! This is a really big deal. I think Starlette may...</div>
+                        <div class="atom-link"><a href="https://simonwillison.net/2026/Mar/22/starlette/#atom-everything" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Gemini模型更新</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Google Developers Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Developers Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Google has introduced Finish Changes and Outlines for Gemini Code Assist in IntelliJ and VS Code to reduce developer friction and eliminate the need f...</div>
+                        <div class="atom-link"><a href="https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">MiniMax动态</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: MiniMax公众号
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">MiniMax公众号</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">🅿️1️⃣-2️⃣ Skills 社区上线，「PPT制作」「PDF编辑」等优质 Skill 已开源！
+ 
+精选上百种 Skills，涵盖开发、学习、办公及内容创作等多场景，用户可在 MaxClaw 或 MiniMax Agent 对话中一键添加，如用户创建并上传的 Skill 被使用可另获积分奖励。...</div>
+                        <div class="atom-link"><a href="https://mp.weixin.qq.com/s?__biz=MzE5MTA3NzcxMQ==&amp;mid=2247488166&amp;idx=1&amp;sn=b631dfcb37fc2a040a5dd3134e8dc834" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Fsd</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: InfoQ 推荐
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">InfoQ 推荐</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;div align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.infoq.cn/article/ia7cifkMwDqYjd1FsdEQ?utm_source=rss&amp;amp;utm_medium=article&quot;&gt;点击查看原文&gt;&lt;/a&gt;&lt;/div&gt;</div>
+                        <div class="atom-link"><a href="https://www.infoq.cn/article/ia7cifkMwDqYjd1FsdEQ?utm_source=rss&amp;utm_medium=article" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">internet_tech (8个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">YouTube产品动态</div>
+                    <div class="topic-heat">🔥 104</div>
+                </div>
+                <div class="topic-meta">
+                    9 条内容 | 信源: Google Blog, @gregisenberg, Google Research Blog, Google Developers Blog, Engadget(Google News)
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@gregisenberg</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Second and third order effects of every app/website becoming an app store:
+
+1. The 30% Apple and Google collected for decades gets distributed across ...</div>
+                        <div class="atom-metrics">❤️ 65 | 🔄 6</div>
+                        <div class="atom-link"><a href="https://x.com/gregisenberg/status/2035878210508878318" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/images/US_en_AMER_Reach_0s_Static.max-600x600.format-webp.webp&quot; /&gt;YouTube is where ...</div>
+                        <div class="atom-link"><a href="https://blog.google/products/ads-commerce/were-launching-the-top-sports-podcasts-on-youtube-for-brands-to-align-with-sports-fans/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">a text image card with the logos of six technology companies &quot;Google&quot; &quot;LinkedIn&quot; &quot;Snapchat&quot; &quot;Microsoft&quot; &quot;TikTok&quot; &quot;Meta&quot;</div>
+                        <div class="atom-link"><a href="https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-lawmakers-must-act-now-to-ensure-the-continued-protection-of-children/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/images/StudyFlightsEco_Social.max-600x600.format-webp.webp&quot; /&gt;Our new study shows w...</div>
+                        <div class="atom-link"><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Google Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Google’s data center demand response capabilities support the grid</div>
+                        <div class="atom-link"><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/demand-response-data-center-milestone/" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 4 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">vivo X Fold新品</div>
+                    <div class="topic-heat">🔥 58</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: vivo韩伯啸
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">自从X200 Pro的视频能力开始得到海内外用户的广泛认可后，X系列的视频能力一直在持续进化，本代专业V单#vivo X300 Ultra #，在专业创作、全焦段规格、日常录制等方面都有巨大升级。
+
+首要的就是专业视频能力，为了让专业内容创作者获得接近电影级的视频创作体验，X300 Ultra在硬件...</div>
+                        <div class="atom-metrics">❤️ 1152 | 🔄 29</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5277041507438015" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">今天的蓝图影像技术沟通会，技术干货很多，我给大家总结一下。
+#vivoX300Ultra专业V单# 从最开始的定义，就是要打造一台为创作而生，为创作者而生的影像旗舰。我们想要进行一次从底层开始的、彻底的架构融合，让全焦段、全场景与色彩体系，无论在拍照还是视频下，都能拥有一致与专业极致的移动影像体验 ...</div>
+                        <div class="atom-metrics">❤️ 885 | 🔄 101</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5279611573503797" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">OPPO新品</div>
+                    <div class="topic-heat">🔥 58</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: 刘作虎, OPPO周意保
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">刘作虎</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">上一代 OPPO Reno14 系列发布半年以来，已经陪伴用户完成超过 425 万场直播，这坚定了我们持续将 Reno Pro 打造成“直播神器”的决心。 在全新一代 OPPO Reno15 Pro 直播神器的研发旅程中，团队经过了近百轮用户访谈，投入超千万研发资源、近千万硬件定制，在 OPPO R...</div>
+                        <div class="atom-metrics">❤️ 551 | 🔄 52</div>
+                        <div class="atom-link"><a href="https://weibo.com/1110411735/5232524482839705" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">OPPO周意保</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">3月20日，OPPO天猫超级品牌日。15点到16点，我会在OPPO天猫官方旗舰店直播间、OPPO商城直播间，为大家揭秘互联新体验#天猫超级品牌日# http://t.cn/AXfchyWj ​​​</div>
+                        <div class="atom-metrics">❤️ 246 | 🔄 5</div>
+                        <div class="atom-link"><a href="https://weibo.com/5313402944/5278132551811749" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Bytedance</div>
+                    <div class="topic-heat">🔥 40</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: @poezhao0605, Game Developer
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@poezhao0605</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">China’s entertainment industry is moving fast on AI actors. One leading short drama company halted all real-actor script submissions. Production house...</div>
+                        <div class="atom-metrics">❤️ 9 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/poezhao0605/status/2035867218299466090" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Game Developer</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">TikTok maker ByteDance paid $4 billion for Moonton in 2021.</div>
+                        <div class="atom-link"><a href="https://www.gamedeveloper.com/business/savvy-games-group-agreed-to-buy-moonton-games-for-6-billion" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Meta动态</div>
+                    <div class="topic-heat">🔥 38</div>
+                </div>
+                <div class="topic-meta">
+                    2 条内容 | 信源: @Techmeme, Techmeme
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@Techmeme</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Reality Labs lost $80B+, but it still makes all of Meta's hardware, and reflects Mark Zuckerberg's desire to run a business without Google or Apple as...</div>
+                        <div class="atom-link"><a href="https://x.com/Techmeme/status/2035891943675461839" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Techmeme</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;a href=&quot;https://www.businessinsider.com/meta-mark-zuckerberg-metaverse-80-billion-loss-ai-2026-3&quot;&gt;&lt;img align=&quot;RIGHT&quot; border=&quot;0&quot; hspace=&quot;4&quot; src=&quot;http:...</div>
+                        <div class="atom-link"><a href="http://www.techmeme.com/260322/p12#a260322p12" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">GStack Office Hours功能</div>
+                    <div class="topic-heat">🔥 27</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @garrytan
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@garrytan</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Chinese Twitter said that /office-hours in gstack was not hard enough on founders, so I made them harder https://t.co/gBNbhtzPAw</div>
+                        <div class="atom-link"><a href="https://x.com/garrytan/status/2035505922056085620" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">NVIDIA动态</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: NVIDIA AI Blog
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">NVIDIA AI Blog</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">The features on social media apps like Snapchat evolve nearly as fast as what’s trending. To keep pace, its parent company Snap has adopted open data ...</div>
+                        <div class="atom-link"><a href="https://blogs.nvidia.com/blog/snap-accelerated-data-processing/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Elon Musk</div>
+                    <div class="topic-heat">🔥 11</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: Ars Technica
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Ars Technica</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">The verdict, while not a complete loss, could still cost him billions.</div>
+                        <div class="atom-link"><a href="https://arstechnica.com/tech-policy/2026/03/jury-agrees-that-musks-tweets-during-twitter-takeover-constituted-fraud/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">🎮 游戏行业 (6个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Steam平台动态</div>
+                    <div class="topic-heat">🔥 111</div>
+                </div>
+                <div class="topic-meta">
+                    4 条内容 | 信源: @WILL_TheGame, @TomorrowHead_St, @pcgamer, PC Gamer
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@WILL_TheGame</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Endless northern waters. A missing son. One last voyage. Play the demo on Steam.</div>
+                        <div class="atom-metrics">❤️ 956 | 🔄 49</div>
+                        <div class="atom-link"><a href="https://x.com/WILL_TheGame/status/2033853624560796017" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@TomorrowHead_St</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Endless northern waters. A missing son. One last voyage. Play the demo on Steam.</div>
+                        <div class="atom-metrics">❤️ 2603 | 🔄 132</div>
+                        <div class="atom-link"><a href="https://x.com/TomorrowHead_St/status/2027069334720540800" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@pcgamer</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Five new Steam games you probably missed (March 23, 2026) https://t.co/eOnDhhGjEs</div>
+                        <div class="atom-metrics">❤️ 7</div>
+                        <div class="atom-link"><a href="https://x.com/pcgamer/status/2035878117617910124" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">PC Gamer</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Sorting through every new game on Steam so you don't have to.</div>
+                        <div class="atom-link"><a href="https://www.pcgamer.com/software/platforms/five-new-steam-games-you-probably-missed-march-23-2026/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Ios</div>
+                    <div class="topic-heat">🔥 34</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @FoundationGF_EN
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@FoundationGF_EN</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">🚀Big News! Issac Asimov's Foundation series,
+Foundation: Galactic Frontier is live on iOS, Android,Windows &amp;amp; Macs! 
+Coming soon on Steam, add it t...</div>
+                        <div class="atom-metrics">❤️ 42 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://x.com/FoundationGF_EN/status/2035221426232307987" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Codex</div>
+                    <div class="topic-heat">🔥 32</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @NextGenPlayer
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@NextGenPlayer</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Games releasing this week - what are we picking up? 🤔
+
+Mar 24
+Ariana and the Elder Codex
+
+Mar 25
+Absolum (Xbox)
+Disney Dreamlight Valley - NS2 Edition...</div>
+                        <div class="atom-metrics">❤️ 22 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://x.com/NextGenPlayer/status/2035891153115955245" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Switch</div>
+                    <div class="topic-heat">🔥 31</div>
+                </div>
+                <div class="topic-meta">
+                    3 条内容 | 信源: Eurogamer, Steam News, TouchArcade
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Eurogamer</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://assetsio.gnwcdn.com/Nintendo-mascots-such-as-Mario-and-Peach-celebrate-with-balloons-in-front-of-a-Switch-2-console-on-a-red-backgro...</div>
+                        <div class="atom-link"><a href="https://www.eurogamer.net/thanks-to-eu-consumer-law-nintendo-is-updating-the-switch-2-design-to-enable-european-players-to-replace-the-battery" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">Steam News</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">&lt;img src=&quot;https://images.rpgsite.net/articles/thumbnail/da49c9a1/19887/original/ff12-zodiac-age-switch-vs-ps4-ps5-2-xbox-pc-steam-deck-best-version-co...</div>
+                        <div class="atom-link"><a href="https://store.steampowered.com/news/group/6070552/view/497223585377551799" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #f97316"></div>
+                            <span class="atom-author">TouchArcade</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Welcome to the latest episode of The TouchArcade Show! We were short on time this week so it&amp;#8217;s a bit &amp;#8230; &lt;p class=&quot;link-more&quot;&gt;&lt;a class=&quot;more...</div>
+                        <div class="atom-link"><a href="https://toucharcade.com/2025/01/17/nintendo-switch-part-deux-the-toucharcade-show-611/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">vivo X Fold新品</div>
+                    <div class="topic-heat">🔥 31</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: vivo韩伯啸
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">vivo韩伯啸</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">作为一款大屏旗舰，超能小V单#vivo X300s#除了视听触的Super，还把蓝厂最强的性能电竞体验全家桶，都给移植进来了：
+
+第一是Super稳帧，X系列首发搭载口碑绝佳的Monster超核引擎，能把游戏稳帧做到极致：
+- 内置「先知调度器」，能精准预判游戏资源的负载，提前预判风险减少掉帧；
+-...</div>
+                        <div class="atom-metrics">❤️ 1623 | 🔄 27</div>
+                        <div class="atom-link"><a href="https://weibo.com/3657968361/5274925353143003" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Ps5</div>
+                    <div class="topic-heat">🔥 31</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @NextGenPlayer
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@NextGenPlayer</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Fatal Frame II Crimson Butterfly is so good, mood is non-stop unsettling with no breathers 
+
+Can’t believe we got Resident Evil Requiem and Fatal Fram...</div>
+                        <div class="atom-metrics">❤️ 14 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://x.com/NextGenPlayer/status/2035893141044121828" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">🏢 科技行业动态 (6个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">GStack AI编程工具</div>
+                    <div class="topic-heat">🔥 27</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @keyur19198
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@keyur19198</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">@garrytan Belated happy birthday @garrytan! Gstack feels like working in a company with all these cadences but all managed by agents. Continuing to st...</div>
+                        <div class="atom-link"><a href="https://x.com/keyur19198/status/2035880781525233709" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Anthropic AI就业影响研究</div>
+                    <div class="topic-heat">🔥 27</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 虎嗅APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">虎嗅APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【#AI让年轻人找不到第一份工作了#？】
+
+Anthropic最近发布了一份关于AI与就业市场的研究报告，并提出了一个新指标——“AI暴露度”（Observed Exposure），用来衡量一个职业中，有多少工作任务已经被AI覆盖。
+ 
+研究显示，程序员是受AI冲击最严重的职业。其日常工作中，大约 ...</div>
+                        <div class="atom-metrics">❤️ 12 | 🔄 10</div>
+                        <div class="atom-link"><a href="https://weibo.com/2357213493/5275219906531055" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Elon Musk</div>
+                    <div class="topic-heat">🔥 27</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 虎嗅APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">虎嗅APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【谁在纵容AI搞黄色？】
+
+经测试，只需简单的几条指令，谁都可以用中美六大AI平台，把普通女性的照片生成多张色情暴露的图片。每天都有大量男性用户测试AI的底线，甚至于将这种奇技淫巧变成商业模式…… #AI# #女性# #商业# #马斯克# #虎嗅视界# http://t.cn/AXViK3N8 ​​...</div>
+                        <div class="atom-metrics">❤️ 8 | 🔄 6</div>
+                        <div class="atom-link"><a href="https://weibo.com/2357213493/5274640692019611" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Kimi动态</div>
+                    <div class="topic-heat">🔥 25</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 36氪
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">36氪</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【#氪星播报#｜3月21日晚间都有哪些#今日大事件#？】
+￼￼[星星]Top3大新闻
+1、#金饰价格已下跌超300元#，多家跌破1400元/克
+2、#马斯克说这就是kimi#，kimi回复表示感谢
+3、#董事长病逝未成年女儿继承9亿股票#，占公司总股本的5.39%
+
+￼[星星]￼科技财经互联网热点
+...</div>
+                        <div class="atom-metrics">❤️ 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/1750070171/5278996889340033" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">DeepSeek GEO优化争议</div>
+                    <div class="topic-heat">🔥 24</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 虎嗅APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">虎嗅APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【给AI投毒？#GEO灰色产业链正在骗你#】
+
+今年315曝光了一门基于GEO的生意，有人在给AI大模型“投毒”。所谓GEO（Generative Engine Optimization），你可以理解为AI版的SEO。SEO是过去二十年互联网最大的灰色产业之一，而GEO则是优化DeepSeek等大模...</div>
+                        <div class="atom-metrics">❤️ 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/2357213493/5277192498972921" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Jensen Huang</div>
+                    <div class="topic-heat">🔥 23</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 虎嗅APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">虎嗅APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【Token正在写进你的工资条】
+
+黄仁勋在GTC大会上提到一个趋势，未来工程师的年薪将包含一笔与现金同等重要的token预算，甚至可能达到年薪的一半，用于换取10倍效率提升。奥特曼的设想更激进。他认为，未来甚至可能出现“全民基础算力”，取代传统意义上的“全民基本收入”。
+ 
+类似的变化，已经开始在...</div>
+                        <div class="atom-link"><a href="https://weibo.com/2357213493/5279574411973463" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">ev_auto (4个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">SpaceX动态</div>
+                    <div class="topic-heat">🔥 151</div>
+                </div>
+                <div class="topic-meta">
+                    7 条内容 | 信源: 36氪, @ChineseWSJ, @SawyerMerritt, 机器之心Pro, 量子位
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@ChineseWSJ</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">马斯克表示，特斯拉和SpaceX将联手在得克萨斯州奥斯汀建造一座全新的大型芯片工厂，以支持他在人工智能、机器人和太空人类定居点方面的宏大计划。https://t.co/Zkn5t5j3WQ</div>
+                        <div class="atom-metrics">❤️ 5 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://x.com/ChineseWSJ/status/2035891810002784697" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@SawyerMerritt</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Elon says 100 million sqft is the right order of magnitude for Tesla/SpaceX's Terafab. Let's put that into perspective.
+
+100 million square feet is eq...</div>
+                        <div class="atom-metrics">❤️ 1542 | 🔄 164</div>
+                        <div class="atom-link"><a href="https://x.com/SawyerMerritt/status/2035869999093420382" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">36氪</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【#氪星播报#｜3月22日晚间都有哪些#今日大事件#？】
+[星星]Top3大新闻
+1、25g金镯降价2040元，#金价八连跌消费者还是不敢买#
+2、#马斯克拟建全球最大芯片厂#，特斯拉自建芯片工厂“Terafab”项目即将启动
+3、#网警破获网络开盒案守护网络空间安全#，依法严打黑灰产业链
+
+[星星...</div>
+                        <div class="atom-metrics">❤️ 4 | 🔄 1</div>
+                        <div class="atom-link"><a href="https://weibo.com/1750070171/5279361461912599" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">36氪</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【#马斯克拟建全球最大芯片厂#，特斯拉自建芯片工厂“Terafab”项目即将启动】
+据新浪科技报道，就在刚刚，特斯拉CEO马斯克在社交平台上宣布，SpaceX与特斯拉将于美国中部时间晚8点左右在X平台直播，正式公布自建芯片工厂“Terafab”项目。特斯拉也发文称，公司正携手SpaceX与人工智能公...</div>
+                        <div class="atom-metrics">❤️ 1 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/1750070171/5279302196921001" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">机器之心Pro</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">马斯克在 X 上预告，将直播正式发布「TERAFAB」项目，它将由其旗下 SpaceX 和 Tesla 共同完成。该项目的目标是每年生产超过 1 太瓦（Terawatt，TW）的算力，包括逻辑、内存和封装，其中约 80% 用于太空，约 20% 用于地面。 http://t.cn/AXfj3GCY ​...</div>
+                        <div class="atom-metrics">🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/3996876140/5279587220849327" target="_blank">查看原文 →</a></div>
+                    </div>
+                    <div style="text-align: center; padding: 8px; color: #999; font-size: 13px;">还有 2 条内容...</div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Fsd发布</div>
+                    <div class="topic-heat">🔥 26</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 虎嗅APP
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">虎嗅APP</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">特斯拉FSD即将满血入华，小鹏VLA 推出第二代，中国高阶智驾究竟是乾崑已定，还是胜负即将揭晓？暗信号实测ADS4.1，究竟还是不是遥遥领先？ #智能驾驶# #9系旗舰# #享界S9# #虎嗅视界# http://t.cn/AXVE0DNe ​​​</div>
+                        <div class="atom-metrics">❤️ 9 | 🔄 4</div>
+                        <div class="atom-link"><a href="https://weibo.com/2357213493/5276090239028727" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Switch发布</div>
+                    <div class="topic-heat">🔥 26</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: 爱范儿
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">爱范儿</span>
+                            <span class="atom-platform">weibo</span>
+                        </div>
+                        <div class="atom-text">【任天堂考虑推出「可换电池」的 Switch 2】
+据日经报道，任天堂正考虑为欧洲市场推出支持更换电池的 Switch 2 新版本。 
+
+这个消息之所以成立，不只是因为欧洲对「可维修」越来越重视，更因为现款 Switch 2 本身就不好修。
+
+iFixit 去年拆机后给它的可维修性评分只有 3/10...</div>
+                        <div class="atom-metrics">❤️ 8 | 🔄 2</div>
+                        <div class="atom-link"><a href="https://weibo.com/1642720480/5278670281510657" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">Tesla合作Ion</div>
+                    <div class="topic-heat">🔥 19</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: TechCrunch AI
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">TechCrunch AI</span>
+                            <span class="atom-platform">rss</span>
+                        </div>
+                        <div class="atom-text">Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.</div>
+                        <div class="atom-link"><a href="https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">crypto_web3 (1个话题)</div>
+            <div class="topic">
+                <div class="topic-header">
+                    <div class="topic-title">OPPO新品</div>
+                    <div class="topic-heat">🔥 42</div>
+                </div>
+                <div class="topic-meta">
+                    1 条内容 | 信源: @MScDigital
+                </div>
+                <div class="topic-content">
+                    <div class="atom-item">
+                        <div class="atom-header">
+                            <div class="trust-badge" style="background: #eab308"></div>
+                            <span class="atom-author">@MScDigital</span>
+                            <span class="atom-platform">x</span>
+                        </div>
+                        <div class="atom-text">Expand your employment opportunities with the world’s first Master’s Degree in Blockchain and Digital Assets
+
+• Taught by Leading Faculty and Practiti...</div>
+                        <div class="atom-metrics">❤️ 13013 | 🔄 2244</div>
+                        <div class="atom-link"><a href="https://x.com/MScDigital/status/1654403203637694464" target="_blank">查看原文 →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

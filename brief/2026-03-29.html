@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年3月29日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  :root {
+    --bg: #FAF9F5; --bg-warm: #F5F0E8; --card: #FFFFFF; --border: #E8E2D9; --border-light: #F0EBE3;
+    --accent: #C96442; --accent-hover: #B5573A; --accent-soft: rgba(201, 100, 66, 0.08); --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A; --text-secondary: #6B6560; --text-tertiary: #9B9590;
+    --tag-red: #C96442; --tag-red-bg: rgba(201, 100, 66, 0.08); --tag-green: #5A8F6B; --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D; --tag-blue-bg: rgba(74, 123, 157, 0.08); --tag-purple: #7B6B9D; --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B; --tag-orange-bg: rgba(184, 134, 59, 0.08); --tag-teal: #4A8F8F; --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04); --shadow-md: 0 4px 12px rgba(0,0,0,0.06); --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px; --radius-sm: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .header { padding: 60px 0 40px; text-align: center; }
+  .header-logo { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: var(--accent); border-radius: 12px; margin-bottom: 20px; }
+  .header-logo svg { width: 26px; height: 26px; fill: white; }
+  .header h1 { font-family: 'Noto Serif SC', 'Georgia', serif; font-size: 32px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; margin-bottom: 8px; }
+  .header .date { color: var(--text-tertiary); font-size: 14px; font-weight: 400; letter-spacing: 0.3px; }
+  .header .divider { width: 40px; height: 2px; background: var(--accent); margin: 20px auto; }
+  .summary-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin-top: 24px; text-align: left; box-shadow: var(--shadow-sm); line-height: 1.95; font-size: 15px; color: var(--text-secondary); }
+  .summary-card strong { color: var(--accent); font-weight: 600; }
+  .toc { margin: 40px 0 32px; padding: 24px 28px; background: var(--bg-warm); border-radius: var(--radius); border: 1px solid var(--border-light); }
+  .toc h3 { font-size: 13px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .toc ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; list-style: none; }
+  .toc a { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; border-radius: var(--radius-sm); transition: all 0.2s; }
+  .toc a:hover { background: var(--card); box-shadow: var(--shadow-sm); color: var(--accent); }
+  .toc .toc-icon { font-size: 16px; }
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+  .section-header .icon { font-size: 28px; }
+  .section-header h2 { font-family: 'Noto Serif SC', 'Georgia', serif; font-size: 22px; font-weight: 700; color: var(--text); }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 20px; box-shadow: var(--shadow-sm); transition: all 0.3s; }
+  .item:hover { box-shadow: var(--shadow-hover); border-color: var(--accent-border); }
+  .item-title { font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.6; margin-bottom: 12px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); } .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); } .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); } .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+  .item-body { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 12px; }
+  .item-body strong { color: var(--text); font-weight: 600; }
+  .item-body a { color: var(--accent); text-decoration: none; }
+  .item-body a:hover { text-decoration: underline; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; padding-top: 8px; }
+  .stat { display: inline-flex; align-items: center; gap: 4px; background: var(--bg-warm); padding: 4px 10px; border-radius: 6px; font-size: 12px; color: var(--text-secondary); }
+  .stat em { font-style: normal; font-weight: 600; color: var(--accent); }
+  .item-source { font-size: 12px; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border-light); }
+  .item-source a { color: var(--accent); text-decoration: none; }
+  .item-source a:hover { text-decoration: underline; }
+  .insight-box { margin-top: 12px; padding: 16px 20px; background: #FFF8F5; border-top: 2px solid var(--accent); border-radius: 0 0 var(--radius-sm) var(--radius-sm); font-size: 14px; color: var(--text-secondary); line-height: 1.85; }
+  .insight-box .insight-label { color: var(--accent); font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .insight-box .insight-content { line-height: 1.85; }
+  .insight-box .insight-content strong { color: var(--text); font-weight: 600; }
+  .footer { text-align: center; padding: 40px 0 50px; border-top: 1px solid var(--border); margin-top: 32px; }
+  .footer p { color: var(--text-tertiary); font-size: 12px; line-height: 2; }
+  .footer .footer-brand { font-family: 'Noto Serif SC', 'Georgia', serif; font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; width: 40px; height: 40px; background: var(--card); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-md); transition: all 0.3s; opacity: 0; pointer-events: none; color: var(--text-secondary); font-size: 18px; text-decoration: none; }
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+  .back-to-top:hover { box-shadow: var(--shadow-hover); color: var(--accent); border-color: var(--accent-border); }
+  .back-home { display: inline-flex; align-items: center; gap: 6px; color: var(--text-tertiary); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--card); transition: all 0.2s; position: fixed; top: 24px; left: 24px; z-index: 100; box-shadow: var(--shadow-sm); }
+  .back-home:hover { color: var(--accent); border-color: var(--accent-border); box-shadow: var(--shadow-md); }
+  .theme-toggle { position: fixed; top: 24px; right: 24px; width: 36px; height: 36px; background: var(--card); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: all 0.3s; font-size: 16px; z-index: 100; }
+  .theme-toggle:hover { box-shadow: var(--shadow-md); border-color: var(--accent-border); }
+  [data-theme="dark"] { --bg: #1C1B18; --bg-warm: #252420; --card: #2A2925; --border: #3D3B36; --border-light: #333230; --accent: #D4845F; --accent-hover: #E0966F; --accent-soft: rgba(212, 132, 95, 0.1); --accent-border: rgba(212, 132, 95, 0.25); --text: #E8E4DE; --text-secondary: #A8A29A; --text-tertiary: #78736C; --tag-red: #D4845F; --tag-red-bg: rgba(212, 132, 95, 0.12); --tag-green: #7DB88D; --tag-green-bg: rgba(125, 184, 141, 0.12); --tag-blue: #6DA0C2; --tag-blue-bg: rgba(109, 160, 194, 0.12); --tag-purple: #9D8DBF; --tag-purple-bg: rgba(157, 141, 191, 0.12); --tag-orange: #D4A95F; --tag-orange-bg: rgba(212, 169, 95, 0.12); --tag-teal: #6DB5B5; --tag-teal-bg: rgba(109, 181, 181, 0.12); --shadow-sm: 0 1px 3px rgba(0,0,0,0.15); --shadow-md: 0 4px 12px rgba(0,0,0,0.2); --shadow-hover: 0 6px 20px rgba(0,0,0,0.25); }
+  [data-theme="dark"] .insight-box { background: rgba(212, 132, 95, 0.06); }
+  @media (max-width: 640px) { .container { padding: 0 16px; } .header { padding: 40px 0 28px; } .header h1 { font-size: 26px; } .toc ul { grid-template-columns: 1fr; } .summary-card { padding: 18px 20px; } .item { padding: 16px 18px; } .theme-toggle { top: 16px; right: 16px; } .back-to-top { bottom: 20px; right: 20px; } .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; } }
+  html { scroll-behavior: smooth; } ::selection { background: var(--accent-soft); color: var(--accent); }
+</style>
+</head>
+<body>
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+<div class="container">
+<header class="header">
+  <div class="header-logo"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年3月29日 · 周日</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>国产大模型集群突破</strong>：智谱GLM-5.1编程能力对标Claude Opus 4.6，昆仑万维天工AI全模态世界模型跻身全球第一梯队，国产AI正从追赶转向并跑。<br><br>
+    ❷ <strong>AI人才流动加速</strong>：华为盘古大模型负责人王云鹤离职投身Agent创业，头部人才向AI应用层迁移，Agent赛道成为新风口。<br><br>
+    ❸ <strong>算力范式变革</strong>：黄仁勋宣称"芯片公司时代结束，AI工厂时代来临"，中兴AI超节点通过系统优化打破GPU依赖路径。<br><br>
+    ❹ <strong>国产设备突围</strong>：新凯来SEMICON发布5nm量检测设备，莫干山系列精度达0.1纳米，直接挑战泛林、科磊垄断地位。<br><br>
+    ❺ <strong>AI基建供应链瓶颈</strong>：全球变压器因AI算力需求短缺，美国交货周期从50周延长至127周，中国制造商成为主要供应方。
+  </div>
+</header>
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      GLM-5.1上线，编程表现对标Claude Opus 4.6
+    </div>
+    <div class="item-body">
+      智谱AI正式发布GLM-5.1模型，其<strong>编程能力直接对标Anthropic的Claude Opus 4.6</strong>。模型在代码生成、调试和优化方面表现突出，Coding plan服务上线后瞬间断货。GLM-5.1采用新一代训练框架，在保持推理效率的同时显著提升代码理解和生成质量，支持Python、Java、C++等主流编程语言。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/392914.html">量子位</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">GLM-5.1的发布标志着国产大模型在编程领域已具备与国际顶尖模型正面竞争的实力。Coding plan的火爆反映出开发者对AI编程助手的强烈需求，智谱选择以编程为突破口，避开与OpenAI在通用能力上的正面交锋，是差异化竞争的有效策略。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      华为盘古大模型负责人王云鹤离职，被曝Agent创业
+    </div>
+    <div class="item-body">
+      华为诺亚方舟实验室<strong>盘古大模型负责人王云鹤已确认离职</strong>，据悉将投身AI Agent领域创业。王云鹤此前主导了盘古系列大模型的研发工作，是华为AI核心人才之一。他的离职引发业界对AI人才流动趋势的关注，Agent赛道正成为顶级AI研究员创业的首选方向。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/392903.html">量子位</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">王云鹤的离职折射出AI行业人才向应用层迁移的大趋势。基础模型层格局渐趋稳定，而Agent作为连接大模型与场景的关键中间层，正吸引大量顶尖人才涌入。华为需在人才激励和职业发展通道上做出调整，以应对AI创业潮带来的人才流失压力。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      国产玩家亮剑世界模型！天工AI全模态卷到顶
+    </div>
+    <div class="item-body">
+      昆仑万维正式发布<strong>天工AI全模态世界模型</strong>，覆盖文本、图像、视频、音乐四大生成能力，性能跻身全球第一梯队。模型采用统一架构处理多模态任务，在多项基准测试中接近或超越GPT-4V、Gemini等国际顶尖模型。天工AI同时推出AIGC全家桶生态，支持创作者一站式内容生产。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/392835.html">新智元 / 量子位</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">天工AI的发布证明国产多模态模型已具备与国际巨头竞争的实力。"全模态"策略虽然技术挑战大，但能形成完整的AIGC生态闭环，对创作者群体具有强吸引力。昆仑万维作为游戏出海巨头，其内容基因有助于天工AI在娱乐、创作场景落地。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">观点</span>
+      杨植麟主持大模型圆桌：张鹏罗福莉夏立雪都放开说了
+    </div>
+    <div class="item-body">
+      中关村论坛期间，<strong>月之暗面杨植麟主持大模型圆桌对话</strong>，智谱张鹏、DeepSeek罗福莉、面壁智能夏立雪等国产大模型核心人物深度交流。圆桌围绕大模型技术路线、商业化路径、开源与闭源之争等话题展开，各位创始人分享了各自的技术理念和产业判断。
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/03/392878.html">量子位</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这场圆桌堪称国产大模型"头部局"，四位创始人的观点碰撞代表了当前国内AI发展的主要流派。从技术路线看，智谱走全栈自研、DeepSeek专注底层创新、面壁押注端侧、月之暗面聚焦长文本，各家差异化竞争格局正在形成。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      中兴扔出AI超节点，不拼GPU把token价格打下来
+    </div>
+    <div class="item-body">
+      中兴通讯发布<strong>AI超节点解决方案</strong>，通过系统级优化而非单纯堆叠GPU，实现大模型推理成本大幅降低。方案采用异构计算架构，结合自研调度算法，在保证性能的同时显著降低算力成本，挑战现有"堆卡"算力范式。中兴表示该方案可将token推理价格降低30%-50%。
+    </div>
+    <div class="item-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652687171&idx=2&sn=5f6d2ae6ae03f527e8b1aa80a860fcb1">新智元</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">中兴AI超节点的思路与DeepSeek的"极致工程优化"异曲同工——在硬件受限的情况下通过系统级创新提升效率。这种"不拼GPU"的路线对国产算力自主可控具有重要意义，也为中小玩家提供了差异化竞争的可能路径。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Meta发布SAM 3.1分割模型，引入对象多路复用
+    </div>
+    <div class="item-body">
+      Meta AI正式发布<strong>SAM 3.1（Segment Anything Model）</strong>，引入对象多路复用功能，显著提升图像分割精度和效率。新版本支持更复杂的场景理解，可直接替代SAM 3，在医学影像、自动驾驶、内容创作等场景具有广泛应用前景。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/AIatMeta/status/2037582117375553924">@AIatMeta / X</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">SAM系列已成为计算机视觉领域的基础模型标杆，3.1版本的快速迭代体现了Meta在AI研究上的持续投入。对象多路复用技术的引入将提升复杂场景下的分割准确率，对自动驾驶、医疗影像等精度要求高的领域尤为重要。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      飞书官方CLI发布，Agent可操作消息文档日历
+    </div>
+    <div class="item-body">
+      飞书推出<strong>官方CLI工具</strong>，开发者可通过命令行操作消息、文档、日历、邮箱等办公功能。CLI支持完整的飞书API能力，为AI Agent集成办公场景提供了标准化接口。开发者可基于CLI快速构建自动化工作流，实现AI助手与飞书生态的深度整合。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cybermeditation.com/">赛博禅心</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">飞书CLI的发布补齐了办公自动化基础设施的关键一环。CLI相比GUI更适合AI Agent调用，标志着飞书从"人的协作平台"向"人机协作平台"演进。这为Agent在B端落地扫清了技术障碍，办公场景将成为AI Agent的率先爆发点。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">手机</span>
+      OPPO Find X9 Ultra屏幕曝光，边框极窄
+    </div>
+    <div class="item-body">
+      <strong>OPPO Find X9 Ultra屏幕设计曝光</strong>，采用极窄边框设计，视觉效果惊艳。据爆料，新机将采用四边等窄的屏幕方案，屏占比有望突破新高。Find X9 Ultra预计将成为OPPO年度旗舰机型，搭载最新一代影像系统和性能平台。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Gm_t18/status/2038021182155640833">@Gm_t18 / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">极窄边框已成为安卓旗舰的标配竞争点，OPPO Find X9 Ultra的设计曝光显示出国产厂商在屏幕工艺上的持续突破。在硬件同质化加剧的背景下，设计美学和工艺精度正成为高端手机差异化竞争的关键。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      NVIDIA RTX电脑直连Apple Vision Pro
+    </div>
+    <div class="item-body">
+      <strong>NVIDIA宣布RTX加速电脑现在可直接连接Apple Vision Pro</strong>，通过CloudXR技术实现高保真VR/AR体验。这一合作打通了PC与空间计算生态，用户可在Vision Pro上运行基于RTX显卡的复杂3D应用和游戏，为专业创作和娱乐体验开辟新可能。
+    </div>
+    <div class="item-source">来源：<a href="https://blogs.nvidia.com/blog/nvidia-cloudxr-apple-vision-pro/">NVIDIA AI Blog</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">NVIDIA与苹果的跨界合作打破了生态壁垒，Vision Pro获得RTX加持后，专业3D创作和高端游戏体验将大幅提升。这反映出苹果在空间计算领域采取开放合作策略，以弥补自身在GPU算力上的短板。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">安全</span>
+      苹果加强Mac安全，打击网络犯罪分子新手段
+    </div>
+    <div class="item-body">
+      苹果采取<strong>新措施打击针对Mac用户的网络犯罪</strong>，加强安全防护体系。公司更新了macOS安全机制，增强对恶意软件的检测和拦截能力，应对日益复杂的网络攻击手段。苹果同时与执法机构合作，追踪和打击针对Mac用户的网络犯罪团伙。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/9to5mac/status/2038056435511070781">@9to5mac / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">随着Mac市场份额提升，针对Mac的恶意软件攻击也呈上升趋势。苹果此次安全升级不仅涉及技术层面，还包括与执法机构的合作，显示出其对安全问题的全方位重视。在隐私和安全成为用户核心关切的背景下，这是苹果巩固高端市场地位的必要举措。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Google耳机实时翻译功能登陆iOS
+    </div>
+    <div class="item-body">
+      <strong>Google宣布耳机实时翻译功能正式支持iOS设备</strong>，用户可将耳机变成实时个人翻译器。功能支持多种语言对话翻译，通过Google Translate引擎实现低延迟语音识别和翻译输出。iOS用户现在可以使用Pixel Buds或其他兼容耳机体验实时翻译。
+    </div>
+    <div class="item-source">来源：<a href="https://blog.google/products-and-platforms/products/translate/live-translate-with-headphones/">Google Blog</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Google将实时翻译功能扩展到iOS，体现了其跨平台服务战略。耳机作为AI语音交互的重要入口，实时翻译功能的普及将降低跨语言沟通门槛，对商务、旅游等场景具有重要价值。这也加剧了与Apple在AI服务领域的竞争。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">国产突破</span>
+      新凯来SEMICON China发布新品，叫板泛林科磊
+    </div>
+    <div class="item-body">
+      新凯来（华为子公司）在<strong>SEMICON China 2026发布多款半导体设备新品</strong>，莫干山系列5nm量检测精度达0.1纳米，武夷山2.0刻蚀设备性能大幅提升。新品直接对标泛林（Lam Research）和科磊（KLA）等国际巨头，标志着国产半导体设备在先进制程领域取得重大突破。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/1725941200/5279938086443725">梁赛 / 微博</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">新凯来的突破是国产半导体设备自主可控进程中的里程碑。量检测和刻蚀是芯片制造的核心环节，长期被美系厂商垄断。新凯来5nm级设备的量产将大幅降低国内晶圆厂对进口设备的依赖，对保障芯片供应链安全具有战略意义。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">供应链</span>
+      台积电CoPoS评估Balance Film，山太士材料通过验证
+    </div>
+    <div class="item-body">
+      台积电<strong>CoPoS（Chip-on-Package-on-Substrate）技术路线</strong>针对Balance Film进行相关评估与验证，山太士之材料已完成台积电内部验证。CoPoS是台积电先进封装的重要技术方向，Balance Film作为关键材料，其国产化进展对供应链安全意义重大。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/QQ_Timmy/status/2038069336909423082">@QQ_Timmy / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">先进封装材料是台积电CoWoS产能扩张的关键瓶颈之一。山太士材料通过验证意味着国产材料在高端封装领域的突破，有助于缓解台积电供应链压力，也为国内封装厂商提供了更多选择。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">观点</span>
+      黄仁勋：芯片公司的时代结束了，现在是AI工厂时代
+    </div>
+    <div class="item-body">
+      英伟达CEO<strong>黄仁勋在最新演讲中宣称，传统芯片公司时代已经结束，未来属于AI工厂</strong>。他表示英伟达正从芯片供应商转型为AI基础设施提供商，构建从芯片到系统再到软件的全栈AI能力。AI工厂概念涵盖算力生产、模型训练、推理部署的完整链条。
+    </div>
+    <div class="item-source">来源：<a href="https://www.founderpark.com/">Founder Park</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">黄仁勋的"AI工厂"论是对英伟达战略转型的定调。从卖芯片到卖算力服务，英伟达正在复制云计算的商业模式，这将大幅提升客户粘性和利润率。同时，这一概念也为其他芯片厂商指明了转型方向——单纯硬件销售的时代正在落幕。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">行业</span>
+      半导体设备接过存储"泼天富贵"，AI叠加工艺升级红利
+    </div>
+    <div class="item-body">
+      存储巨头将行业景气度传递至<strong>上游半导体设备环节</strong>，AI需求叠加工艺升级，设备厂商订单能见度大幅提升。国内设备厂商受益于国产替代加速，在刻蚀、薄膜、量检测等细分领域取得突破，订单量和市场份额持续增长。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/2868676035/5281448237467668">财联社 / 微博</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">半导体设备是芯片制造的"卖铲人"，景气周期传导具有滞后性但持续性更强。AI算力需求推动先进制程投资，叠加国产替代红利，国内设备厂商正迎来黄金发展期。这一趋势将在未来2-3年持续释放业绩。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">生态</span>
+      阿里玄铁RISC-V生态大会召开
+    </div>
+    <div class="item-body">
+      <strong>"开放·连接"2026玄铁RISC-V生态大会</strong>在上海举行，由浦东新区科经委指导，达摩院玄铁主办。大会汇聚RISC-V产业链上下游企业，展示玄铁处理器在物联网、边缘计算、AI推理等场景的最新应用成果，推动国产芯片架构生态建设。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/1725941200/5279592870052707">梁赛 / 微博</a> ｜ 3月27日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">RISC-V作为开源指令集，是国产芯片实现架构自主可控的重要路径。阿里玄铁是国内RISC-V生态的核心推动者，生态大会的举办标志着RISC-V从技术研发向产业化应用加速迈进，在物联网和边缘AI领域具有广阔前景。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">供应链</span>
+      AI算力导致全球变压器短缺，中国制造成"唯一解药"
+    </div>
+    <div class="item-body">
+      <strong>AI算力需求导致全球变压器严重短缺</strong>，美国交货周期从50周延长至127周。马斯克一年前预言"接下来会缺变压器"应验，数据中心电力基础设施成为AI扩张的关键瓶颈。中国变压器制造商凭借产能优势，成为全球AI基建的主要供应方。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/1725941200/5279349481674633">梁赛 / 微博</a> ｜ 3月27日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">变压器短缺是AI基建供应链的"卡脖子"环节，暴露出电力基础设施与算力扩张之间的错配。中国制造业在这一领域的优势地位，为国产AI产业链提供了独特的竞争优势，也可能成为地缘政治博弈的新焦点。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">贸易</span>
+      美国ITC对日韩存储芯片展开337调查
+    </div>
+    <div class="item-body">
+      美国国际贸易委员会（ITC）<strong>投票决定对日韩存储芯片展开337调查</strong>，被告包括日本铠侠（Kioxia）和韩国SK海力士。337调查是美国版海关知识产权保护调查，涉及存储芯片相关专利侵权指控，调查结果可能影响存储芯片贸易格局。
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/1725941200/5281051015905569">梁赛 / 微博</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">ITC 337调查是美光等美国存储厂商打压日韩竞争对手的常用手段。在当前存储市场复苏的背景下，这一调查可能加剧供应链不确定性，也为国产存储厂商提供了潜在的市场机会窗口。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">更新</span>
+      生化危机新作加入照片模式，角色表情更丰富
+    </div>
+    <div class="item-body">
+      <strong>《生化危机：安魂曲》补丁更新加入照片模式</strong>，角色表情更加丰富，提升玩家拍照体验和社交分享。照片模式支持自由调整视角、滤镜、角色姿势等参数，玩家可创作个性化游戏截图并在社交平台分享。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pcgamer/status/2038062758667960440">@pcgamer / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">照片模式已成为3A游戏的标配功能，不仅提升玩家沉浸感，更成为游戏在社交平台的"免费广告"。生化危机系列通过持续内容更新保持玩家活跃度，是长线运营策略的典型体现。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">影视</span>
+      马里奥银河电影配音阵容与宫本茂合影
+    </div>
+    <div class="item-body">
+      <strong>《超级马里奥银河》电影配音阵容曝光</strong>，杰克·布莱克等明星与任天堂传奇制作人宫本茂合影。影片由任天堂与照明娱乐联合制作，延续《超级马里奥兄弟大电影》的成功，任天堂IP影视化战略持续推进。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Genki_JPN/status/2038048215854120990">@Genki_JPN / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">马里奥大电影的成功证明了游戏IP影视化的巨大商业潜力。任天堂正在构建"游戏+影视+主题乐园"的IP生态闭环，银河题材的加入将扩展马里奥宇宙的世界观，为后续游戏和衍生品开发铺路。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">预告</span>
+      下周蒸汽朋克风格新作即将发布
+    </div>
+    <div class="item-body">
+      独立游戏开发者预告<strong>下周将发布蒸汽朋克风格新作</strong>，引发社区期待。新作将融合维多利亚时代美学与蒸汽动力机械设定，打造独特的视觉风格和游戏机制。独立游戏领域持续涌现创新作品，丰富游戏市场多样性。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/cocktailpeanut/status/2037921254825472155">@cocktailpeanut / X</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">独立游戏是行业创新的重要源泉，蒸汽朋克作为经典美术风格仍有很强的市场吸引力。在3A大作同质化加剧的背景下，独立游戏的差异化创新为玩家提供了更多选择，也为行业培养了新生力量。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">基建</span>
+      特斯拉国内最大高速服务区超充站项目上线
+    </div>
+    <div class="item-body">
+      <strong>特斯拉重庆高速服务区超级充电站项目正式上线</strong>，首批启用55座，是特斯拉在国内一次性投建数量最多、规模最大的高速服务区超充项目。新站点覆盖重庆主要高速公路网络，大幅提升区域充电便利性，支持特斯拉及其他品牌电动车充电。
+    </div>
+    <div class="stat-row">
+      <span class="stat">首批站点 <em>55座</em></span>
+      <span class="stat">覆盖区域 <em>重庆高速网络</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/2868676035/5281736193737823">财联社 / 微博</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">高速服务区充电网络是电动车普及的关键基础设施。特斯拉此次大规模投建显示出其对中国市场的长期信心，也加剧了与本土充电运营商的竞争。开放充电网络给其他品牌，是特斯拉从"车企"向"能源公司"转型的重要一步。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">观点</span>
+      微软AI博客：Kevin Scott谈AI未来趋势
+    </div>
+    <div class="item-body">
+      微软CTO<strong>Kevin Scott在博客中分享AI发展趋势</strong>，探讨从热轮到内容处理的AI应用案例，以及AI对金融服务中心的变革。Scott强调AI正在从工具向伙伴演进，企业需要重新设计工作流程以充分发挥AI潜力。
+    </div>
+    <div class="item-source">来源：<a href="https://blogs.microsoft.com/">Microsoft AI Blog</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Kevin Scott作为微软AI战略的核心制定者，其观点代表了微软对AI产业化的判断。强调"AI伙伴"而非"AI工具"，预示着Copilot类产品将向更深度的人机协作演进，这也符合微软在企业服务市场的长期战略。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">安全</span>
+      谷歌网络安全实践内部揭秘
+    </div>
+    <div class="item-body">
+      Google发布<strong>《How Google Does It》系列文章</strong>，揭秘谷歌网络安全实践，分享全球领先的安全防护体系和最佳实践。内容涵盖零信任架构、威胁情报、安全运营中心等核心领域，为行业提供企业安全建设参考。
+    </div>
+    <div class="item-source">来源：<a href="https://blog.google/">Google Blog</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">谷歌开放安全实践是行业领导力的一种体现，也是吸引安全人才的方式。零信任架构已成为企业安全的新标准，谷歌的实践经验对正在数字化转型的传统企业具有重要参考价值。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">商业</span>
+      晶泰率先盈利背后：AI for Science的"数据工厂"模式
+    </div>
+    <div class="item-body">
+      <strong>晶泰科技率先实现盈利</strong>，其AI for Science的"数据工厂"模式成为关键。公司通过AI驱动科学研究，实现从实验室到产业化的闭环，在药物发现、新材料研发等领域建立商业化能力。晶泰的盈利验证了AI+科研商业模式的可行性。
+    </div>
+    <div class="item-source">来源：<a href="https://www.siliconbase.com/">硅基观察Pro</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">晶泰的盈利是AI for Science领域的重要里程碑，证明AI在科研领域的商业化路径可行。"数据工厂"模式的核心在于将科研过程工业化、规模化，这一经验可推广至更多科学计算领域。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">资本</span>
+      宇树科技：史上"最奇怪"的IPO公司
+    </div>
+    <div class="item-body">
+      深度分析<strong>宇树科技IPO特点</strong>，作为人形机器人公司，其商业模式、技术路线和市场定位都打破传统IPO公司范式。宇树以消费级机器人起家，逐步向工业级和通用人形机器人拓展，其独特的成长路径引发资本市场关注。
+    </div>
+    <div class="item-source">来源：<a href="https://www.siliconbase.com/">硅基观察Pro</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">宇树的"奇怪"恰恰代表了硬科技创业的新范式——从消费级产品切入积累技术和现金流，再向高门槛的工业级市场渗透。这种"农村包围城市"的策略，为硬件创业公司提供了可复制的成长路径。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">政策</span>
+      韩国考虑按账面价值而非市场价征收遗产税
+    </div>
+    <div class="item-body">
+      韩国政府<strong>正在考虑调整遗产税征收方式</strong>，从按市场价征收改为按账面价值征收。这一调整可能影响科技创业者和投资者的财富传承规划，降低股权类资产的遗产税负担。韩国目前遗产税率最高达50%，在全球处于较高水平。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ftworldnews/status/2038067342895177875">FT / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">遗产税政策直接影响科技创业者的财富积累和传承意愿。韩国此次调整旨在缓解高税率对创业生态的抑制，但按账面价值征收可能带来新的估值争议。这一政策动向对亚洲科技投资格局具有参考意义。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">监管</span>
+      华尔街日报：社交媒体内容审核争议持续
+    </div>
+    <div class="item-body">
+      华尔街日报评论<strong>社交媒体内容审核争议</strong>，Rama Duwaji事件引发关于平台言论自由与内容治理的广泛讨论。文章探讨了平台在内容审核中面临的平衡难题，以及不同国家和地区对内容治理的不同标准。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/WSJ/status/2038072772295827880">WSJ / X</a> ｜ 3月29日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">内容审核是平台治理的核心难题，涉及言论自由、文化差异、商业利益等多重因素。在AI生成内容爆发的背景下，平台审核压力将进一步加大，可能需要引入AI辅助审核与人工复核相结合的新机制。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">研判</span>
+      大摩最新研判：中美AI GPU差距没想象那么大
+    </div>
+    <div class="item-body">
+      摩根士丹利<strong>最新研究报告指出，中美在AI GPU领域的差距被高估</strong>，中国在算法优化、系统级创新方面正在快速追赶。报告认为，尽管美国对华实施芯片出口管制，但中国通过架构创新和工程优化，在特定场景下已能达到接近美国水平的AI算力效率。
+    </div>
+    <div class="item-source">来源：<a href="https://www.siliconbase.com/">硅基观察Pro</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">大摩的研判为市场提供了看待中美AI竞争的新视角。硬件差距确实存在，但算法和系统优化可以在一定程度上弥补。DeepSeek等案例证明，中国工程师在极限优化上的能力不容小觑，这也为国产AI芯片的突围提供了信心。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">能源</span>
+      菲律宾能源价格飙升，陷入两难困境
+    </div>
+    <div class="item-body">
+      菲律宾<strong>面临能源价格飙升困境</strong>，在全球能源转型和经济发展之间寻求平衡。能源成本上涨影响数据中心等科技基础设施布局，菲律宾作为东南亚数字经济发展热点，其能源政策走向对区域科技投资具有重要影响。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ftworldnews/status/2038060540161839324">FT / X</a> ｜ 3月28日</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">能源是数据中心选址的核心考量因素，菲律宾的能源困境可能影响其在东南亚数字基础设施竞争中的地位。对科技企业而言，能源成本上升将推动其向可再生能源转型，也加速了液冷等节能技术的普及。</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年3月29日 · 覆盖范围：3月28日-29日</p>
+  <p>数据来源：<strong>X</strong> / <strong>RSS</strong> / 微博 / 量子位 / 新智元 / 硅基观察Pro / 财联社</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>

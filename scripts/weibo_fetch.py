@@ -30,46 +30,44 @@ def get_weibo_cli_path():
     return "weibo"
 
 
-def search_weibo(query, max_results=10):
-    """使用 weibo-cli 搜索微博"""
+def fetch_user_weibo(username, max_results=10, uid=None):
+    """获取指定用户发布的微博
+    优先使用 UID 直接拉主页（weibo weibos），无 UID 则回退到搜索。
+    """
     weibo_cmd = get_weibo_cli_path()
+    env = {**os.environ, "PATH": "/Users/yangliu/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"}
 
-    cmd = [weibo_cmd, "search", query, "-n", str(max_results), "--json"]
-
-    try:
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=30,
-            env={**os.environ, "PATH": "/Users/yangliu/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"}
-        )
-
-        if result.returncode != 0:
-            print(f"搜索 '{query}' 失败: {result.stderr}", file=sys.stderr)
-            return []
-
-        # 解析 JSON 输出
+    # 优先：按 UID 直接拉用户主页帖子列表
+    if uid:
+        cmd = [weibo_cmd, "weibos", str(uid), "-n", str(max_results), "--json"]
         try:
-            data = json.loads(result.stdout)
-            return data.get("statuses", [])
-        except json.JSONDecodeError as e:
-            print(f"解析 JSON 失败: {e}", file=sys.stderr)
-            print(f"原始输出: {result.stdout[:500]}", file=sys.stderr)
-            return []
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30, env=env)
+            if result.returncode == 0:
+                try:
+                    data = json.loads(result.stdout)
+                    # weibos 返回 {"list": [...], ...}
+                    items = data.get("list", [])
+                    if items:
+                        return items
+                except json.JSONDecodeError:
+                    pass
+        except (subprocess.TimeoutExpired, Exception):
+            pass
+        # UID 失败后继续走搜索兜底
 
-    except subprocess.TimeoutExpired:
-        print(f"搜索 '{query}' 超时", file=sys.stderr)
-        return []
-    except Exception as e:
-        print(f"搜索 '{query}' 出错: {e}", file=sys.stderr)
-        return []
-
-
-def fetch_user_weibo(username, max_results=10):
-    """获取指定用户发布的微博（通过搜索用户名）"""
-    # 搜索用户名，获取该用户发布的内容
-    return search_weibo(f'"{username}"', max_results)
+    # 回退：搜索用户名
+    cmd = [weibo_cmd, "search", f'"{username}"', "-n", str(max_results), "--json"]
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30, env=env)
+        if result.returncode == 0:
+            try:
+                data = json.loads(result.stdout)
+                return data.get("statuses", [])
+            except json.JSONDecodeError:
+                return []
+    except (subprocess.TimeoutExpired, Exception):
+        pass
+    return []
 
 
 def load_config():
@@ -97,9 +95,31 @@ def format_weibo(weibo, username):
     except:
         pass
 
+    # 构建帖子 URL
+    # weibo-cli 搜索接口返回 "mid" 字段（数字ID），user.id 可能为 0（搜索限制）
+    uid = user.get("id") or user.get("idstr", "")
+    # uid 为 0 时视为无效
+    if uid == 0 or uid == "0":
+        uid = ""
+    mid = weibo.get("mid", "") or weibo.get("mblogid", "")
+    weibo_id = weibo.get("id", "")
+    
+    if uid and mid:
+        url = f"https://weibo.com/{uid}/{mid}"
+    elif mid:
+        url = f"https://m.weibo.cn/detail/{mid}"
+    elif uid and weibo_id:
+        url = f"https://weibo.com/{uid}/{weibo_id}"
+    elif weibo_id:
+        url = f"https://m.weibo.cn/detail/{weibo_id}"
+    else:
+        url = "https://weibo.com/"
+
     return {
-        "id": weibo.get("id"),
-        "mid": weibo.get("mblogid", ""),
+        "id": weibo_id,
+        "mid": mid,
+        "uid": str(uid),
+        "url": url,
         "username": username,
         "nickname": user.get("screen_name", username),
         "content": weibo.get("text", ""),
@@ -137,8 +157,17 @@ def main():
     users_to_fetch = []
 
     if args.user:
-        # 命令行指定用户
-        users_to_fetch = [{"name": args.user, "category": "命令行指定"}]
+        # 命令行指定用户：先从配置文件查 UID，找不到则不带 UID 走搜索兜底
+        config = load_config()
+        matched = None
+        for u in config.get("weibo_users", []):
+            if u.get("name") == args.user:
+                matched = u
+                break
+        if matched:
+            users_to_fetch = [matched]
+        else:
+            users_to_fetch = [{"name": args.user, "category": "命令行指定", "uid": ""}]
     else:
         # 加载配置文件
         config = load_config()
@@ -167,7 +196,8 @@ def main():
 
         print(f"[{i}/{len(users_to_fetch)}] 采集 @{username} ({category})...", file=sys.stderr)
 
-        weibos = fetch_user_weibo(username, max_per_user)
+        uid = user.get("uid", "")
+        weibos = fetch_user_weibo(username, max_per_user, uid=uid if uid else None)
 
         # 过滤只保留该用户发布的微博（通过昵称匹配）
         user_weibos = []

@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选题报告 - 2026-03-24</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+        }
+        .section-icon {
+            font-size: 28px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+        }
+        .section-count {
+            background: #ecf0f1;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .candidate-list {
+            display: grid;
+            gap: 16px;
+        }
+        .candidate-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .candidate-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .candidate-card.selected {
+            background: #e8f5e9;
+            border-left-width: 6px;
+        }
+        .candidate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .candidate-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.5;
+            flex: 1;
+            margin-right: 12px;
+        }
+        .score-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .candidate-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        .trust-l1 { background: #ffebee; color: #c62828; }
+        .trust-l2 { background: #fff3e0; color: #ef6c00; }
+        .trust-l3 { background: #e8f5e9; color: #2e7d32; }
+        .type-official { background: #e3f2fd; color: #1565c0; }
+        .type-exclusive { background: #f3e5f5; color: #7b1fa2; }
+        .type-report { background: #e0f2f1; color: #00695c; }
+        .type-default { background: #f5f5f5; color: #616161; }
+        .candidate-source {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        .source-link {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .entity-tag {
+            background: #f0f0f0;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #ddd;
+        }
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .checkbox-wrapper label {
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+        }
+        .actions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            z-index: 100;
+        }
+        .btn {
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #555;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .empty-section {
+            text-align: center;
+            padding: 40px;
+            color: #95a5a6;
+            background: white;
+            border-radius: 12px;
+        }
+        .timestamp {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 12px;
+            margin: 40px 0 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 科技资讯日报选题</h1>
+        <div class="subtitle">2026-03-24 | 预筛选候选内容</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">36</div>
+                <div class="stat-label">候选内容</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">6</div>
+                <div class="stat-label">板块分类</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+
+        <div class="section">
+            <div class="section-header" style="border-color: #e74c3c;">
+                <span class="section-icon">🤖</span>
+                <span class="section-title">🤖 AI模型与产品</span>
+                <span class="section-count">目标 5 条 | 候选 10 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_190" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">There’s Cowork and Code, just rolling out the features of OpenClaw, one by one, every day. (But Mac </div>
+                        <span class="score-badge">得分 135</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l1">🔴 L1 一手</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @emollick</span>
+                        <a href="https://x.com/emollick/status/2036200792193929644" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_190" data-atom-id="atom_20260324_190">
+                        <label for="sel_atom_20260324_190">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_191" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">People with extensive Steam libraries (or corporate computers) deserve cutting edge AI tools too.</div>
+                        <span class="score-badge">得分 135</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l1">🔴 L1 一手</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @emollick</span>
+                        <a href="https://x.com/emollick/status/2036202272015753485" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Steam</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_191" data-atom-id="atom_20260324_191">
+                        <label for="sel_atom_20260324_191">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_193" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Ok, they work fast.</div>
+                        <span class="score-badge">得分 130</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l1">🔴 L1 一手</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @emollick</span>
+                        <a href="https://x.com/emollick/status/2036236449842864565" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_193" data-atom-id="atom_20260324_193">
+                        <label for="sel_atom_20260324_193">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_188" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">redline：为 Claude Code 提供异步、持续的自动代码审查，由 OpenAI Codex（@OpenRouter）在后台完成
+
+轻量级、基于 hook 的开源工具（TypeScript </div>
+                        <span class="score-badge">得分 55</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @shao__meng</span>
+                        <a href="https://x.com/shao__meng/status/2036236629816246663" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">OpenAI</span><span class="entity-tag">GPT-5</span><span class="entity-tag">GPT-5.4</span><span class="entity-tag">Claude</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_188" data-atom-id="atom_20260324_188">
+                        <label for="sel_atom_20260324_188">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_133" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">一人公司 (OPC) 必备的 9 个 Agent Skills
+
+@Gumroad Founder @shl 把他的书籍「The Minimalist Entrepreneur」中的极简创业哲学封装为</div>
+                        <span class="score-badge">得分 50</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @shao__meng</span>
+                        <a href="https://x.com/shao__meng/status/2036243884557410400" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span><span class="entity-tag">Unity</span><span class="entity-tag">https://github.com/slavingia/skills</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_133" data-atom-id="atom_20260324_133">
+                        <label for="sel_atom_20260324_133">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_337" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">刚刚，OpenClaw最猛升级！底层架构大换血，全网等了9天</div>
+                        <span class="score-badge">得分 45</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 新智元</span>
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652686074&idx=1&sn=4a013504215c39f477c50eda4af0fb89&chksm=f0b2921091f7405475a0a45547ef468f97b301307cd7da5145cdd107197f96b2e513c6bc3e73&scene=0&xtrack=1#rd" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">GPT-5</span><span class="entity-tag">GPT-5.4</span><span class="entity-tag">GitHub</span><span class="entity-tag">Apple M4</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_337" data-atom-id="atom_20260324_337">
+                        <label for="sel_atom_20260324_337">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_132" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">I turned The Minimalist Entrepreneur into 9 Claude Code skills.
+
+/find-community — find your people
+</div>
+                        <span class="score-badge">得分 45</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @shl</span>
+                        <a href="https://x.com/shl/status/2036162956761715096" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span><span class="entity-tag">Unity</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_132" data-atom-id="atom_20260324_132">
+                        <label for="sel_atom_20260324_132">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_305" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">DNS Lookup</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 Simon Willison's Weblog</span>
+                        <a href="https://simonwillison.net/2026/Mar/22/dns/#atom-everything" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span><span class="entity-tag">GitHub</span><span class="entity-tag">Cloudflare</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_305" data-atom-id="atom_20260324_305">
+                        <label for="sel_atom_20260324_305">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_306" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Merge State Visualizer</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 Simon Willison's Weblog</span>
+                        <a href="https://simonwillison.net/2026/Mar/22/manyana/#atom-everything" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Claude</span><span class="entity-tag">GitHub</span><span class="entity-tag">Cohere</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_306" data-atom-id="atom_20260324_306">
+                        <label for="sel_atom_20260324_306">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_336" style="border-color: #e74c3c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">OpenClaw创始人回信确认360独家发现漏洞</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-exclusive">Exclusive</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 量子位</span>
+                        <a href="https://www.qbitai.com/2026/03/391303.html" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_336" data-atom-id="atom_20260324_336">
+                        <label for="sel_atom_20260324_336">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #3498db;">
+                <span class="section-icon">📱</span>
+                <span class="section-title">📱 手机与消费电子</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_195" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Review: The Orico HS500 MetaBox Pro is a five-bay NAS with good hardware, but unless you like taking</div>
+                        <span class="score-badge">得分 45</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @appleinsider</span>
+                        <a href="https://x.com/appleinsider/status/2036236398924108236" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Apple</span><span class="entity-tag">https://appleinsider.com/articles/26/03/24/orico-hs500-metabox-pro-5-nas-review---good-hardware-badly-let-down-by-software</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_195" data-atom-id="atom_20260324_195">
+                        <label for="sel_atom_20260324_195">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_261" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">More Than Meets the Eye: NVIDIA RTX-Accelerated Computers Now Connect Directly to Apple Vision Pro</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/nvidia-cloudxr-apple-vision-pro/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Apple</span><span class="entity-tag">Vision Pro</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_261" data-atom-id="atom_20260324_261">
+                        <label for="sel_atom_20260324_261">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_309" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Testing LLMs on superconductivity research questions</div>
+                        <span class="score-badge">得分 25</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 Google Research Blog</span>
+                        <a href="https://research.google/blog/testing-llms-on-superconductivity-research-questions/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_309" data-atom-id="atom_20260324_309">
+                        <label for="sel_atom_20260324_309">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_005" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Folding iPhone rumored to get new glass sandwich screen to prevent damage https://t.co/XKwpI0WXF4 #A</div>
+                        <span class="score-badge">得分 25</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @appleinsider</span>
+                        <a href="https://x.com/appleinsider/status/2036261788770017558" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Apple</span><span class="entity-tag">iPhone</span><span class="entity-tag">https://appleinsider.com/articles/26/03/23/folding-iphone-rumored-to-get-new-glass-sandwich-screen-to-prevent-damage?utm_source=rss&utm_source=rss&utm_medium=Sendible&utm_campaign=RSS</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_005" data-atom-id="atom_20260324_005">
+                        <label for="sel_atom_20260324_005">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_148" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Apple's 2026 iPad Refresh is Coming Soon, But No Major Upgrades Expected https://t.co/12BJGIxxnV #an</div>
+                        <span class="score-badge">得分 25</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Androidheadline</span>
+                        <a href="https://x.com/Androidheadline/status/2036241334940418331" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Apple</span><span class="entity-tag">iPad</span><span class="entity-tag">https://ift.tt/axBXVWR</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_148" data-atom-id="atom_20260324_148">
+                        <label for="sel_atom_20260324_148">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_022" style="border-color: #3498db;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">vivo Pad6 Pro
+13.2インチのDolby Vision対応大型ディスプレイにハイエンドなAndroidタブレットで史上初となる4K解像度
+
+Snapdragon 8 Elite Gen </div>
+                        <span class="score-badge">得分 20</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @nakajimegame</span>
+                        <a href="https://x.com/nakajimegame/status/2036259718877122651" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">vivo</span><span class="entity-tag">Snapdragon</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_022" data-atom-id="atom_20260324_022">
+                        <label for="sel_atom_20260324_022">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #f39c12;">
+                <span class="section-icon">🔧</span>
+                <span class="section-title">🔧 芯片与算力</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_183" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Good Morning! 3/24 Foreign Media Summary
+- GTC/OFC:
+After reviewing both exhibitions, major U.S. ban</div>
+                        <span class="score-badge">得分 55</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @QQ_Timmy</span>
+                        <a href="https://x.com/QQ_Timmy/status/2036237086161035544" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Apple</span><span class="entity-tag">Nintendo Switch</span><span class="entity-tag">NVIDIA Blackwell</span><span class="entity-tag">NVIDIA Rubin</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_183" data-atom-id="atom_20260324_183">
+                        <label for="sel_atom_20260324_183">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_182" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">早安！3/24 外電綜合整理
+
+- GTC/OFC: 
+美系大行看完兩展後對覆蓋裡的貿聯、致茂、智邦、川湖、勤誠、萬潤、上詮、日月光等維持正面評價，同時上修信驊目標。
+
+券商表示雖然兩個展期時間重疊但</div>
+                        <span class="score-badge">得分 50</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @QQ_Timmy</span>
+                        <a href="https://x.com/QQ_Timmy/status/2036232494811586943" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Apple</span><span class="entity-tag">NVIDIA Blackwell</span><span class="entity-tag">NVIDIA Rubin</span><span class="entity-tag">NVIDIA Hopper</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_182" data-atom-id="atom_20260324_182">
+                        <label for="sel_atom_20260324_182">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_258" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">NVIDIA GTC 2026: Live Updates on What’s Next in AI</div>
+                        <span class="score-badge">得分 35</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/gtc-2026-news/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Jensen Huang</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_258" data-atom-id="atom_20260324_258">
+                        <label for="sel_atom_20260324_258">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_264" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Snap Decisions: How Open Libraries for Accelerated Data Processing Boost A/B Testing for Snapchat</div>
+                        <span class="score-badge">得分 35</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/snap-accelerated-data-processing/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Google</span><span class="entity-tag">NVIDIA</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_264" data-atom-id="atom_20260324_264">
+                        <label for="sel_atom_20260324_264">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_265" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Roche Scales NVIDIA AI Factories Globally to Accelerate Drug Discovery, Diagnostic Solutions and Manufacturing Breakthroughs</div>
+                        <span class="score-badge">得分 35</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/roche-ai-factories-omniverse/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">NVIDIA Blackwell</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_265" data-atom-id="atom_20260324_265">
+                        <label for="sel_atom_20260324_265">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_266" style="border-color: #f39c12;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">NVIDIA DSX Air Boosts Time to Token With Accelerated Simulation for AI Factories</div>
+                        <span class="score-badge">得分 35</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/dsx-air-simulation-ai-factories/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">NVIDIA</span><span class="entity-tag">Jensen Huang</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_266" data-atom-id="atom_20260324_266">
+                        <label for="sel_atom_20260324_266">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #9b59b6;">
+                <span class="section-icon">🎮</span>
+                <span class="section-title">🎮 游戏行业</span>
+                <span class="section-count">目标 2 条 | 候选 4 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_033" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">I felt like playing a janky choice-driven RPG on my Steam Deck, and this gritty AA deepcut is hittin</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @pcgamer</span>
+                        <a href="https://x.com/pcgamer/status/2036258652802392433" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Steam</span><span class="entity-tag">https://www.pcgamer.com/games/rpg/i-felt-like-playing-a-janky-choice-driven-rpg-on-my-steam-deck-and-this-gritty-aa-deepcut-is-hitting-the-spot-for-just-99-cents</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_033" data-atom-id="atom_20260324_033">
+                        <label for="sel_atom_20260324_033">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_065" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Enthralling zones and a satisfying endgame loop carry World of Warcraft: Midnight from high point to</div>
+                        <span class="score-badge">得分 40</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-firsthand_test">Firsthand Test</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @IGN</span>
+                        <a href="https://x.com/IGN/status/2036254443721675157" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">https://bit.ly/4uT1QFM</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_065" data-atom-id="atom_20260324_065">
+                        <label for="sel_atom_20260324_065">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_259" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Smooth Moves: 90 Frames-Per-Second Virtual Reality Arrives on GeForce NOW</div>
+                        <span class="score-badge">得分 30</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📰 NVIDIA AI Blog</span>
+                        <a href="https://blogs.nvidia.com/blog/geforce-now-thursday-virtual-reality-update/" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Steam</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_259" data-atom-id="atom_20260324_259">
+                        <label for="sel_atom_20260324_259">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_199" style="border-color: #9b59b6;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">It’s a tough one to remedy but one of my suggestions to appeal to a younger audience would be puttin</div>
+                        <span class="score-badge">得分 30</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l3">🟢 L3 参考</span>
+                        <span class="meta-tag type-original_analysis">Original Analysis</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Genki_JPN</span>
+                        <a href="https://x.com/Genki_JPN/status/2036219934737572094" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_199" data-atom-id="atom_20260324_199">
+                        <label for="sel_atom_20260324_199">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #1abc9c;">
+                <span class="section-icon">🏢</span>
+                <span class="section-title">🏢 科技行业动态</span>
+                <span class="section-count">目标 3 条 | 候选 6 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_5279936663264959" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">小米笔记本Pro 14，专业旗舰OLED屏
+高清｜3.1K 分辨率、120Hz 刷新率
+高亮｜1600nits HDR 峰值亮度
+高色准｜ΔE≈0.3 ，小米设备多屏同色
+还配备全域压感触控板，支持快...</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279936663264959" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279936663264959" data-atom-id="atom_20260324_5279936663264959">
+                        <label for="sel_atom_20260324_5279936663264959">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_5279629760006136" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">新一代SU7 销售情况，比第一代好很多。截至目前，锁单已超过3万台[good]</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279629760006136" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279629760006136" data-atom-id="atom_20260324_5279629760006136">
+                        <label for="sel_atom_20260324_5279629760006136">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_5279336036303592" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">明天上午10点，雷总直播新一代SU7车主交付仪式[心]</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279336036303592" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279336036303592" data-atom-id="atom_20260324_5279336036303592">
+                        <label for="sel_atom_20260324_5279336036303592">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_5279264619889476" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">欢迎大家到#小米之家# 体验新一代小米笔记本[作揖]</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279264619889476" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279264619889476" data-atom-id="atom_20260324_5279264619889476">
+                        <label for="sel_atom_20260324_5279264619889476">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_5279213737479492" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">媒体对小米笔记本的评价[作揖]</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279213737479492" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279213737479492" data-atom-id="atom_20260324_5279213737479492">
+                        <label for="sel_atom_20260324_5279213737479492">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_5279199937955757" style="border-color: #1abc9c;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">小米首款手机龙虾Xiaomi miclaw，已启动封测，
+AI开始从聊天机器人，化身为真正生产力。
+
+搭载MiMo大模型，深度融合OS与人车家全生态，
+无需费心说明，AI自主寻求更优方案，安全执行，
+...</div>
+                        <span class="score-badge">得分 60</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>📝 @数码闲聊站</span>
+                        <a href="https://weibo.com/1892653244/5279199937955757" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_5279199937955757" data-atom-id="atom_20260324_5279199937955757">
+                        <label for="sel_atom_20260324_5279199937955757">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" style="border-color: #34495e;">
+                <span class="section-icon">📜</span>
+                <span class="section-title">📜 政策与监管</span>
+                <span class="section-count">目标 2 条 | 候选 4 条</span>
+            </div>
+            <div class="candidate-list">
+
+                <div class="candidate-card" data-id="atom_20260324_003" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">White House eyes Iran’s parliament speaker Ghalibaf as potential US-backed leader, Politico reports </div>
+                        <span class="score-badge">得分 80</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Reuters</span>
+                        <a href="https://x.com/Reuters/status/2036261959331369335" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">http://reut.rs/4c2UUy8</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_003" data-atom-id="atom_20260324_003">
+                        <label for="sel_atom_20260324_003">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_066" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Crunchyroll probes breach after hacker steal users data, BleepingComputer reports https://t.co/iHjMD</div>
+                        <span class="score-badge">得分 80</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-report">Report</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Reuters</span>
+                        <a href="https://x.com/Reuters/status/2036254275274232074" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">http://reut.rs/3NxLKQZ</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_066" data-atom-id="atom_20260324_066">
+                        <label for="sel_atom_20260324_066">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_038" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">US Transportation Secretary Sean Duffy said the LaGuardia Airport will run at reduced capacity for s</div>
+                        <span class="score-badge">得分 70</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Reuters</span>
+                        <a href="https://x.com/Reuters/status/2036257943402738158" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">Runway</span><span class="entity-tag">https://reut.rs/4lOKGoy</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_038" data-atom-id="atom_20260324_038">
+                        <label for="sel_atom_20260324_038">选中此条进入日报</label>
+                    </div>
+                </div>
+
+                <div class="candidate-card" data-id="atom_20260324_028" style="border-color: #34495e;">
+                    <div class="candidate-header">
+                        <div class="candidate-title">Oil prices have not climbed enough to cause demand destruction, US energy secretary says https://t.c</div>
+                        <span class="score-badge">得分 65</span>
+                    </div>
+                    <div class="candidate-meta">
+                        <span class="meta-tag trust-l2">🟡 L2 可靠</span>
+                        <span class="meta-tag type-commentary">Commentary</span>
+                    </div>
+                    <div class="candidate-source">
+                        <span>𝕏 @Reuters</span>
+                        <a href="https://x.com/Reuters/status/2036259218815103456" class="source-link" target="_blank">查看原文 →</a>
+                    </div>
+                    <div class="entities"><span class="entity-tag">http://reut.rs/4bGiaAK</span></div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sel_atom_20260324_028" data-atom-id="atom_20260324_028">
+                        <label for="sel_atom_20260324_028">选中此条进入日报</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="timestamp">
+            报告生成时间: 2026-03-24 10:16:02
+        </div>
+    </div>
+    
+    <div class="actions">
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ 打印/PDF</button>
+        <button class="btn btn-primary" onclick="exportSelection()">📋 导出选中项</button>
+    </div>
+    
+    <script>
+        // 导出选中的内容
+        function exportSelection() {
+            const selected = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                const card = cb.closest('.candidate-card');
+                const title = card.querySelector('.candidate-title').textContent;
+                const source = card.querySelector('.source-link').href;
+                selected.push({title, source});
+            });
+            
+            if (selected.length === 0) {
+                alert('请先选中至少一条内容');
+                return;
+            }
+            
+            let text = `已选中 ${selected.length} 条内容：\n\n`;
+            selected.forEach((item, i) => {
+                text += `${i+1}. ${item.title}\n   ${item.source}\n\n`;
+            });
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('已复制到剪贴板！');
+            });
+        }
+        
+        // 点击卡片切换选中状态
+        document.querySelectorAll('.candidate-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // 如果点击的是链接或复选框，不处理
+                if (e.target.tagName === 'A' || e.target.tagName === 'INPUT') return;
+                
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+            });
+        });
+        
+        // 复选框变化时更新样式
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', function() {
+                const card = this.closest('.candidate-card');
+                card.classList.toggle('selected', this.checked);
+            });
+        });
+    </script>
+</body>
+</html>

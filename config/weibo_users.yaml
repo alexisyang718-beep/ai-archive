@@ -1,60 +1,216 @@
 # 微博采集配置
-# 更新：2026-03-16
+# 更新：2026-03-20
 # 策略：每日采集以下科技博主的最新微博，作为中文科技信息来源补充
+# 分两层：T1 AI核心/官方媒体/头部KOL → T2 科技媒体/品牌/数码
 
-# 关注的微博博主（按 UID 或用户名配置）
-# 推荐使用用户名搜索，weibo-cli 会自动匹配
+# 微博博主（按 UID 配置，使用 weibo weibos <uid> 直接拉主页帖子）
+# UID 来源：从博主主页 URL 提取，格式 weibo.com/u/{UID}
+# 爬取方式：weibo-cli weibos <uid> -n N --json（按 UID 直接拉，比搜索可靠）
 weibo_users:
-  # 数码科技类
-  - name: "数码闲聊站"
-    uid: "6048569942"
-    category: "手机/芯片"
-    description: "知名数码博主，专注手机/芯片等数码产品爆料"
 
-  - name: "科技数码"
-    uid: ""  # 待获取
-    category: "手机/芯片"
-    description: "科技数码资讯"
-
-  - name: "IT之家"
-    uid: ""
-    category: "科技新闻"
-    description: "科技新闻网站"
-
-  - name: "爱范儿"
-    uid: ""
-    category: "科技媒体"
-    description: "科技媒体"
-
-  - name: "钛媒体"
-    uid: ""
-    category: "科技媒体"
-    description: "科技媒体"
-
-  - name: "机器之心"
-    uid: ""
-    category: "AI/科技"
-    description: "AI 科技媒体"
+  # ═══════════════════════════════════════════
+  # T1: AI 核心媒体
+  # ═══════════════════════════════════════════
+  - name: "机器之心Pro"
+    uid: "3996876140"
+    category: "AI"
+    tier: "T1"
+    description: "专业 AI 媒体，深度报道+论文解读"
 
   - name: "量子位"
-    uid: ""
-    category: "AI/科技"
-    description: "AI 科技媒体"
+    uid: "6105753431"
+    category: "AI"
+    tier: "T1"
+    description: "AI 科技媒体，关注人工智能&前沿科技"
 
   - name: "新智元"
-    uid: ""
+    uid: "5703921756"
+    category: "AI"
+    tier: "T1"
+    description: "AI 科技媒体，AGI/大模型/机器人"
+
+  - name: "梁赛"
+    uid: "1725941200"
+    category: "AI"
+    tier: "T1"
+    description: "微博直播十大影响力博主，AI领域"
+
+  # ═══════════════════════════════════════════
+  # T2: 手机/数码 官方/高管/头部KOL
+  # ═══════════════════════════════════════════
+  - name: "华为终端"
+    uid: "1839167003"
+    category: "手机/华为"
+    tier: "T2"
+    description: "华为终端官方账号，新品发布与动态"
+
+  - name: "华为手机"
+    uid: "2836883273"
+    category: "手机/华为"
+    tier: "T2"
+    description: "华为手机官方账号"
+
+  - name: "华为何刚"
+    uid: "1663983930"
+    category: "手机/华为"
+    tier: "T2"
+    description: "华为终端BG CEO，鸿蒙生态一手信息"
+
+  - name: "华为终端云服务"
+    uid: "2280893642"
+    category: "手机/华为"
+    tier: "T2"
+    description: "华为终端云服务官方，鸿蒙生态服务"
+
+  - name: "HarmonyOS开发者"
+    uid: "3211647923"
+    category: "AI/开发者"
+    tier: "T2"
+    description: "HarmonyOS开发者官方，鸿蒙开发资讯"
+
+  - name: "小米手机"
+    uid: "2202387347"
+    category: "手机/小米"
+    tier: "T2"
+    description: "小米手机官方账号，新品发布"
+
+  - name: "雷军"
+    uid: "1749127163"
+    category: "手机/小米"
+    tier: "T2"
+    description: "小米集团创始人，一手动态"
+
+  - name: "卢伟冰"
+    uid: "1892653244"
+    category: "手机/小米"
+    tier: "T2"
+    description: "小米集团高管，行业观点"
+
+  - name: "刘作虎"
+    uid: "1110411735"
+    category: "手机/OPPO"
+    tier: "T2"
+    description: "OPPO首席产品官，行业观点"
+
+  - name: "OPPO周意保"
+    uid: "5313402944"
+    category: "手机/OPPO"
+    tier: "T2"
+    description: "OPPO Find产品经理，Find N系列爆料"
+
+  - name: "OPPO刘波"
+    uid: "7592223370"
+    category: "手机/OPPO"
+    tier: "T2"
+    description: "OPPO中国区总裁，行业观点"
+
+  - name: "荣耀李健"
+    uid: "8001709753"
+    category: "手机/荣耀"
+    tier: "T2"
+    description: "荣耀CEO，行业观点"
+
+  - name: "vivo韩伯啸"
+    uid: "3657968361"
+    category: "手机/vivo"
+    tier: "T2"
+    description: "vivo产品线高管，行业洞察"
+
+  - name: "RD观测"
+    uid: "7928198622"
+    category: "手机/数据"
+    tier: "T2"
+    description: "国内手机市场份额数据，每周更新"
+
+  - name: "钟文泽"
+    uid: "1906286443"
+    category: "手机/数码"
+    tier: "T2"
+    description: "科技视频博主，数码评测"
+
+  - name: "智慧皮卡丘"
+    uid: "5888095979"
+    category: "手机/数码"
+    tier: "T2"
+    description: "数码博主，手机/芯片爆料"
+
+  - name: "林亦LYi"
+    uid: "6444741184"
     category: "AI/科技"
-    description: "AI 科技媒体"
+    tier: "T2"
+    description: "科技视频博主，AI/开发者工具体验，鸿蒙生态"
 
+  - name: "财联社APP"
+    uid: "2868676035"
+    category: "财经/科技"
+    tier: "T2"
+    description: "权威财经通讯社，科技+金融综合快讯"
+
+  - name: "竞核"
+    uid: "2648435521"
+    category: "游戏/行业"
+    tier: "T2"
+    description: "游戏行业媒体，腾讯/网易/字节动态"
+
+  - name: "QuestMobile"
+    uid: "5463009082"
+    category: "数据/移动互联网"
+    tier: "T2"
+    description: "移动互联网数据机构，DAU/MAU/市场份额权威来源"
+
+  # ═══════════════════════════════════════════
+  # T3: 科技综合媒体
+  # ═══════════════════════════════════════════
   - name: "36氪"
-    uid: ""
-    category: "科技媒体"
-    description: "科技媒体"
+    uid: "1750070171"
+    category: "科技/创投"
+    tier: "T3"
+    description: "科技创投媒体，聚焦互联网与新经济"
 
-  - name: "虎嗅"
-    uid: ""
-    category: "科技媒体"
-    description: "科技媒体"
+  - name: "虎嗅APP"
+    uid: "2357213493"
+    category: "科技/商业"
+    tier: "T3"
+    description: "商业科技深度报道"
+
+  - name: "爱范儿"
+    uid: "1642720480"
+    category: "科技/消费电子"
+    tier: "T3"
+    description: "消费科技媒体，专注创新产品与体验"
+
+  - name: "钛媒体APP"
+    uid: ""  # 自定义域名 weibo.com/tmtpost，weibo-cli 用用户名匹配
+    category: "科技/商业"
+    tier: "T3"
+    description: "科技财经媒体"
+
+  - name: "IT之家"
+    uid: ""  # 自定义域名 weibo.com/ithome，weibo-cli 用用户名匹配
+    category: "科技/新闻"
+    tier: "T3"
+    description: "科技快讯，更新最快的科技新闻"
+
+  # ═══════════════════════════════════════════
+  # T4: AI/科技 KOL（个人博主，一手观点）— 已停更或低质
+  # ═══════════════════════════════════════════
+  - name: "宝玉xp"
+    uid: "1727858283"
+    category: "AI"
+    tier: "T4"
+    description: "AI 提示词方法论专家，108万粉，年度新知博主"
+
+  - name: "歸藏的AI工具箱"
+    uid: "6182606334"
+    category: "AI"
+    tier: "T4"
+    description: "⚠️ 疑似停更（2月25日后无更新），AI效率工具发掘者"
+
+  - name: "karminski-牙医"
+    uid: "2169039837"
+    category: "AI"
+    tier: "T4"
+    description: "⚠️ 疑似停更（2025年1月后无更新），AI模型硬核测评员"
 
 # 采集参数
 settings:
@@ -64,9 +220,9 @@ settings:
   # 是否只采集原创微博（不含转发）
   original_only: false
 
-  # 关键词过滤（可选）：只保留包含这些关键词的微博
-  # keywords:
-  #   - "AI"
-  #   - "大模型"
-  #   - "手机"
-  #   - "芯片"
+  # T1 全量 + T2 前3条 + T3-T4 前3条
+  tier_limits:
+    T1: 10
+    T2: 3
+    T3: 3
+    T4: 3

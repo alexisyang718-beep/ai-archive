@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Atom — 信息原子",
+  "description": "Tech Daily Brief v2 系统的最小数据单元。每条新闻/资讯/推文在采集后都会被格式化为一个 Atom。",
+  "type": "object",
+  "required": ["id", "date", "title", "summary_zh", "source", "content_type", "trust_default", "category", "tags", "entities"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "唯一标识符。格式：atom_YYYYMMDD_NNN（NNN 为当日序号，三位数，从 001 开始）",
+      "pattern": "^atom_\\d{8}_\\d{3,}$",
+      "examples": ["atom_20260318_001", "atom_20260318_042"]
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "采集日期（YYYY-MM-DD）",
+      "examples": ["2026-03-18"]
+    },
+    "title": {
+      "type": "string",
+      "description": "新闻标题（原文语言）。如果原文是英文，保留英文。",
+      "maxLength": 200
+    },
+    "title_zh": {
+      "type": "string",
+      "description": "中文标题。如果原文是英文，翻译为中文；如果原文是中文，与 title 相同。",
+      "maxLength": 200
+    },
+    "summary_zh": {
+      "type": "string",
+      "description": "中文摘要，100-200 字。包含核心事实、关键数据。",
+      "maxLength": 500
+    },
+    "summary_en": {
+      "type": "string",
+      "description": "英文摘要（可选）。对于英文原文可直接摘取。",
+      "maxLength": 500
+    },
+    "source": {
+      "type": "object",
+      "description": "信源元数据",
+      "required": ["platform", "author", "author_type", "url"],
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": ["x", "weibo", "rss", "web", "arxiv", "github"],
+          "description": "来源平台"
+        },
+        "author": {
+          "type": "string",
+          "description": "原始作者。X 用 @username，微博用昵称，RSS/Web 用媒体名。",
+          "examples": ["@OpenAI", "@sama", "数码闲聊站", "TechCrunch", "科创板日报"]
+        },
+        "author_type": {
+          "type": "string",
+          "enum": ["official", "ceo_cto", "researcher", "kol", "media", "blogger", "analyst", "insider", "community"],
+          "description": "作者身份类型。official=公司官方账号，ceo_cto=高管，researcher=研究员，kol=关键意见领袖，media=媒体机构，blogger=博主，analyst=分析师，insider=行业内部人士，community=社区用户"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "原始 URL。必须是最上游的一手链接，不是转载链接。"
+        },
+        "upstream_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "如果 url 本身是二手转载，这里填更上游的原始 URL（如官方博客、原推文）。日报信源链接应该用这个字段（如果存在）。"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "原始发布时间（ISO 8601）",
+          "examples": ["2026-03-18T10:30:00Z"]
+        }
+      }
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "official",
+        "exclusive",
+        "firsthand_test",
+        "original_analysis",
+        "report",
+        "interview",
+        "commentary",
+        "translation",
+        "repost"
+      ],
+      "description": "内容性质类型。\nofficial=官方公告/PR/博客；\nexclusive=独家爆料/独家采访（'据本报记者获悉''真机上手''供应链消息'）；\nfirsthand_test=一手实测/评测/上手体验；\noriginal_analysis=原创分析（有自有数据/经验的判断）；\nreport=权威媒体原创报道（记者采访、多信源交叉验证）；\ninterview=采访/对话原文；\ncommentary=评论/观点（无独家数据）；\ntranslation=翻译/编译外媒；\nrepost=转发/转载"
+    },
+    "trust_default": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3"],
+      "description": "采集时自动标注的默认置信度（基于作者身份的粗判）。\nL1=作者是官方/CEO/CTO/研究员；\nL2=作者是权威媒体/知名KOL/分析师；\nL3=其他"
+    },
+    "trust_final": {
+      "type": ["string", "null"],
+      "enum": ["L1", "L2", "L3", null],
+      "description": "写日报时精判的最终置信度（基于内容性质）。采集时为 null，写日报时填充。",
+      "default": null
+    },
+    "trust_reason": {
+      "type": ["string", "null"],
+      "description": "trust_final 的判断依据。例：'一手真机实测，含未公开硬件规格' 或 '翻译自 Reuters 英文报道'。",
+      "default": null
+    },
+    "category": {
+      "type": "string",
+      "enum": ["ai_models", "mobile", "chips", "gaming", "tech_industry", "policy"],
+      "description": "所属板块。ai_models=AI模型与产品；mobile=手机与消费电子；chips=芯片与算力；gaming=游戏行业；tech_industry=科技行业动态；policy=政策与监管"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "主题标签，小写，用于跨天检索和趋势统计。",
+      "examples": [["openai", "gpt", "llm", "lightweight"], ["nvidia", "chip", "export", "china"]]
+    },
+    "entities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "涉及的公司/产品/人物名称，用于实体链接和跨天关联。保留原始大小写。",
+      "examples": [["OpenAI", "GPT-5.4", "Sam Altman"], ["NVIDIA", "Groq", "Jensen Huang"]]
+    },
+    "metrics": {
+      "type": "object",
+      "description": "互动数据（来自社交平台的原始数据）",
+      "properties": {
+        "likes": { "type": "integer" },
+        "retweets": { "type": "integer" },
+        "replies": { "type": "integer" },
+        "views": { "type": "integer" }
+      }
+    },
+    "in_daily_brief": {
+      "type": "boolean",
+      "description": "是否入选当日日报",
+      "default": false
+    },
+    "brief_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "入选哪一天的日报（可能与采集日期不同）",
+      "default": null
+    },
+    "related_atoms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "关联的其他 Atom ID。周/月报生成时由脚本自动填充。",
+      "default": []
+    },
+    "full_text_fetched": {
+      "type": "boolean",
+      "description": "是否已抓取全文",
+      "default": false
+    },
+    "full_text_path": {
+      "type": ["string", "null"],
+      "description": "全文存储路径（如果抓取了全文）",
+      "default": null
+    }
+  }
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采集监控报告 - 2026-03-23</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { color: #666; font-size: 14px; }
+        .stat-value { font-weight: bold; color: #333; }
+        .stat-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .stat-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .status-success { color: #27ae60; }
+        .status-warning { color: #f39c12; }
+        .status-error { color: #e74c3c; }
+        .big-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            padding: 20px;
+        }
+        .big-label {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            color: #7f8c8d;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        tr:hover { background: #f9f9f9; }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-l1 { background: #ffebee; color: #c62828; }
+        .badge-l2 { background: #fff3e0; color: #ef6c00; }
+        .badge-l3 { background: #e8f5e9; color: #2e7d32; }
+        .timestamp {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 采集监控报告 - 2026-03-23</h1>
+        
+        <!-- 总览卡片 -->
+        <div class="grid">
+            <div class="card">
+                <div class="big-number">1419</div>
+                <div class="big-label">总采集条数</div>
+            </div>
+            <div class="card">
+                <div class="big-number">3</div>
+                <div class="big-label">活跃渠道数</div>
+            </div>
+            <div class="card">
+                <div class="big-number">11</div>
+                <div class="big-label">覆盖板块数</div>
+            </div>
+        </div>
+        
+        <!-- 采集状态 -->
+        <div class="grid">
+            <div class="card">
+                <h2>📡 采集状态</h2>
+
+                <div class="stat-row">
+                    <span class="stat-label">X/Twitter</span>
+                    <span class="stat-value status-success">成功 (277 条)</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">微博</span>
+                    <span class="stat-value status-success">成功 (802 条)</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">RSS</span>
+                    <span class="stat-value status-success">成功 (340 条)</span>
+                </div>
+            </div>
+            
+            <!-- 板块分布 -->
+            <div class="card">
+                <h2>📊 板块分布</h2>
+
+                <div class="stat-row">
+                    <span class="stat-label">🤖 AI模型与产品</span>
+                    <span class="stat-value">360 (25.4%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 25.36997885835095%; background: #e74c3c;"></div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">📱 手机与消费电子</span>
+                    <span class="stat-value">213 (15.0%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 15.010570824524313%; background: #3498db;"></div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">🔧 芯片与算力</span>
+                    <span class="stat-value">49 (3.5%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 3.453136011275546%; background: #f39c12;"></div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">🎮 游戏行业</span>
+                    <span class="stat-value">24 (1.7%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 1.6913319238900635%; background: #9b59b6;"></div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">🏢 科技行业动态</span>
+                    <span class="stat-value">75 (5.3%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 5.2854122621564485%; background: #1abc9c;"></div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">📜 政策与监管</span>
+                    <span class="stat-value">10 (0.7%)</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 0.7047216349541932%; background: #34495e;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 信源质量 -->
+        <div class="grid">
+            <div class="card">
+                <h2>🎯 信源质量分布</h2>
+
+                <div class="stat-row">
+                    <span class="stat-label"><span class="badge badge-l1">一手信源</span></span>
+                    <span class="stat-value">0 (0.0%)</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label"><span class="badge badge-l2">可靠信源</span></span>
+                    <span class="stat-value">1089 (76.7%)</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label"><span class="badge badge-l3">参考信源</span></span>
+                    <span class="stat-value">330 (23.3%)</span>
+                </div>
+            </div>
+            
+            <!-- 热门实体 -->
+            <div class="card">
+                <h2>🔥 热门实体 TOP 10</h2>
+                <table>
+                    <thead>
+                        <tr><th>实体</th><th>出现次数</th></tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Huawei</td>
+                            <td>142</td>
+                        </tr>
+                        <tr>
+                            <td>Xiaomi</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>OPPO</td>
+                            <td>54</td>
+                        </tr>
+                        <tr>
+                            <td>Claude</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>31</td>
+                        </tr>
+                        <tr>
+                            <td>Honor</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Tencent</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>NVIDIA</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 活跃作者 -->
+        <div class="card">
+            <h2>👤 活跃作者 TOP 10</h2>
+            <table>
+                <thead>
+                    <tr><th>作者</th><th>发布数量</th></tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>财联社APP</td>
+                        <td>53</td>
+                    </tr>
+                    <tr>
+                        <td>量子位</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>华为终端</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>华为手机</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>爱范儿</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>机器之心Pro</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>新智元</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>36氪</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>华为终端云服务</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>@Reuters</td>
+                        <td>25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="timestamp">
+            报告生成时间: 2026-03-23 22:59:50
+        </div>
+    </div>
+</body>
+</html>

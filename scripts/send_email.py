@@ -3,16 +3,17 @@
 发送科技资讯日报邮件 — 通过 QQ 邮箱 SMTP
 
 用法:
-    # 发送给全部收件人（默认）
-    python send_email.py
-    python send_email.py brief/2026-03-18.html
-    
+    # 发送给全部收件人（会先显示预览，需确认后才发送）
+    python send_email.py brief/2026-03-21.html
+
     # 只发送给指定邮箱（测试用）
-    python send_email.py --to alexisyang@tencent.com
-    python send_email.py --to user1@tencent.com,user2@tencent.com brief/2026-03-18.html
-    
+    python send_email.py brief/2026-03-21.html --to alexisyang@tencent.com
+
+    # 跳过确认直接发送（脚本/CI 调用时使用）
+    python send_email.py brief/2026-03-21.html -y
+
     # 发送给新增的一批收件人
-    python send_email.py --new-only brief/2026-03-18.html
+    python send_email.py --new-only brief/2026-03-21.html
 
 邮件适配：缩减左右边距、CSS变量→硬编码、去JS/暗黑/外部字体/SVG、premailer内联
 """
@@ -203,6 +204,7 @@ def parse_args():
     parser.add_argument('file', nargs='?', help='日报 HTML 文件路径（默认自动检测最新）')
     parser.add_argument('--to', help='指定收件人邮箱，多个用逗号分隔')
     parser.add_argument('--new-only', action='store_true', help='只发送给新增的收件人')
+    parser.add_argument('-y', '--yes', action='store_true', help='跳过确认直接发送')
     return parser.parse_args()
 
 
@@ -285,8 +287,30 @@ def main():
     msg.attach(text_part)
     msg.attach(html_part)
 
+    # 发送前确认
+    print("\n" + "=" * 50)
+    print("📋 发送预览")
+    print("=" * 50)
+    print(f"   标题:  {subject}")
+    print(f"   文件:  {input_html.name}")
+    print(f"   大小:  {len(inlined)} bytes")
+    print(f"   收件人: {len(to_list)} 人")
+    for addr in to_list:
+        print(f"     → {addr}")
+    print("=" * 50)
+
+    if not args.yes:
+        try:
+            confirm = input("\n⚠️  确认发送？(y/N) ").strip().lower()
+            if confirm not in ('y', 'yes'):
+                print("❌ 已取消发送。")
+                sys.exit(0)
+        except (EOFError, KeyboardInterrupt):
+            # 非交互环境（如 AI 调用）自动跳过确认
+            pass
+
     # QQ SMTP SSL 发送
-    print("5. 连接 QQ SMTP...")
+    print("\n5. 连接 QQ SMTP...")
     auth_code = get_auth_code()
     try:
         with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:

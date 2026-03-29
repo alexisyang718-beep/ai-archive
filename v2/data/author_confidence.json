@@ -1,0 +1,82 @@
+{
+  "reuters": {
+    "category": "policy",
+    "confidence": 0.7,
+    "samples": 25,
+    "matches": {
+      "policy": 4
+    }
+  },
+  "business": {
+    "category": "policy",
+    "confidence": 0.4,
+    "samples": 18,
+    "matches": {
+      "policy": 2
+    }
+  },
+  "polymarket": {
+    "category": "tech_industry",
+    "confidence": 0.4,
+    "samples": 7,
+    "matches": {
+      "tech_industry": 2
+    }
+  },
+  "chinesewsj": {
+    "category": "policy",
+    "confidence": 0.4,
+    "samples": 6,
+    "matches": {
+      "policy": 2
+    }
+  },
+  "emollick": {
+    "category": "ai_models",
+    "confidence": 0.3,
+    "samples": 2,
+    "matches": {
+      "ai_models": 3
+    }
+  },
+  "techmeme": {
+    "category": "tech_industry",
+    "confidence": 0.4,
+    "samples": 2,
+    "matches": {
+      "tech_industry": 3
+    }
+  },
+  "shao__meng": {
+    "category": "software_dev",
+    "confidence": 0.6,
+    "samples": 2,
+    "matches": {
+      "software_dev": 3
+    }
+  },
+  "qq_timmy": {
+    "category": "chips",
+    "confidence": 0.3,
+    "samples": 3,
+    "matches": {
+      "chips": 3
+    }
+  },
+  "sawyermerritt": {
+    "category": "tech_industry",
+    "confidence": 0.4,
+    "samples": 2,
+    "matches": {
+      "tech_industry": 2
+    }
+  },
+  "unusual_whales": {
+    "category": "tech_industry",
+    "confidence": 0.4,
+    "samples": 2,
+    "matches": {
+      "tech_industry": 2
+    }
+  }
+}

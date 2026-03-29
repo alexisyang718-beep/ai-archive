@@ -302,16 +302,29 @@ git push origin main
 
 ```bash
 cd /Users/yangliu/Documents/Claude\ Code/codebuddy/tech-daily-brief
-python scripts/send_email.py
+
+# ✅ 正确：指定文件 + 指定单人测试邮箱
+python scripts/send_email.py brief/YYYY-MM-DD.html --to alexisyang@tencent.com
 ```
 
-- 自动检测 `brief/` 下最新的日报 HTML，自动提取日期生成邮件标题
-- 也可指定文件：`python scripts/send_email.py brief/2026-03-13.html`
-- 收件人：alexisyang@tencent.com 等
-- 通过 QQ 邮箱 SMTP（smtp.qq.com:465 SSL），授权码在 macOS 钥匙串（service: qq-smtp-auth）
-- CSS 通过 premailer 内联（邮件客户端会剥离 `<style>` 标签）
+- **必须指定文件路径**（不传文件路径时脚本会默认选 index.html，不是日报）
+- **测试邮件必须加 `--to alexisyang@tencent.com`**，默认会发给全部 23 人
+- 发送前会显示预览（收件人列表 + 邮件大小），需输入 `y` 确认
+- 加 `-y` 可跳过确认直接发送（CI/脚本调用时使用）
+- 测试邮件内容和群发完全一致，区别只是只发给你一个人
 
-### Step 3：同步到公众号
+### Step 3：群发邮件
+
+确认测试邮件效果OK后，执行群发：
+
+```bash
+# ✅ 正确：指定文件，脚本会显示预览确认后发给全部 23 人
+python scripts/send_email.py brief/YYYY-MM-DD.html
+```
+
+> ⚠️ **不要不传文件直接运行 `python scripts/send_email.py`**，会默认发给全部 23 人且可能选错文件。
+
+### Step 4：同步到公众号
 
 ```bash
 cd /Users/yangliu/Documents/Claude\ Code/codebuddy/raphael-publish
@@ -352,25 +365,24 @@ node publish-daily.mjs ../tech-daily-brief/brief/YYYY-MM-DD.html
 
 ### 一键发布（推荐）
 
+> ⚠️ 一键发布内部会自动检测最新日报，但建议手动指定文件避免误选
+
 ```bash
 cd /Users/yangliu/Documents/Claude\ Code/codebuddy/tech-daily-brief
 
-# 完整发布流程：GitHub + 邮件 + 公众号
-python scripts/publish_all.py
+# 完整发布流程（按顺序）：GitHub push → 测试邮件 → 群发邮件 → 公众号
+python scripts/publish_all.py brief/YYYY-MM-DD.html
 
-# 发布指定日报
-python scripts/publish_all.py brief/2026-03-18.html
+# 只发测试邮件（验证效果）✅ 推荐先跑这个
+python scripts/publish_all.py brief/YYYY-MM-DD.html --test-email alexisyang@tencent.com
 
-# 只发给测试邮箱（验证效果）
-python scripts/publish_all.py --test-email alexisyang@tencent.com
-
-# 只发给新增的收件人
-python scripts/publish_all.py --new-only
+# 测试OK后单独群发（跳过公众号先用 --skip-wechat）
+python scripts/publish_all.py brief/YYYY-MM-DD.html --skip-wechat
 
 # 跳过某些步骤
-python scripts/publish_all.py --skip-github   # 跳过 GitHub
-python scripts/publish_all.py --skip-email    # 跳过邮件
-python scripts/publish_all.py --skip-wechat   # 跳过公众号
+python scripts/publish_all.py brief/YYYY-MM-DD.html --skip-github   # 跳过 GitHub
+python scripts/publish_all.py brief/YYYY-MM-DD.html --skip-email    # 跳过邮件
+python scripts/publish_all.py brief/YYYY-MM-DD.html --skip-wechat   # 跳过公众号
 ```
 
 ### 社交媒体 CLI 工具
@@ -389,18 +401,20 @@ weibo ...
 
 ### 邮件发送
 
-```bash
-# 发送给全部收件人（23人）
-python scripts/send_email.py
+> ⚠️ **默认发给全部 23 人，测试必须加 `--to alexisyang@tencent.com`**
 
-# 发送给指定邮箱（测试用）
-python scripts/send_email.py --to alexisyang@tencent.com
+```bash
+# 发送给全部收件人（23人）- 会显示预览确认
+python scripts/send_email.py brief/YYYY-MM-DD.html
+
+# 发送给指定邮箱（测试用）✅
+python scripts/send_email.py brief/YYYY-MM-DD.html --to alexisyang@tencent.com
+
+# 跳过确认直接发送（CI/脚本调用）
+python scripts/send_email.py brief/YYYY-MM-DD.html -y
 
 # 发送给新增的收件人（15人）
-python scripts/send_email.py --new-only
-
-# 指定日报文件
-python scripts/send_email.py brief/2026-03-18.html
+python scripts/send_email.py brief/YYYY-MM-DD.html --new-only
 ```
 
 ---

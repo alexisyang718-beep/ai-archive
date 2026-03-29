@@ -1,0 +1,34 @@
+# 定时采集配置
+
+# 采集渠道配置
+channels:
+  x:
+    enabled: true
+    schedule: "0 * * * *"      # 每小时执行
+    source: "x"
+    timeout: 300               # 5分钟超时
+    retry: 3                   # 失败重试次数
+    
+  weibo:
+    enabled: true
+    schedule: "15 */2 * * *"   # 每2小时执行（0,2,4...22点）
+    source: "weibo"
+    timeout: 300
+    retry: 3
+    
+  rss:
+    enabled: true
+    schedule: "30 */3 * * *"   # 每3小时执行（0,3,6...21点）
+    source: "rss"
+    timeout: 300
+    retry: 3
+
+# 输出配置
+output:
+  base_dir: "v2/archive/daily"
+  format: "jsonl"
+  
+# 环境变量
+env:
+  PATH: "/Users/yangliu/.local/bin:/Library/Frameworks/Python.framework/Versions/3.13/bin:/usr/local/bin:/usr/bin:/bin"
+  PYTHON_EXE: "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
