@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年4月1日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年4月1日 · 周三</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>OpenAI完成$1220亿融资</strong>，估值$8520亿创科技史最高单轮纪录，亚马逊/NVIDIA/软银联手押注，IPO进入倒计时。<br>
+    ❷ <strong>伊朗革命卫队威胁打击17家美科技巨头</strong>（Apple/Google/NVIDIA/Meta等），同步触发PCB、芯片器件、激光器全线涨价，供应链成本压力骤升。<br>
+    ❸ <strong>Arm vs Intel路线争论公开化</strong>：Arm主张Agent AI需要新型CPU，Intel数据中心负责人明确反对，行业算力路线分歧进入公众视野。<br>
+    ❹ <strong>Anthropic源码泄露</strong>，内含"电子宠物"式Agent架构和常驻后台设计，揭示Claude Code未来产品方向。<br>
+    ❺ <strong>Unity关停IronSource广告网络</strong>，转向Vector AI获客平台，游戏投放格局生变，值得密切跟踪。<br>
+    ❻ <strong>欧洲算力军备赛加速</strong>：Mistral $8.3亿建巴黎数据中心，Nebius芬兰建欧洲最大AI工厂之一，NVIDIA同步战略入股Marvell $20亿。
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">头条</span>
+      OpenAI完成$1220亿融资，估值$8520亿创科技史最大单轮纪录
+    </div>
+    <div class="item-body">
+      OpenAI完成史上最大科技单轮私募融资，估值达 <strong>$8520亿</strong>。亚马逊、NVIDIA、软银承诺投资逾 <strong>$1100亿</strong>，其余来自硅谷和华尔街机构。官方博客同步发布"加速AI下一阶段"声明，公司IPO路径愈发清晰。
+    </div>
+    <div class="stat-row">
+      <span class="stat">本轮融资 <em>$1220亿</em></span>
+      <span class="stat">估值 <em>$8520亿</em></span>
+      <span class="stat">软银/亚马逊/NVIDIA <em>$1100亿+</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html">CNBC Tech</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这笔融资值得关注的不只是金额，而是<strong>投资人结构</strong>：NVIDIA是算力供应商，亚马逊既是云端竞争对手又同时入股，软银押注AI生态财务回报——三方各有不同的对冲逻辑。$8520亿估值意味着OpenAI走向IPO时必须拿出能支撑该估值的财务数据，届时市场才会第一次看到这家公司真实的收入规模和亏损结构。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      Google推出Veo 3.1 Lite：主打低成本视频生成，开放开发者API
+    </div>
+    <div class="item-body">
+      Google正式发布 <strong>Veo 3.1 Lite</strong>，定位最具成本效益的视频生成模型，面向开发者开放API接入。与OpenAI Sora已关停形成鲜明对比，Google在AI视频赛道持续进攻。
+    </div>
+    <div class="item-source">来源：<a href="https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/">Google Blog（官方）</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Veo 3.1 Lite的定位是<strong>低成本+开放API</strong>，区别于此前主打效果的旗舰版本。OpenAI Sora已关停，对手缺席的窗口期Google选择不是推更强的模型，而是主动降价扩大可用范围——这是一个务实的市场切入选择，说明Google认为现阶段视频生成的竞争重点是跑通开发者生态，而非效果军备赛。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">产品</span>
+      Gmail推出AI Inbox Beta，AI Ultra订阅用户先行体验
+    </div>
+    <div class="item-body">
+      Gmail AI Inbox进入Beta测试，<strong>AI Ultra</strong> 订阅用户率先体验智能收件箱分类、邮件摘要和优先级自动排序功能。Google正在将AI能力与高端订阅套餐深度捆绑。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/31/gmail-ai-inbox-beta-ultra/">9to5Google</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Google把AI Inbox功能限定给AI Ultra付费用户先行体验，是一个明确的商业信号：<strong>AI功能被当作订阅升级的理由，而不是免费服务的默认组成部分</strong>。这与OpenAI Plus/Pro的分级策略逻辑一致。这条新闻本身不大，但它反映的是Google在C端的AI变现路径——不是靠AI吸引用户，而是靠AI让用户升级付费。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">事件</span>
+      Apple Intelligence向中国用户推送后被撤回，合规问题暴露
+    </div>
+    <div class="item-body">
+      Apple Intelligence开始向中国用户推送更新，但随即被撤回。此前Apple AI在中国迟迟未落地，本次推送被认为是进入中国市场的关键一步，<strong>"推送-撤回"本身已成新闻焦点</strong>，暗示监管审批仍未完成。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5mac.com/2026/03/30/apple-intelligence-rolling-out-now-in-china-per-user-reports/">9to5Mac</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Apple Intelligence在中国推送后迅速撤回，说明<strong>监管审批尚未完成，推送很可能是技术测试而非正式上线</strong>。这件事的背景是：Apple此前在欧盟也出现过类似情况——功能推出后因监管压力暂停。对国内市场而言，Apple AI功能何时真正落地、能开放哪些能力，目前仍是未知数。华为、小米等厂商在此期间积累的AI功能用户习惯，是Apple入场前的实际窗口期。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">独家</span>
+      Anthropic源码泄露：内藏"电子宠物"Agent与常驻后台架构
+    </div>
+    <div class="item-body">
+      Anthropic因暴露源码map文件导致Claude Code部分源码外泄。The Verge独家披露源码细节：内含<strong>"电子宠物"式交互设计</strong>（AI具有情感状态和持久记忆）和<strong>常驻后台Agent架构</strong>，揭示Claude Code未来将走向持续运行的自主Agent产品形态。
+    </div>
+    <div class="item-source">来源：<a href="https://www.theverge.com/ai-artificial-intelligence/904776/anthropic-claude-source-code-leak">The Verge（独家）</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">泄露本身是安全事故，但泄露内容反映了Anthropic真实的产品方向判断：他们在内部已经在验证"<strong>AI作为持续存在的伴侣角色</strong>"这个方向，而不只是工具。"电子宠物"式情感状态和常驻后台Agent，与当前市面上所有AI产品的设计都不同。这个方向能否被用户接受是另一回事，但Anthropic愿意在内部探索这条路，说明他们认为Claude的差异化不该只是"更聪明的助手"。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">产品</span>
+      Salesforce对Slack全面AI改造，一次推出30项新功能
+    </div>
+    <div class="item-body">
+      Salesforce宣布对Slack进行大规模AI升级，一次性推出 <strong>30项新功能</strong>，涵盖AI助手、自动工作流、智能摘要、跨频道知识检索等。企业协作软件AI化进入全面爆发阶段。
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/">TechCrunch AI</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Slack背后是Salesforce，后者的核心客户是企业销售和CRM用户。此次30项AI功能的背景是<strong>Microsoft Teams+Copilot的捆绑竞争压力持续上升</strong>——微软可以把Copilot塞进Teams再打包进Office 365，Salesforce没有这种捆绑优势，所以只能靠功能密度来防守。这次发布对我们日常工作影响不大，选这条更多是作为企业AI工具竞争格局的参考。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">泄露</span>
+      Google Pixel 11 Pro首次曝光：全玻璃摄像头岛+更薄机身
+    </div>
+    <div class="item-body">
+      渲染图泄露显示Pixel 11 Pro采用<strong>全玻璃摄像头模组</strong>设计，机身比前代更薄，整体轮廓更圆润。Google旗舰硬件美学正在与三星/苹果路线分化。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/31/google-pixel-11-pro-thinner-same-design-leak/">9to5Google</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Pixel 11 Pro本身在国内渠道几乎没有存在感，选这条的原因是它的<strong>设计方向</strong>：全玻璃摄像头模组是摄像头突出模组做大后的自然演化，三星/苹果目前还是单独凸起的金属圆形。如果Pixel的方案量产效果好，国内厂商有可能在下一代旗舰跟进。这是设计趋势的早期信号，实际影响还需观察。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">涨价</span>
+      三星Galaxy Fold 7 / Flip 7韩国率先涨价，关税+零部件双重成本压力
+    </div>
+    <div class="item-body">
+      三星计划对 <strong>Galaxy Fold 7</strong> 和 <strong>Flip 7</strong> 在韩国本土提价，官方指向关税压力和零部件成本上涨。分析师预计涨价将蔓延至全球市场，折叠屏普及节奏或受影响。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/31/samsung-price-hike-galaxy-fold-7-flip-7-south-korea/">9to5Google</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">三星涨价的直接原因是关税+零部件成本，而零部件涨价正是今日另一条新闻（伊朗战争→供应链涨价）的具体落地。<strong>折叠屏是三星最高单价品类，如果这里都扛不住成本要涨价，中低端产品线的压力只会更大。</strong>对我们的渠道而言，三星手机如果在韩国以外也开始提价，整体安卓旗舰市场的出货节奏可能放缓，需关注国内合作渠道的促销政策变化。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      vivo X300 Ultra发布：主打安卓终极视频拍摄，明确推出全球版
+    </div>
+    <div class="item-body">
+      vivo X300 Ultra以<strong>视频拍摄</strong>为核心差异化，搭载旗舰规格配置，并明确宣布将推出国际版本。国产品牌正在将影像能力作为全球化突破口。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/30/vivo-x300-ultra-specs-china-release/">9to5Google</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">vivo X300 Ultra选这条的核心原因是<strong>它明确发布全球版</strong>，说明vivo在旗舰产品上的全球化信心在增强。对我们来说，vivo是重要的合作渠道，新旗舰发布周期通常是渠道方资源集中的时间节点，可以主动询问是否有联投或资源置换的机会。但"影像差异化能否转化为获客量"这个命题本身还需要数据验证。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Meta推出Ray-Ban处方镜片版智能眼镜"Blayzer"和"Scriber"，$499起
+    </div>
+    <div class="item-body">
+      Meta发布两款支持处方镜片的Ray-Ban智能眼镜新型号，设计更轻薄，<strong>$499起</strong>入门。AI穿戴设备首次正式面向需要视力矫正的主流用户群体，潜在市场空间大幅扩展。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/31/meta-ray-ban-prescription-lens-styles/">9to5Google</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI智能眼镜此前的一个结构性障碍是：大多数人需要佩戴度数眼镜，而智能眼镜不支持处方定制，意味着视力不好的用户要在"智能眼镜+普通眼镜"之间二选一。Meta这次推出处方版本<strong>直接打掉了这个障碍</strong>。这不是技术突破，而是产品策略的务实调整——先让更多人能用，再谈普及率。目前还没有销量数据，但值得持续关注接受度。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">并购</span>
+      TCL正式接管Sony电视业务，中国品牌全球扩张里程碑
+    </div>
+    <div class="item-body">
+      TCL与Sony正式签署合作协议，TCL接管Sony电视业务运营。这是中国消费电子品牌借助品牌授权模式完成<strong>全球化扩张</strong>的标志性案例，Sony将专注其他业务线。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5google.com/2026/03/31/sony-tcl-new-strategic-partnership-joint-venture/">9to5Google</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">TCL接管Sony电视，本质上是Sony在电视这个低利润品类上<strong>选择退出自主运营</strong>，将品牌授权给TCL换取分成，腾出资源专注传感器、游戏（PlayStation）等高利润业务。对TCL而言，Sony品牌溢价是进入欧美高端市场的门票。这件事本身对我们的获客渠道没有直接影响，选入的原因是：它是中国消费电子品牌全球化方式的一个真实案例，值得老板有这个背景认知。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      NVIDIA战略入股Marvell $20亿，深化NVLink Fusion供应链话语权
+    </div>
+    <div class="item-body">
+      NVIDIA以 <strong>$20亿</strong> 战略入股Marvell Technology，双方在NVLink Fusion定制芯片上深化合作，Marvell股价单日涨 <strong>13%</strong>。NVIDIA正在以资本方式锁定AI算力供应链关键节点。
+    </div>
+    <div class="stat-row">
+      <span class="stat">投资金额 <em>$20亿</em></span>
+      <span class="stat">Marvell股价当日 <em>+13%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/31/marvell-nvidia-stock-stake.html">CNBC Tech</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">NVIDIA入股Marvell的背景是NVLink Fusion——这是NVIDIA今年推出的、允许第三方芯片接入NVLink互联协议的方案。Marvell是定制AI芯片的重要设计商，服务亚马逊、谷歌等大客户。<strong>NVIDIA入股的时机恰好是这些大客户开始自研芯片、绕开NVIDIA的节点</strong>——通过入股供应商，NVIDIA在自研芯片趋势中保留了一席之地，而不是被完全排除在外。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">融资</span>
+      Mistral完成$8.3亿债务融资，在巴黎郊区自建AI数据中心集群
+    </div>
+    <div class="item-body">
+      欧洲AI独角兽Mistral AI完成 <strong>$8.3亿债务融资</strong>，资金专用于在巴黎近郊建设自有AI数据中心集群。欧洲AI算力自主化加速。
+    </div>
+    <div class="stat-row">
+      <span class="stat">融资规模 <em>$8.3亿</em></span>
+      <span class="stat">融资类型 <em>债务融资</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/30/mistral-ai-paris-data-center-cluster-debt-financing.html">CNBC Tech</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">选择债务融资而非股权融资，通常意味着公司认为自己能产生足够现金流还债，或者估值预期较高不想此时稀释。Mistral的核心业务是向企业销售API和定制模型，有相对稳定的收入。<strong>自建数据中心的战略考量是：长期减少对AWS/Azure等美国云厂商的依赖，同时控制推理成本</strong>——这对一个要向欧洲企业客户销售AI服务的公司来说，合规层面也是有价值的（欧盟对数据驻留有严格要求）。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">算力</span>
+      Nebius计划在芬兰建欧洲最大AI算力工厂之一
+    </div>
+    <div class="item-body">
+      前Yandex旗下AI基础设施公司Nebius宣布在<strong>芬兰</strong>建设大规模AI算力工厂，规模跻身欧洲最大之列。北欧低温气候天然适合数据中心降温，成本优势显著。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/31/nebius-finland-ai-factory-europe-compute.html">CNBC Tech</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Nebius是原Yandex的AI基础设施部门，在俄乌战争后从Yandex分拆出来独立运营，总部迁至荷兰，主要面向欧洲市场提供GPU算力租用服务。选芬兰建厂原因很实际：<strong>北欧电价低、气候冷（降低冷却成本）、政治稳定</strong>。Mistral和Nebius同日出现，说明欧洲AI算力的自建趋势不是一两家公司的偶发动作，而是多个玩家同步在推进的方向。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">制程</span>
+      Fujitsu委托Rapidus代工1.4nm AI专用芯片，实现全程日本国产
+    </div>
+    <div class="item-body">
+      Fujitsu宣布设计专用AI推理芯片，委托日本本土晶圆厂 <strong>Rapidus</strong> 代工，工艺节点 <strong>1.4nm</strong>，从设计到制造全程日本本土完成，是日本AI芯片自主化战略的重大突破。
+    </div>
+    <div class="stat-row">
+      <span class="stat">工艺节点 <em>1.4nm</em></span>
+      <span class="stat">代工厂 <em>Rapidus（日本）</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/fujitsu-plans-dedicated-1-4nm-ai-chip-manufactured-entirely-in-japan-by-rapidus">Tom's Hardware</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Rapidus是日本政府主导成立的晶圆厂，背后有大量政府补贴，目标是在2027年前后量产2nm制程。Fujitsu委托Rapidus代工1.4nm AI芯片，<strong>是日本政府和企业联手打造"芯片制造能力"的配套动作</strong>——光有晶圆厂没有订单不行，Fujitsu的订单等于在给Rapidus的良品率和产能爬坡提供商业验证机会。这条选入的价值在于：它是"政府补贴+企业配合"这种国家级芯片战略的真实落地案例，与中国模式有可比性。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">供应链</span>
+      伊朗战争推动PCB、元器件、激光器全线涨价，科技供应链成本骤升
+    </div>
+    <div class="item-body">
+      据Nikkei报道，伊朗战争触发全球科技供应链多品类涨价：<strong>PCB铜箔材料</strong>连续三次提价（KB Laminates已涨3次），<strong>Murata</strong>正式通知电容电感涨价，EML/CW激光器出现严重短缺，专用包装材料也出现罕见涨价。
+    </div>
+    <div class="item-source">来源：<a href="https://asia.nikkei.com/business/technology/tech-asia/no-escape-iran-war-and-ai-boom-push-up-costs-across-the-tech-industry">Nikkei Asia（via @jukan05）</a> ｜ 2026-04-01</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这条的核心价值是把多个孤立涨价事件串联成了一条完整的供应链路径：伊朗战争→铜箔/EML激光器/电容等关键材料短缺→KB Laminates、Murata等主要供应商提价→整机成本上升。<strong>Murata是全球最大的被动元器件厂商之一，它发出涨价通知代表成本压力已经从原材料传导到中间供应环节</strong>，后续消费电子整机涨价只是时间问题。三星折叠屏涨价正是这条链路的可见结果之一。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">裁员</span>
+      单日三家工作室宣布裁员：Eidos-Montréal裁124人，寒冬持续
+    </div>
+    <div class="item-body">
+      3月31日单日内：<strong>Eidos-Montréal</strong>（古墓丽影/漫威开发商）裁员124人且创始主管离职；VR工作室 <strong>Polyarc</strong> 裁员；移动工作室 <strong>Pixelberry</strong> 裁员。游戏行业结构性收缩集中释放。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Eidos-Montréal裁员 <em>124人</em></span>
+      <span class="stat">单日涉及工作室 <em>3家</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/eidos-montreal-announces-124-job-cuts-studio-head-david-anfossi-departs-after-19-years-at-developer">GamesIndustry.biz</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Eidos-Montréal是《古墓丽影》系列的主要开发商，19年任职的主管同步离职说明这不是普通的成本优化，而是业务方向的调整。三家工作室同日裁员是巧合，但反映的是同一个行业背景：<strong>AAA游戏开发成本过去5年翻了2-3倍，但市场的购买力没有同步增长，多数3A作品无法收回成本</strong>。VR工作室Polyarc和移动工作室Pixelberry同日裁员，说明这个问题不限于某个品类，是整个行业在重新评估规模。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">关服</span>
+      PUBG衍生作《盲点》仅54天即关服，大IP衍生失败模式再现
+    </div>
+    <div class="item-body">
+      Krafton旗下《PUBG：盲点》上线Steam抢先体验<strong>仅54天</strong>即宣布关服，在线人数峰值极低，成为大IP衍生快速失败的典型案例。
+    </div>
+    <div class="stat-row">
+      <span class="stat">存活时长 <em>54天</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/krafton-shutters-free-to-play-pubg-spin-off-after-two-months">GamesIndustry.biz</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">《PUBG：盲点》54天关服，不是PUBG品牌本身的问题，而是<strong>Battle Royale赛道已经高度饱和，新进入者很难抢走《PUBG》《Fortnite》的既有玩家</strong>。Krafton用自己最强的IP来验证这个命题，结果印证了赛道壁垒。对我们的业务而言，这类案例是买量评估的参考样本之一：即使有大IP背书，如果赛道没有增量空间，投放效率也会极差。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">关停</span>
+      Rec Room关停：曾估值数十亿的社交游戏平台未能实现可持续盈利
+    </div>
+    <div class="item-body">
+      曾估值数十亿美元的社交游戏平台 <strong>Rec Room</strong> 宣布关停运营，官方声明原因是"未能实现可持续盈利"。元宇宙/社交游戏赛道商业模式危机再度警示。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamedeveloper.com/business/rec-room-shutting-down-after-failing-to-become-sustainability-profitable-">Game Developer</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Rec Room曾被视为元宇宙赛道的代表产品，高峰估值超过30亿美元。关停原因官方说是"不可持续盈利"，实际上<strong>社交游戏平台的变现路径一直是个未解决的问题</strong>：用户规模大、但付费意愿低，广告主也不认这类沉浸式场景的投放价值。元宇宙叙事2021-2022年的融资热潮，让这类产品获得了远超其商业价值的估值，现在是还账的阶段。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      Xbox Games Showcase 2026定档6月7日，Gears of War: E-Day同步直播
+    </div>
+    <div class="item-body">
+      Xbox正式宣布 <strong>Xbox Games Showcase 2026</strong> 定于北京时间6月8日凌晨举办，Gears of War: E-Day同步专题直播。微软年度最重要游戏内容发布活动即将开启。
+    </div>
+    <div class="item-source">来源：<a href="https://news.xbox.com/en-us/2026/03/30/xbox-games-showcase-2026-gears-of-war-e-day-direct/">Xbox Wire（官方）</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Xbox Games Showcase是微软每年最重要的游戏内容发布会，今年同步进行Gears of War: E-Day专项直播，说明这款游戏的体量和关注度足够支撑独立直播。<strong>对我们来说，6月游戏行业内容密集期是制作借势素材的重要时间节点</strong>——如果当前有Xbox平台相关产品在投放，可以提前准备围绕Gears等大IP的创意方向预案。时间是北京时间6月8日凌晨，可提前安排素材跟进。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">重要</span>
+      Unity关停IronSource广告网络，转向Vector AI用户获客平台
+    </div>
+    <div class="item-body">
+      Unity宣布正式关停旗下 <strong>IronSource</strong> 广告网络，转型押注自研 <strong>Vector AI</strong> 用户获客平台，同期引擎业务营收实现增长。这是游戏广告平台AI化转型的重要信号。
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/unity-sees-growth-in-engine-revenue-shuts-down-ironsource-ad-network-in-favour-of-vector-ai-user-acquisition-platform">GamesIndustry.biz</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这条与我们的获客业务直接相关。IronSource曾是游戏广告变现和买量的主要平台之一，Unity 2022年斥资43亿美元收购，但整合一直不顺。<strong>关停IronSource意味着流量和变现会向Unity自研的Vector AI迁移</strong>，对使用IronSource做变现或买量的游戏团队，需要评估迁移时间表和新平台的效果差异。Vector AI是否有同等的流量规模和定向能力，目前还没有公开数据，需要主动测试。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">争论</span>
+      Arm：Agent AI需要新型CPU架构；Intel数据中心负责人：不认同
+    </div>
+    <div class="item-body">
+      Arm公开主张Agentic AI的计算特征与传统工作负载根本不同，需要全新架构的CPU。Intel数据中心负责人明确表示不认同，认为现有x86架构可以充分应对。<strong>两大芯片巨头路线分歧首次公开化</strong>。
+    </div>
+    <div class="item-source">来源：<a href="https://go.theregister.com/feed/www.theregister.com/2026/03/31/intel_arm_agi_cpu/">The Register</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这场争论值得关注，因为双方都在陈述对自己有利的立场：Arm的CPU（Cortex-X系列）已经在数据中心开始渗透，主张"新架构必要"是在为自己的产品找叙事支撑；Intel守着x86基本盘，否认"需要新架构"是防御性表态。<strong>真正有意义的问题是：Agent AI的计算特征（频繁的上下文切换、多任务并发、低延迟推理）到底更适合哪种架构</strong>，这是个值得持续追踪的技术判断，而不是靠两家公司的说法就能定论的。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">监管</span>
+      英国CMA对微软软件业务启动调查，聚焦捆绑销售和垄断行为
+    </div>
+    <div class="item-body">
+      英国竞争与市场管理局（CMA）正式对<strong>微软软件业务</strong>启动调查，重点关注Teams与Office 365的捆绑销售是否构成垄断，以及云服务的竞争限制行为。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/31/microsoft-cma-investigation-uk-software-business.html">CNBC Tech</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">CMA此次调查的背景是英国在脱欧后独立行使竞争监管权，近年对大型科技公司的调查频率明显上升（之前调查过Google/Apple的移动生态）。调查本身不代表最终结论，<strong>但调查启动会让微软在英国的捆绑销售行为更加谨慎，短期内也会分散微软的法务资源</strong>。对微软AI业务的直接影响有限，但如果CMA最终要求Teams与Office解绑，对Slack等竞品确实会是利好。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">动态</span>
+      Oracle大规模裁员数千人，同步宣布加大AI基础设施投入
+    </div>
+    <div class="item-body">
+      Oracle宣布大规模裁员<strong>数千人</strong>，同时公布继续加码AI基础设施建设计划。"裁人+投AI"的科技大厂叙事模式进一步固化，传统企业软件业务人员面临结构性压缩。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html">CNBC Tech</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Oracle裁员的背景是：该公司在过去两年大量招募销售和咨询人员以推动云业务增长，但增速低于预期。同时AI推理基础设施的建设需要大量资本支出。<strong>"裁人+投AI"并不总是战略转型，有时只是把人力成本转移成资本支出</strong>——Oracle这个案例里，被裁的不是工程师，更多是传统销售和支持岗位。这是值得区分的细节，否则会误读为"AI替代了传统岗位"，但其实更多是业务重心的调整。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">监管</span>
+      北京审查Meta Manus，打击借新加坡规避中国AI监管的"洗产地"行为
+    </div>
+    <div class="item-body">
+      北京突然对 <strong>Meta Manus</strong>（通过新加坡运营的AI助手）启动审查，明确打击以新加坡为中转规避中国AI监管的"洗产地"行为，令中国创投圈震动。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/03/27/meta-manus-china-review-singapore-washing-model-regulation-.html">CNBC Tech</a> ｜ 2026-03-27</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Meta Manus的新加坡路径是一种常见的规避策略：在新加坡注册独立实体，用新加坡团队和服务器运营AI产品，绕开中国对"境外AI产品"的管控。<strong>北京此次明确将这种操作定性为"洗产地"并启动审查，等于直接关闭了这条路径</strong>。对中国AI创业公司出海而言，更值得关注的影响是反向的：境外产品通过新加坡进入中国市场的可能性降低，国内AI产品竞争压力反而相对减小。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">产品</span>
+      GitHub Copilot进入Agent驱动开发新阶段，官方详解工作流重构
+    </div>
+    <div class="item-body">
+      GitHub官方博客详解Copilot Applied Science团队以<strong>Agent驱动开发模式</strong>重构内部研发工作流，AI辅助编程从"代码补全"全面进化为"自主执行开发任务"。
+    </div>
+    <div class="item-source">来源：<a href="https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/">GitHub Blog（官方）</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">GitHub官方写这篇博客，等于是在公开承认自己的工程团队已经在用Agent驱动的方式开发Copilot本身——也就是说，<strong>Copilot现在部分是由Copilot自己开发的</strong>。这个细节说明Agent驱动开发在某些任务上已经可以进入真实生产环境，不只是Demo。对我们的意义：如果连GitHub自己都在这样用，我们内部技术团队对Copilot Agent的评估和试用优先级可以提高。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">突发</span>
+      伊朗革命卫队宣布从4月1日起，将Apple/Google/NVIDIA/Meta等17家美国科技公司列为打击目标
+    </div>
+    <div class="item-body">
+      伊朗伊斯兰革命卫队发出直接威胁：从<strong>北京时间4月1日晚8时</strong>起，将苹果、谷歌、NVIDIA、Meta、微软等<strong>17家美国科技公司</strong>列为打击目标。美国政府已发出应对声明，Wired、Tom's Hardware等多家媒体交叉确认。
+    </div>
+    <div class="stat-row">
+      <span class="stat">威胁目标 <em>17家美国科技公司</em></span>
+      <span class="stat">生效时间 <em>2026年4月1日 20:00 CST</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.wired.com/story/iran-threatens-to-start-attacking-major-us-tech-firms-on-april-1/">Wired</a> ｜ 2026-04-01</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这条选入日报是因为今天是威胁生效的时间节点，需要提示关注。需要说明的是：<strong>威胁≠已发生攻击</strong>，目前还处于威胁声明阶段。这17家公司都有完整的安全防护体系，短期内广告系统中断的概率很低。但这条新闻的持续价值在于：如果后续确实发生了针对性网络攻击，Google/Meta广告系统的可用性可能受到影响，那时候投放中断会是真实风险。建议在未来1-2周保持跟踪，而不是现在就做应急调整。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">平台</span>
+      Apple大举下架Vibe Coding类AI应用，CNBC评"站在历史错误一边"
+    </div>
+    <div class="item-body">
+      Apple加大力度清理App Store中的Vibe Coding类AI应用（允许用户直接用自然语言生成和运行代码的工具），CNBC专栏发文批评此举<strong>"Apple站在了历史错误的一边"</strong>。
+    </div>
+    <div class="item-source">来源：<a href="https://9to5mac.com/2026/03/30/apple-steps-up-crackdown-on-vibe-coding-apps-pulls-anything-from-the-app-store/">9to5Mac</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Apple下架Vibe Coding应用的核心顾虑是：这类工具允许用户直接在设备上生成并执行任意代码，<strong>实际上绕开了App Store审核这道门</strong>。Apple长期以来把"所有代码必须经过审核后才能运行在iPhone上"作为安全和商业控制的双重屏障，Vibe Coding类应用打穿了这个屏障。这与Apple限制网页端PWA安装应用、限制小程序形式绕过应用商店是同一个逻辑——维护渠道控制权。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">深度</span>
+      Pentagon对Anthropic的文化战争策略适得其反——MIT TR深度报道
+    </div>
+    <div class="item-body">
+      MIT Technology Review深度报道揭示：美国国防部曾尝试通过文化战争手段（渲染Anthropic员工的政治立场）向其施压，要求配合军事应用。结果<strong>适得其反</strong>，反而强化了Anthropic的品牌形象和内部凝聚力。
+    </div>
+    <div class="item-source">来源：<a href="https://www.technologyreview.com/2026/03/30/1134881/the-pentagons-culture-war-tactic-against-anthropic-has-backfired/">MIT Technology Review</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">MIT TR这篇报道揭示了一个具体的操作细节：Pentagon试图通过对Anthropic员工进行政治身份调查（渲染其进步主义立场），来制造"Anthropic不爱国"的舆论压力，进而迫使其与国防部合作。<strong>这个策略没有奏效，反而让外界更清楚地看到了Anthropic在AI安全立场上的独立性</strong>。这条新闻的背景价值是：它说明了AI头部公司与美国政府/军方之间的关系并不是铁板一块，存在真实的价值观摩擦。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">合规</span>
+      Apple爱尔兰子公司因向受制裁俄罗斯开发者支付分成，被英国罚款
+    </div>
+    <div class="item-body">
+      Apple爱尔兰子公司因向受制裁俄罗斯开发者支付 <strong>63.5万英镑</strong> App Store收益分成，违反英国对俄制裁规定，被英国政府处以罚款。科技平台的跨境合规风险进一步上升。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涉及金额 <em>63.5万英镑</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://9to5mac.com/2026/03/30/apple-subsidiary-fined-in-the-uk-for-breaching-russia-sanctions-rules/">9to5Mac</a> ｜ 2026-03-30</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这个案例的具体情况是：Apple爱尔兰子公司在制裁生效后，仍然向名单内的俄罗斯开发者的银行账户打款分成，违反了英国OFSI的制裁规定。<strong>对我们游戏业务的参考点是：App Store/Google Play的收益分成并不天然合规，在制裁环境下，平台向特定地区的开发者打款是有法律风险的</strong>——这对有俄罗斯、伊朗等被制裁地区用户收入的游戏团队是一个实际合规提示。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">行业</span>
+      AI Benchmark体系已失效，MIT TR：行业正被刷榜行为系统性误导
+    </div>
+    <div class="item-body">
+      MIT Technology Review深度报道指出，当前主流AI基准测试体系全面失效：<strong>刷榜行为</strong>已系统性扭曲排名，同期Quinnipiac民调显示仅有<strong>21%的美国人信任AI</strong>，74%认为政府监管不足。
+    </div>
+    <div class="stat-row">
+      <span class="stat">美国人信任AI比例 <em>21%</em></span>
+      <span class="stat">认为监管不足 <em>74%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/">MIT Technology Review</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">MIT TR这篇报道的核心观察是：当前的主流AI Benchmark（如MMLU、HumanEval等）被各大公司有针对性地训练刷分，已经无法反映模型的真实能力。<strong>同期Quinnipiac民调21%信任度与Benchmark失效是两个独立的信号，但放在一起说明同一个问题：外部对AI能力的评估框架正在失效</strong>，无论是技术层面（榜单失效）还是公众感知层面（信任度低）。对我们内部选用AI工具而言，更值得做的是针对自己具体场景的A/B测试，而不是参考公开排名。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">安全</span>
+      新研究：量子计算机破解椭圆曲线加密所需资源远低于预期，威胁时间表提前
+    </div>
+    <div class="item-body">
+      Ars Technica报道，最新研究成果显示量子计算机破解<strong>椭圆曲线加密（ECC）</strong>所需的量子比特数和纠错开销大幅低于此前学界预测，加密基础设施面临量子威胁的时间表可能大幅提前。
+    </div>
+    <div class="item-source">来源：<a href="https://arstechnica.com/security/2026/03/new-quantum-computing-advances-heighten-threat-to-elliptic-curve-cryptosystems/">Ars Technica</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这条研究的核心结论是：此前学界认为破解ECC需要数百万量子比特，新研究把这个数字降低了一个数量级。但需要注意的是：<strong>现有量子计算机的规模仍然离这个数字差距很大，这是对未来威胁时间表的调整，不是当下已经存在的即时威胁</strong>。对我们目前的业务没有直接影响。选这条是因为这类研究进展会推动全球IT基础设施加速向后量子密码学迁移，未来3-5年会逐渐变成云服务商和应用厂商的合规要求，提前有概念有价值。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">安全</span>
+      OpenAI修复ChatGPT静默数据泄露漏洞：用户对话内容可能已在不知情下外泄
+    </div>
+    <div class="item-body">
+      OpenAI已修复ChatGPT中一个<strong>静默数据泄露漏洞</strong>，该漏洞允许对话内容在用户完全不知情的情况下被外泄。安全专家发出警告：<strong>"不要默认AI工具是安全的"</strong>。
+    </div>
+    <div class="item-source">来源：<a href="https://www.techradar.com/pro/security/a-hard-truth-for-the-ai-era-dont-assume-ai-tools-are-secure-by-default-openai-patches-flaw-allowing-silent-data-leakage-from-chatgpt-conversations-without-users-ever-knowing">TechRadar</a> ｜ 2026-03-31</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这个漏洞的机制是：攻击者通过构造特定的prompt，可以让ChatGPT在回复中嵌入一个隐藏的外部请求，把对话内容悄悄发送到攻击者的服务器——整个过程用户界面没有任何异常提示。OpenAI已修复，但<strong>漏洞存在期间有多少对话内容已经被泄露是无法回溯的</strong>。对内部使用AI工具的团队：已有的对话记录无法撤回，但从今天起，涉及商业敏感信息的对话不应该在公共AI平台上进行，这是一条值得固化的规范。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年4月1日 · 覆盖范围：3月30日—4月1日</p>
+  <p>数据来源：<strong>CNBC Tech</strong> · <strong>The Verge</strong> · <strong>9to5Mac</strong> · <strong>9to5Google</strong> · <strong>Ars Technica</strong> · <strong>MIT Technology Review</strong> · <strong>GamesIndustry.biz</strong> · <strong>Game Developer</strong> · <strong>The Register</strong> · <strong>Tom's Hardware</strong> · <strong>TechCrunch AI</strong> · <strong>TechRadar</strong> · <strong>Wired</strong> · <strong>Nikkei Asia</strong> · Google Blog · GitHub Blog · Xbox Wire</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
