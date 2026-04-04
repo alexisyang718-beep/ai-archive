@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年4月4日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">&#9728;&#65039;</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年4月4日 · 周六</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>Google Gemma 4</strong> 发布，从2B到31B四档规模改用 Apache 2.0 可商用协议，对标 Qwen/DeepSeek，开源模型格局再洗牌。<br>
+    ❷ <strong>苹果不计成本扫货 DRAM</strong>，Q2 价格飙至去年四季度4倍；分析师预测 CY26 再翻倍——<strong>小米已率先涨价</strong>，全球手机价格上涨无悬念。<br>
+    ❸ <strong>DeepSeek V4 将全面运行华为昇腾芯片</strong>，阿里/字节/腾讯同步备货，国产 AI＋国产芯闭环加速成型。<br>
+    ❹ <strong>伊朗直接攻击 Oracle/Amazon 中东数据中心</strong>，同期美国半数 AI 数据中心项目延迟或取消，AI 算力基建承受地缘与供应链双重压力。<br>
+    ❺ <strong>OpenAI 老股九折无人接盘，Anthropic 被溢价50%疯抢</strong>，二级市场资本投票揭示两强预期深度分化。<br>
+    ❻ <strong>TSMC 亚利桑那扩建至12座晶圆厂</strong>；<strong>NVIDIA 20亿投资 Marvell</strong> 强化互联生态护城河，算力军备赛持续升温。
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      Google Gemma 4 发布：四档规模，Apache 2.0 可商用，剑指中国开源模型
+    </div>
+    <div class="item-body">
+      Google DeepMind 正式发布 Gemma 4 系列开源模型，提供 <strong>2B、9B、14B 和 31B</strong> 四档规模，全部改用 Apache 2.0 协议开放商业使用。模型在多项基准测试中超越同规模竞品，明确对标阿里 Qwen 和 DeepSeek 等中国开源模型，并支持 Snapdragon、Arm 等移动端芯片部署。
+    </div>
+    <div class="stat-row">
+      <span class="stat">规模 <em>4档（2B–31B）</em></span>
+      <span class="stat">协议 <em>Apache 2.0</em></span>
+      <span class="stat">支持 <em>移动端芯片</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/">Google DeepMind</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Apache 2.0 协议转变是核心信号。此前 Gemma 系列仍有使用限制，此次完全商用开放，意味着 Google 决心通过开源渗透企业市场，正面抢占 Qwen/DeepSeek 的开发者生态。对 AI 应用层而言，<strong>高质量可商用开源模型的涌现将进一步压缩中间件 API 的定价空间</strong>；Gemma 4 对端侧部署的优化也将加速 AI 功能向手机终端渗透，与本期三星 AI 通话筛选案例形成直接呼应。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">发布</span>
+      Microsoft MAI 系列亮相：三款自研基础模型，微软加速降低对 OpenAI 依赖
+    </div>
+    <div class="item-body">
+      微软 CEO Satya Nadella 亲自宣布推出 <strong>MAI 系列三款自研基础模型</strong>，涵盖语音转录、图像生成和多模态理解能力。这是微软在 Azure AI 战略下最新的去依赖动作，MAI 系列将直接与 OpenAI、Google、Anthropic 的商用 API 竞争，并作为 Azure 平台的原生模型选项提供给企业客户。
+    </div>
+    <div class="stat-row">
+      <span class="stat">模型数 <em>3款</em></span>
+      <span class="stat">能力 <em>转录/图像/多模态</em></span>
+      <span class="stat">平台 <em>Azure 原生</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/">TechCrunch</a> ｜ 2026-04-02</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">微软与 OpenAI 的关系正从「强绑定」走向「有竞争的合作」。MAI 系列布局的是企业 AI 最高频需求（语音转录、视觉），<strong>微软选择此时自研意味着其判断 OpenAI 定价仍有溢价空间</strong>，通过自有模型可大幅降低 API 成本。对国内 AI 应用开发者而言，微软/Azure 的多模型选择将进一步压低大模型调用单价，价格战下行压力持续。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">独家</span>
+      DeepSeek V4 将全面迁移华为昇腾，阿里/字节/腾讯已在备货测试
+    </div>
+    <div class="item-body">
+      据 The Information 独家报道，DeepSeek 下一代旗舰模型 V4 将全面迁移至<strong>华为昇腾芯片</strong>运行，阿里云、字节跳动、腾讯云已开始采购华为 AI 算力进行备货测试。这是中国顶级 AI 模型与国产芯片深度绑定的最强信号，也是针对美国芯片出口管制最直接的反制动作。
+    </div>
+    <div class="stat-row">
+      <span class="stat">模型 <em>DeepSeek V4</em></span>
+      <span class="stat">芯片 <em>华为昇腾</em></span>
+      <span class="stat">备货方 <em>阿里/字节/腾讯</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ReutersTech/status/2040069379593756763">Reuters Tech</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">DeepSeek 效率优化能力＋华为昇腾国产算力，如果 V4 表现达到预期，将为整个中国 AI 产业提供一条可行的「去英伟达」路径。三大云厂商同步备货意味着<strong>国内 AI 算力采购策略将出现实质性转向</strong>，英伟达在中国大客户端的议价地位面临长期侵蚀。这与 Supermicro 走私案执法升级形成叠加效应，加速合规切换时间表。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">争议</span>
+      Anthropic 封堵 OpenClaw 免费骑，代码已被中国开发者大量克隆
+    </div>
+    <div class="item-body">
+      Anthropic 宣布封堵用户通过订阅账户免费使用 OpenClaw 的行为，要求 OpenClaw 用户单独为 Claude API 付费。OpenClaw 是一款开源的 Claude Code 替代工具，其核心代码被指疑似泄露自 Anthropic 内部，目前已被<strong>中国开发者大量克隆</strong>并在 GitHub 上广泛传播。
+    </div>
+    <div class="stat-row">
+      <span class="stat">结果 <em>需额外付费</em></span>
+      <span class="stat">状态 <em>代码已大量克隆</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban">The Verge</a> ｜ 2026-04-04</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Anthropic 此举暴露了开源生态商业化的两难困境——OpenClaw 的兴起本质上是对 Claude Code 高定价的市场反应。强制付费可能将开发者推向 Gemini/Qwen 替代品，而中国开发者已完成代码克隆，<strong>管控的实际效果存疑</strong>。这是继 GPT-4 能力扩散后，又一次 AI 前沿能力通过「平行路径」向全球扩散的典型案例。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">落地</span>
+      ChatGPT 正式接入 CarPlay，iOS 26.4+ 用户可在车内使用语音模式
+    </div>
+    <div class="item-body">
+      OpenAI 官宣 ChatGPT 正式接入苹果 CarPlay，<strong>iOS 26.4 及以上</strong>系统用户可在车载屏幕启动 ChatGPT 语音模式进行对话。这是 ChatGPT 继整合入 iOS 系统后，向车载场景的进一步渗透，用户无需解锁手机即可语音交互。
+    </div>
+    <div class="stat-row">
+      <span class="stat">要求 <em>iOS 26.4+</em></span>
+      <span class="stat">场景 <em>CarPlay 车载</em></span>
+      <span class="stat">功能 <em>语音模式</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/OpenAI/status/2039748699350532097">OpenAI</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">车载场景是 AI 助手竞争的重要赛道——用户在驾驶时对语音交互有真实刚需，且切换成本极高。ChatGPT 抢先进入 CarPlay 生态，将压缩 Siri 重构后的用户空间，并为 OpenAI 积累高价值场景数据。<strong>对国内手机/车企而言，豆包/元宝等本土 AI 助手在车载端的布局窗口期正在收窄。</strong></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">更新</span>
+      Apple iOS / macOS 26.5 首个公测版发布
+    </div>
+    <div class="item-body">
+      苹果向公众测试用户推送 <strong>iOS 26.5 和 macOS 26.5</strong> 首个公开测试版，这是苹果 2026 年春季首次向非开发者开放的系统更新测试渠道。具体功能更新细节将随用户反馈持续披露。
+    </div>
+    <div class="stat-row">
+      <span class="stat">版本 <em>iOS 26.5</em></span>
+      <span class="stat">状态 <em>首个公测版</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.macrumors.com/2026/04/03/apple-first-ios-26-5-public-beta/">MacRumors</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">公测版上线意味着 iOS 26.5 正式版最快将于5月随 WWDC 周期发布。重点关注 iOS 26.5 是否携带 Apple Intelligence 新能力扩展——<strong>苹果 AI 功能的逐步铺开将改变移动端 AI 应用的分发格局</strong>，对游戏和应用开发者而言需提前评估适配优先级。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      W13 中国手机份额：苹果 18% 重夺第一，华为 17%，小米 16.9%
+    </div>
+    <div class="item-body">
+      据 RD观测 追踪数据，2026年第13周（3月最后一周）中国手机市场份额：<strong>苹果 18% 重夺周销量第一</strong>，华为 17% 紧随其后，小米 16.9% 居三。三强份额差距不足1.5个百分点，格局高度胶着。华为折叠屏新品预计本月发布，将对后续数据产生冲击。
+    </div>
+    <div class="stat-row">
+      <span class="stat">苹果 <em>18% · 第1</em></span>
+      <span class="stat">华为 <em>17% · 第2</em></span>
+      <span class="stat">小米 <em>16.9% · 第3</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/7928198622/5283633096298513">RD观测</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">苹果重夺周销冠主要受年初促销及 iOS 更新带动，但三强差距仅1个百分点，华为折叠新品本月发布后份额大概率反弹。<strong>对手机渠道获客策略而言，份额格局高度动态意味着 iOS/Android 双端投放比例需保持弹性</strong>，不宜锁死分配，建议按周度数据动态调整。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">涨价</span>
+      小米率先涨价，全球智能手机涨价潮"不可避免"
+    </div>
+    <div class="item-body">
+      小米宣布旗下手机产品价格上调约 <strong>30 元</strong>，成为全球手机涨价潮的首批案例之一。分析报告指出，苹果大量锁仓 DRAM 导致内存价格飙涨，全球智能手机涨价已「不可避免」，三星、OPPO、vivo 等品牌有望陆续跟进。
+    </div>
+    <div class="stat-row">
+      <span class="stat">小米涨幅 <em>约 ¥30</em></span>
+      <span class="stat">原因 <em>DRAM 价格传导</em></span>
+      <span class="stat">趋势 <em>全球跟进</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pstAsiatech/status/2040052823870640532">@pstAsiatech</a> / <a href="https://9to5google.com/2026/04/02/smartphone-price-hikes-report/">9to5Google</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">小米涨价是 DRAM 超级周期向终端消费者传导的第一枪。对手游获客业务而言，<strong>手机涨价短期推高换机门槛、减缓新机普及速度</strong>，但中期将淘汰低端设备、提升留存玩家的设备质量。重点关注各品牌调价节奏是否影响主力获客机型（中端千元机）的目标用户画像和购机决策周期。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">升级</span>
+      Samsung One UI 8.5 推出 AI 通话筛选，S23 老机型也将获得
+    </div>
+    <div class="item-body">
+      三星 One UI 8.5 将引入 <strong>AI 通话筛选功能</strong>，可自动识别并过滤骚扰电话，并将该功能下放至 Galaxy S23 等老机型。这是三星继 Galaxy AI 功能矩阵推出后，将 AI 能力向历史设备扩展的重要举措，也是对 iPhone 用户迁移壁垒的直接反制。
+    </div>
+    <div class="stat-row">
+      <span class="stat">版本 <em>One UI 8.5</em></span>
+      <span class="stat">覆盖 <em>S23 及以上</em></span>
+      <span class="stat">功能 <em>AI 通话筛选</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/UniverseIce/status/2039871801678086592">@UniverseIce</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">三星将 AI 通话筛选下放 S23 的策略核心是延长老用户留存周期——让现有用户感受到 AI 升级价值，降低换机冲动。<strong>AI 功能「向下兼容」将成为 2026 年安卓厂商标准竞争动作</strong>，对获客业务的影响是：Android 旗舰机保有用户生命周期拉长，存量运营价值提升，但新机首发拉新峰值可能相应收窄。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">供应链</span>
+      苹果不计成本扫货 Mobile DRAM，Q2 价格逼近去年四季度4倍
+    </div>
+    <div class="item-body">
+      苹果正大规模采购 Mobile DRAM 为 iPhone 18 备货，据供应链分析师追踪，<strong>Q2 DRAM 合约价已飙涨至去年四季度的近4倍</strong>。苹果以「不计成本」策略锁仓优质产能，直接挤压其他手机厂商的采购空间，小米率先宣布涨价，OPPO/vivo 跟进预期升温。
+    </div>
+    <div class="stat-row">
+      <span class="stat">Q2 价格 <em>涨幅约4倍</em></span>
+      <span class="stat">备货目标 <em>iPhone 18</em></span>
+      <span class="stat">波及 <em>全行业手机厂商</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Compute_King/status/2040247978464784557">@Compute_King</a> / <a href="https://x.com/jukan05/status/2039716783226314998">@jukan05</a> ｜ 2026-04-04</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">苹果凭借庞大预付款和长期合同「垄断」优质 DRAM 产能，本质上是将内存成本转移给竞争对手——小米、OPPO、vivo 不得不以更高价格采购次优产能。这一供应链博弈每次 iPhone 大年都会重演，但<strong>本次叠加 AI 手机对 LPDDR5X 大内存的需求激增，供给缺口比历史更严峻</strong>，传导至终端消费者的价格压力也更持久。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">预测</span>
+      分析师：DRAM 价格 CY26 年内翻倍，CY27 继续双位数涨幅
+    </div>
+    <div class="item-body">
+      供应链分析师 @jukan05 发布预测：<strong>DRAM 价格将在 2026 年内翻倍</strong>，2027 年继续录得双位数涨幅。预测依据为三重因素叠加：苹果锁仓、AI 服务器内存需求爆炸，以及 HBM 产能挤压标准 DRAM 供给。
+    </div>
+    <div class="stat-row">
+      <span class="stat">CY26 <em>年内翻倍</em></span>
+      <span class="stat">CY27 <em>双位数继续涨</em></span>
+      <span class="stat">驱动 <em>AI服务器+苹果+HBM</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/jukan05/status/2039874839696339021">@jukan05</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">本轮 DRAM 超级周期与以往不同——以往主要由 PC/手机换机潮驱动，本轮叠加 AI 服务器 DDR5/HBM 需求，供给弹性更差。<strong>对 AI 创业公司而言，推理服务器的内存成本将成为 LLM 推理价格持续下探的约束项</strong>；对手机厂商而言，两年内存本成本上行压力几乎没有缓解空间，高端化转型是唯一出路。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">扩建</span>
+      TSMC 亚利桑那扩建计划曝光：12 座晶圆厂 + 4 个封装基地
+    </div>
+    <div class="item-body">
+      台积电亚利桑那扩建规划曝光：计划建设 <strong>12 座晶圆厂和 4 个先进封装基地</strong>，作为台美 5000 亿美元投资协议的重要组成部分。若规划全部落地，亚利桑那将成为全球规模最大的单一晶圆厂集群，重塑全球先进制程产能格局。
+    </div>
+    <div class="stat-row">
+      <span class="stat">晶圆厂 <em>12 座</em></span>
+      <span class="stat">封装基地 <em>4 个</em></span>
+      <span class="stat">台美协议 <em>$5000 亿</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/semiconductors/tsmc-reportedly-plans-to-build-12-fabs-four-packaging-facilities-in-arizona-plan-purportedly-part-of-taiwans-agreed-usd500-million-investment-in-the-us">Tom's Hardware</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是全球半导体产能「去台湾化」进程中最大的单体布局信号，地缘风险层面意义深远；但 12 座 fab 建设周期预计超过十年，对近期产能和价格影响有限。<strong>更需关注的是：大规模美国建厂将抬高整体晶圆制造成本</strong>（美国用工/能源成本高于台湾），可能在 2028 年后系统性推高先进芯片售价。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      韩国 3 月半导体出口同比 +151.4%，单月达 328 亿美元创历史纪录
+    </div>
+    <div class="item-body">
+      韩国贸易部数据：2026年3月半导体出口额达 <strong>328 亿美元，同比暴增 151.4%</strong>，创单月历史纪录。AI 服务器对 HBM 内存和 NAND 存储的爆炸式需求是主要驱动力，三星和 SK 海力士均创季度最高营收。台积电同期毛利率亦超摩根大通预期。
+    </div>
+    <div class="stat-row">
+      <span class="stat">出口额 <em>$328 亿</em></span>
+      <span class="stat">同比 <em>+151.4%</em></span>
+      <span class="stat">驱动 <em>AI 服务器 HBM</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/dnystedt/status/2039880184841801875">@dnystedt</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">韩国半导体出口 151% 的增幅是全球 AI 算力投资热度最直接的结晶。<strong>这一数据也是 AI Capex 周期最灵敏的先行指标之一</strong>——一旦 AI 数据中心建设节奏收缩，韩国半导体出口将率先反映。当前数据显示 AI 算力需求尚未见顶，相关上下游投资逻辑仍然成立。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">投资</span>
+      NVIDIA 20 亿美元投资 Marvell，强化 NVLink Fusion 互联生态护城河
+    </div>
+    <div class="item-body">
+      NVIDIA 宣布向 Marvell Technology 投资 <strong>20 亿美元</strong>，进一步强化 NVLink Fusion 生态系统。值得注意的是，Marvell 的主要客户——Google、Amazon、Microsoft——恰好是正在研发自研 ASIC 以绕开 NVIDIA GPU 的超大规模云厂商，此举引发市场对战略意图的广泛讨论。
+    </div>
+    <div class="stat-row">
+      <span class="stat">投资额 <em>$20 亿</em></span>
+      <span class="stat">目标 <em>NVLink Fusion</em></span>
+      <span class="stat">Marvell 客户 <em>Google/Amazon/微软</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/nvidia-invests-2-billion-in-marvell-whose-biggest-clients-are-trying-to-replace-nvidia-chips">Tom's Hardware</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">NVIDIA 此举是「以投资锁定竞争对手供应商」的经典生态战略——通过入股 Marvell，确保其网络互联技术（NVLink Fusion）成为 Marvell 产品的优先集成方向，<strong>即便云厂商绕过 GPU 使用 ASIC，互联层仍可能被 NVIDIA 主导</strong>。这是围绕「算力互联」而非「算力本身」构建护城河的核心防御思路，展示了 NVIDIA 对抗 ASIC 替代威胁的系统性布局能力。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">争议</span>
+      Switch 2 销量争议深度分析："薛定谔的失败"——失败与成功同时为真？
+    </div>
+    <div class="item-body">
+      GamesIndustry.biz 发表深度分析，系统梳理 Switch 2 的销量争议——部分分析师认为首周销量不及预期，任天堂方面坚称按计划推进。文章将其称为<strong>「薛定谔的失败」</strong>：在相互矛盾的数据中，成功与失败依据所选基准同时成立，反映出主机市场预期管理的系统性失调。
+    </div>
+    <div class="stat-row">
+      <span class="stat">状态 <em>销量预期争议</em></span>
+      <span class="stat">来源 <em>分析师 vs 任天堂</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/schrodingers-switch-2-is-it-failing-or-soaring-opinion">GamesIndustry.biz</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Switch 2 争议的本质是主机游戏市场预期管理的失调——在手游、PC、订阅制全面冲击下，「首周爆款」叙事已不再适用于专用主机。但 Switch 2 的长期价值在于任天堂 IP 的持续变现能力，而非首发数据。<strong>对手游市场而言，Switch 2 争议期可能短暂延缓主机玩家预算分流，为移动端提供窗口期。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">爆料</span>
+      PS6 手持版细节曝光：独立运行、PS4 向下兼容、PlayGo 流媒体
+    </div>
+    <div class="item-body">
+      知名爆料人 @Mooreslawisdead 披露 PS6 手持版更多细节：配备<strong>独立运行能力</strong>（而非仅作 PS5 串流终端）、专用拍照功能、PlayGo 流媒体技术，并向下兼容庞大的 PS4 游戏库。该设备定位直接对标 Switch 2 和 Steam Deck。
+    </div>
+    <div class="stat-row">
+      <span class="stat">运行方式 <em>独立运行</em></span>
+      <span class="stat">兼容 <em>PS4 游戏库</em></span>
+      <span class="stat">功能 <em>PlayGo + 拍照</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Mooreslawisdead/status/2039866982477013464">@Mooreslawisdead</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Sony 推出独立运行 PS6 手持版，意味着主机厂商已明确感知「便携式游戏」需求的结构性增长。PS4 向下兼容将是关键购买理由——数亿 PS4 玩家拥有庞大历史游戏库。<strong>这一趋势对手游市场的长期冲击在于：高质量便携主机将持续侵占「碎片时间」场景，直接竞争手游核心使用时长。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">上线</span>
+      Indie Pass 独立游戏订阅上线：$6.99/月，首批 70 款，低于 Xbox/PS
+    </div>
+    <div class="item-body">
+      独立游戏订阅平台 Indie Pass 正式上线，月费定价 <strong>$6.99</strong>，首批收录 70 款独立游戏，每月新增新作。定价低于 Xbox Game Pass（$14.99）和 PlayStation Plus（$9.99），主打「发现新独立游戏」场景，面向硬核独立游戏爱好者。
+    </div>
+    <div class="stat-row">
+      <span class="stat">月费 <em>$6.99</em></span>
+      <span class="stat">首批 <em>70 款</em></span>
+      <span class="stat">对比 <em>低于 Xbox/PS 订阅</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.gamesindustry.biz/a-game-pass-for-indie-games-meet-indie-pass-a-7-a-month-subscription-that-brings-new-titles-every-month">GamesIndustry.biz</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">独立游戏订阅制的入场验证了一个市场假设：玩家愿意为「内容发现」而非「AAA 游戏访问权」付费。$6.99 的定价锚点将压缩独立游戏买断售价空间，但反向为开发者提供稳定订阅收入。<strong>对手游订阅/礼包商业化模式的参考价值：用户对低门槛订阅接受度持续提升，是验证轻订阅商业化潜力的正向信号。</strong></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">地缘</span>
+      伊朗袭击 Oracle 迪拜 / Amazon 巴林数据中心，威胁打击 NVIDIA 和 Intel
+    </div>
+    <div class="item-body">
+      伊朗宣称已成功攻击甲骨文迪拜数据中心和亚马逊巴林数据中心，并威胁进一步打击英伟达、英特尔等科技基础设施。此次攻击发生于美伊核谈判破裂后，标志着<strong>科技基础设施正式成为地缘冲突的直接攻击目标</strong>。
+    </div>
+    <div class="stat-row">
+      <span class="stat">已攻击 <em>Oracle 迪拜</em></span>
+      <span class="stat">已攻击 <em>Amazon 巴林</em></span>
+      <span class="stat">威胁 <em>NVIDIA / Intel</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/iran-claims-it-has-hit-oracle-data-center-in-dubai-amazon-data-center-in-bahrain-country-has-threatened-to-attack-nvidia-intel-and-others-too">Tom's Hardware</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">这是 AI 数据中心安全威胁从「理论风险」变为「真实事件」的历史节点。中东是全球 AI Capex 重要输出地，微软/Google/AWS 均在该地区大规模建设，攻击事件将直接推高云厂商安全溢价和保险成本，加速「去单一地区」分布策略。<strong>对出海业务依赖中东节点的国内云服务用户，需重新评估容灾方案和数据冗余部署。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">警示</span>
+      美国约半数 AI 数据中心项目延迟或取消，中国零件短缺和电力不足是主因
+    </div>
+    <div class="item-body">
+      据 Tom's Hardware 报道，美国约<strong>半数 AI 数据中心建设项目</strong>面临延迟或取消，主要原因为中国制造零部件短缺（受关税政策波及）和电网基础设施不足两大瓶颈。特朗普关税政策正在直接制约美国本土 AI 基础设施建设速度。
+    </div>
+    <div class="stat-row">
+      <span class="stat">受影响项目 <em>约半数</em></span>
+      <span class="stat">原因一 <em>中国零件短缺</em></span>
+      <span class="stat">原因二 <em>电力基础设施不足</em></span>
+    </div>
+    <div class="item-source">来源：Tom's Hardware ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">美国 AI 数据中心建设的自相矛盾：通过关税战限制中国 AI 发展，但数据中心建设所需的大量硬件（UPS、变压器、冷却系统零部件）高度依赖中国制造，关税反噬直接拖慢本土 AI Capex 落地。<strong>这为国内云厂商提供了相对窗口——全球 AI 算力竞赛中，中国无需自我制裁，基础设施扩张速度可能短期超越美国。</strong></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">执法</span>
+      Supermicro 联合创始人被控走私数十亿美元 NVIDIA 服务器至中国
+    </div>
+    <div class="item-body">
+      美国司法部指控 Supermicro 联合创始人 Wally Liaw 涉嫌走私<strong>价值数十亿美元的英伟达服务器</strong>至中国，违反出口管制法规，被告已出庭宣布无罪抗辩。Supermicro 是全球最大 AI 服务器代工商之一，此案是迄今规模最大的 AI 芯片出口管制执法案例。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涉案规模 <em>数十亿美元</em></span>
+      <span class="stat">被告 <em>Supermicro 联创</em></span>
+      <span class="stat">罪名 <em>违反出口管制</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/super-micro-co-founder-wally-liaw-pleads-not-guilty-to-nvidia-smuggling-charges">Tom's Hardware</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">此案信号极其明确：美国正将芯片禁运执法从「限制销售」升级至「追溯走私」。对国内 AI 算力采购而言，<strong>通过灰色渠道获取英伟达 GPU 的刑事风险已显著上升</strong>——不仅是采购方，供应链上游代工商和中间商均面临追责。合规压力将进一步加速 DeepSeek V4/华为昇腾方案的需求，国产算力替代的时间表将被提前。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">资本</span>
+      OpenAI 老股九折无人接盘，Anthropic 被溢价 50% 疯抢——资本投票结果分化
+    </div>
+    <div class="item-body">
+      据报道，OpenAI 员工持股以<strong>九折挂售但无人接盘</strong>，而 Anthropic 二级市场股份则被投资者以溢价 50% 抢购。两家公司在二级市场的冰火两重天，直接映射投资者对各自商业化前景和战略方向的深度分化判断。
+    </div>
+    <div class="stat-row">
+      <span class="stat">OpenAI <em>九折无人买</em></span>
+      <span class="stat">Anthropic <em>溢价 +50%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/6105753431/5283661616251090">量子位</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">市场在「押注」和「对冲」之间做出了清晰选择——OpenAI 在 GPT-5 延期、商业化争议和内部动荡后估值预期走低，Anthropic 则受益于 Claude 3.7 企业市场爆发和积极的战略扩张信号。<strong>对国内 AI 创业者而言，隐含信息是：「技术领先」正让位于「企业客户留存率」，成为 AI 公司价值评估的核心指标。</strong></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">监管</span>
+      中国九部委联合发布《AI 伦理审查试行办法》，上线前强制审查
+    </div>
+    <div class="item-body">
+      工信部等<strong>九个部委联合</strong>发布《人工智能伦理审查试行办法》，要求 AI 产品在上线前须通过伦理审查，涵盖数据采集规范、算法透明度、用户隐私保护等核心维度，是中国 AI 监管体系的重要里程碑文件。
+    </div>
+    <div class="stat-row">
+      <span class="stat">发布方 <em>九部委联合</em></span>
+      <span class="stat">要求 <em>上线前强制审查</em></span>
+      <span class="stat">覆盖 <em>全类 AI 产品</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pstAsiatech/status/2040097680685232385">@pstAsiatech</a> ｜ 2026-04-04</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">「上线前伦理审查」将成为中国 AI 产品的新合规门槛，对小型 AI 应用开发者的合规成本冲击显著——相当于在备案制之上再叠加一道审查层。<strong>对游戏业务中的 AI 功能（如 AI NPC、AI 客服）而言，若触发「智能对话」类认定，需提前评估是否须申请伦理审查</strong>，建议关注细则落地时间表并提前准备合规材料。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">监管</span>
+      中国规范"数字人"管理：禁止对儿童提供成瘾性 AI 服务，强制披露虚拟身份
+    </div>
+    <div class="item-body">
+      中国相关部门发布数字人管理规范，明确<strong>禁止向未成年人提供具有成瘾性设计的 AI 陪伴服务</strong>，同时要求数字人产品须明确告知用户其虚拟属性。规范针对近年来快速增长的 AI 情感陪伴类应用，对行业商业化核心设计提出约束。
+    </div>
+    <div class="stat-row">
+      <span class="stat">禁止 <em>对儿童成瘾性设计</em></span>
+      <span class="stat">要求 <em>虚拟身份强制披露</em></span>
+      <span class="stat">针对 <em>AI 陪伴类产品</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ReutersTech/status/2040039165522330111">Reuters Tech</a> ｜ 2026-04-03</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">数字人监管直接打击「AI 陪伴」赛道的核心增长策略——无限陪伴＋情感依赖设计是该类产品的商业化核心，「禁止成瘾性设计」若严格执行将限制其留存手段。<strong>对游戏业务而言，带有 AI NPC 社交互动功能的产品需评估是否触碰「成瘾性」认定红线</strong>，尤其是面向青少年的产品，建议尽早启动合规评估。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年4月3日–4日 · 覆盖范围：AI模型 / 手机消费电子 / 芯片算力 / 游戏行业 / 科技动态 / 政策监管</p>
+  <p>数据来源：<strong>Google DeepMind</strong>、<strong>TechCrunch</strong>、<strong>Reuters Tech</strong>、<strong>Tom's Hardware</strong>、<strong>The Verge</strong>、<strong>GamesIndustry.biz</strong>、<strong>MacRumors</strong>、<strong>9to5Google</strong>、量子位、RD观测、@jukan05、@Compute_King、@pstAsiatech、@UniverseIce</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>

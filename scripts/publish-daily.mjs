@@ -308,7 +308,10 @@ function makeWeChatCompatible(html, themeId) {
     node.setAttribute('style', currentStyle.trim());
   });
   
-  return doc.body.innerHTML;
+  // 去除微信域名链接（WeChat API 不允许 mp.weixin.qq.com 链接，否则报 45166 invalid content hint）
+  let result = doc.body.innerHTML;
+  result = result.replace(/href="https?:\/\/mp\.weixin\.qq\.com\/[^"]*"/g, 'href="#"');
+  return result;
 }
 
 // 微信公众号 API
