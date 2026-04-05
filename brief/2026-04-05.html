@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Daily Brief | 2026年4月5日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #FAF9F5;
+    --bg-warm: #F5F0E8;
+    --card: #FFFFFF;
+    --border: #E8E2D9;
+    --border-light: #F0EBE3;
+    --accent: #C96442;
+    --accent-hover: #B5573A;
+    --accent-soft: rgba(201, 100, 66, 0.08);
+    --accent-border: rgba(201, 100, 66, 0.2);
+    --text: #1A1A1A;
+    --text-secondary: #6B6560;
+    --text-tertiary: #9B9590;
+    --tag-red: #C96442;
+    --tag-red-bg: rgba(201, 100, 66, 0.08);
+    --tag-green: #5A8F6B;
+    --tag-green-bg: rgba(90, 143, 107, 0.08);
+    --tag-blue: #4A7B9D;
+    --tag-blue-bg: rgba(74, 123, 157, 0.08);
+    --tag-purple: #7B6B9D;
+    --tag-purple-bg: rgba(123, 107, 157, 0.08);
+    --tag-orange: #B8863B;
+    --tag-orange-bg: rgba(184, 134, 59, 0.08);
+    --tag-teal: #4A8F8F;
+    --tag-teal-bg: rgba(74, 143, 143, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .header-logo svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header .date {
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .header .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.95;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-card strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc {
+    margin: 40px 0 32px;
+    padding: 24px 28px;
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+  }
+
+  .toc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+  }
+
+  .toc .toc-icon {
+    font-size: 16px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header .icon {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-border);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .tag-hot { background: var(--tag-red-bg); color: var(--tag-red); }
+  .tag-new { background: var(--tag-green-bg); color: var(--tag-green); }
+  .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+  .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+  .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange); }
+  .tag-teal { background: var(--tag-teal-bg); color: var(--tag-teal); }
+
+  .item-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .item-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .item-body a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-body a:hover {
+    text-decoration: underline;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-warm);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .stat em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .item-source {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .item-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+
+  .insight-box {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: #FFF8F5;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-label {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .insight-box .insight-content {
+    line-height: 1.85;
+  }
+
+  .insight-box .insight-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  .footer p {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer .footer-brand {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+  .back-to-top:hover {
+    box-shadow: var(--shadow-hover);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: all 0.2s;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 640px) {
+    .back-home { top: 16px; left: 16px; font-size: 12px; padding: 5px 12px; }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-border);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1C1B18;
+    --bg-warm: #252420;
+    --card: #2A2925;
+    --border: #3D3B36;
+    --border-light: #333230;
+    --accent: #D4845F;
+    --accent-hover: #E0966F;
+    --accent-soft: rgba(212, 132, 95, 0.1);
+    --accent-border: rgba(212, 132, 95, 0.25);
+    --text: #E8E4DE;
+    --text-secondary: #A8A29A;
+    --text-tertiary: #78736C;
+    --tag-red: #D4845F;
+    --tag-red-bg: rgba(212, 132, 95, 0.12);
+    --tag-green: #7DB88D;
+    --tag-green-bg: rgba(125, 184, 141, 0.12);
+    --tag-blue: #6DA0C2;
+    --tag-blue-bg: rgba(109, 160, 194, 0.12);
+    --tag-purple: #9D8DBF;
+    --tag-purple-bg: rgba(157, 141, 191, 0.12);
+    --tag-orange: #D4A95F;
+    --tag-orange-bg: rgba(212, 169, 95, 0.12);
+    --tag-teal: #6DB5B5;
+    --tag-teal-bg: rgba(109, 181, 181, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  [data-theme="dark"] .insight-box {
+    background: rgba(212, 132, 95, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .header { padding: 40px 0 28px; }
+    .header h1 { font-size: 26px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .summary-card { padding: 18px 20px; }
+    .item { padding: 16px 18px; }
+    .theme-toggle { top: 16px; right: 16px; }
+    .back-to-top { bottom: 20px; right: 20px; }
+  }
+
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">&larr; 返回存档</a>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换深色/浅色模式" aria-label="切换主题">☀️</button>
+
+<div class="container">
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  </div>
+  <h1>Tech Daily Brief</h1>
+  <div class="date">2026年4月5日 · 周六</div>
+  <div class="divider"></div>
+  <div class="summary-card">
+    ❶ <strong>Anthropic 封杀 OpenClaw</strong>：Claude 订阅不再覆盖第三方工具，需额外付费，AI Agent 生态商业化加速<br>
+    ❷ <strong>Google 开源 Gemma 4</strong>：2B-31B 四档规模，Apache 2.0 许可，正面硬刚中国开源模型<br>
+    ❸ <strong>NVIDIA AI 纹理压缩</strong>：VRAM 占用降低 85%，6.5GB 压至 970MB 无损，游戏 GPU 内存瓶颈突破<br>
+    ❹ <strong>苹果高价锁仓 DRAM</strong>：Q2 价格接近去年 Q4 的 4 倍，内存超级周期传导至终端涨价<br>
+    ❺ <strong>阿里千问调用量破万亿</strong>：登顶全球模型调用量榜首，国内大模型首次突破万亿级<br>
+    ❻ <strong>美国数据中心建设受阻</strong>：50% 延迟或取消，中国零件短缺+电力不足三重压力<br>
+    ❼ <strong>中国 AI 监管落地</strong>：九部委联合发布伦理审查办法，数字人服务禁止成瘾性设计
+  </div>
+</header>
+
+<nav class="toc">
+  <h3>目录</h3>
+  <ul>
+    <li><a href="#model"><span class="toc-icon">🧠</span> AI 模型与产品</a></li>
+    <li><a href="#phone"><span class="toc-icon">📱</span> 手机与消费电子</a></li>
+    <li><a href="#chip"><span class="toc-icon">🔧</span> 芯片与算力</a></li>
+    <li><a href="#game"><span class="toc-icon">🎮</span> 游戏行业</a></li>
+    <li><a href="#industry"><span class="toc-icon">🏛️</span> 科技行业动态</a></li>
+    <li><a href="#policy"><span class="toc-icon">📜</span> 政策与监管</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== 1. AI 模型与产品 ==================== -->
+<section class="section" id="model">
+  <div class="section-header">
+    <span class="icon">🧠</span>
+    <h2>AI 模型与产品</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">热点</span>
+      Anthropic 正式封杀 OpenClaw，Claude 订阅需额外付费
+    </div>
+    <div class="item-body">
+      Anthropic 宣布 <strong>Claude Code 订阅不再覆盖 OpenClaw 等第三方工具</strong>，用户需额外付费才能继续使用。这是继 OpenClaw 代码泄露后被中国开发者大量使用后的商业化管控，直接影响企业级 AI Agent 生态的定价模式。
+    </div>
+    <div class="stat-row">
+      <span class="stat">影响范围 <em>OpenClaw 用户</em></span>
+      <span class="stat">政策生效 <em>即刻</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban">The Verge</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Anthropic 此举标志着 AI 公司开始<strong>收回第三方工具的免费午餐</strong>。OpenClaw 曾因泄露代码让大量开发者免费使用 Claude，此次收费既是对 IP 泄露的止损，也是商业化路径的调整。对 AI Agent 生态而言，<strong>工具层与模型层的分成博弈</strong>才刚开始，未来可能看到更多模型厂商效仿，甚至推出官方 SDK 收费方案。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      Google Gemma 4 发布：四档规模（2B-31B），开源 Apache 2.0
+    </div>
+    <div class="item-body">
+      Google 发布开源模型 <strong>Gemma 4</strong>，提供 2B、7B、14B、31B 四种规模，改用 Apache 2.0 许可（可商用），明确对标 Qwen、DeepSeek 等中国开源模型。这是 Google 在开源大模型领域的重大战略转向。
+    </div>
+    <div class="stat-row">
+      <span class="stat">模型规模 <em>2B-31B</em></span>
+      <span class="stat">许可证 <em>Apache 2.0</em></span>
+      <span class="stat">商用 <em>支持</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/3996876140/5283656270612366">机器之心Pro</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Google 从 Gemini 商业闭源转向 Gemma 4 开源，是对中国开源模型的直接回应。Apache 2.0 许可意味着<strong>无商业限制</strong>，开发者可自由商用。这与 Meta LLaMA、阿里 Qwen、DeepSeek 形成开源大模型<strong>四强格局</strong>。对中小企业而言，开源模型的选择更加丰富，但 Google 是否能打破"开源模型性能不如闭源"的认知惯性，仍需实测验证。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">新品</span>
+      微软发布三款 MAI 自研基础模型，转录/图像生成等多模态能力
+    </div>
+    <div class="item-body">
+      微软 CEO Satya Nadella 亲自发布 <strong>MAI 系列三款自研模型</strong>，覆盖语音转录、图像生成等多模态能力，宣示微软在 AI 应用层降低对 OpenAI 依赖的决心。
+    </div>
+    <div class="stat-row">
+      <span class="stat">模型数量 <em>3款</em></span>
+      <span class="stat">能力 <em>多模态</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/technology/microsoft-launches-3-new-ai-models-in-direct-shot-at-openai-and-google">VentureBeat</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">微软自研 MAI 模型，是对 OpenAI 关系的<strong>战略性对冲</strong>。虽然双方合作紧密，但微软显然不希望将 AI 能力完全绑定在 OpenAI 身上。MAI 系列的推出，意味着微软在<strong>AI 技术栈全栈自研</strong>（算力+模型+应用）的道路上更进一步，未来可能看到更多微软产品用自家模型替代 OpenAI。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">数据</span>
+      阿里千问 3.6Plus 日调用量破万亿，登顶全球模型调用量榜首
+    </div>
+    <div class="item-body">
+      阿里千问 3.6Plus 日调用量突破 <strong>1万亿次</strong>，成为全球调用量最高的大模型。这是国内大模型首次突破万亿级别调用量，标志着中国大模型在规模化应用上取得突破。
+    </div>
+    <div class="stat-row">
+      <span class="stat">日调用量 <em>1万亿次</em></span>
+      <span class="stat">排名 <em>全球第一</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.qbitai.com/2026/04/396346.html">量子位</a> ｜ 12小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">万亿调用量背后，是阿里云在<strong>B 端市场的规模化渗透</strong>。千问通过钉钉、淘宝、阿里云等生态场景，实现了调用量爆发式增长。对比 OpenAI 的 1000 亿+年调用量，千问的万亿<strong>日调用量</strong>展示了中国市场的规模优势。但调用量≠收入，阿里如何将这些调用转化为商业化收入，仍是关键挑战。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      Anthropic 发布 Claude"情绪开关"研究：锁定 171 种情绪表征
+    </div>
+    <div class="item-body">
+      Anthropic 研究团队在 Sonnet 4.5 中锁定"喜怒哀惧"等 <strong>171 种情绪神经元</strong>，证实情绪表征驱动 AI 行为。这是 AI 可解释性研究的重大突破，为大模型"黑箱"问题提供新解法。
+    </div>
+    <div class="stat-row">
+      <span class="stat">情绪类型 <em>171种</em></span>
+      <span class="stat">研究模型 <em>Sonnet 4.5</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/5703921756/5283665508831847">新智元</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">情绪表征的发现，让 AI 的<strong>"性格调控"成为可能</strong>。理论上，开发者可通过调整特定神经元，让 Claude 变得更"谨慎"或"激进"。这对 AI 安全意义重大，也为企业定制化 AI 提供了新维度。但情绪表征是否具有普适性，以及如何避免被恶意利用，仍需进一步研究。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 2. 手机与消费电子 ==================== -->
+<section class="section" id="phone">
+  <div class="section-header">
+    <span class="icon">📱</span>
+    <h2>手机与消费电子</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      苹果批准 NVIDIA eGPU 驱动，Arm Mac 首次支持外接显卡
+    </div>
+    <div class="item-body">
+      苹果批准第三方驱动让 <strong>Arm Mac 支持 NVIDIA eGPU</strong>，但仅用于计算加速，不用于图形加速。这是苹果 Mac 转向 Arm 架构后首次开放外接显卡支持，对开发者意义重大。
+    </div>
+    <div class="stat-row">
+      <span class="stat">支持类型 <em>计算加速</em></span>
+      <span class="stat">限制 <em>不支持图形加速</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.theverge.com/tech/907003/apple-approves-driver-that-lets-nvidia-egpus-work-with-arm-macs">The Verge</a> ｜ 9小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">苹果开放 eGPU，是对开发者生态的<strong>务实妥协</strong>。Arm Mac 虽然性能强劲，但在 AI 训练、视频渲染等场景仍需 GPU 算力。此次开放计算加速但不开放图形加速，是苹果的<strong>精确控制</strong>——既满足开发者需求，又不影响 Mac 自身的图形体验。未来可能看到更多专业开发者回归 Mac。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">市场</span>
+      中国 W13 手机市场份额：苹果 18% 重夺第一，华为 17%，小米 16.9%
+    </div>
+    <div class="item-body">
+      最新周度销量数据显示，<strong>苹果以 18% 份额重夺第一</strong>，华为 17% 紧随其后，小米 16.9% 位列第三。三强格局清晰，市场份额差距仅 1.1 个百分点。
+    </div>
+    <div class="stat-row">
+      <span class="stat">苹果 <em>18%</em></span>
+      <span class="stat">华为 <em>17%</em></span>
+      <span class="stat">小米 <em>16.9%</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://weibo.com/7928198622/5283633096298513">RD观测</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">三强格局中，<strong>国产与国际品牌占比接近 5:5</strong>。苹果重夺第一，主要得益于 iPhone 16 系列的价格调整和 618 预热。华为的强势回归，则依赖品牌力和麒麟芯片的产能恢复。小米在海外市场表现亮眼，但国内市场仍面临价格战压力。下周可能再次洗牌，竞争白热化。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">价格</span>
+      小米手机涨价，内存价格飙升传导至终端
+    </div>
+    <div class="item-body">
+      小米率先涨价约 <strong>30 元</strong>，直接源于内存价格飙涨。全球手机价格传导链条正式启动，苹果高价锁仓 DRAM 推高全行业内存成本。
+    </div>
+    <div class="stat-row">
+      <span class="stat">涨价幅度 <em>约30元</em></span>
+      <span class="stat">传导原因 <em>DRAM涨价</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pstAsiatech/status/2040052823870640532">@pstAsiatech</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">小米涨价是 DRAM 超级周期向终端传导的<strong>第一张多米诺骨牌</strong>。苹果大规模锁仓让内存价格接近去年 Q4 的 4 倍，其他厂商不得不跟进涨价。预计未来 1-2 个月，更多手机品牌将宣布涨价，涨幅可能在 50-200 元区间。这对本就疲软的智能手机市场是<strong>雪上加霜</strong>。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-teal">品牌</span>
+      三星 One UI 更新遭韩国用户质疑，软件差异化引不满
+    </div>
+    <div class="item-body">
+      三星韩国社区用户对 <strong>One UI 软件差异化政策</strong>不满，认为本土版本功能阉割严重，品牌声誉风险上升。
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/UniverseIce/status/2039898037548646684">@UniverseIce</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">三星在韩国本土的软件差异化策略，引发用户强烈反弹。这与苹果在欧美市场的"一视同仁"形成反差。软件差异化本意是<strong>地区适配</strong>，但过度阉割会伤害本土用户忠诚度。对三星而言，如何在全球化与本土化之间平衡，是长期挑战。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 3. 芯片与算力 ==================== -->
+<section class="section" id="chip">
+  <div class="section-header">
+    <span class="icon">🔧</span>
+    <h2>芯片与算力</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">供应链</span>
+      苹果高价扫货 Mobile DRAM，Q2 价格接近去年四季度 4 倍
+    </div>
+    <div class="item-body">
+      苹果大规模锁仓 DRAM 为 iPhone 18 铺路，<strong>Q2 价格接近去年 Q4 的 4 倍</strong>，直接推高全行业内存成本。小米已开始涨价，供应链价格传导链条清晰。
+    </div>
+    <div class="stat-row">
+      <span class="stat">价格涨幅 <em>约4倍</em></span>
+      <span class="stat">采购方 <em>苹果</em></span>
+      <span class="stat">影响 <em>全行业</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/Compute_King/status/2040247978464784557">@Compute_King</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">苹果的锁仓行为，是 DRAM 超级周期的<strong>核心推手</strong>。iPhone 18 预计采用更高容量的内存配置，苹果提前锁定产能导致其他厂商<strong>无货可买</strong>。这与 2021 年的芯片短缺类似，但这次是内存。对三星、SK 海力士等存储厂商是利好，但对手机、PC 品牌是成本噩梦。预计内存高景气将持续至 2026 Q4。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">技术</span>
+      NVIDIA AI 纹理压缩技术：GPU 内存占用降低 85%，零质量损失
+    </div>
+    <div class="item-body">
+      NVIDIA 演示 <strong>Neural Texture Compression</strong>，6.5GB VRAM 压缩至 970MB，质量无损。游戏 GPU 内存瓶颈突破，技术价值重大。
+    </div>
+    <div class="stat-row">
+      <span class="stat">压缩比例 <em>85%</em></span>
+      <span class="stat">原大小 <em>6.5GB</em></span>
+      <span class="stat">压缩后 <em>970MB</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/pc-components/gpus/nvidia-ai-tech-claims-to-slash-vram-usage-by-85-percent-with-zero-quality-loss-neural-texture-compression-demo-reveals-stunning-visual-parity-between-6-5gb-of-memory-and-970mb">Tom's Hardware</a> ｜ 10小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">AI 纹理压缩是 NVIDIA 将 AI 技术从<strong>图形渲染延伸到存储优化</strong>的突破。传统纹理压缩（BC7/ASTC）压缩比仅 4:1，而 NVIDIA 用 AI 实现了 7:1 的无损压缩。这意味着<strong>8GB 显卡可运行原本需要 40GB 的游戏</strong>。对游戏玩家是利好，但可能影响高端显卡销量——中端卡也能跑 4K 游戏了。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">技术</span>
+      三星启动硅光子代工业务，首发 RISC-V SSD 控制器
+    </div>
+    <div class="item-body">
+      三星进入<strong>硅光子代工领域</strong>，同时开发基于 RISC-V 的 SSD 控制器，摆脱 Arm 依赖。半导体技术路线重大调整。
+    </div>
+    <div class="stat-row">
+      <span class="stat">技术方向 <em>硅光子</em></span>
+      <span class="stat">芯片架构 <em>RISC-V</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/trendforce/status/2040459744117174675">@trendforce</a> ｜ 10小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">硅光子是突破摩尔定律瓶颈的关键路径，通过光信号替代电信号实现更高带宽、更低功耗。三星能在硅光子代工上与 Intel、TSMC 竞争，是其<strong>技术栈多元化</strong>的体现。同时转向 RISC-V，则是降低 Arm 授权成本的长期战略。这对中国芯片产业有参考意义——<strong>RISC-V+硅光子</strong>可能是突破口。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">产能</span>
+      TSMC 传将 4nm 产线转 3nm，智能手机厂商削减晶圆订单
+    </div>
+    <div class="item-body">
+      TSMC 将闲置 4nm 产能转 3nm，智能手机需求疲软+内存价格高企导致<strong>晶圆订单削减</strong>。产能调整反映行业景气度变化。
+    </div>
+    <div class="stat-row">
+      <span class="stat">产能转换 <em>4nm→3nm</em></span>
+      <span class="stat">原因 <em>需求疲软</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/dnystedt/status/2039982422960587160">@dnystedt</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">TSMC 的产能调整，是智能手机市场<strong>双杀</strong>的反映：需求疲软（销量下滑）+成本上涨（内存涨价）。手机厂商砍单，导致 4nm 产能闲置，TSMC 顺势转产 3nm 给苹果、英伟达等 AI 芯片客户。这进一步加剧了<strong>手机芯片与 AI 芯片争抢产能</strong>的局面，可能导致手机 SoC 涨价。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">风险</span>
+      美国 AI 数据中心建设半数延迟或取消，中国零件短缺+电力不足
+    </div>
+    <div class="item-body">
+      美国 AI 算力基建受地缘政治、供应链、基础设施<strong>三重压力夹击</strong>，中国零件短缺直接源于关税战。AI 算力风险叙事完整。
+    </div>
+    <div class="stat-row">
+      <span class="stat">延迟/取消率 <em>50%</em></span>
+      <span class="stat">原因 <em>零件短缺+电力不足</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/half-of-planned-us-data-center-builds-have-been-delayed-or-canceled-growth-limited-by-shortages-of-power-infrastructure-and-parts-from-china-the-ai-build-out-flips-the-breakers">Tom's Hardware</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">美国 AI 数据中心建设受阻，是<strong>地缘政治反噬</strong>的典型案例。关税战导致中国产电源、散热、机柜等零部件短缺，价格飙升 2-3 倍。同时，美国电网老化无法支撑 AI 数据中心的庞大功耗。这对 OpenAI、Google、Meta 的 AI 算力扩张计划是<strong>严重打击</strong>，可能导致美国在 AI 算力竞赛中落后于中国。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 4. 游戏行业 ==================== -->
+<section class="section" id="game">
+  <div class="section-header">
+    <span class="icon">🎮</span>
+    <h2>游戏行业</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">监管</span>
+      韩国监管调查游戏平台抽成，或影响 App Store 模式
+    </div>
+    <div class="item-body">
+      韩国公平贸易委员会调查游戏平台抽成，可能影响 <strong>App Store/Google Play 分成模式</strong>。游戏行业监管动态值得关注。
+    </div>
+    <div class="item-source">来源：<a href="https://www.pocketgamer.biz/korea-regulator-game-platform-commission/">PocketGamer.biz</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">韩国是全球首个通过立法限制 App Store 垄断的国家，此次针对游戏平台的调查，可能进一步<strong>打破 30% 抽成惯例</strong>。如果韩国强制要求降低抽成比例，苹果和谷歌可能在全球范围内面临压力。这对游戏开发者是利好，但可能导致平台提高其他费用（如广告、云服务）来弥补收入损失。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">裁员</span>
+      Rec Room 裁员并关闭工作室，社交 VR 游戏困境加剧
+    </div>
+    <div class="item-body">
+      Rec Room 作为 VR 社交游戏代表，<strong>裁员并关闭工作室</strong>，反映 VR 游戏商业化困境。社交 VR 领域持续承压。
+    </div>
+    <div class="item-source">来源：<a href="https://www.pocketgamer.biz/rec-room-runs-out-of-road-and-fire-emblem-shadows-paltry-earnings-week-in-views/">PocketGamer.biz</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Rec Room 曾获 1.5 亿美元融资，估值近 20 亿美元，但仍难逃裁员命运。这反映<strong>VR 社交游戏商业化困境</strong>：用户基数小（Meta Quest 累计销量仅 2000 万台）、付费意愿低、内容生产成本高。与元宇宙泡沫破裂同步，VR 游戏行业进入<strong>寒冬洗牌期</strong>，预计未来 1-2 年将有更多 VR 游戏工作室倒闭。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-new">工具</span>
+      Netflix 推出 AI 视频编辑器，加入 AI 工具竞争
+    </div>
+    <div class="item-body">
+      Netflix 推出 <strong>AI 视频编辑器</strong>，AI 工具从创作层向消费层延伸。对视频行业有影响。
+    </div>
+    <div class="item-source">来源：<a href="https://www.theregister.com/2026/04/03/netflix_video_ai/">The Register</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Netflix 推出 AI 视频编辑器，是其从内容平台向<strong>工具平台延伸</strong>的尝试。用户可用 AI 剪辑、配音、字幕，降低内容创作门槛。这对 Adobe Premiere、Final Cut Pro 等专业软件构成威胁——如果 Netflix 能提供免费或低价的 AI 编辑工具，可能吸引大量中小创作者。但也可能导致<strong>同质化内容泛滥</strong>，影响平台内容质量。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 5. 科技行业动态 ==================== -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="icon">🏛️</span>
+    <h2>科技行业动态</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">收购</span>
+      OpenAI 收购脱口秀公司 TBPN，M&A 战略令人困惑
+    </div>
+    <div class="item-body">
+      OpenAI 收购科技脱口秀公司 <strong>TBPN</strong>，M&A 战略方向模糊，引发行业困惑。OpenAI 商业化路径值得关注。
+    </div>
+    <div class="item-source">来源：<a href="https://www.cnbc.com/2026/04/03/chasing-vibes-openai-ma-strategy-gets-more-confusing-with-tbpn-.html">CNBC Tech</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">OpenAI 收购 TBPN，是其 M&A 战略的<strong>又一令人费解之举</strong>。此前已收购数字产品公司、AI 初创企业，此次收购脱口秀公司，可能是为了<strong>内容营销</strong>——通过 TBPN 的播客影响力推广 ChatGPT。但这与 OpenAI 的核心技术方向（大模型研发）相去甚远，可能反映 OpenAI 在商业化压力下的<strong>战略摇摆</strong>。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-hot">隐私</span>
+      LinkedIn 扫描用户浏览器 6000+ 扩展，隐私争议升级
+    </div>
+    <div class="item-body">
+      LinkedIn 被曝<strong>秘密扫描用户浏览器扩展和设备信息</strong>，隐私风险重大，用户信任危机。
+    </div>
+    <div class="stat-row">
+      <span class="stat">扫描扩展 <em>6000+</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://www.tomshardware.com/software/browsers/linkedin-scans-visitors-browsers-for-over-6000-chrome-extensions-and-collects-device-data">Tom's Hardware</a> ｜ 9小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">LinkedIn 扫描浏览器扩展，是为了<strong>检测广告拦截器</strong>和隐私保护工具，从而绕过用户的防护措施。这种做法在技术上属于<strong>灰色地带</strong>，可能违反 GDPR 等隐私法规。对用户而言，这是对隐私的赤裸侵犯。可能引发<strong>集体诉讼</strong>，LinkedIn 需要尽快澄清数据收集范围和使用目的。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-blue">架构</span>
+      Karpathy 发布 LLM Wiki 架构：用 Markdown 库替代 RAG
+    </div>
+    <div class="item-body">
+      Andrej Karpathy 提出用<strong>可演进的 Markdown 库替代 RAG</strong>，LLM 知识管理新范式。对 AI 应用开发有启发。
+    </div>
+    <div class="item-source">来源：<a href="https://venturebeat.com/data/karpathy-shares-llm-knowledge-base-architecture-that-bypasses-rag-with-an">VentureBeat</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Karpathy 的 LLM Wiki 架构，是对 RAG 的<strong>极简主义反思</strong>。传统 RAG 需要向量数据库、embedding 模型、检索排序，复杂度高且易出错。Karpathy 提出：用 Markdown 写知识，直接让 LLM 读取，通过版本控制演进。这种<strong>"人机协作的知识库"</strong>，适合个人知识管理和企业内部知识库，但可能不适合大规模实时更新场景。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">政治</span>
+      Anthropic 成立 PAC，加大政治活动力度
+    </div>
+    <div class="item-body">
+      Anthropic 成立<strong>政治行动委员会（PAC）</strong>，AI 公司政治影响力扩张信号。游说活动将更加频繁。
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/">TechCrunch AI</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Anthropic 成立 PAC，是 AI 公司<strong>政治游说正规化</strong>的标志。此前 OpenAI、Google 已成立 PAC，AI 行业进入<strong>政策博弈阶段</strong>。PAC 可通过捐款影响立法者，推动对 AI 公司有利的监管政策（如降低合规成本、限制开源模型）。这可能加剧<strong>AI 监管的利益分歧</strong>，小公司可能被排除在政策制定之外。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-orange">收购</span>
+      Anthropic 收购生物科技初创公司 Coefficient Bio，估值 4 亿美元
+    </div>
+    <div class="item-body">
+      Anthropic 收购生物科技公司，<strong>AI+生物交叉领域布局加速</strong>。跨领域整合值得关注。
+    </div>
+    <div class="stat-row">
+      <span class="stat">估值 <em>4亿美元</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/">TechCrunch AI</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">Anthropic 收购生物科技公司，是其<strong>跨领域扩张</strong>的信号。AI+生物是热门赛道，DeepMind 的 AlphaFold 已证明 AI 在蛋白质折叠预测上的威力。Coefficient Bio 可能专注于<strong>AI 辅助药物研发</strong>，Anthropic 可能将其能力整合到 Claude 中，打造垂直领域的专业 AI。这可能开启 AI 公司的<strong>跨学科并购潮</strong>。</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==================== 6. 政策与监管 ==================== -->
+<section class="section" id="policy">
+  <div class="section-header">
+    <span class="icon">📜</span>
+    <h2>政策与监管</h2>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">监管</span>
+      中国九部委联合发布 AI 伦理审查试行办法
+    </div>
+    <div class="item-body">
+      工信部等<strong>九部委联合出台</strong>，是中国 AI 治理监管落地的重要节点，影响国内 AI 产品合规路径。
+    </div>
+    <div class="stat-row">
+      <span class="stat">发布部门 <em>九部委</em></span>
+      <span class="stat">性质 <em>试行办法</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/pstAsiatech/status/2040097680685232385">@pstAsiatech</a> ｜ 12小时前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">九部委联合发布 AI 伦理审查办法，标志着中国 AI 监管从<strong>原则指导转向实操落地</strong>。预计审查重点包括：算法歧视、数据隐私、内容安全、自动化决策透明度等。对 AI 企业而言，合规成本将大幅上升，可能需要<strong>成立专门的伦理审查委员会</strong>。这也可能成为中国 AI 产品出海的合规壁垒——符合中国伦理标准的 AI，未必符合欧盟 GDPR。</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">
+      <span class="tag tag-purple">监管</span>
+      中国规范"数字人"管理，禁止对儿童提供成瘾性 AI 服务
+    </div>
+    <div class="item-body">
+      针对<strong>数字人/AI 陪伴类产品</strong>的专项监管，明确禁止成瘾性设计，对 AI 应用层产品形态有直接约束。
+    </div>
+    <div class="stat-row">
+      <span class="stat">监管对象 <em>数字人/AI陪伴</em></span>
+      <span class="stat">禁令 <em>成瘾性设计</em></span>
+    </div>
+    <div class="item-source">来源：<a href="https://x.com/ReutersTech/status/2040039165522330111">@ReutersTech</a> ｜ 1天前</div>
+    <div class="insight-box">
+      <div class="insight-label">💡 深度洞察</div>
+      <div class="insight-content">禁止成瘾性 AI 服务，是对<strong>AI 陪伴产品</strong>的精准打击。Character.AI 等产品已出现用户过度依赖、沉迷甚至自残案例。中国监管提前布局，可能要求 AI 陪伴产品<strong>限制使用时长、增加防沉迷机制</strong>。这对 AI 虚拟人、AI 伴侣创业公司是重大合规挑战，可能需要重新设计产品逻辑，从"让用户沉迷"转向"帮助用户成长"。</div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-brand">Tech Daily Brief</p>
+  <p>2026年4月5日 · 覆盖范围：4月3日-5日</p>
+  <p>数据来源：<strong>The Verge</strong>、<strong>TechCrunch</strong>、<strong>VentureBeat</strong>、<strong>Tom's Hardware</strong>、<strong>CNBC Tech</strong>、量子位、机器之心Pro、新智元、RD观测、智慧芯片案内人等</p>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" title="回到顶部">&uarr;</a>
+
+<script>
+  function toggleTheme() {
+    const body = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    }
+  })();
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
